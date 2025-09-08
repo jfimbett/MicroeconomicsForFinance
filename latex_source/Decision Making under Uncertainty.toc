@@ -1,0 +1,5 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Expected Utility}{2}{0}{1}
+\beamer@sectionintoc {2}{Risk Aversion}{17}{0}{2}
+\beamer@sectionintoc {3}{Portfolio Choice}{24}{0}{3}
+\beamer@sectionintoc {4}{Initial Wealth}{30}{0}{4}

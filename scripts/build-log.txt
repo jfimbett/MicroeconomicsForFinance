@@ -1,0 +1,358 @@
+Building Microeconomics for Finance course materials...
+
+Building Topic 1: Equilibrium in an Exchange Economy
+pandoc 
+  to: revealjs
+  from: markdown-auto_identifiers
+  output-file: index.html
+  standalone: true
+  title-prefix: Microeconomics for Finance
+  wrap: none
+  default-image-extension: png
+  html-math-method:
+    method: mathjax
+    url: >-
+      https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML-full
+  slide-level: 2
+  css:
+    - ../../styles.css
+  variables: {}
+  
+metadata
+  link-citations: true
+  width: 1050
+  height: 700
+  margin: 0.1
+  center: false
+  navigationMode: linear
+  controlsLayout: edges
+  controlsTutorial: false
+  hash: true
+  history: true
+  hashOneBasedIndex: false
+  fragmentInURL: false
+  transition: slide
+  backgroundTransition: fade
+  pdfSeparateFragments: false
+  lang: en
+  auto-stretch: true
+  theme: white
+  slideNumber: true
+  chalkboard: true
+  previewLinks: auto
+  hash-type: number
+  controls: true
+  progress: true
+  mathjax: https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js
+  config: TeX-AMS_HTML-full
+  tex2jax:
+    inlineMath:
+      - - \\(
+        - \\)
+    displayMath:
+      - - \\[
+        - \\]
+    balanceBraces: true
+    processEscapes: false
+    processRefs: true
+    processEnvironments: true
+    preview: TeX
+    skipTags:
+      - script
+      - noscript
+      - style
+      - textarea
+      - pre
+      - code
+    ignoreClass: tex2jax_ignore
+    processClass: tex2jax_process
+  plugins:
+    - RevealMath
+    - RevealNotes
+    - RevealSearch
+    - RevealZoom
+    - RevealMenu
+    - RevealChalkboard
+  title: Equilibrium in an Exchange Economy
+  subtitle: Microeconomics for Finance
+  author: Juan F. Imbet
+  institute: Master in Finance, 1st Year - Paris Dauphine University - PSL
+  footer: Microeconomics for Finance - Equilibrium in an Exchange Economy
+  
+Output created: ..\..\docs\src\equilibrium-exchange-economy\index.html
+
+Topic 1 completed successfully
+
+Building Topic 2: Decision Making under Uncertainty
+pandoc 
+  to: revealjs
+  from: markdown-auto_identifiers
+  output-file: index.html
+  standalone: true
+  title-prefix: Microeconomics for Finance
+  wrap: none
+  default-image-extension: png
+  html-math-method:
+    method: mathjax
+    url: >-
+      https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML-full
+  slide-level: 2
+  css:
+    - ../../styles.css
+  variables: {}
+  
+metadata
+  link-citations: true
+  width: 1050
+  height: 700
+  margin: 0.1
+  center: false
+  navigationMode: linear
+  controlsLayout: edges
+  controlsTutorial: false
+  hash: true
+  history: true
+  hashOneBasedIndex: false
+  fragmentInURL: false
+  transition: slide
+  backgroundTransition: fade
+  pdfSeparateFragments: false
+  lang: en
+  auto-stretch: true
+  theme: white
+  slideNumber: true
+  chalkboard: true
+  previewLinks: auto
+  hash-type: number
+  controls: true
+  progress: true
+  mathjax: https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js
+  config: TeX-AMS_HTML-full
+  tex2jax:
+    inlineMath:
+      - - \\(
+        - \\)
+    displayMath:
+      - - \\[
+        - \\]
+    balanceBraces: true
+    processEscapes: false
+    processRefs: true
+    processEnvironments: true
+    preview: TeX
+    skipTags:
+      - script
+      - noscript
+      - style
+      - textarea
+      - pre
+      - code
+    ignoreClass: tex2jax_ignore
+    processClass: tex2jax_process
+  plugins:
+    - RevealMath
+    - RevealNotes
+    - RevealSearch
+    - RevealZoom
+    - RevealMenu
+    - RevealChalkboard
+  title: Decision Making under Uncertainty
+  subtitle: Microeconomics for Finance
+  author: Juan F. Imbet
+  institute: Master in Finance, 1st Year - Paris Dauphine University - PSL
+  footer: Microeconomics for Finance - Decision Making under Uncertainty
+  
+Output created: ..\..\docs\src\decision-making-uncertainty\index.html
+
+Topic 2 completed successfully
+
+Building Topic 3: Equilibrium in Markets for Securities
+pandoc 
+  to: revealjs
+  from: markdown-auto_identifiers
+  output-file: index.html
+  standalone: true
+  title-prefix: Microeconomics for Finance
+  wrap: none
+  default-image-extension: png
+  html-math-method:
+    method: mathjax
+    url: >-
+      https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML-full
+  slide-level: 2
+  css:
+    - ../../styles.css
+  variables: {}
+  
+metadata
+  link-citations: true
+  width: 1050
+  height: 700
+  margin: 0.1
+  center: false
+  navigationMode: linear
+  controlsLayout: edges
+  controlsTutorial: false
+  hash: true
+  history: true
+  hashOneBasedIndex: false
+  fragmentInURL: false
+  transition: slide
+  backgroundTransition: fade
+  pdfSeparateFragments: false
+  lang: en
+  auto-stretch: true
+  theme: white
+  slideNumber: true
+  chalkboard: true
+  previewLinks: auto
+  hash-type: number
+  controls: true
+  progress: true
+  mathjax: https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js
+  config: TeX-AMS_HTML-full
+  tex2jax:
+    inlineMath:
+      - - \\(
+        - \\)
+    displayMath:
+      - - \\[
+        - \\]
+    balanceBraces: true
+    processEscapes: false
+    processRefs: true
+    processEnvironments: true
+    preview: TeX
+    skipTags:
+      - script
+      - noscript
+      - style
+      - textarea
+      - pre
+      - code
+    ignoreClass: tex2jax_ignore
+    processClass: tex2jax_process
+  plugins:
+    - RevealMath
+    - RevealNotes
+    - RevealSearch
+    - RevealZoom
+    - RevealMenu
+    - RevealChalkboard
+  title: Equilibrium in Markets for Securities
+  subtitle: Microeconomics for Finance
+  author: Juan F. Imbet
+  institute: Master in Finance, 1st Year - Paris Dauphine University - PSL
+  footer: Microeconomics for Finance - Equilibrium in Markets for Securities
+  
+Output created: ..\..\docs\src\equilibrium-markets-securities\index.html
+
+Topic 3 completed successfully
+
+Building Topic 4: Investment Decisions under Market Imperfections
+pandoc 
+  to: revealjs
+  from: markdown-auto_identifiers
+  output-file: index.html
+  standalone: true
+  title-prefix: Microeconomics for Finance
+  wrap: none
+  default-image-extension: png
+  html-math-method:
+    method: mathjax
+    url: >-
+      https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML-full
+  slide-level: 2
+  css:
+    - ../../styles.css
+  variables: {}
+  
+metadata
+  link-citations: true
+  width: 1050
+  height: 700
+  margin: 0.1
+  center: false
+  navigationMode: linear
+  controlsLayout: edges
+  controlsTutorial: false
+  hash: true
+  history: true
+  hashOneBasedIndex: false
+  fragmentInURL: false
+  transition: slide
+  backgroundTransition: fade
+  pdfSeparateFragments: false
+  lang: en
+  auto-stretch: true
+  theme: white
+  slideNumber: true
+  chalkboard: true
+  previewLinks: auto
+  hash-type: number
+  controls: true
+  progress: true
+  mathjax: https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js
+  config: TeX-AMS_HTML-full
+  tex2jax:
+    inlineMath:
+      - - \\(
+        - \\)
+    displayMath:
+      - - \\[
+        - \\]
+    balanceBraces: true
+    processEscapes: false
+    processRefs: true
+    processEnvironments: true
+    preview: TeX
+    skipTags:
+      - script
+      - noscript
+      - style
+      - textarea
+      - pre
+      - code
+    ignoreClass: tex2jax_ignore
+    processClass: tex2jax_process
+  plugins:
+    - RevealMath
+    - RevealNotes
+    - RevealSearch
+    - RevealZoom
+    - RevealMenu
+    - RevealChalkboard
+  title: Investment Decisions under Market Imperfections
+  subtitle: Microeconomics for Finance
+  author: Juan F. Imbet
+  institute: Master in Finance, 1st Year - Paris Dauphine University - PSL
+  footer: Microeconomics for Finance - Investment Decisions under Market Imperfections
+  
+Output created: ..\..\docs\src\investment-decisions-imperfections\index.html
+
+Topic 4 completed successfully
+
+Building main website...
+[1/6] about.qmd
+[2/6] index.qmd
+[3/6] src\decision-making-uncertainty\index.qmd
+[4/6] src\equilibrium-exchange-economy\index.qmd
+[5/6] src\equilibrium-markets-securities\index.qmd
+[6/6] src\investment-decisions-imperfections\index.qmd
+
+Output created: docs\index.html
+
+
+============================================
+All builds completed successfully!
+============================================
+
+Generated files:
+- docs/src/equilibrium-exchange-economy/index.html
+- docs/src/decision-making-uncertainty/index.html
+- docs/src/equilibrium-markets-securities/index.html
+- docs/src/investment-decisions-imperfections/index.html
+- docs/index.html (main website)
+
+You can now open docs/index.html in your browser to view the course materials.
+Press any key to continue . . . 

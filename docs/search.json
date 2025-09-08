@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Microeconomics for Finance",
+    "section": "",
+    "text": "This course provides students with relevant microeconomic methods to tackle finance issues. The course covers 24 hours of material and is designed for first-year Master in Finance students at Paris Dauphine University - PSL.\n\n\nThe course consists of four main topics:\n\nEquilibrium in an Exchange Economy - Understanding how markets allocate resources through voluntary exchange\nDecision Making under Uncertainty - Expected utility theory and risk preferences\nEquilibrium in Markets for Securities - Asset pricing and portfolio theory\nInvestment Decisions under Market Imperfections - Asymmetric information and agency problems\n\n\n\n\n\n\nTopic 1: Exchange Economy\nUnderstanding the fundamentals of market equilibrium with a focus on exchange between agents.\n\n\nTopic 2: Decision under Uncertainty\nExpected utility theory, risk aversion, and portfolio choice.\n\n\nTopic 3: Securities Markets\nAsset pricing models, CAPM, and market equilibrium concepts.\n\n\nTopic 4: Market Imperfections\nAsymmetric information, principal-agent problems, and real-world market frictions.\n\n\n\n\n\n\nInstructor: Juan F. Imbet\nInstitution: Paris Dauphine University - PSL\nLevel: Master in Finance, 1st Year\nDuration: 24 hours\nEvaluation: Mid-term and final exams\n\n\n\n\nBy the end of this course, students will be able to:\n\nUnderstand the fundamental concepts of microeconomic theory as applied to finance\nAnalyze market equilibrium under different conditions\nApply expected utility theory to decision-making under uncertainty\nComprehend asset pricing models and their implications\nRecognize the impact of market imperfections on investment decisions\n\n\n\n\n\nBasic knowledge of microeconomics\nFamiliarity with mathematical concepts (calculus, probability)\nUnderstanding of financial instruments\n\n\nThis course builds upon the foundational work of previous instructors while incorporating modern developments in financial economics."
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "Microeconomics for Finance",
+    "section": "",
+    "text": "The course consists of four main topics:\n\nEquilibrium in an Exchange Economy - Understanding how markets allocate resources through voluntary exchange\nDecision Making under Uncertainty - Expected utility theory and risk preferences\nEquilibrium in Markets for Securities - Asset pricing and portfolio theory\nInvestment Decisions under Market Imperfections - Asymmetric information and agency problems"
+  },
+  {
+    "objectID": "index.html#course-materials",
+    "href": "index.html#course-materials",
+    "title": "Microeconomics for Finance",
+    "section": "",
+    "text": "Topic 1: Exchange Economy\nUnderstanding the fundamentals of market equilibrium with a focus on exchange between agents.\n\n\nTopic 2: Decision under Uncertainty\nExpected utility theory, risk aversion, and portfolio choice.\n\n\nTopic 3: Securities Markets\nAsset pricing models, CAPM, and market equilibrium concepts.\n\n\nTopic 4: Market Imperfections\nAsymmetric information, principal-agent problems, and real-world market frictions."
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Microeconomics for Finance",
+    "section": "",
+    "text": "Instructor: Juan F. Imbet\nInstitution: Paris Dauphine University - PSL\nLevel: Master in Finance, 1st Year\nDuration: 24 hours\nEvaluation: Mid-term and final exams"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Microeconomics for Finance",
+    "section": "",
+    "text": "By the end of this course, students will be able to:\n\nUnderstand the fundamental concepts of microeconomic theory as applied to finance\nAnalyze market equilibrium under different conditions\nApply expected utility theory to decision-making under uncertainty\nComprehend asset pricing models and their implications\nRecognize the impact of market imperfections on investment decisions"
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Microeconomics for Finance",
+    "section": "",
+    "text": "Basic knowledge of microeconomics\nFamiliarity with mathematical concepts (calculus, probability)\nUnderstanding of financial instruments\n\n\nThis course builds upon the foundational work of previous instructors while incorporating modern developments in financial economics."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Juan F. Imbet\nAssistant Professor\nDepartment of Finance\nParis Dauphine University - PSL\n\n\n\nThis 24-hour course in Microeconomics for Finance aims to equip students with essential microeconomic tools for analyzing financial markets and decision-making. The course bridges theoretical microeconomics with practical applications in finance.\n\n\n\nUpon completion of this course, students will be able to:\n\nApply microeconomic principles to financial decision-making\nUnderstand market equilibrium concepts in financial contexts\nAnalyze decision-making under uncertainty using expected utility theory\nComprehend asset pricing models and their implications\nRecognize the impact of market imperfections on investment decisions\n\n\n\n\nThe course is divided into four main modules, each building upon the previous one:\n\nFoundation: Exchange economy and basic equilibrium concepts\nRisk and Uncertainty: Decision theory and risk preferences\nAsset Markets: Pricing and portfolio theory\nReal-World Applications: Market imperfections and agency problems\n\n\n\n\nAll course materials are provided in interactive HTML format using Quarto and Reveal.js, allowing for an engaging learning experience with embedded mathematical expressions and visualizations.\n\n\n\nFor questions about the course content or materials, please contact the instructor.\n\n\n\nThis course builds upon the foundational work of previous instructors and incorporates modern developments in financial economics and teaching methodologies."
+  },
+  {
+    "objectID": "about.html#instructor",
+    "href": "about.html#instructor",
+    "title": "About",
+    "section": "",
+    "text": "Juan F. Imbet\nAssistant Professor\nDepartment of Finance\nParis Dauphine University - PSL"
+  },
+  {
+    "objectID": "about.html#course-description",
+    "href": "about.html#course-description",
+    "title": "About",
+    "section": "",
+    "text": "This 24-hour course in Microeconomics for Finance aims to equip students with essential microeconomic tools for analyzing financial markets and decision-making. The course bridges theoretical microeconomics with practical applications in finance."
+  },
+  {
+    "objectID": "about.html#learning-outcomes",
+    "href": "about.html#learning-outcomes",
+    "title": "About",
+    "section": "",
+    "text": "Upon completion of this course, students will be able to:\n\nApply microeconomic principles to financial decision-making\nUnderstand market equilibrium concepts in financial contexts\nAnalyze decision-making under uncertainty using expected utility theory\nComprehend asset pricing models and their implications\nRecognize the impact of market imperfections on investment decisions"
+  },
+  {
+    "objectID": "about.html#course-structure",
+    "href": "about.html#course-structure",
+    "title": "About",
+    "section": "",
+    "text": "The course is divided into four main modules, each building upon the previous one:\n\nFoundation: Exchange economy and basic equilibrium concepts\nRisk and Uncertainty: Decision theory and risk preferences\nAsset Markets: Pricing and portfolio theory\nReal-World Applications: Market imperfections and agency problems"
+  },
+  {
+    "objectID": "about.html#materials",
+    "href": "about.html#materials",
+    "title": "About",
+    "section": "",
+    "text": "All course materials are provided in interactive HTML format using Quarto and Reveal.js, allowing for an engaging learning experience with embedded mathematical expressions and visualizations."
+  },
+  {
+    "objectID": "about.html#contact-information",
+    "href": "about.html#contact-information",
+    "title": "About",
+    "section": "",
+    "text": "For questions about the course content or materials, please contact the instructor."
+  },
+  {
+    "objectID": "about.html#acknowledgments",
+    "href": "about.html#acknowledgments",
+    "title": "About",
+    "section": "",
+    "text": "This course builds upon the foundational work of previous instructors and incorporates modern developments in financial economics and teaching methodologies."
+  }
+]

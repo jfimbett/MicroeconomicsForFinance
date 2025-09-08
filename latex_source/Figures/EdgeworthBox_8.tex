@@ -1,0 +1,106 @@
+\documentclass[compress, 9pt]{beamer}
+%\documentclass[handout]{beamer} aurait supprimé les ``overlays''
+
+\usetheme{}% le thème choisi pour ma présentation
+%\useoutertheme{smoothbars}
+%\useinnertheme{rounded}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}%pour les includegraphics
+\usepackage{array}% pour des tableaux particuliers. Nécessaire pour les révéler colonne par colonne
+\usepackage{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-plot}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+
+
+
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%pour ajouter un numéro de page en bas.% une autre solution : \useoutertheme{shadow}
+%\usepackage{beamerthemesplit}
+
+
+
+
+\begin{document}
+
+
+\frame{
+
+
+\begin{pspicture}(0,0)(11,8)
+
+
+
+\psline[linewidth=0.05cm]{->}(0,0.5)(11,0.5)
+\rput[B](5.5,0.1){\Large $x_1$}
+\psline[linewidth=0.05cm]{->}(0.5,0)(0.5,7.5)
+\rput[B](0.2,4){\Large $x_2$}
+
+\psline[linewidth=0.05cm]{<-}(0,7)(11,7)
+\rput[B](5.5,7.3){\Large $y_1$}
+\psline[linewidth=0.05cm]{<-}(10.5,0)(10.5,7.5)
+\rput[B](10.8,4){\Large $y_2$}
+
+
+\rput(0,0){\psframebox[linewidth=1pt,linecolor=red]{\LARGE  \red \bf $A$}}
+\rput(11,7.5){\psframebox[linewidth=1pt,linecolor=blue]{\LARGE  \blue \bf $B$}}
+
+
+
+
+\psplot[algebraic,linecolor=red,linestyle=solid,linewidth=0.05cm]{2.5}{6}{0.5+ 12.8/(x-0.5)}
+
+\psplot[algebraic,linecolor=red,linestyle=dotted,linewidth=0.05cm]{2}{5}{0.5+ 8/(x-0.5)}
+\psplot[algebraic,linecolor=red,linestyle=dotted,linewidth=0.05cm]{3.5}{7}{0.5+ 17/(x-0.5)}
+
+
+
+\psplot[algebraic,linecolor=violet,linestyle=solid,linewidth=0.05cm]{2}{6.333}{10 - 1.5*x}
+
+\psdot[dotsize=6pt](3.4,4.9)
+\rput[Bl](3.5,5){\Large $I_A:$ Individually optimum allocation}
+\rput[Bl](4.5,4.5){\Large $\Leftrightarrow$ highest achievable utility} 
+\rput[Bl](5,4){\Large under budget constraint}
+
+
+
+
+
+\end{pspicture}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

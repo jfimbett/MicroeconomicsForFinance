@@ -1,0 +1,134 @@
+---
+title: "Equilibrium in Markets for Securities"
+subtitle: "Microeconomics for Finance"
+author: "Juan F. Imbet"
+institute: "Master in Finance, 1st Year - Paris Dauphine University - PSL"
+format:
+  revealjs:
+    theme: white
+    css: ../../styles.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Microeconomics for Finance - Equilibrium in Markets for Securities"
+execute:
+  enabled: false
+---
+
+## Introduction to Securities Markets
+
+- Securities markets involve trading of financial instruments such as stocks, bonds, and derivatives.
+
+- In equilibrium, supply equals demand for each security.
+
+- Prices adjust to clear markets.
+
+- Key concepts: portfolio choice, market completeness, and the role of information.
+
+------------------------------------------------------------------------
+
+## Portfolio Theory
+
+- Investors choose portfolios to maximize expected utility given their risk preferences.
+
+- Mean-variance analysis: portfolios characterized by expected return and variance.
+
+- Efficient frontier: set of portfolios with maximum expected return for given risk level.
+
+- Capital Asset Pricing Model (CAPM): relationship between expected return and systematic risk.
+
+------------------------------------------------------------------------
+
+## The Capital Asset Pricing Model (CAPM)
+
+- **Assumptions:**
+  - Investors are risk-averse and maximize expected utility
+  - Single-period investment horizon
+  - Frictionless markets (no transaction costs, taxes)
+  - Investors can borrow/lend at risk-free rate
+  - Homogeneous expectations
+
+- **Key Result:** Expected return on asset i:
+- **Key Result:** Expected return on asset $i$:
+  $$\mathbb{E}[R_i] = R_f + \beta_i \left(\mathbb{E}[R_m] - R_f\right)$$
+
+  where $\beta_i = \dfrac{\mathrm{Cov}(R_i, R_m)}{\mathrm{Var}(R_m)}$
+
+------------------------------------------------------------------------
+
+## Market Equilibrium
+
+- In equilibrium, all investors hold the market portfolio (combination of all risky assets).
+
+- The market portfolio is mean-variance efficient.
+
+- Risk-free asset is tangent to the efficient frontier.
+
+- Separation theorem: portfolio choice separates into two decisions:
+  1. Which efficient portfolio to hold
+  2. How much to invest in risky vs. risk-free assets
+
+------------------------------------------------------------------------
+
+## Complete Markets
+
+- A market is complete if any contingent claim can be replicated by a portfolio of existing securities.
+
+- In complete markets, all risk can be hedged.
+
+- Arrow-Debreu securities: pay 1 in one state, 0 otherwise.
+
+- State prices: prices of Arrow-Debreu securities.
+
+- Any security's price is the expected value of its payoffs discounted by state prices.
+
+------------------------------------------------------------------------
+
+## Incomplete Markets
+
+- Most real-world markets are incomplete.
+
+- Cannot hedge all risks.
+
+- Equilibrium concepts: Radner equilibrium, constrained efficiency.
+
+- Role of derivatives in completing markets.
+
+------------------------------------------------------------------------
+
+## Information and Asset Pricing
+
+- Asymmetric information: some investors have private information.
+
+- Efficient markets hypothesis: prices reflect all available information.
+
+- Forms of market efficiency:
+  - Weak: prices reflect past price information
+  - Semi-strong: prices reflect all public information
+  - Strong: prices reflect all information (public and private)
+
+------------------------------------------------------------------------
+
+## Behavioral Finance
+
+- Traditional finance assumes rational investors.
+
+- Behavioral finance incorporates psychological biases:
+  - Overconfidence
+  - Loss aversion
+  - Mental accounting
+  - Herding
+
+- Implications for asset pricing and market anomalies.
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+- Securities markets play a crucial role in allocating resources and managing risk.
+
+- Equilibrium concepts help understand price formation.
+
+- Extensions to incomplete markets and behavioral considerations provide more realistic models.
+
+- Applications in portfolio management, risk management, and financial regulation.

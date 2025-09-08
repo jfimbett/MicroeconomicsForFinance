@@ -1,0 +1,169 @@
+---
+title: "Investment Decisions under Market Imperfections"
+subtitle: "Microeconomics for Finance"
+author: "Juan F. Imbet"
+institute: "Master in Finance, 1st Year - Paris Dauphine University - PSL"
+format:
+  revealjs:
+    theme: white
+    css: ../../styles.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Microeconomics for Finance - Investment Decisions under Market Imperfections"
+execute:
+  enabled: false
+---
+
+## Introduction to Market Imperfections
+
+- Real-world markets deviate from the perfect competition assumptions.
+
+- Market imperfections include:
+  - Asymmetric information
+  - Transaction costs
+  - Taxes and regulations
+  - Market power
+  - Behavioral biases
+
+- These imperfections affect investment decisions and asset pricing.
+
+------------------------------------------------------------------------
+
+## Asymmetric Information
+
+- One party has more or better information than the other.
+
+- Types:
+  - Adverse selection: occurs before transaction
+  - Moral hazard: occurs after transaction
+
+- In financial markets: lenders vs. borrowers, insurers vs. insured, etc.
+
+------------------------------------------------------------------------
+
+## The Principal-Agent Problem
+
+- Principal delegates tasks to agent.
+
+- Agent may not act in principal's best interest due to:
+  - Different objectives
+  - Information asymmetry
+  - Incentive misalignment
+
+- Solutions:
+  - Monitoring
+  - Incentive contracts
+  - Performance-based compensation
+
+------------------------------------------------------------------------
+
+## Moral Hazard in Financial Contracts
+
+- Agent (borrower/manager) takes actions not observable by principal (lender/investor).
+
+- Examples:
+  - Borrower may invest in riskier projects than promised
+  - Fund manager may trade excessively for personal gain
+  - Insurance claimant may engage in risky behavior
+
+- Mitigation:
+  - Collateral requirements
+  - Covenants
+  - Performance-based fees
+
+------------------------------------------------------------------------
+
+## Adverse Selection in Financial Markets
+
+- Occurs when one party has private information before the contract.
+
+- Examples:
+  - Borrowers with high risk projects seek loans more aggressively
+  - Sellers of "lemons" (low-quality assets) in used car markets
+  - Investors with inside information
+
+- Solutions:
+  - Screening
+  - Signaling
+  - Pooling equilibria
+
+------------------------------------------------------------------------
+
+## Corporate Finance under Imperfections
+
+- Capital structure decisions affected by:
+  - Taxes (tax shield on debt)
+  - Bankruptcy costs
+  - Agency costs
+  - Asymmetric information
+
+- Pecking order theory: firms prefer internal financing, then debt, then equity.
+
+- Trade-off theory: optimal capital structure balances tax benefits and costs of debt.
+
+------------------------------------------------------------------------
+
+## Investment under Asymmetric Information
+
+- Firms may underinvest due to:
+  - Debt overhang: existing debt reduces incentives for new investment
+  - Asset substitution: shareholders may increase risk after debt issuance
+
+- Solutions:
+  - Convertible debt
+  - Priority structures
+  - Covenants restricting investment
+
+------------------------------------------------------------------------
+
+## Behavioral Aspects
+
+- Investors are not always rational.
+
+- Biases affecting investment decisions:
+  - Overconfidence
+  - Loss aversion
+  - Mental accounting
+  - Herding behavior
+
+- Implications for asset pricing and market efficiency.
+
+------------------------------------------------------------------------
+
+## Market Microstructure
+
+- How trades are executed and prices are determined.
+
+- Imperfections:
+  - Bid-ask spreads
+  - Market impact
+  - Liquidity constraints
+
+- High-frequency trading and algorithmic trading.
+
+------------------------------------------------------------------------
+
+## Regulation and Market Imperfections
+
+- Government intervention to correct market failures:
+  - Disclosure requirements
+  - Capital requirements for banks
+  - Insider trading regulations
+  - Consumer protection laws
+
+- Trade-offs between regulation and innovation.
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+- Market imperfections significantly affect investment decisions.
+
+- Understanding these imperfections is crucial for:
+  - Corporate finance decisions
+  - Investment strategy
+  - Risk management
+  - Financial regulation
+
+- Real-world financial decisions require balancing theoretical optimality with practical constraints.

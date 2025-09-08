@@ -1,0 +1,119 @@
+\documentclass[compress, 9pt]{beamer}
+%\documentclass[handout]{beamer} aurait supprimé les ``overlays''
+
+\usetheme{}% le thème choisi pour ma présentation
+%\useoutertheme{smoothbars}
+%\useinnertheme{rounded}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}%pour les includegraphics
+\usepackage{array}% pour des tableaux particuliers. Nécessaire pour les révéler colonne par colonne
+\usepackage{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-plot}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+
+
+
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%pour ajouter un numéro de page en bas.% une autre solution : \useoutertheme{shadow}
+%\usepackage{beamerthemesplit}
+
+
+
+
+\begin{document}
+
+
+\frame{
+
+
+\begin{pspicture}(0,0)(11,8)
+
+%\psgrid
+
+%\pscustom[fillstyle=solid,fillcolor=black!20,linestyle=none,algebraic]{%
+ %    \psplot{3}{9}{ 1+50*3*cos((x-1)*Pi/16)*sin(0.25*(x-1)*Pi/16)^2 }     
+  %   \psplot{9}{3}{1}
+   %  }
+
+
+
+
+
+%\psframe[linewidth=0.05cm](0.5,0.5)(10.5,7.5)
+
+
+\psline[linewidth=0.05cm]{->}(0,0.5)(11,0.5)
+\rput[B](5.5,0.1){\Large $x_1$}
+\psline[linewidth=0.05cm]{->}(0.5,0)(0.5,7.5)
+\rput[B](0.2,4){\Large $x_2$}
+
+\psline[linewidth=0.05cm]{<-}(0,7)(11,7)
+\rput[B](5.5,7.3){\Large $y_1$}
+\psline[linewidth=0.05cm]{<-}(10.5,0)(10.5,7.5)
+\rput[B](10.8,4){\Large $y_2$}
+
+
+\rput(0,0){\psframebox[linewidth=1pt,linecolor=red]{\LARGE  \red \bf $A$}}
+\rput(11,7.5){\psframebox[linewidth=1pt,linecolor=blue]{\LARGE  \blue \bf $B$}}
+
+
+
+
+
+\psplot[algebraic,linecolor=red,linestyle=solid,linewidth=0.05cm]{3}{7}{0.5+ 10/(x-0.5)}
+\psplot[algebraic,linecolor=blue,linestyle=solid,linewidth=0.05cm]{6.5}{2}{7- 24/(10.5-x)}
+
+
+
+
+\rput[Bl](4.5,4.5){\Large $p^*_1$ and $p^*_2$ such that $I_A = I_B$} 
+\rput[Bl](4.5,4){\Large market clearing: demand $=$ supply} 
+
+\rput[Bl](1,5.5){\Large \color{violet} $p^*_1 x_1 + p^*_2 x_2 = p^*_1 \omega^A_1 + p^*_2 \omega^A_2  $ }
+\psplot[algebraic,linecolor=violet,linestyle=solid,linewidth=0.05cm]{0.5}{8.34}{3.06 -0.65*(x-4.4)}
+
+
+\psdot[dotsize=6pt](4.4,3.06)
+\rput[Bl](4.5,3.1){\Large $I_A$} 
+\rput[Br](4.2,2.8){\Large $I_B$} 
+
+
+\end{pspicture}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,77 @@
+---
+title: "Microeconomics for Finance"
+subtitle: "Master in Finance, 1st Year - Paris Dauphine University - PSL"
+author: "Juan F. Imbet"
+format: html
+---
+
+# Welcome to Microeconomics for Finance
+
+This course provides students with relevant microeconomic methods to tackle finance issues. The course covers 24 hours of material and is designed for first-year Master in Finance students at Paris Dauphine University - PSL.
+
+## Course Overview
+
+The course consists of four main topics:
+
+1. **Equilibrium in an Exchange Economy** - Understanding how markets allocate resources through voluntary exchange
+2. **Decision Making under Uncertainty** - Expected utility theory and risk preferences
+3. **Equilibrium in Markets for Securities** - Asset pricing and portfolio theory
+4. **Investment Decisions under Market Imperfections** - Asymmetric information and agency problems
+
+## Course Materials
+
+::: {.grid}
+
+::: {.g-col-6 .g-col-md-3}
+[Topic 1: Exchange Economy](src/equilibrium-exchange-economy/index.html){.btn .btn-primary .btn-lg role="button"}
+
+Understanding the fundamentals of market equilibrium with a focus on exchange between agents.
+:::
+
+::: {.g-col-6 .g-col-md-3}
+[Topic 2: Decision under Uncertainty](src/decision-making-uncertainty/index.html){.btn .btn-primary .btn-lg role="button"}
+
+Expected utility theory, risk aversion, and portfolio choice.
+:::
+
+::: {.g-col-6 .g-col-md-3}
+[Topic 3: Securities Markets](src/equilibrium-markets-securities/index.html){.btn .btn-primary .btn-lg role="button"}
+
+Asset pricing models, CAPM, and market equilibrium concepts.
+:::
+
+::: {.g-col-6 .g-col-md-3}
+[Topic 4: Market Imperfections](src/investment-decisions-imperfections/index.html){.btn .btn-primary .btn-lg role="button"}
+
+Asymmetric information, principal-agent problems, and real-world market frictions.
+:::
+
+:::
+
+## Course Information
+
+- **Instructor:** Juan F. Imbet
+- **Institution:** Paris Dauphine University - PSL
+- **Level:** Master in Finance, 1st Year
+- **Duration:** 24 hours
+- **Evaluation:** Mid-term and final exams
+
+## Learning Objectives
+
+By the end of this course, students will be able to:
+
+- Understand the fundamental concepts of microeconomic theory as applied to finance
+- Analyze market equilibrium under different conditions
+- Apply expected utility theory to decision-making under uncertainty
+- Comprehend asset pricing models and their implications
+- Recognize the impact of market imperfections on investment decisions
+
+## Prerequisites
+
+- Basic knowledge of microeconomics
+- Familiarity with mathematical concepts (calculus, probability)
+- Understanding of financial instruments
+
+---
+
+*This course builds upon the foundational work of previous instructors while incorporating modern developments in financial economics.*

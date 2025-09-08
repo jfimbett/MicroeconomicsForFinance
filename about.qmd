@@ -1,0 +1,48 @@
+---
+title: "About"
+format: html
+---
+
+# About This Course
+
+## Instructor
+
+**Juan F. Imbet**  
+Assistant Professor  
+Department of Finance  
+Paris Dauphine University - PSL
+
+## Course Description
+
+This 24-hour course in Microeconomics for Finance aims to equip students with essential microeconomic tools for analyzing financial markets and decision-making. The course bridges theoretical microeconomics with practical applications in finance.
+
+## Learning Outcomes
+
+Upon completion of this course, students will be able to:
+
+1. Apply microeconomic principles to financial decision-making
+2. Understand market equilibrium concepts in financial contexts
+3. Analyze decision-making under uncertainty using expected utility theory
+4. Comprehend asset pricing models and their implications
+5. Recognize the impact of market imperfections on investment decisions
+
+## Course Structure
+
+The course is divided into four main modules, each building upon the previous one:
+
+1. **Foundation**: Exchange economy and basic equilibrium concepts
+2. **Risk and Uncertainty**: Decision theory and risk preferences
+3. **Asset Markets**: Pricing and portfolio theory
+4. **Real-World Applications**: Market imperfections and agency problems
+
+## Materials
+
+All course materials are provided in interactive HTML format using Quarto and Reveal.js, allowing for an engaging learning experience with embedded mathematical expressions and visualizations.
+
+## Contact Information
+
+For questions about the course content or materials, please contact the instructor.
+
+## Acknowledgments
+
+This course builds upon the foundational work of previous instructors and incorporates modern developments in financial economics and teaching methodologies.

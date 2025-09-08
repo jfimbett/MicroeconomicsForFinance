@@ -1,0 +1,335 @@
+---
+title: "Decision Making under Uncertainty"
+subtitle: "Microeconomics for Finance"
+author: "Juan F. Imbet"
+institute: "Master in Finance, 1st Year - Paris Dauphine University - PSL"
+format:
+  revealjs:
+    theme: white
+    css: ../../styles.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Microeconomics for Finance - Decision Making under Uncertainty"
+execute:
+  enabled: false
+---
+
+
+## Choosing Between Uncertain Payments
+
+|  | Payments, Good state | Payments, Bad state |
+|---|---|---|
+| Asset 1 | 1500 | 1000 |
+| Asset 2 | 2000 | 500 |
+| Asset 3 | 2000 | 1000 |
+
+Asset 3 payments **state by state dominate** those of assets 1 and 2.
+
+⇒ Obviously, 3 is preferred
+
+Asset 1 vs. Asset 2 is not obvious: more in state B but less in state G.
+
+**Similar problem.** Which basket the consumer does prefer: 2 apples and 3 bananas or 3 apples and 2 bananas?
+
+⇒ We must quantify the **agents' preferences** with a **utility function**.
+
+------------------------------------------------------------------------
+
+## Properties of the Utility Function
+
+We want to determine a utility function, $U$, "reasonable", which generates a **relation of order** (i.e, a preference) over the set of risky payments (lotteries).
+
+Back to our example, the utility function should depend positively on the payment realization in each state.
+
+If $\tilde{a}$ is a risky payment with realizations $a^{G}$, $a^{B}$, then
+$$U(\tilde{a}) = U(a^{G}, a^{B}) \quad \text{with} \quad \frac{\partial U}{\partial a^{G}} > 0, \quad \frac{\partial U}{\partial a^{B}} > 0$$
+
+------------------------------------------------------------------------
+
+## Properties of the Utility Function
+
+How to take into account the probabilities of each state of the world?
+
+|  | Payments, Good state | Payments, Bad state |
+|---|---|---|
+| Asset 1 | 1500 | 1000 |
+| Asset 2 | 2000 | 500 |
+
+ - If $\pi^{G} = 0.99$ and $\pi^{B} = 0.01$, we should prefer asset 2.
+
+- Denote u(x) the utility obtained from a **certain payment** x
+- → a good "candidate" is an **expected utility function**
+
+  $$U(\tilde{a}) = \pi^G u(a^G) + \pi^B u(a^B) = \mathbb{E}[u(\tilde{a})]$$
+
+------------------------------------------------------------------------
+
+## Properties of the Utility Function
+
+|  | Payments, Good state | Payments, Bad state |
+|---|---|---|
+| Asset 1 | 1500 | 1000 |
+| Asset 2 | 2000 | 500 |
+
+
+ - If $\pi^{G} = \pi^{B} = 0.5$, both assets have same mean 1250. Which one do you prefer?
+
+ - If you are **risk averse**, $\mathbb{E}[u(\tilde{a}_1)] > \mathbb{E}[u(\tilde{a}_2)].$
+
+- → If we still consider the "candidate"
+  $$\mathbb{E}[u(\tilde{a})] = \pi^G u(a^G) + \pi^B u(a^B),$$
+  Which condition on u?
+
+------------------------------------------------------------------------
+
+## Expected Utility
+
+John **von Neumann** and Oskar **Morgenstern** have determined conditions under which agents' preferences for risky payments (lotteries) can be described by an **expected utility function** such that
+
+$$\mathbb{E}[u(\tilde{a})] = \sum_{n=1}^N \pi_n u(a_n)$$
+
+with $u$ **concave and increasing**, $u' > 0$ and $u'' < 0$.
+
+More generally, if a risky payment $\tilde{a}$ has a distribution $d\Phi$,
+
+$$\mathbb{E}[u(\tilde{a})] = \int_{\mathbb{R}} u(a) \, d\Phi(a)$$
+
+**Bibliography.** The axiomatic approach behind the theory of the expected utility function are developed by von Neumann and Morgenstern in their book *Theory of Games and Economic Behavior* (1947).
+
+------------------------------------------------------------------------
+
+## Risk Aversion
+
+Under these conditions, agents are risk averse. In particular, with **Jensen inequality** for a concave function, we have
+
+$$\mathbb{E}[u(\tilde{a})] \leq u(\mathbb{E}[\tilde{a}]).$$
+
+Agents would prefer to obtain the mean of payment with certainty rather than the risky payment.
+
+**How to quantify risk aversion?**
+
+The level of concavity, measured by the second derivative, $u''$, **is not** a good measure. Indeed, if
+$v = \alpha u + \beta$, with $\alpha > 1$
+
+$v$ generates the same relation of order among risky payments than u does. Yet $v'' < u'' < 0$.
+
+⇒ A measure of risk aversion must be invariant with any affine transformation of the utility function.
+
+------------------------------------------------------------------------
+
+## Measuring Risk Aversion
+
+There are two classic measures of risk aversion
+
+$$R_A(y) = -\frac{u''(y)}{u'(y)} = \text{coefficient of absolute risk aversion}$$
+
+and
+
+$$R_R(y) = -y \frac{u''(y)}{u'(y)} = \text{coefficient of relative risk aversion}$$
+
+where $y$ is the payment (the income) of the agent.
+
+Both are positive: $R_A(y) > 0, R_R(y) > 0$.
+
+------------------------------------------------------------------------
+
+## Interpreting Risk Aversion
+
+Consider a risk averse agent who receives a risky payment $y + \tilde{\epsilon}$, with mean $y$ and variance $\mathrm{Var}[\tilde{\epsilon}] = \sigma^{2}$.
+
+The **certainty equivalent** of this payment is $y - \Delta$ such that
+
+$$u(y - \Delta) = \mathbb{E}[u(y + \tilde{\epsilon})]$$
+
+$\Delta$ is a **risk premium**: How much the agent is willing to reduce his mean payment to get rid of uncertainty.
+
+------------------------------------------------------------------------
+
+## Interpreting Risk Aversion
+
+Assuming that $\Delta$ and $\epsilon$ are small, $\Delta \ll 1$ and $\sigma^{2} \ll 1$, give an approximation of $\Delta$.
+
+$$u(y - \Delta) \approx u(y) - \Delta u'(y)$$
+$$\mathbb{E}[u(y + \tilde{\epsilon})] \approx \mathbb{E}[u(y)] + \mathbb{E}[\tilde{\epsilon} u'(y)] + \frac{1}{2}\mathbb{E}[\tilde{\epsilon}^2 u''(y)] = u(y) + \frac{\sigma^2}{2} u''(y)$$
+
+$$\Rightarrow \Delta = -\frac{u''(y)}{u'(y)} \cdot \frac{\sigma^2}{2} = R_A(y) \cdot \frac{\sigma^2}{2}$$
+
+------------------------------------------------------------------------
+
+## Interpreting Risk Aversion
+
+When the risky payment is $y + y \tilde{\epsilon}$, define $\delta$ as
+$$u(y - \delta y) = \mathbb{E}[u(y + y \tilde{\epsilon})].$$
+Similarly, one can give a first order approximation of δ under the assumption δ ≪ 1 and σ² ≪ 1.
+
+$$u(y - \delta y) \approx u(y) - \delta y u'(y)$$
+$$\mathbb{E}[u(y + y \tilde{\epsilon})] \approx u(y) + \frac{y^2 \sigma^2}{2} u''(y)$$
+
+$$\Rightarrow \delta = -\frac{y u''(y)}{u'(y)} \cdot \frac{\sigma^2}{2} = R_R(y) \cdot \frac{\sigma^2}{2}$$
+
+Whether uncertainty is absolute or relative (w.r.t $y$), the certainty equivalent depends on the coefficient of absolute or relative risk aversion.
+
+------------------------------------------------------------------------
+
+## Usual Utility Functions
+
+- CARA ("Constant Absolute Risk Aversion")
+
+  $$u(y) = -\frac{1}{\nu} e^{-\nu y}$$
+
+- CRRA ("Constant Relative Risk Aversion")
+
+  $$u(y) = \frac{y^{1-\gamma}}{1-\gamma}$$
+
+  and, in addition, $$u(y) = \ln(y)$$ for γ = 1.
+
+- What are $R_A(y)$ in the CARA case, and $R_R(y)$ in the CRRA case?
+
+------------------------------------------------------------------------
+
+## Risk Neutrality
+
+When $u$ is affine, the agent is risk neutral:
+
+$$u(y) = \alpha y + \beta$$
+
+He only cares about his expected revenue.
+
+Specifically,
+
+$$R_A(y) = R_R(y) = 0 \quad \forall y$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion and Portfolio Choice
+
+Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at t=0 and, at t=1, receives the pay-off of its investment and "consume" it (get the utility out of the payment).
+
+The agent can invest his initial wealth $y_0$ in the following way:
+
+- invests an amount $w$ in a risky asset (the S&P 500 for instance) with random net return $\tilde{r}$,
+  and the rest in the risk free asset with (certain) net return $r_f$.
+
+His final wealth $\tilde{y}_1$ at $t=1$:
+$$\tilde{y}_1 = (y_0 - w) \times (1 + r_f) + w \times (1 + \tilde{r})$$
+$$= y_0 \times (1 + r_f) + w \times (\tilde{r} - r_f)$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion and Portfolio Choice
+
+Objective function of the agent:
+
+$$\max_w U(w) = \max_w \mathbb{E}[u(\tilde{y}_1)] = \max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))]$$
+
+Unconstrained optimization of a concave function,
+
+$$u'' < 0 \Rightarrow U''(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] < 0$$
+
+The optimal amount $w*$ is given by the first order condition:
+
+$$U'(w) = 0$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion and Portfolio Choice
+
+First order condition:
+
+$$\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0$$
+
+*Remark:* Unconstrained optimization implies that short-selling ($w < 0$) or leverage ($w > y_0$) are possible.
+
+**Proposition 1.** When $u$ is increasing and concave, $u' > 0, u'' < 0$, then,
+$$w^* > 0 \Leftrightarrow \mathbb{E}[\tilde{r}] > r_f$$
+$$w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f$$
+$$w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f$$
+
+**Implication.** Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (at least a little).
+
+------------------------------------------------------------------------
+
+## Risk Aversion and Portfolio Choice
+
+**Proof.** Define $F(w)$ as
+$$F(w) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w (\tilde{r} - r_f))]$$
+$$w^* \text{ is such that } F(w^*) = 0$$
+
+Derivative of $F$:
+
+$$F'(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] < 0$$
+
+Value of $F$ in $0$:
+$$F(0) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f))] = u'(y_0 (1 + r_f)) \times (\mathbb{E}[\tilde{r}] - r_f)$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion and Portfolio Choice
+
+If the investor is risk neutral:
+
+$$u(y) = \alpha y + \beta$$
+
+$$\max_w \mathbb{E}[u(\tilde{y}_1)] \Leftrightarrow \max_w y_0 (1 + r_f) + w (\mathbb{E}[\tilde{r}] - r_f).$$
+
+Then,
+
+$$\mathbb{E}[\tilde{r}] > r_f \Rightarrow w^* = +\infty$$
+$$\mathbb{E}[\tilde{r}] < r_f \Rightarrow w^* = -\infty$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion and Portfolio Choice
+
+Same problem, different formulation: The agent buys z units of risky assets, at price p, with pay-off at t=1 equal to $\tilde{a}$. 
+
+$$\tilde{y}_1 = (y_0 - p \cdot z) \times (1 + r_f) + z \times \tilde{a}$$
+$$= y_0 \times (1 + r_f) + z \times (\tilde{a} - (1 + r_f)p)$$
+
+First order condition:
+$$\mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f) + z^* (\tilde{a} - (1 + r_f)p))] = 0$$
+$$z^* > 0 \Leftrightarrow \frac{\mathbb{E}[\tilde{a}]}{1 + r_f} > p$$
+
+Consistent with Proposition 1 because:
+$$1 + \mathbb{E}[\tilde{r}] = \frac{\mathbb{E}[\tilde{a}]}{p}$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion, Portfolio and Initial Wealth
+
+Let $w^*(y_0)$ the solution of
+
+$$\max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))], \quad \text{when } \mathbb{E}[\tilde{r}] > r_f$$
+which implies $w^* > 0$.
+
+**Proposition 2.** If u is such that
+$$R_A'(y) < 0 \Rightarrow \frac{dw^*}{dy_0} > 0$$
+$$R_A'(y) = 0 \Rightarrow \frac{dw^*}{dy_0} = 0$$
+$$R_A'(y) > 0 \Rightarrow \frac{dw^*}{dy_0} < 0$$
+
+------------------------------------------------------------------------
+
+## Risk Aversion, Portfolio and Initial Wealth
+
+**Proof.** Assume that $R_A'(y) < 0$. By taking the derivative of the first order condition with respect to $y_0$ we get:
+
+$$\mathbb{E}[(\tilde{r} - r_f)(1 + r_f + \frac{d w^*}{d y_0} (\tilde{r} - r_f)) u''(\tilde{y}_1)] = 0$$
+
+$$\frac{d w^*}{d y_0} \; \mathbb{E}[(\tilde{r} - r_f)^2 u''(\tilde{y}_1)] = (1 + r_f) \; \mathbb{E}[(\tilde{r} - r_f) (-u''(\tilde{y}_1))]$$
+$$= (1 + r_f) \; \mathbb{E}[(\tilde{r} - r_f) u'(\tilde{y}_1) R_A(\tilde{y}_1)]$$
+
+Since $$\mathbb{E}[(\tilde{r} - r_f)^2 u''(\tilde{y}_1)] < 0$$, and the right side is positive when $R_A'(y) < 0$, we have $$\frac{d w^*}{d y_0} > 0$$.
+
+------------------------------------------------------------------------
+
+## Risk Aversion, Portfolio and Initial Wealth
+
+Let $\eta(y_0)$ the elasticity of $w^*(y_0)$:
+
+$$\eta(y_0) = \frac{d \ln\left(w^*(y_0)\right)}{d \ln(y_0)}$$
+
+**Proposition 3.** If $u$ is such that
+$$R_R'(y) < 0 \Rightarrow \eta(y_0) > 1$$
+$$R_R'(y) = 0 \Rightarrow \eta(y_0) = 1$$
+$$R_R'(y) > 0 \Rightarrow \eta(y_0) < 1$$

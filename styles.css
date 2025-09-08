@@ -1,0 +1,327 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+/* Centralized styles for Microeconomics for Finance course slides */
+
+/* Import Merriweather font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+/* Main theme adjustments - White background with Merriweather font */
+.reveal {
+    font-family: "Merriweather", serif;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.20em; /* Increased by 10% from 0.95em */
+}
+
+.reveal .slides {
+    background-color: #ffffff;
+}
+
+.reveal .slides section {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Titles styling with your blue color #2596be */
+.reveal h1, .reveal h2, .reveal h3 {
+    color: #2596be;
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+}
+
+.reveal h1 {
+    font-size: 2.2em; /* Increased by 10% from 2.0em */
+    font-weight: 900;
+    text-shadow: 1px 1px 2px rgba(37, 150, 190, 0.1);
+}
+
+.reveal h2 {
+    font-size: 1.76em; /* Increased by 10% from 1.6em */
+    font-weight: 700;
+}
+
+.reveal h3 {
+    font-size: 1.43em; /* Increased by 10% from 1.3em */
+    font-weight: 700;
+}
+
+/* Code blocks - Updated for white background theme */
+.reveal pre {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.9em;
+    font-size: 0.8em; /* Increased by ~10% from 0.72em */
+    line-height: 1.4; /* Slightly increased from 1.35 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #000000;
+}
+
+.reveal code {
+    background: #f1f3f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    color: #2596be;
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+/* Tables - Updated for white background */
+.reveal table {
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #ffffff;
+    font-size: 0.99em; /* Increased by 10% from 0.9em */
+}
+
+.reveal table th {
+    background: #2596be;
+    color: white;
+    padding: 0.75em;
+    border: 1px solid #1f7a9a;
+    font-weight: 700;
+}
+
+.reveal table td {
+    padding: 0.55em;
+    border: 1px solid #dee2e6;
+    color: #000000;
+}
+
+.reveal table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.reveal table tr:hover {
+    background: #e3f2fd;
+}
+
+/* Lists - Updated colors */
+.reveal ul, .reveal ol {
+    margin-left: 1em;
+    color: #000000;
+}
+
+.reveal li {
+    margin-bottom: 0.45em;
+    line-height: 1.45; /* Increased by ~10% from 1.35 */
+}
+
+/* Enhanced bullet points with blue color */
+.reveal ul li::marker {
+    color: #2596be;
+    font-weight: bold;
+}
+
+/* Blockquotes - Updated for white theme */
+.reveal blockquote {
+    background: #f8f9fa;
+    border-left: 5px solid #2596be;
+    margin: 1em 0;
+    padding: 1em;
+    font-style: italic;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #000000;
+}
+
+/* Math expressions - Enhanced for better equation display */
+.katex {
+    font-size: 1.1em;
+    font-family: 'Merriweather', serif;
+}
+
+.katex-display {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.reveal .katex {
+    font-size: 1.2em;
+}
+
+.reveal .katex-display {
+    margin: 1.5em 0;
+}
+
+/* Progress bar customization - Updated with new blue */
+.reveal .progress {
+    color: #2596be;
+    height: 3px;
+}
+
+.reveal .progress span {
+    background: #2596be;
+}
+
+/* Slide numbers styling - Updated for white theme */
+.reveal .slide-number {
+    color: #2596be;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #2596be;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+/* Text styling - Ensure black text on white background */
+.reveal p, .reveal li {
+    color: #000000;
+    font-size: 1.05em; /* Added 10% font size increase */
+}
+
+/* Links styling */
+.reveal a {
+    color: #2596be;
+    text-decoration: none;
+}
+
+.reveal a:hover {
+    color: #1f7a9a;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .reveal h1 {
+        font-size: 1.7em; /* Adjusted between 1.8em and 1.6em */
+    }
+
+    .reveal pre {
+        font-size: 0.62em; /* Adjusted between 0.65em and 0.6em */
+    }
+
+    .reveal table {
+        font-size: 0.78em; /* Adjusted between 0.8em and 0.75em */
+    }
+}
+
+/* Print styles */
+@media print {
+    .reveal .slides section::before {
+        display: none;
+    }
+}
+
+/* Force white background and override any theme defaults */
+.reveal,
+.reveal .slides,
+.reveal .slides section,
+.reveal .backgrounds,
+.reveal .slide-background {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+/* Ensure all text elements are black */
+.reveal .slides section * {
+    color: inherit;
+}
+
+.reveal .slides section {
+    color: #000000;
+}
+
+/* Website styling - adapted from AssetPricingTheory */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2596be !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, #2596be, #1f7a9a);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Merriweather', serif;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Topic cards */
+.topic-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.topic-card h3 {
+    color: #2596be;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+}
+
+.topic-card .btn {
+    background: #2596be;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.topic-card .btn:hover {
+    background: #1f7a9a;
+}
+
+/* Body styling */
+body {
+    font-family: 'Merriweather', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #2596be;
+    border: none;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary:hover {
+    background: #1f7a9a;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 4rem;
+}

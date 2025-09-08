@@ -1,0 +1,91 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Microeconomics for Finance"
+  description: "Course materials for Microeconomics for Finance - Master in Finance, 1st Year"
+  site-url: "https://example.com"  # Replace with actual URL
+  repo-url: "https://github.com/username/microeconomics-for-finance"  # Replace with actual repo
+  repo-actions: [edit, issue]
+  
+  page-navigation: true
+  
+  navbar:
+    title: "Microeconomics for Finance"
+    logo: "figures/CMJN.pdf"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Topics"
+        menu:
+          - text: "1. Equilibrium in an Exchange Economy"
+            href: src/equilibrium-exchange-economy/index.html
+          - text: "2. Decision Making under Uncertainty"
+            href: src/decision-making-uncertainty/index.html
+          - text: "3. Equilibrium in Markets for Securities"
+            href: src/equilibrium-markets-securities/index.html
+          - text: "4. Investment Decisions under Market Imperfections"
+            href: src/investment-decisions-imperfections/index.html
+    right:
+      - text: "About"
+        href: about.qmd
+
+  sidebar:
+    - title: "Course Topics"
+      contents:
+        - section: "Topic 1: Equilibrium in an Exchange Economy"
+          contents:
+            - src/equilibrium-exchange-economy/index.qmd
+        - section: "Topic 2: Decision Making under Uncertainty"
+          contents:
+            - src/decision-making-uncertainty/index.qmd
+        - section: "Topic 3: Equilibrium in Markets for Securities"
+          contents:
+            - src/equilibrium-markets-securities/index.qmd
+        - section: "Topic 4: Investment Decisions under Market Imperfections"
+          contents:
+            - src/investment-decisions-imperfections/index.qmd
+
+format:
+  revealjs:
+    theme: white
+    css: styles.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    transition: slide
+    background-transition: fade
+    hash-type: number
+    controls: true
+    progress: true
+    center: false
+    width: 1050
+    height: 700
+    margin: 0.1
+    mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js'
+    config: 'TeX-AMS_HTML-full'
+    tex2jax:
+      inlineMath: [['\\(','\\)']]
+      displayMath: [['\\[','\\]']]
+      balanceBraces: true
+      processEscapes: false
+      processRefs: true
+      processEnvironments: true
+      preview: 'TeX'
+      skipTags: ['script','noscript','style','textarea','pre','code']
+      ignoreClass: 'tex2jax_ignore'
+      processClass: 'tex2jax_process'
+    plugins: [RevealMath, RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard]
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-copy: true
+    code-fold: true
+    highlight-style: github
+    link-external-newwindow: true

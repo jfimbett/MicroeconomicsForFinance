@@ -1,0 +1,777 @@
+\documentclass[10pt]{beamer}
+%\documentclass[handout, 10pt]{beamer} %aurait supprimé les ``overlays''
+\usefonttheme[onlymath]{serif}
+\usetheme{Pittsburgh}% le thème choisi pour ma présentation
+%\useoutertheme{smoothbars}
+%\useinnertheme{rounded}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}%pour les includegraphics
+\usepackage{array}% pour des tableaux particuliers. Nécessaire pour les révéler colonne par colonne
+\usepackage{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-plot}
+\usepackage{ragged2e}
+
+\usepackage{eurosym}
+
+\setbeamertemplate{navigation symbols}{}
+
+\justifying
+
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot} Jérôme Dugast
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot} Microeconomics for Finance - Decision Making
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+        \usebeamerfont{date in head/foot}%\insertshortdate{}\hspace*{2em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+      \end{beamercolorbox}%
+  }%
+}
+\justifying
+
+\colorlet{orange}{red!70!yellow}% mes petites couleurs que j'aime bien
+\colorlet{mauve}{blue!70!red}
+\colorlet{brouge}{red!70!blue}
+
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%pour ajouter un numéro de page en bas.% une autre solution : \useoutertheme{shadow}
+%\usepackage{beamerthemesplit}
+
+\title{\black {\huge \textbf{Microeconomics for Finance}} \\ \vspace{0.5cm} Decision Making under Uncertainty}
+
+\institute[shortinst]{\includegraphics[scale=0.15]{Figures/CMJN.eps} }
+\author[shortname]{ \bf Jérôme Dugast}
+
+\date{}
+
+
+\begin{document}
+
+
+\newtheorem{equi}{Equilibrium}[section]
+\newtheorem{ass}{Assumption}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{defi}{Definition}
+
+
+
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+
+\frame{\titlepage}
+
+
+
+
+
+
+
+\section{Expected Utility}
+
+
+
+
+
+
+\subsection*{}
+
+\frame{
+\frametitle{Choosing Between Uncertain Payments}
+
+
+
+
+\vspace{0.5cm}
+{\blue
+\begin{tabular}{ccc}
+  & Payments, Good state &  Payments, Bad state \\ 
+ 
+Asset 1  & 1500 & 1000 \\ 
+
+Asset 2   & 2000 & 500 \\ 
+ 
+Asset 3   & 2000 & 1000 \\ 
+\end{tabular} }
+
+\pause
+
+\vspace{0.5cm}
+Asset 3 payments {\red state by state dominates} those of assets 1 and 2.
+
+$\Rightarrow$ Obviously, 3 is preferred
+
+
+
+\vspace{0.5cm}
+Asset 1 vs. Asset 2 is not obvious: more in state B but less in state G.
+
+\pause
+\vspace{0.5cm}
+
+\textbf{Similar problem.} Which basket the consumer does prefer: 2 apples and 3 bananas or 3 apples and 2 bananas?
+
+$\Rightarrow$ We must quantify the \textbf{agents' preferences} with a \textbf{utility function}.
+
+
+
+}
+
+\frame{
+\frametitle{Properties of the Utility Function}
+
+
+We want to determine a utility function, $U$, ``reasonable", which generates a \textbf{relation of order} (i.e, a preference) over the set of risky payments (lotteries).
+
+\vspace{0.5cm}
+
+Back to our example, the utility function should depend positively on the payment realization in each state of the world.
+
+\vspace{0.5cm}
+
+If $\tilde{a}$ is a risky payments with realizations $a^G, a^B$, then
+$$U(\tilde{a}) = U(a^G,a^B) \ \text{with} \ \frac{\partial U}{\partial a^G} > 0, \frac{\partial U}{\partial a^B} > 0$$  
+
+
+
+}
+
+
+
+\frame{
+\frametitle{Properties of the Utility Function}
+
+How to take into account the probabilities of each state of the world? 
+
+\vspace{0.5cm}
+{\blue
+\begin{tabular}{ccc}
+  & Payments, Good state &  Payments, Bad state \\ 
+
+Asset 1  & 1500 & 1000 \\ 
+
+Asset 2   & 2000 & 500 \\ 
+\end{tabular} 
+
+}
+
+\vspace{0.5cm}
+
+\begin{itemize}
+\item If $\pi_G = 0.99$ and $\pi_B = 0.01$, we should prefer asset 2.
+
+\pause
+\item[]
+\item Denote $u(x)$ the utility obtained from a \textbf{certain payment} $x$
+\item[$\rightarrow$] a good ``candidate" is an \textbf{expected utility function}
+
+$$U(\tilde{a})= \pi_G u(a^G) + \pi_B u(a^B) {= \red E[u(\tilde{a})]}$$
+
+\end{itemize}
+
+
+}
+
+
+\frame{
+\frametitle{Properties of the Utility Function}
+
+
+
+{\blue
+\begin{tabular}{cccc}
+  & Payments, Good state &  Payments, Bad state \\ 
+
+Asset 1  & 1500 & 1000 \\ 
+
+Asset 2   & 2000 & 500 \\ 
+\end{tabular} 
+}
+
+\vspace{0.5cm}
+
+\begin{itemize}
+\item If $\pi_G = \pi_B = 0.5$, both assets have same mean 1250. Which one do you prefer?
+\pause
+\item[]
+\item If you are \textbf{risk averse}, $E[u(\tilde{a}_1)] > E[u(\tilde{a}_2)]$.
+\item[]
+\item[$\rightarrow$] If we still consider the ``candidate"
+$$E[u(\tilde{a})]= \pi_G u(a^G) + \pi_B u(a^B),$$
+Which condition on $u$?
+
+\end{itemize}
+
+
+}
+
+
+
+
+
+
+%\subsection{}
+\frame{
+\frametitle{Concavity}
+
+\begin{pspicture}(0,0)(11,8)
+%\psgrid
+
+
+\rput[Bl](5,7.5){\psframebox[linewidth=0.03cm]{\large  $u$ concave}}
+
+%\pscurve[linecolor=blue,linewidth=0.05cm]{-}(6,4.5)(5,5.5)(7.25,7)
+
+
+
+\psline[linecolor=black,linewidth=0.03cm]{-}(1,1)(1,7)
+\psline[linecolor=black,linewidth=0.03cm]{-}(1,1)(10,1)
+
+%\parabola[linecolor=blue]{-}(7.25,7)(6,4.5)
+
+\psplot[algebraic,linecolor=black,,linewidth=0.05cm]{1}{10}{1+2*ln(1+2*(x-1))}
+
+
+\pause
+
+\psline[linecolor=black,linecolor=blue,linestyle=dashed,linewidth=0.03cm]{-}(2,1)(2,3.2)
+\psline[linecolor=black,linecolor=blue,linestyle=dashed, linewidth=0.03cm]{-}(7,1)(7,6.1)
+
+\rput[B](2,0.5){\blue $a^B_1$}
+\rput[B](7,0.5){\blue $a^G_1$}
+
+\psline[linecolor=black,linecolor=red,linestyle=dashed,linewidth=0.03cm]{-}(1.5,1)(1.5,2.4)
+\psline[linecolor=black,linecolor=red,linestyle=dashed, linewidth=0.03cm]{-}(7.5,1)(7.5,6.2)
+
+\rput[B](1.4,0.5){\red $a^B_2$}
+\rput[B](7.5,0.5){\red $a^G_2$}
+
+\psline[linecolor=black,linecolor=black,linestyle=dashed,linewidth=0.03cm]{-}(1,2.4)(1.5,2.4)
+\rput[B](0.5,2.4){$u(a^B_2)$}
+\psline[linecolor=black,linecolor=black,linestyle=dashed,linewidth=0.03cm]{-}(1,3.2)(2,3.2)
+\rput[B](0.5,3.2){$u(a^B_1)$}
+
+\psline[linecolor=black,linecolor=black,linestyle=dashed,linewidth=0.03cm]{-}(1,6.1)(7,6.1)
+\rput[B](0.5,5.8){$u(a^G_1)$}
+\psline[linecolor=black,linecolor=black,linestyle=dashed,linewidth=0.03cm]{-}(1,6.3)(7.5,6.3)
+\rput[B](0.5,6.3){$u(a^G_2)$}
+
+\pause
+
+
+\psline[linecolor=black,linecolor=black,linestyle=dashed,linewidth=0.03cm]{-}(4.5,1)(4.5,5.1)
+\rput[B](4.5,0.5){$E[\tilde{a}_1] = E[\tilde{a}_2]=\bar{a}$}
+
+\pause
+
+
+
+\psplot[algebraic,linecolor=blue,linewidth=0.03cm]{2}{7}{(1+2*ln(3))*(1-(x-2)/5) + (1+2*ln(13))*(x-2)/5}
+
+\psplot[algebraic,linecolor=blue,linestyle=dashed,linewidth=0.03cm]{1}{4.5}{(1+2*ln(3))*(1-(4.5-2)/5) + (1+2*ln(13))*(4.5-2)/5}
+
+
+
+\rput[B](0.2,4.7){\blue $E[u(\tilde{a}_1)]$}
+
+\pause
+
+\psplot[algebraic,linecolor=red,linewidth=0.03cm]{1.5}{7.5}{(1+2*ln(2))*(1-(x-1.5)/6) + (1+2*ln(14))*(x-1.5)/6}
+
+\psplot[algebraic,linecolor=red,linestyle=dashed,linewidth=0.03cm]{1}{4.5}{(1+2*ln(2))*(1-(4.5-1.5)/6) + (1+2*ln(14))*(4.5-1.5)/6}
+
+
+
+\rput[B](0.2,4.2){\red $E[u(\tilde{a}_2)]$}
+
+
+
+\pause
+
+\psline[linecolor=black,linecolor=black,linestyle=dashed,linewidth=0.03cm]{-}(1,5.2)(4.5,5.2)
+\rput[B](0.3,5.2){$u(\bar{a})$}
+
+%\rput[B](5,2.5){\Large $\sigma_P$}
+
+%\rput[B](2.5,5){\Large $\mathbb{E}[r_P]$}
+
+\end{pspicture}
+
+
+}
+
+
+
+
+\frame{
+\frametitle{Expected Utility}
+
+
+
+John \textbf{von Neumann} and Oskar \textbf{Morgenstern} have determined conditions under which agents' preferences for risky payments (lotteries) can be described by an {\bf \red expected utility function} such that 
+
+$$E[u(\tilde{a})]= \sum_{n=1}^N \pi_n u(a_n)$$
+
+with $u$ {\red \bf concave and increasing}, $u' > 0$ and $u'' < 0$.
+
+\vspace{0.5cm}
+More generally, if a risky payment $\tilde{a}$ has a distribution $d\Phi$,
+
+$$E[u(\tilde{a})] = \int_{\mathbb{R}} u(a)d\Phi(a)$$
+
+
+\textbf{Bibliography.} The axiomatic approach behind the theory of the expected utility function are developed by von Neumann and Morgenstern in their book \textit{Theory of Games and Economic Behavior} (1947). 
+
+
+}
+
+
+\section{Risk Aversion}
+
+\subsection*{}
+
+\frame{
+\frametitle{Risk Aversion}
+
+Under these conditions, agents are risk averse. In particular, with \textbf{Jensen inequality} for a concave function, we have 
+
+$$E[u(\tilde{a})] \leq u(E[\tilde{a}]).$$
+
+Agents would prefer to obtain the mean of payment with certainty rather than the risky payment.
+
+\vspace{0.5cm}
+
+\textbf{How to quantify risk aversion?}
+
+%\pause
+\vspace{0.3cm}
+
+The level of concavity, measured by the second derivative, $u''$, \textbf{is not} a good measure. Indeed, if
+$$v = \alpha u +\beta, \text{with} \ \alpha > 1$$
+
+$v$ generates the same relation of order among risky payments than $u$ does. Yet $v'' < u'' <0$.
+
+$\Rightarrow$ A measure of risk aversion must be invariant with any affine transformation of the utility function.
+
+}
+
+
+\frame{
+\frametitle{Measuring Risk Aversion}
+
+There are two classic measures of risk aversion
+
+
+$$R_A(y) = - \frac{u''(y)}{u'(y)} = \textbf{coefficient of absolute risk aversion}$$
+
+and
+
+$$R_R(y) = - \frac{yu''(y)}{u'(y)} = \textbf{coefficient of relative risk aversion}$$
+
+where $y$ is the payment (the income) of the agent.
+
+\vspace{0.5cm}
+
+Both are positive: $R_A(y) > 0, R_R(y) >0$.
+
+}
+
+
+
+\frame{
+\frametitle{Interpreting Risk Aversion}
+
+
+Consider a risk averse agent who receives a risky payment $y + \tilde{\varepsilon}$, with mean $y$ and variance $Var[\tilde{\varepsilon}] = \sigma^2$.
+\vspace{0.5cm}
+
+The \textbf{certainty equivalent} of this payment is $y-\Delta$ such that  
+%%
+$$u(y-\Delta) = E[u(y+\varepsilon)]$$
+
+\vspace{0.5cm}
+
+$\Delta$ is a \textbf{risk premium}: How much the agent is willing to reduce his mean payment to get rid of uncertainty. 
+
+
+
+}
+
+
+\frame{
+\frametitle{Interpreting Risk Aversion}
+
+
+
+Assuming that $\Delta$ and $\varepsilon$ are small,  $\Delta <<1$ and $\sigma^2 << 1$, give an approximation of $\Delta$. 
+
+%\vspace{5cm}
+
+$$u(y-\Delta) \approx u(y) - \Delta u'(y) $$ 
+$$E[u(y+\varepsilon)]  \approx  E[u(y)] + \underbrace{E[\varepsilon u'(y)]}_{=u'(y)E[\varepsilon] = 0} + \frac{1}{2}E[\varepsilon^2 u''(y)] = u(y) + \frac{\sigma^2}{2} u''(y)$$
+
+
+$$\Rightarrow \ \ \Delta = - \frac{u''(y)}{u'(y)}\frac{\sigma^2}{2} = R_A(y) \frac{\sigma^2}{2}$$
+
+
+}
+
+
+
+
+
+\frame{
+\frametitle{Interpreting Risk Aversion}
+
+
+
+When the risky payment is $y + y\tilde{\varepsilon}$, define $\delta$ as
+$$u(y-\delta y) = E[u(y+ y\varepsilon)].$$
+Similarly, one can give a first order approximation of $\delta$ under the assumption $\delta <<1$ and $\sigma^2 << 1$ (cf Problem Set).
+
+
+$$u(y-\delta y)) \approx u(y) - \delta y u'(y) $$ 
+$$E[u(y+ y\varepsilon)]  \approx   u(y) + \frac{y^2 \sigma^2}{2} u''(y)$$
+%
+$$\Rightarrow \ \ \delta = - \frac{yu''(y)}{u'(y)}\frac{\sigma^2}{2}= R_R(y) \frac{\sigma^2}{2}$$
+
+
+
+\vspace{0.3cm}
+
+Whether uncertainty is absolute or relative (w.r.t $y$), the certainty equivalent depends on the coefficient of absolute or relative risk aversion.
+}
+
+
+
+
+
+
+\frame{
+\frametitle{Usual Utility Functions}
+
+
+\begin{itemize}
+
+\item CARA (``Constant Absolute Risk Aversion")
+
+$$u(y) = - \frac{1}{\nu}e^{-\nu y}$$
+
+\item CRRA (``Constant Relative Risk Aversion")
+
+$$u(y) = \frac{y^{1-\gamma }}{1-\gamma}$$
+
+and, in addition, $u(y) = \ln(y)$ for $\gamma=1$.
+\item[]
+\item What are $R_A(y)$ in the CARA case, and $R_R(y)$ in the CRRA case?
+
+\end{itemize}
+
+
+}
+
+
+\frame{
+\frametitle{Risk Neutrality}
+
+When $u$ is affine, the agent is risk neutral:
+
+$$u(y) = \alpha y  +\beta$$
+
+He only cares about his expected revenue. 
+
+\vspace{0.5cm}
+
+Specifically,
+
+$$R_A(y) =R_R(y) =0 \ \forall y$$ 
+
+}
+
+
+
+\section{Portfolio Choice}
+
+\subsection*{}
+
+
+\frame{
+\frametitle{Risk Aversion and Portfolio Choice}
+
+
+Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at $t=0$ and, at $t=1$, receives the pay-off of its investment and ``consume" it (get the utility out of the payment).
+
+\vspace{0.3cm}
+
+The agent can invest his initial wealth $y_0$ in the following way:
+\begin{itemize}
+\item invests an amount $w$ in a risky asset (the S\&P 500 for instance) with random net return $\tilde{r}$,
+\item and the rest in the risk free asset with (certain) net return, $r_f$.
+\end{itemize}
+
+\vspace{0.3cm}
+
+His final wealth $\tilde{y}_1$ at  $t=1$:
+\begin{align*}
+\tilde{y}_1 & = (y_0 - w)\times (1+r_f) + w\times (1+\tilde{r})  \\
+ &= y_0 \times (1+r_f) + w\times (\tilde{r}- r_f)
+\end{align*}
+
+
+}
+
+
+\frame{
+\frametitle{Risk Aversion and Portfolio Choice}
+
+Objective function of the agent:
+
+$$\max_{w} U(w) = \max_{w} E[u(\tilde{y}_1)] = \max_{w} E[u(y_0 (1+r_f) + w (\tilde{r}- r_f) )]$$
+
+
+\vspace{0.3cm} 
+
+Unconstrained optimization of a concave function, 
+
+$$u'' < 0 \Rightarrow U''(w) = E[(\tilde{r}- r_f)^2 u''(y_0 (1+r_f) + w (\tilde{r}- r_f))] <0$$
+
+ 
+\vspace{0.3cm}
+
+The optimal amount $w^*$ is given by the first order condition:
+
+$$U'(w) = 0 $$
+
+
+
+
+
+}
+
+\frame{
+\frametitle{Risk Aversion and Portfolio Choice}
+
+
+First order condition:
+
+$$E[(\tilde{r}- r_f) u'(y_0 (1+r_f) + w^* (\tilde{r}- r_f) )]=0$$
+
+\vspace{0.3cm}
+
+\textit{Remark:} Unconstrained optimization implies that short-selling ($w < 0$) or leverage ($w > y_0$) are possible. 
+
+\vspace{0.5cm}
+
+
+%\pause
+
+
+\textbf{Proposition 1.} When $u$ is increasing and concave, $u' > 0,  \ u'' <0$, then,
+\begin{align*}
+w^* > 0 & \Leftrightarrow E[\tilde{r}] > r_f \\
+w^* = 0 & \Leftrightarrow E[\tilde{r}] = r_f \\
+w^* < 0 & \Leftrightarrow E[\tilde{r}] < r_f
+\end{align*}
+
+\textbf{Implication.} Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (al least a little).
+
+}
+
+
+
+\frame{
+\frametitle{Risk Aversion and Portfolio Choice}
+
+
+\textbf{Proof.} Define $F(w)$ as
+$$F(w) = E[(\tilde{r}- r_f) u'(y_0 (1+r_f) + w (\tilde{r}- r_f))]$$
+$w^*$ is such that $F(w^*)=0$
+\vspace{0.5cm}
+
+Derivative of $F$:
+
+$$F'(w) = E[(\tilde{r}- r_f)^2 u''(y_0 (1+r_f) + w (\tilde{r}- r_f))] <0$$
+
+
+\vspace{0.5cm}
+
+Value of $F$ in $0$:
+$$F(0) = E[(\tilde{r}- r_f) u'(y_0 (1+r_f))] = \underbrace{u'(y_0 (1+r_f))}_{>0} \times (E[\tilde{r}]- r_f)$$ 
+
+}
+
+\frame{
+\frametitle{Risk Aversion and Portfolio Choice}
+
+
+If the investor is risk neutral:
+
+$$u(y) = \alpha y + \beta$$
+
+%\vspace{5cm}
+\vspace{0.5cm}
+
+%\pause 
+
+
+$$\max_{w} E[u(\tilde{y}_1)] \Leftrightarrow \max_{w} y_0 (1+r_f) + w (E[\tilde{r}]- r_f).$$
+
+Then,
+
+\begin{align*}
+E[\tilde{r}] > r_f  \Rightarrow w^* = +\infty \\
+E[\tilde{r}] < r_f  \Rightarrow w^* = -\infty
+\end{align*}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+\frame{
+\frametitle{Risk Aversion and Portfolio Choice}
+
+Same problem, different formulation: The agent buys $z$ units of risky assets, at price $p$, with pay-off at $t=1$ equal to $\tilde{a}$.
+%\pause
+\begin{align*}
+\tilde{y}_1 & = (y_0 - p.z)\times (1+r_f) + z\times \tilde{a} \\
+&= y_0 \times (1+r_f) + z\times (\tilde{a}- (1+r_f)p) 
+\end{align*}
+%
+First order condition:
+$$E[(\tilde{a}- (1+r_f)p) u'(y_0 (1+r_f) + z^* (\tilde{a}- (1+r_f)p))]=0$$
+$$z^* > 0  \Leftrightarrow \frac{E[\tilde{a}]}{1+r_f} > p$$
+%
+Consistent with Proposition 1 because:
+$$1+ E[\tilde{r}]= \frac{E[\tilde{a}]}{p}$$
+
+
+}
+
+
+
+
+
+
+
+
+\section{Initial Wealth}
+\subsection*{}
+
+\frame{
+\frametitle{Risk Aversion, Portfolio and Initial Wealth}
+
+Let $w^*(y_0)$ the solution of
+
+$$\max_{w} E[u(y_0 (1+r_f) + w (\tilde{r}- r_f))], \ \text{when} \ E[\tilde{r}] > r_f$$
+which implies $w^* >0$.
+
+\vspace{0.5cm}
+
+
+\textbf{Proposition 2.} If $u$ is such that
+\begin{align*}
+R_{A}'(y) < 0 & \Rightarrow \frac{dw^*}{dy_0} > 0 \\
+R_{A}'(y) = 0 & \Rightarrow \frac{dw^*}{dy_0} = 0  \\
+R_{A}'(y) > 0 & \Rightarrow \frac{dw^*}{dy_0} < 0 
+\end{align*}
+
+
+}
+
+\frame{
+\frametitle{Risk Aversion, Portfolio and Initial Wealth}
+
+\textbf{Proof.} Assume that $R_{A}'(y) < 0$. By taking the derivative of the first order condition with respect to $y_0$ we get:
+%\vspace{5cm}
+$$E\left[(\tilde{r}- r_f)\left(1+r_f + \frac{dw^*}{dy_0} (\tilde{r}- r_f)\right) u''(\tilde{y}_1)\right]=0$$
+
+\begin{align*}
+\frac{dw^*}{dy_0} \overbrace{E\left[(\tilde{r}- r_f)^2 u''(\tilde{y}_1)\right]}^{<0} &= (1+r_f)E\left[(\tilde{r}- r_f)(- u''(\tilde{y}_1))\right] \\
+& = (1+r_f) \underbrace{E\left[(\tilde{r}- r_f) u'(\tilde{y}_1)R_{A}(\tilde{y}_1) \right]}_{=H}
+\end{align*}
+
+ 
+\begin{align*}
+H =& \ E\left[(\tilde{r}- r_f) u'(\tilde{y}_1)R_{A}(\tilde{y}_1)|\tilde{r}< r_f \right]P[\tilde{r}< r_f] \\
+& \ + E\left[(\tilde{r}- r_f) u'(\tilde{y}_1)R_{A}(\tilde{y}_1)|\tilde{r} > r_f \right]P[\tilde{r}> r_f] \\
+\leq &  \ E\left[(\tilde{r}- r_f) u'(\tilde{y}_1)R_{A}(y_0 (1+r_f))|\tilde{r}< r_f \right]P[\tilde{r}< r_f] \\
+& \ + E\left[(\tilde{r}- r_f) u'(\tilde{y}_1)R_{A}(y_0 (1+r_f))|\tilde{r} > r_f \right]P[\tilde{r}> r_f] \\
+\leq & \ R_{A}(y_0 (1+r_f)) E\left[(\tilde{r}- r_f) u'(\tilde{y}_1) \right] = 0
+\end{align*}
+
+
+}
+
+
+
+\frame{
+\frametitle{Risk Aversion, Portfolio and Initial Wealth}
+
+Let $\eta(y_0)$ the elasticity of $w^*(y_0)$:
+
+$$\eta(y_0) = \frac{d \ln(w^*(y_0))}{d \ln (y_0)}$$
+
+
+\vspace{0.5cm}
+
+
+\textbf{Proposition 3.} If $u$ is such that
+\begin{align*}
+R_{R}'(y) < 0 & \Rightarrow \eta(y_0) > 1 \\
+R_{R}'(y) = 0 & \Rightarrow \eta(y_0) = 1  \\
+R_{R}'(y) > 0 & \Rightarrow \eta(y_0) < 1 
+\end{align*}
+
+
+}
+
+
+
+\frame{
+\frametitle{Risk Aversion, Portfolio and Initial Wealth}
+
+\textbf{Proof.} Let $w^* = e^{\theta^*}$ and $y_0 = e^{\gamma_0}$, 
+%\vspace{5cm}
+$$\eta = \frac{d\theta^*}{d \gamma_0} .$$ 
+
+ By taking the derivative of the first order condition with respect to $\gamma_0$ we get:
+
+$$E\left[(\tilde{r}- r_f)\left((1+r_f)y_0 + \frac{d\theta^*}{d \gamma_0} w^* (\tilde{r}- r_f)\right) u''(\tilde{y}_1)\right]=0$$
+
+\begin{align*}
+\left(\frac{d\theta^*}{d\gamma_0} -1\right)w^* \overbrace{E\left[(\tilde{r}- r_f)^2 u''(\tilde{y}_1)\right]}^{<0} &= E\left[(\tilde{r}- r_f)\tilde{y}_1(- u''(\tilde{y}_1))\right] \\
+& =  E\left[(\tilde{r}- r_f) u'(\tilde{y}_1)R_{R}(\tilde{y}_1) \right]
+\end{align*}
+
+ 
+}
+
+
+
+
+
+
+\end{document}

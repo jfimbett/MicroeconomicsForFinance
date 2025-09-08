@@ -1,0 +1,112 @@
+\documentclass[compress, 9pt]{beamer}
+%\documentclass[handout]{beamer} aurait supprimé les ``overlays''
+
+\usetheme{}% le thème choisi pour ma présentation
+%\useoutertheme{smoothbars}
+%\useinnertheme{rounded}
+\usepackage[french]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}%pour les includegraphics
+\usepackage{array}% pour des tableaux particuliers. Nécessaire pour les révéler colonne par colonne
+\usepackage{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-plot}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+
+
+
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%pour ajouter un numéro de page en bas.% une autre solution : \useoutertheme{shadow}
+%\usepackage{beamerthemesplit}
+
+
+
+
+\begin{document}
+
+
+\frame{
+
+
+\begin{pspicture}(0,0)(11,8)
+
+
+
+
+
+
+\psline[linewidth=0.05cm]{->}(0,0.5)(11,0.5)
+\rput[B](5.5,0.1){\Large $x_1$}
+\psline[linewidth=0.05cm]{->}(0.5,0)(0.5,7.5)
+\rput[B](0.2,4){\Large $x_2$}
+
+\psline[linewidth=0.05cm]{<-}(0,7)(11,7)
+\rput[B](5.5,7.3){\Large $y_1$}
+\psline[linewidth=0.05cm]{<-}(10.5,0)(10.5,7.5)
+\rput[B](10.8,4){\Large $y_2$}
+
+
+\rput(0,0){\psframebox[linewidth=1pt,linecolor=red]{\LARGE  \red \bf $A$}}
+\rput(11,7.5){\psframebox[linewidth=1pt,linecolor=blue]{\LARGE  \blue \bf $B$}}
+
+
+
+
+\psplot[algebraic,linecolor=red,linestyle=solid,linewidth=0.05cm]{2.5}{6}{0.5+ 12.8/(x-0.5)}
+
+
+
+\psplot[algebraic,linecolor=blue,linestyle=solid,linewidth=0.05cm]{4}{6.333}{7- 27.25/(10.5-x)}
+
+
+
+
+\psplot[algebraic,linecolor=violet,linestyle=solid,linewidth=0.05cm]{2}{6.333}{10 - 1.5*x}
+
+\psdot[dotsize=6pt](3.4,4.9)
+\rput[Bl](3.5,5){\Large $I_A$}
+
+\psdot[dotsize=6pt](6.2,0.7)
+\rput[Bl](6.4,0.7){\Large $I_B$}
+
+\rput[Bl](5,6){\Large $I_A \neq I_B \Leftrightarrow$ demand $\neq$ supply}
+
+
+
+\end{pspicture}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
