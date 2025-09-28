@@ -1,0 +1,8 @@
+# Ignore Quarto caches and transient build assets to avoid Dropbox file locks
+.quarto/
+site_libs/
+docs/site_libs/
+# Optional: ignore other generated site files if not needed in Dropbox cloud
+# docs/search.json
+# docs/sitemap.xml
+# docs/robots.txt

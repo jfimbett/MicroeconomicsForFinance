@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  # keep cache within project; can be cleared safely if locked
+  resources: [".nojekyll"]
 
 website:
   title: "Microeconomics for Finance"
@@ -52,7 +54,7 @@ format:
     theme: white
     css: styles.css
     slide-number: true
-    chalkboard: true
+    chalkboard: false
     preview-links: auto
     transition: slide
     background-transition: fade
@@ -76,7 +78,7 @@ format:
       skipTags: ['script','noscript','style','textarea','pre','code']
       ignoreClass: 'tex2jax_ignore'
       processClass: 'tex2jax_process'
-    plugins: [RevealMath, RevealNotes, RevealSearch, RevealZoom, RevealMenu, RevealChalkboard]
+    plugins: [RevealMath, RevealNotes, RevealSearch, RevealZoom, RevealMenu]
   html:
     theme: 
       light: flatly
