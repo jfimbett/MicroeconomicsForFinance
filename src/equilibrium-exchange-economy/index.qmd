@@ -102,7 +102,7 @@ execute:
 
 - Definition:  
   $$
-  	ext{MRS}_{i,\ell k} = \frac{\partial u_i/\partial x_{i\ell}}{\partial u_i/\partial x_{ik}}.
+  	\text{MRS}_{i,\ell k} = \frac{\partial u_i/\partial x_{i\ell}}{\partial u_i/\partial x_{ik}}.
   $$
 - Individual problem: maximize $u_i(x_i)$ s.t. $p\cdot x_i \le w_i(p) = p\cdot \omega_i$  
   (with monotonicity/LNS, the budget binds at the optimum: $p\cdot x_i = w_i(p)$).
@@ -140,14 +140,13 @@ execute:
 
 - Definition: The Marshallian demand of agent i, $x_i(p,w_i)$, gives the utility-maximizing bundle as a function of prices $p$ and wealth (income) $w_i$ subject to the budget constraint $p\cdot x_i \le w_i$.
 - “Uncompensated” means income is held fixed; changes in prices affect both relative prices and real purchasing power.
-- Contrast: Hicksian (compensated) demand $h_i(p,\bar u)$ gives the cost-minimizing bundle to reach a target utility $\bar u$ at prices $p$; income is adjusted to keep utility constant.
 - Name: “Marshallian” honors Alfred Marshall, who formalized demand as a function of prices and income in the partial-equilibrium tradition.
 
 ------------------------------------------------------------------------
 
 ## Marshallian Demand Properties
 
-- Homogeneous of degree zero: scaling all prices doesn’t affect demand.
+- Homogeneous of degree zero: scaling all prices and wealth doesn’t affect demand.
 - Budget exhaustion (with LNS/monotonicity): $p \cdot x_i(p) = p \cdot \omega_i$.
 - Individual Walras’ law (net demand): $p \cdot z_i(p) = p \cdot (x_i(p) - \omega_i) = 0$.
 - If utilities are strictly concave and monotone: demand is unique.
@@ -173,10 +172,6 @@ execute:
   p \cdot z(p) = 0.
   $$
 - Prices are defined up to scale (normalize: $\sum_\ell p_\ell=1$).
-- Under continuity, convexity, local non-satiation, and positive endowments:  
-  an equilibrium **exists** (Arrow–Debreu).
-
-------------------------------------------------------------------------
 
 ## First Welfare Theorem
 
@@ -188,20 +183,11 @@ execute:
 ## Second Welfare Theorem
 
 - Any Pareto efficient allocation can be supported by some prices and transfers.
-- Interpretation:
-  - Markets can handle efficiency,
-  - Redistribution requires adjusting endowments.
-
-------------------------------------------------------------------------
-
-## Price Normalization
-
-- Prices are relative: only ratios matter.
-- We usually normalize:  
+- Consider you want to implement a specific Pareto efficient allocation $x^*$.
+- You can find prices $p$ and transfers $T_i$ such that:
   $$
-  \sum_\ell p_\ell = 1.
+  p \cdot x_i^* + T_i = w_i(p) \quad \forall i.
   $$
-- This avoids indeterminacy of multiplying all prices by a constant.
 
 ------------------------------------------------------------------------
 
@@ -252,6 +238,31 @@ execute:
 
 ------------------------------------------------------------------------
 
+## The Hicksian (Compensated) Demand. 
+
+- Every convex optimization problem has a ***dual*** problem. 
+- Original: Choose consumption to maximize utility subject to a budget constraint (Marshallian demand).
+- Dual: Choose consumption to minimize expenditure subject to achieving a target utility level (Hicksian demand).
+- General case 
+
+$$
+\min_{x_i \ge 0} p \cdot x_i \quad \text{s.t.} \quad u_i(x_i) \ge \bar u.
+$$
+
+Lagrangian:
+
+$$
+\mathcal{L}(x_i, \mu) = p \cdot x_i + \mu (\bar u - u_i(x_i))
+$$
+
+F.O.C. 
+
+$$
+\frac{\partial \mathcal{L}}{\partial x_{i\ell}} = p_\ell - \mu \frac{\partial u_i}{\partial x_{i\ell}} = 0 \quad \Rightarrow \quad \frac{\partial u_i}{\partial x_{i\ell}} = \frac{p_\ell}{\mu}.
+$$
+
+---
+
 ## Cobb–Douglas: Hicksian Demand and Expenditure
 
 - Expenditure minimization for target utility $\bar u$:  
@@ -288,24 +299,17 @@ execute:
   $$
   h_{i\ell}(p,\bar u) = \alpha_{i\ell}\, \bar u\, \frac{\prod_m p_m^{\alpha_{im}}}{p_\ell} \cdot C_i, \quad \text{with } C_i = \left(\prod_m \alpha_{im}^{\alpha_{im}}\right)^{-1}.
   $$
-- Expenditure function (Shephard):  
+
+
+---
+
+## Continuation: Hicksian Demand and Expenditure
+
+- Expenditure function (Shephard’s lemma): 
   $$
   e_i(p,\bar u) = p\cdot h_i(p,\bar u) = \bar u\, C_i\, \prod_{m} p_m^{\alpha_{im}}.
   $$
 - Check (duality): Marshallian demand satisfies $x_{i\ell}(p,w) = h_{i\ell}\big(p, u_i(x_i(p,w))\big)$ and $e_i(p, u_i(x_i)) = p\cdot x_i$.
-
-------------------------------------------------------------------------
-
-## Cobb–Douglas: MRS and Price Ratios
-
-- MRS between goods $\ell$ and $k$:  
-  $$
-  	\text{MRS}_{i,\ell k} = \frac{\partial u_i/\partial x_{i\ell}}{\partial u_i/\partial x_{ik}} = \frac{\alpha_{i\ell}}{\alpha_{ik}}\, \frac{x_{ik}}{x_{i\ell}}.
-  $$
-- Using demand: $\tfrac{x_{ik}}{x_{i\ell}} = \tfrac{\alpha_{ik} p_\ell}{\alpha_{i\ell} p_k}$, so  
-  $$
-  	\text{MRS}_{i,\ell k} = \frac{p_\ell}{p_k} \quad (\text{at interior optimum}).
-  $$
 
 ------------------------------------------------------------------------
 
@@ -435,10 +439,7 @@ execute:
   $$
   h_{i\ell}(p,\bar u) = \bar u\; \frac{a_{i\ell}^{\tfrac{1}{1-\rho}}\, p_\ell^{-\tfrac{1}{1-\rho}}}{\left(\sum_m a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}\right)^{\tfrac{\rho}{1-\rho}}}.
   $$
-- Corresponding expenditure function:  
-  $$
-  e_i(p,\bar u) = \bar u\; \left(\sum_m a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}\right)^{\tfrac{\rho}{1-\rho}}.
-  $$
+- $ e_i(p,\bar u) = \bar u\; \left(\sum_m a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}\right)^{\tfrac{\rho}{1-\rho}}.$
 
 ------------------------------------------------------------------------
 
@@ -448,73 +449,5 @@ execute:
 - Perfect substitutes ($\rho\to 1$): spend all on the cheapest good(s) by $a_{i\ell}/p_\ell$.
 - Leontief ($\rho\to -\infty$): fixed proportions given by the $a_{i\ell}$.
 
-------------------------------------------------------------------------
 
  
-
-## Core and Competitive Equilibrium
-
-- **Core**: allocations not blocked by any coalition of agents.
-- As the economy is replicated (more agents), the core shrinks.
-- **Debreu–Scarf theorem**: with many agents, the core = competitive equilibria.
-- Intuition: large markets reduce individual bargaining power.
-
-------------------------------------------------------------------------
-
-## Equilibrium With and Without Transfers
-
-- Without transfers (pure exchange): each agent’s budget is their endowment value:  
-  $w_i(p) = p\cdot \omega_i$. Equilibrium is $(p^*, x^*)$ with $x_i^* \in \arg\max\{u_i(x_i): p^*\cdot x_i \le p^*\cdot \omega_i\}$ and $\sum_i x_i^* = \Omega$.
-- With transfers: endowments are reallocated in value via lump-sum $T_i$ (in value terms), so budgets become $w_i'(p) = p\cdot (\omega_i + T_i)$ with $\sum_i T_i = 0$.
-- Purpose: reach a different feasible allocation (e.g., distributive goals) while keeping decentralized market efficiency.
-
-------------------------------------------------------------------------
-
-## Who Makes Transfers? Mechanisms
-
-- Central authority (government): collects lump-sum taxes and pays lump-sum subsidies so that $\sum_i T_i = 0$; does not distort prices when transfers are lump-sum.
-- Decentralized agents: agents can trade initial endowments to replicate any value-transfer pattern $T$ if markets are complete; effectively, initial wealth distribution can be mimicked by contingent trades or ownership shares.
-- Modeling convention: treat $T_i$ as exogenous wealth redistribution in value (numeraire) that shifts budget lines in parallel.
-
-------------------------------------------------------------------------
-
-## Implementing a Target Efficient Allocation
-
-- Let $x^*=(x_1^*,\dots,x_N^*)$ be Pareto efficient. By the Second Welfare Theorem, there exist prices $p^*$ and transfers $T$ with $\sum_i T_i=0$ s.t. for all i:  
-  $$
-  x_i^* \in \arg\max\{u_i(x_i): p^*\cdot x_i \le p^*\cdot (\omega_i + T_i)\}.
-  $$
-- Operationally:  
-  1) Find supporting prices $p^*$ (equal MRSs on the frontier),  
-  2) Set $T$ so that $p^*\cdot (\omega_i + T_i) = p^*\cdot x_i^*$ (budgets exactly fund $x_i^*$),  
-  3) Check feasibility: $\sum_i T_i=0$ and $\sum_i x_i^* = \Omega$.
-
-------------------------------------------------------------------------
-
-## Transfers: Intuition and Examples
-
-- Two-agent, two-good example: Suppose $x^*$ splits $\Omega$ efficiently at prices $p^*$. If agent 1’s endowment is worth less than $p^*\cdot x_1^*$, set $T_1>0$ and $T_2=-T_1$ to balance; then each agent optimizes to choose $x_i^*$.
-- With identical homothetic (e.g., Cobb–Douglas) preferences and common weights, supporting prices depend on $\Omega$; transfers tilt wealth to select the desired point along the efficient frontier.
-- Key distinction:  
-  - Without transfers: outcome determined by initial endowments (who is “rich” in value).  
-  - With transfers: initial value distribution is adjusted; competitive forces still deliver efficiency at the chosen distribution.
-
-------------------------------------------------------------------------
-
-## Boundary and Corner Cases
-
-- If $x_{i\ell}^*=0$: corner solution.
-- If $p_\ell=0$: good is free, demand may be unbounded.
-- With monotonic utilities, budgets are exhausted.
-- Positive aggregate endowments avoid trivialities.
-
-------------------------------------------------------------------------
-
-## Summary and Takeaways
-
-- In an exchange economy:
-  - Agents trade endowments at prices to maximize utility,
-  - Equilibrium requires individual optimality + market clearing.
-- **FWT**: equilibria are Pareto efficient.  
-- **SWT**: any efficient allocation can be decentralized with transfers.
-- Existence is guaranteed under standard assumptions.

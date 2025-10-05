@@ -53,6 +53,8 @@ format:
   revealjs:
     theme: white
     css: styles.css
+    # Ensure only explicit '---' separators create new slides (no auto slides from headings)
+    slide-level: 0
     slide-number: true
     chalkboard: false
     preview-links: auto
