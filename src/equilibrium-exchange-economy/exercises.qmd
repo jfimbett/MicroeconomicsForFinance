@@ -1,0 +1,98 @@
+---
+title: "Exercises: Equilibrium in an Exchange Economy"
+subtitle: "Practice Problems"
+format:
+  html:
+    toc: false
+    number-sections: false
+execute:
+  enabled: false
+page-layout: article
+page-navigation: false
+sidebar: false
+---
+
+# Practice Exercises
+
+## Exercise 1
+
+Adam and Bob are the only two individuals in an island. Adam has been able to collect 10 coconuts and 5 fish, while Bob has 5 coconuts and 10 fish. Both individuals have the same utility function over coconut and fish consumption bundles represented by the following Constant Elasticity of Substitution (CES) utility function:
+$$
+u(X_c, X_f) = \left( X_c^{\frac{\sigma - 1}{\sigma}} + X_f^{\frac{\sigma - 1}{\sigma}} \right)^{\frac{\sigma}{\sigma - 1}}
+$$
+where $X_c$ is the number of coconuts, $X_f$ is the number of fish, and $\sigma$ is the elasticity of substitution between coconuts and fish. Assume that $\sigma = 2$.
+
+1. Compute the Marshallian demand functions for coconuts and fish for both Adam and Bob as a function of prices. 
+2. Compute the equilibrium prices of coconuts and fish in this economy.
+3. Compute the equilibrium consumption bundles for both Adam and Bob.
+4. For an arbitrary level $\bar{u}$ of utility, compute the Hicksian demand functions for both Adam and Bob as a function of prices and utility. 
+5. Compute the expenditure functions for both Adam and Bob as a function of prices and utility.
+6. Show that both demands coincide. 
+
+## Exercise 2
+
+Only one hospital in a country provides medical services. Citizens have preferences over medical services and cash that they can use for their own spending. Cities have the following utility function:
+
+$$
+U(X,C) = X^{\frac{1}{2}} C^{\frac{1}{2}}
+$$
+
+where $X$ is the number of medical services received, and $C$ the amount of cash. Currently, the government has allocated 1 million services to city 1, and 2 million services to city 2. Cities have currently no cash. However, the government is thinking about implementing a 
+policy in which cities can exchange medical services to other cities outside of this economy and receive 80% of the price of the services that they give away. If the normalized price of cash is $1$, compute the total demand of services and cash for each city after this policy is implemented.
+
+
+## Exercise 3 
+
+In the market for tobacco and alcohol, Carol and Dave have preferences represented by the following utility functions:
+$$
+U_C(X_t, X_a) = X_t^{\frac{1}{3}} X_a^{\frac{2}{3}}
+$$
+and
+$$
+U_D(X_t, X_a) = X_t^{\frac{2}{3}} X_a^{\frac{1}{3}}
+$$
+
+where $X_t$ is the number of tobacco units, and $X_a$ the number of alcohol units. Carol has an initial endowment of 4 units of tobacco and 1 unit of alcohol, while Dave has an initial endowment of 1 unit of tobacco and 4 units of alcohol. Compute the Mashallian Demands. 
+
+- Find the equilibrium prices of tobacco and alcohol in this economy.
+- Assume that the government has imposed a tax of $20\%$ on tobacco consumption. What are the implicit transfers that the government has to give/receive to/from Carol and Dave to achieve an equilibrium? Think about the Second Welfare Theorem, these transfers do not need to be unique.
+- If the government only uses the collected tax revenue for transfers, what would be the transfers to Carol and Dave?  
+
+## Exercise 4
+
+Apples and Pears are in season. Eve and Frank are the only market participants. They have agreed that the first $\bar{A}$ units of apples will be sold/bought at a price of $\bar{p_a}$ but every extra apple will only pay $\frac{\bar{p_a}}{2}$. The same agreement has been made for pears, where the first $\bar{P}$ units of pears will be sold/bought at a price of $\bar{p_p}$ but every extra pear will only pay $\frac{\bar{p_p}}{2}$. Eve has an initial endowment of $\omega_{EA}$ apples and $\omega_{EP}$ pears,
+ while Frank has an initial endowment of $\omega_{FA}$ apples and $\omega_{FP}$ pears. Both individuals have the same utility function represented by the following Cobb-Douglas utility function:
+
+ $$
+    U(X_A, X_P) = X_A^{\alpha} X_P^{1 - \alpha}
+$$
+
+where $X_A$ is the number of apples, $X_P$ the number of pears, and $\alpha \in (0,1)$.
+
+1. Compute the Marshallian demand functions for apples and pears for both Eve and Frank as a function of prices.
+2. Compute the equilibrium prices of apples and pears in this economy.
+3. Compute the equilibrium consumption bundles for both Eve and Frank.
+4. How do the equilibrium prices and consumption bundles change if $\bar{A}$ and $\bar{P}$ increase?
+
+## Exercise 5
+
+- For a two good (1,2), two consumer (A,B) exchange economy and initial allocations
+$$
+\omega_A = (4, 2) \quad \text{and} \quad \omega_B = (2, 4)
+$$
+
+- Assume that both consumers have the same utility function represented by the following Cobb-Douglas utility function:
+$$
+U(X_1, X_2) = X_1^{\alpha} X_2^{1 - \alpha}
+$$
+
+- Draw a 6 by 6 box in which the x-axis represents good 1 and the y-axis good 2. The bottom left corner represents the origin for consumer A (no consumption), while the top right corner represents the origin for consumer B.  This is called an Edgeworth box, it's like putting two coordinate systems one in top of the other. 
+- As a point draw the initial endownment of both consumers. 
+- Draw the equation representing the budget constraint for consumer A using its (0,0) point as a reference. Do the same for consumer B using its origin point as a reference. 
+- For different values of $\bar{u}$, the relation between $X_1$ and $X_2$ is called an indifference curve
+$$
+\bar{u} = X_1^{\alpha} X_2^{1 - \alpha}
+$$
+- For the first consumer, draw different indifference curves. What can you say about their shape?
+- What is the slope of the budget constraint? 
+- Compute the equilibrium prices.

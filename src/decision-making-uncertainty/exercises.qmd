@@ -1,0 +1,193 @@
+---
+title: "Exercises: Decision Making under Uncertainty"
+subtitle: "Practice Problems"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-fold: false
+    code-copy: false
+execute:
+  enabled: false
+page-layout: article
+---
+
+# Instructions
+
+Below you will find a collection of practice problems on expected utility, risk aversion, and portfolio choice. They are designed for self-study. Try to solve each exercise before opening the solution. Mathematical notation uses LaTeX and renders directly in the page.
+
+Notation reminders:
+
+- $\mathbb{E}[\cdot]$ expectation, $\mathrm{Var}[\cdot]$ variance.
+- $u(\cdot)$: Bernoulli (von Neumann–Morgenstern) utility.
+- $R_A(y) = -\dfrac{u''(y)}{u'(y)}$ absolute risk aversion.
+- $R_R(y) = - y \dfrac{u''(y)}{u'(y)}$ relative risk aversion.
+
+---
+
+# 1. Expected Utility Basics
+
+## Exercise 1.1 (State-preference comparison)
+Consider two assets with state-contingent payoffs (Good, Bad):
+
+| Asset | Good | Bad |
+|-------|------|-----|
+| A | 1600 | 900 |
+| B | 2000 | 400 |
+
+Probabilities of Good and Bad are $\pi$ and $1-\pi$. A risk-averse agent has expected utility $U = \pi u(x_G) + (1-\pi) u(x_B)$ with $u'>0$, $u''<0$.
+
+1. Show that there exists a threshold probability $\pi^* \in (0,1)$ such that for $\pi > \pi^*$, B is preferred to A, and for $\pi < \pi^*$, A is preferred to B.
+2. Derive an implicit expression for $\pi^*$.
+3. Assuming $u(x)= \sqrt{x}$, compute $\pi^*$ numerically.
+
+::: {.callout-tip collapse="true" title="Solution"}
+1. Preference switches when
+$$\pi u(2000) + (1-\pi) u(400) = \pi u(1600) + (1-\pi) u(900).$$
+2. Solve for $\pi$:
+$$\pi^* = \frac{u(900) - u(400)}{[u(2000)-u(400)] - [u(1600)-u(900)]}.$$
+3. With $u(x)=x^{1/2}$:
+$u(2000)=\sqrt{2000}$, $u(1600)=40$, $u(900)=30$, $u(400)=20$.
+Thus numerator $=30-20=10$.
+Denominator $=[\sqrt{2000}-20] - [40-30] = (\sqrt{2000}-20) -10$.
+Since $\sqrt{2000}\approx 44.721$, denominator $= 44.721 -30 =14.721$.
+Hence $\pi^* \approx 10/14.721 \approx 0.6795$.
+:::
+
+## Exercise 1.2 (Jensen inequality application)
+Let $\tilde{X}$ have mean $m$ and variance $\sigma^2$. Show that for concave $u$,
+$$u(m) - \mathbb{E}[u(\tilde{X})] \approx \frac{1}{2} R_A(m) \sigma^2$$
+under a second-order Taylor approximation.
+
+::: {.callout-tip collapse="true" title="Solution"}
+Expand $u(\tilde{X})$ at $m$: $u(\tilde{X}) \approx u(m) + u'(m)(\tilde{X}-m) + \tfrac12 u''(m) (\tilde{X}-m)^2$.
+Take expectation: $\mathbb{E}[u(\tilde{X})] \approx u(m) + 0 + \tfrac12 u''(m)\sigma^2$.
+Thus $u(m) - \mathbb{E}[u(\tilde{X})] \approx -\tfrac12 u''(m)\sigma^2 = \tfrac12 R_A(m) u'(m) \sigma^2 / u'(m) = \tfrac12 R_A(m) \sigma^2$.
+:::
+
+## Exercise 1.3 (Certainty equivalent and risk premium)
+Let CE denote the certainty equivalent for $\tilde{X}$. Show that the risk premium $\pi = m - \text{CE}$ satisfies $\pi \approx \tfrac12 R_A(m) \sigma^2$.
+
+::: {.callout-tip collapse="true" title="Solution"}
+CE solves $u(\text{CE}) = \mathbb{E}[u(\tilde{X})]$. Approximate $u(\text{CE}) \approx u(m) - \pi u'(m)$. Set equal to previous expansion: $u(m) - \pi u'(m) \approx u(m) + \tfrac12 u''(m) \sigma^2$. Rearranging gives $\pi \approx -\tfrac12 u''(m)\sigma^2/u'(m)= \tfrac12 R_A(m) \sigma^2$.
+:::
+
+---
+
+# 2. Measures of Risk Aversion
+
+## Exercise 2.1 (Affine transformations invariance)
+Show that for $v(x)= a u(x) + b$, with $a>0$, the Arrow-Pratt coefficients computed from $v$ equal those from $u$.
+
+::: {.callout-tip collapse="true" title="Solution"}
+$v'(x)= a u'(x)$, $v''(x)= a u''(x)$ so $R_A^v = -v''/v' = -a u''/(a u') = R_A^u$ and $R_R^v = -x v''/v' = -x u''/u' = R_R^u$.
+:::
+
+## Exercise 2.2 (CARA vs CRRA)
+1. For CARA $u(x)= -\frac{1}{\nu} e^{-\nu x}$, compute $R_A(x)$ and $R_R(x)$.
+2. For CRRA $u(x)= \frac{x^{1-\gamma}}{1-\gamma}$ ($\gamma\neq 1$) or $u(x)=\ln x$, compute $R_A(x)$ and $R_R(x)$.
+3. Interpret economic meaning of constancy in each case.
+
+::: {.callout-tip collapse="true" title="Solution"}
+1. CARA: $u'(x)= e^{-\nu x}$, $u''(x)= -\nu e^{-\nu x}$. So $R_A=\nu$ (constant), $R_R= \nu x$ (increasing in wealth).
+2. CRRA ($\gamma\neq 1$): $u'(x)= x^{-\gamma}$, $u''(x)= -\gamma x^{-\gamma-1}$. So $R_A = \gamma / x$, $R_R= \gamma$ (constant). For $u=\ln x$, $u'=1/x$, $u''=-1/x^2$, giving $R_A=1/x$, $R_R=1$.
+3. CARA: willingness to pay to avoid an absolute (additive) small risk independent of wealth. CRRA: proportional (multiplicative) risk attitude independent of scale of wealth.
+:::
+
+## Exercise 2.3 (Decreasing absolute risk aversion)
+Suppose $u$ exhibits decreasing absolute risk aversion (DARA). Explain why an increase in wealth may increase optimal risky investment in dollar terms. Provide a formal argument referencing $R_A'(y)<0$.
+
+::: {.callout-tip collapse="true" title="Solution"}
+With DARA, $R_A'(y)<0$. From comparative statics of portfolio $w^*(y)$, $dw^*/dy >0$. Thus as wealth rises, agent allocates more absolute dollars to the risky asset because marginal disutility of risk falls.
+:::
+
+---
+
+# 3. Portfolio Choice
+
+Consider an investor with initial wealth $y_0$ allocating $w$ to a risky asset with return $\tilde{r}$ and the remainder to a risk-free asset $r_f$. Final wealth: $\tilde{y}_1 = y_0(1+r_f) + w (\tilde{r} - r_f)$.
+
+## Exercise 3.1 (First-order condition)
+Derive the first-order condition characterizing the optimal $w^*$.
+
+::: {.callout-tip collapse="true" title="Solution"}
+Maximize $\mathbb{E}[u(y_0(1+r_f)+ w(\tilde{r}-r_f))]$. FOC: $\mathbb{E}[(\tilde{r}-r_f) u'(y_0(1+r_f)+ w^*(\tilde{r}-r_f))]=0$.
+:::
+
+## Exercise 3.2 (Sign of optimal position)
+Show $w^*>0$ iff $\mathbb{E}[\tilde{r}]> r_f$ (risk-averse $u$). Sketch proof using monotonicity of $F(w) = \mathbb{E}[(\tilde{r}-r_f)u'(\cdot)]$.
+
+::: {.callout-tip collapse="true" title="Solution"}
+$F'(w)= \mathbb{E}[(\tilde{r}-r_f)^2 u''(\cdot)]<0$. Thus $F$ strictly decreasing. $F(0)= u'(y_0(1+r_f)) (\mathbb{E}[\tilde{r}] - r_f)$. Sign of $F(0)$ gives sign of root $w^*$. Hence direction results.
+:::
+
+## Exercise 3.3 (Mean-variance approximation)
+Assume $u$ is twice differentiable and risk is small so that a second-order expansion around mean return applies. Let $\mu = \mathbb{E}[\tilde{r}]$ and $\sigma^2 = \mathrm{Var}(\tilde{r})$. Show that approximately
+$$w^* \approx \frac{\mu - r_f}{R_A(y_0(1+r_f)) \sigma^2}.$$
+
+::: {.callout-tip collapse="true" title="Solution"}
+Approximate $u'(y_0(1+r_f)+ w(\tilde{r}-r_f)) \approx u'(Y) + w(\tilde{r}-r_f) u''(Y)$ with $Y= y_0(1+r_f)$. Plug in FOC: $0 \approx (\mu - r_f) u'(Y) + w u''(Y) \sigma^2$. Hence $w^* \approx - (\mu - r_f) u'(Y)/(u''(Y) \sigma^2)= (\mu - r_f)/(R_A(Y) \sigma^2)$.
+:::
+
+## Exercise 3.4 (Elasticity with CRRA utility)
+Let $u(y)= y^{1-\gamma}/(1-\gamma)$, $\tilde{r}$ small risk, and use the approximation in Exercise 3.3. Express $w^*$ in terms of wealth $y_0$ and show the elasticity of $w^*$ w.r.t. $y_0$ is 1.
+
+::: {.callout-tip collapse="true" title="Solution"}
+For CRRA, $R_A(Y)= \gamma / Y$. Thus $w^* \approx (\mu - r_f)/( (\gamma / Y) \sigma^2) = (\mu - r_f) Y/(\gamma \sigma^2) \propto y_0$. Therefore $d \ln w^* / d \ln y_0 = 1$.
+:::
+
+## Exercise 3.5 (Multiple risky assets)
+Suppose there are $n$ risky assets with excess return vector $\tilde{R}$ (over $r_f$), mean $\mu$ and covariance matrix $\Sigma$. Small-risk approximation. Show
+$$w^* \approx \frac{1}{R_A(Y)} \Sigma^{-1} \mu.$$
+
+::: {.callout-tip collapse="true" title="Solution"}
+FOC vector form: $\mathbb{E}[ \tilde{R} u'(Y + w' \tilde{R})]=0$. Approx: $u'(Y + w'\tilde{R}) \approx u'(Y) + u''(Y) w' \tilde{R}$. Then $0 \approx u'(Y)\mu + u''(Y) \mathbb{E}[\tilde{R} \tilde{R}' ] w = u'(Y)\mu + u''(Y) \Sigma w$. Hence $w = - u'(Y)/u''(Y) \Sigma^{-1} \mu = (1/R_A(Y)) \Sigma^{-1} \mu$.
+:::
+
+---
+
+# 4. Utility Function Identification
+
+## Exercise 4.1 (Recovering risk aversion from choices)
+An investor with wealth $Y$ accepts any small actuarially fair gamble paying $+\epsilon$ or $-\epsilon$ with equal probability only if $\epsilon < K$. Show that $R_A(Y) \approx 1/K$.
+
+::: {.callout-tip collapse="true" title="Solution"}
+Fair gamble: mean 0, variance $\epsilon^2$. Risk premium for indifference equals expected gain (=0). Approx premium $\pi = \tfrac12 R_A(Y) \epsilon^2$. Indifference implies $\pi$ equal to 0 while utility loss from variance just offsets no mean gain: set $\tfrac12 R_A(Y) \epsilon^2 \approx 0$ at threshold. For maximum accepted $\epsilon=K$, require $\tfrac12 R_A(Y) K^2 \approx 0$ boundary ⇒ $R_A(Y) \approx 1/K$ (dropping constant scaling gives order). More precise derivations yield $R_A(Y) = 2 / K^2$ if defining threshold differently; here proportionality highlighted.
+:::
+
+## Exercise 4.2 (Exponential utility calibration)
+Given empirical estimate $R_A(Y)=0.8$ at $Y=100{,}000$, calibrate CARA parameter $\nu$ and write $u(y)$ up to affine transformations.
+
+::: {.callout-tip collapse="true" title="Solution"}
+For CARA $R_A=\nu$. Thus $\nu=0.8$. Up to affine transform: $u(y) = -\tfrac{1}{0.8} e^{-0.8 y}$.
+:::
+
+---
+
+# 5. Additional Conceptual Questions
+
+1. Explain why risk neutrality implies linear indifference curves in the $(x_G,x_B)$ state space whereas risk aversion implies strictly convex indifference curves.
+2. Discuss how decreasing relative risk aversion (DRRA) affects the fraction of wealth invested in risky assets.
+3. Provide an example of a utility function that has DARA but not constant relative risk aversion.
+
+::: {.callout-tip collapse="true" title="Sample Answers"}
+1. Expected utility linear in probabilities and payoffs when $u$ affine ⇒ level sets linear. Concavity introduces curvature making mixtures preferred.
+2. DRRA: as wealth grows, $R_R$ falls ⇒ optimal risky share (under CRRA-style approximations) increases with wealth.
+3. $u(y)= -e^{-\nu y^\alpha}$ with $0<\alpha<1$ can yield DARA and non-constant RRA.
+:::
+
+---
+
+# 6. (Optional) Computational Exploration
+
+You can experiment numerically (e.g., in Python/R) with different $u$ and return distributions to simulate $w^*$ using the exact FOC and compare to approximations above.
+
+---
+
+# References
+
+- Mas-Colell, Whinston, Green (1995), Microeconomic Theory.
+- Pratt (1964), "Risk Aversion in the Small and in the Large."
+- Arrow (1965), "Aspects of the Theory of Risk-Bearing."
+- Ingersoll (1987), Theory of Financial Decision Making.

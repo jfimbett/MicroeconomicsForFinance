@@ -39,6 +39,7 @@ website:
         - section: "Topic 1: Equilibrium in an Exchange Economy"
           contents:
             - src/equilibrium-exchange-economy/index.qmd
+            - src/equilibrium-exchange-economy/exercises.qmd
         - section: "Topic 2: Decision Making under Uncertainty"
           contents:
             - src/decision-making-uncertainty/index.qmd

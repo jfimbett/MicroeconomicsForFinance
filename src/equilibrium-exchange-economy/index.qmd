@@ -325,129 +325,57 @@ $$
   $$
   Note: RHS depends on prices via $w_i(p)$.
 
-------------------------------------------------------------------------
-
-## Equilibrium with Identical Preference Weights
-
-- Suppose $\alpha_{i\ell} = \alpha_\ell$ for all i (common Cobb–Douglas weights). Then
-  $$
-  p_\ell\, \Omega_\ell = \alpha_\ell \sum_i w_i(p) = \alpha_\ell\, (p\cdot \Omega).
-  $$
-- Price ratios become price-independent of $w_i$:  
-  $$
-  \boxed{\; \frac{p_\ell}{p_k} = \frac{\alpha_\ell\, \Omega_k}{\alpha_k\, \Omega_\ell} \;}
-  $$
-- With a normalization (e.g., $\sum_\ell p_\ell = 1$), prices follow immediately. Given prices, each agent consumes  
-  $x_{i\ell} = \alpha_\ell\, \dfrac{p\cdot \omega_i}{p_\ell}$.
+  - The equilibrium is then defined as
+    - a price vector $p^*$ satisfying the above for all $\ell$,
+    - and the associated demands $x_i(p^*)$ clearing the markets.
+    - How to find $p^*$? System of $L$ equations in $L$ unknowns (up to scale).
 
 ------------------------------------------------------------------------
 
-## Symmetry Properties and Special Cases
+## Equilibrium with 2 agents and two goods. 
 
-- Uniform tastes across goods: $\alpha_\ell = 1/L$. Then  
-  $$
-  \frac{p_\ell}{p_k} = \frac{\Omega_k}{\Omega_\ell} \quad \Rightarrow \quad p_\ell \propto \frac{1}{\Omega_\ell} \; (\text{scarcity pricing}).
-  $$
-- Identical agents and identical endowments ($\omega_i = \Omega/N$):  
-  $w_i = (p\cdot \Omega)/N$ and $x_{i\ell} = X_\ell/N$ (equal split of aggregate demand).
-- Representative consumer (identical $\alpha$ across agents):  
-  aggregate behaves like one agent with utility $\prod_\ell X_\ell^{\alpha_\ell}$ and income $p\cdot \Omega$:
-  $$
-  X_\ell = \alpha_\ell\, \frac{p\cdot \Omega}{p_\ell}.
-  $$
+Assume two agents with Cobb-Douglas preferences with parameters $\alpha_1$ and $\alpha_2$ for good 1 and $1-\alpha_1$ and $1-\alpha_2$ for good 2. Initial endowments are $\omega_1=(\omega_{11},\omega_{12})$ and $\omega_2=(\omega_{21},\omega_{22})$.
 
-------------------------------------------------------------------------
-
-## Two-Good Closed Form (L = 2)
-
-- Weights $(\alpha_1,\alpha_2)$ with $\alpha_1+\alpha_2=1$; endowments $(\Omega_1,\Omega_2)$.
-- Equilibrium price ratio (identical $\alpha$ across agents):  
+- Individual demands:  
   $$
-  \frac{p_1}{p_2} = \frac{\alpha_1\, \Omega_2}{\alpha_2\, \Omega_1}.
+  x_{11}(p) = \alpha_1 \frac{w_1(p)}{p_1}, \quad x_{12}(p) = (1-\alpha_1) \frac{w_1(p)}{p_2},
   $$
-- Individual demands: $x_{i1} = \alpha_1 \dfrac{p\cdot \omega_i}{p_1}$,  
-  $x_{i2} = \alpha_2 \dfrac{p\cdot \omega_i}{p_2}$.
-
-------------------------------------------------------------------------
-
- 
-
-## CES Preferences: Setup
-
-- Utility:  
   $$
-  u_i(x_i) = \left(\sum_{\ell=1}^L a_{i\ell} x_{i\ell}^{\rho}\right)^{1/\rho}, \quad a_{i\ell}>0,\; \rho \in (-\infty,1],\; \rho\neq 0.
+  x_{21}(p) = \alpha_2 \frac{w_2(p)}{p_1}, \quad x_{22}(p) = (1-\alpha_2) \frac{w_2(p)}{p_2}.
   $$
-- Elasticity of substitution: $\sigma = 1/(1-\rho)$. Limits:  
-  $\rho\to 0$ (Cobb–Douglas), $\rho\to 1$ (perfect substitutes), $\rho\to -\infty$ (Leontief).
-
-------------------------------------------------------------------------
-
-## CES: Lagrangian and FOCs (Marshallian)
-
-- Problem:  
+- Market clearing:  
   $$
-  \max_{x_i\ge 0} \; \left(\sum_{\ell} a_{i\ell} x_{i\ell}^{\rho}\right)^{1/\rho} \quad \text{s.t.} \quad p\cdot x_i \le w_i(p).
-  $$
-- Since utility is monotone, the budget binds at optimum. Equivalent to maximizing the inner sum:  
-  $$
-  \max_{x_i\ge 0} \; \sum_{\ell} a_{i\ell} x_{i\ell}^{\rho} \quad \text{s.t.} \quad p\cdot x_i = w_i.
-  $$
-- Lagrangian:  
-  $$
-  \mathcal{L}(x_i,\lambda_i) = \sum_{\ell} a_{i\ell} x_{i\ell}^{\rho} - \lambda_i\, (p\cdot x_i - w_i).
-  $$
-- FOCs (interior solution):  
-  $$
-  a_{i\ell}\, \rho\, x_{i\ell}^{\rho-1} = \lambda_i p_\ell \qquad \forall \ell.
-  $$
-- Taking ratios for goods $\ell$ and $k$:  
-  $$
-  \frac{x_{i\ell}}{x_{ik}} = \left(\frac{a_{i\ell}}{a_{ik}}\right)^{\tfrac{1}{1-\rho}} \left(\frac{p_\ell}{p_k}\right)^{-\tfrac{1}{1-\rho}}.
+  \begin{align}
+  \omega_{11} + \omega_{21} &= x_{11}(p) + x_{21}(p) = \alpha_1 \frac{w_1(p)}{p_1} + \alpha_2 \frac{w_2(p)}{p_1}, \\[6pt]
+  \omega_{12} + \omega_{22} &= x_{12}(p) + x_{22}(p) = (1-\alpha_1) \frac{w_1(p)}{p_2} + (1-\alpha_2) \frac{w_2(p)}{p_2}.
+  \end{align}
   $$
 
-------------------------------------------------------------------------
+---
 
-## CES: Marshallian Demand (Closed Form)
+## Continuation 
 
-- Solve for $x_{i\ell}$ using the expenditure share form. Let  
+- Normalize prices $p_1 + p_2 = 1$ to solve for $p^*$. Only one equation is independent (Walras’ law).
+- Substitute $w_i(p) = p_1 \omega_{i1} + p_2 \omega_{i2}$ and solve for $p_1^*$:  
   $$
-  S_i(p) = \sum_{m=1}^L a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}.
+ \begin{align}
+\omega_{11} + \omega_{21} &=  \alpha_1 \frac{p_1\omega_{11} + p_2\omega_{12}}{p_1} + \alpha_2 \frac{p_1\omega_{21} + p_2\omega_{22}}{p_1},\\
+&= \frac{\alpha_1\big(p_1\omega_{11} + (1-p_1)\omega_{12}\big) + \alpha_2\big(p_1\omega_{21} + (1-p_1)\omega_{22}\big)}{p_1},\\
+p_1(\omega_{11} + \omega_{21}) &= p_1\Big(\alpha_1(\omega_{11}-\omega_{12}) + \alpha_2(\omega_{21}-\omega_{22})\Big) + (\alpha_1 \omega_{12} + \alpha_2 \omega_{22}),\\
+p_1(\omega_{11} + \omega_{21}) - p_1\Big(\alpha_1(\omega_{11}-\omega_{12}) + \alpha_2(\omega_{21}-\omega_{22})\Big) &= (\alpha_1 \omega_{12} + \alpha_2 \omega_{22}),\\
+p_1 &= \frac{\alpha_1 \omega_{12} + \alpha_2 \omega_{22}}{(\omega_{11} + \omega_{21}) - \Big(\alpha_1(\omega_{11}-\omega_{12}) + \alpha_2(\omega_{21}-\omega_{22})\Big)}\\
+p_2 &= 1 - p_1.
+ \end{align}
   $$
-- Then the Marshallian demand is:  
-  $$
-  \boxed{\; x_{i\ell}(p,w_i) = \frac{a_{i\ell}^{\tfrac{1}{1-\rho}}\, p_\ell^{-\tfrac{1}{1-\rho}}}{S_i(p)}\; \frac{w_i}{p_\ell} \;}
-  $$
-  which implies the expenditure share on good $\ell$ is  
-  $$
-  \frac{p_\ell x_{i\ell}}{w_i} = \frac{a_{i\ell}^{\tfrac{1}{1-\rho}}\, p_\ell^{-\tfrac{1}{1-\rho}}}{\sum_m a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}}.
-  $$
-
-------------------------------------------------------------------------
-
-## CES: Hicksian Demand and Expenditure
-
-- Expenditure minimization for target utility $\bar u$:  
-  $$
-  \min_{x_i\ge 0} p\cdot x_i \quad \text{s.t.} \quad \left(\sum_{\ell} a_{i\ell} x_{i\ell}^{\rho}\right)^{1/\rho} \ge \bar u.
-  $$
-- Lagrangian with multiplier $\mu$:  
-  $$
-  \mathcal{L}(x_i,\mu) = p\cdot x_i + \mu\, \left(\bar u - \left(\sum_{\ell} a_{i\ell} x_{i\ell}^{\rho}\right)^{1/\rho}\right).
-  $$
-- FOCs yield Hicksian demand up to a common scale; minimizing gives:  
-  $$
-  h_{i\ell}(p,\bar u) = \bar u\; \frac{a_{i\ell}^{\tfrac{1}{1-\rho}}\, p_\ell^{-\tfrac{1}{1-\rho}}}{\left(\sum_m a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}\right)^{\tfrac{\rho}{1-\rho}}}.
-  $$
-- $ e_i(p,\bar u) = \bar u\; \left(\sum_m a_{im}^{\tfrac{1}{1-\rho}}\, p_m^{-\tfrac{1}{1-\rho}}\right)^{\tfrac{\rho}{1-\rho}}.$
-
-------------------------------------------------------------------------
-
-## CES: Special Cases and Checks
-
-- Cobb–Douglas ($\rho\to 0$): $x_{i\ell} = \alpha_{i\ell}\, \dfrac{w_i}{p_\ell}$ with $\alpha_{i\ell} = \dfrac{a_{i\ell}}{\sum_m a_{im}}$.
-- Perfect substitutes ($\rho\to 1$): spend all on the cheapest good(s) by $a_{i\ell}/p_\ell$.
-- Leontief ($\rho\to -\infty$): fixed proportions given by the $a_{i\ell}$.
 
 
- 
+---
+
+## Further Practice
+
+For additional practice problems (with collapsible solutions posted later) see:
+
+➡️ [Exercises: Equilibrium in an Exchange Economy](exercises.qmd)
+
+
+
