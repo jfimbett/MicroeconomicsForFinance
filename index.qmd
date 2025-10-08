@@ -18,6 +18,10 @@ The course consists of four main topics:
 3. **Equilibrium in Markets for Securities** - Asset pricing and portfolio theory
 4. **Investment Decisions under Market Imperfections** - Asymmetric information and agency problems
 
+## Direct Practice Access
+
+[Exercises: Exchange Economy (Topic 1)](src/equilibrium-exchange-economy/exercises.html){.btn .btn-success .mb-3 role="button"}
+
 ## Course Materials
 
 ::: {.grid}
