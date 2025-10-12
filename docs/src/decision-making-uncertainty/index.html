@@ -200,7 +200,12 @@ Juan F. Imbet
 <section class="slide level0">
 
 <h2>Preferences over Lotteries</h2>
-<p>We want to define a <strong>relation of order</strong> (i.e, a preference) over the set of risky payments (lotteries). Denote <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{b}\)</span> two risky payments (lotteries). - <span class="math inline">\(\tilde{a}\)</span> is <strong>preferred to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \succ \tilde{b}\)</span>, if the agent prefers <span class="math inline">\(\tilde{a}\)</span> to <span class="math inline">\(\tilde{b}\)</span>. - <span class="math inline">\(\tilde{a}\)</span> is <strong>indifferent to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \sim \tilde{b}\)</span>, if the agent is indifferent between <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{b}\)</span>. - <span class="math inline">\(\tilde{a}\)</span> is <strong>not preferred to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \preceq \tilde{b}\)</span>, if the agent does not prefer <span class="math inline">\(\tilde{a}\)</span> to <span class="math inline">\(\tilde{b}\)</span>.</p>
+<p>We want to define a <strong>relation of order</strong> (i.e, a preference) over the set of risky payments (lotteries). Denote <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{b}\)</span> two risky payments (lotteries).</p>
+<ul>
+<li><span class="math inline">\(\tilde{a}\)</span> is <strong>preferred to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \succ \tilde{b}\)</span>, if the agent prefers <span class="math inline">\(\tilde{a}\)</span> to <span class="math inline">\(\tilde{b}\)</span>.</li>
+<li><span class="math inline">\(\tilde{a}\)</span> is <strong>indifferent to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \sim \tilde{b}\)</span>, if the agent is indifferent between <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{b}\)</span>.</li>
+<li><span class="math inline">\(\tilde{a}\)</span> is <strong>not preferred to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \preceq \tilde{b}\)</span>, if the agent does not prefer <span class="math inline">\(\tilde{a}\)</span> to <span class="math inline">\(\tilde{b}\)</span>.</li>
+</ul>
 </section>
 <section class="slide level0">
 
@@ -417,8 +422,7 @@ w^* &gt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &gt; r_f
 \]</span> <span class="math display">\[
 w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
 \]</span> w^* &lt; 0 [] &lt; r_f <span class="math display">\[
-w^* &lt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &lt; r_f
-\]</span></p>
+\]</span> w^* &lt; 0 [] &lt; r_f $$</p>
 <p><strong>Implication.</strong> Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (at least a little).</p>
 </section>
 <section class="slide level0">
@@ -467,9 +471,6 @@ Compute her <em>expected utility</em> and <em>certainty equivalent (CE)</em>.</p
 </section>
 <section class="slide level0">
 
-</section>
-<section class="slide level0">
-
 <h2>Exercise 2: Certainty Equivalent (with CRRA Utility)</h2>
 <p>Let <span class="math inline">\(u(y) = \frac{y^{1-\gamma}}{1-\gamma}\)</span> with <span class="math inline">\(\gamma = 2\)</span> and a lottery paying: - €80 with probability 0.6<br>
 - €200 with probability 0.4</p>
@@ -484,20 +485,21 @@ Compute the certainty equivalent and risk premium.</p>
 = 0.6(-\tfrac{1}{80}) + 0.4(-\tfrac{1}{200}) = -0.0095
 \]</span></p>
 <p><span class="math display">\[
-CE: \frac{CE^{-1}}{-1} = -0.0095 \Rightarrow CE^{-1} = 0.0095 \Rightarrow CE = 105.26
+u(CE) = -0.0095 \Rightarrow \frac{CE^{-1}}{-1} = -0.0095 \Rightarrow CE = 105.26
 \]</span></p>
 <p>Expected value = €128 → Risk premium = €22.74.</p>
-</section>
-<section class="slide level0">
-
 </section>
 <section class="slide level0">
 
 <h2>Exercise 3: Portfolio Choice (Analytical)</h2>
 <p>Initial wealth <span class="math inline">\(y_0 = 100\)</span>.<br>
 Risk-free rate <span class="math inline">\(r_f = 5\%\)</span>.<br>
-Risky asset return <span class="math inline">\(\tilde{r}\)</span> takes: - <span class="math inline">\(r_G = 20\%\)</span> with probability 0.5<br>
-- <span class="math inline">\(r_B = -10\%\)</span> with probability 0.5</p>
+Risky asset return <span class="math inline">\(\tilde{r}\)</span> takes:</p>
+<ul>
+<li><span class="math inline">\(r_G = 20\%\)</span> with probability 0.5<br>
+</li>
+<li><span class="math inline">\(r_B = -10\%\)</span> with probability 0.5</li>
+</ul>
 <p>Utility: <span class="math inline">\(u(y) = \ln(y)\)</span>.</p>
 <p><strong>Question:</strong><br>
 Find the optimal risky investment <span class="math inline">\(w^*\)</span>.</p>
@@ -524,29 +526,44 @@ U'(w) = 0.5\frac{0.15}{105 + 0.15w} - 0.5\frac{0.15}{105 - 0.15w} = 0
 </section>
 <section class="slide level0">
 
-</section>
-<section class="slide level0">
-
 <h2>Exercise 4: Portfolio Choice (Approximation)</h2>
 <p>Same setup as before, but now <span class="math inline">\(\mathbb{E}[\tilde{r}] = 0.10\)</span>, <span class="math inline">\(\sigma = 0.20\)</span>, <span class="math inline">\(r_f = 0.05\)</span>, and <span class="math inline">\(u(y)=\ln(y)\)</span>.</p>
 <p><strong>Question:</strong><br>
-Approximate the optimal risky share <span class="math inline">\(w^*\)</span> using the mean–variance approximation.</p>
+Approximate the optimal risky share <span class="math inline">\(w^*\)</span> using a mean–variance approximation.</p>
 </section>
 <section class="slide level0">
 
 <p><strong>Solution</strong></p>
-<p>For small risk,</p>
+<ul>
+<li>Approximate u(y) around <span class="math inline">\(\mathbb{E}[\tilde{y}_1]\)</span>:</li>
+</ul>
 <p><span class="math display">\[
-w^* \approx \frac{\mathbb{E}[\tilde{r}] - r_f}{R_R(y_0)\sigma^2}
+u(y) \approx u(\mathbb{E}[\tilde{y}_1]) + u'(\mathbb{E}[\tilde{y}_1])(y - \mathbb{E}[\tilde{y}_1]) + \frac{1}{2}u''(\mathbb{E}[\tilde{y}_1])(y - \mathbb{E}[\tilde{y}_1])^2
+\]</span> - Expected utility: <span class="math display">\[
+\mathbb{E}[u(\tilde{y}_1)] \approx u(\mathbb{E}[\tilde{y}_1]) + \frac{1}{2}u''(\mathbb{E}[\tilde{y}_1])\mathrm{Var}[\tilde{y}_1]
 \]</span></p>
-<p>For <span class="math inline">\(u(y)=\ln(y)\)</span>, <span class="math inline">\(R_R(y)=1\)</span>. Thus,</p>
-<p><span class="math display">\[
-w^* = \frac{0.10 - 0.05}{(0.20)^2} = \frac{0.05}{0.04} = 1.25
-\]</span></p>
-<p>→ The investor invests <strong>125%</strong> of wealth in the risky asset (i.e.&nbsp;leveraged position).</p>
+<ul>
+<li>Final wealth: <span class="math display">\[
+\tilde{y}_1 = 100(1.05) + w(\tilde{r} - 0.05)
+\]</span></li>
+</ul>
 </section>
 <section class="slide level0">
 
+<ul>
+<li><p>Mean and variance: <span class="math display">\[
+\mathbb{E}[\tilde{y}_1] = 105 + 0.05w, \quad \mathrm{Var}[\tilde{y}_1] = w^2 \sigma^2
+\]</span></p></li>
+<li><p>Objective function: <span class="math display">\[
+\max_w U(w) \approx \max_w \ln(105 + 0.05w) - \frac{1}{2}\frac{1}{(105 + 0.05w)^2} w^2 \sigma^2
+\]</span></p></li>
+<li><p>First-order condition: <span class="math display">\[
+U'(w) = \frac{0.05}{105 + 0.05w} - \frac{w \sigma^2}{(105 + 0.05w)^2} = 0
+\]</span></p></li>
+<li><p>Solution: <span class="math display">\[
+\Rightarrow w^* \approx \frac{0.05(105 + 0.05w^*)}{\sigma^2} \approx \frac{0.05 \times 105}{0.20^2} = 131.25
+\]</span></p></li>
+</ul>
 </section>
 <section class="slide level0">
 

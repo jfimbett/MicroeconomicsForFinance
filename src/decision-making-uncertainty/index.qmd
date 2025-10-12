@@ -58,6 +58,7 @@ Examples include:
 ## Preferences over Lotteries
 
 We want to define a **relation of order** (i.e, a preference) over the set of risky payments (lotteries). Denote $\tilde{a}$ and $\tilde{b}$ two risky payments (lotteries).
+
 - $\tilde{a}$ is **preferred to** $\tilde{b}$, denoted $\tilde{a} \succ \tilde{b}$, if the agent prefers $\tilde{a}$ to $\tilde{b}$.
 - $\tilde{a}$ is **indifferent to** $\tilde{b}$, denoted $\tilde{a} \sim \tilde{b}$, if the agent is indifferent between $\tilde{a}$ and $\tilde{b}$.
 - $\tilde{a}$ is **not preferred to** $\tilde{b}$, denoted $\tilde{a} \preceq \tilde{b}$, if the agent does not prefer $\tilde{a}$ to $\tilde{b}$.
@@ -317,6 +318,7 @@ w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
 $$
 w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f
 $$
+$$
 w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f
 $$
 
@@ -395,8 +397,6 @@ $$
 
 Expected value = €250 → Risk premium = €25.
 
----
-
 ------------------------------------------------------------------------
 
 ## Exercise 2: Certainty Equivalent (with CRRA Utility)
@@ -418,12 +418,10 @@ $$
 $$
 
 $$
-CE: \frac{CE^{-1}}{-1} = -0.0095 \Rightarrow CE^{-1} = 0.0095 \Rightarrow CE = 105.26
+u(CE) = -0.0095 \Rightarrow \frac{CE^{-1}}{-1} = -0.0095 \Rightarrow CE = 105.26
 $$
 
 Expected value = €128 → Risk premium = €22.74.
-
----
 
 ------------------------------------------------------------------------
 
@@ -432,6 +430,7 @@ Expected value = €128 → Risk premium = €22.74.
 Initial wealth $y_0 = 100$.  
 Risk-free rate $r_f = 5\%$.  
 Risky asset return $\tilde{r}$ takes:
+
 - $r_G = 20\%$ with probability 0.5  
 - $r_B = -10\%$ with probability 0.5  
 
@@ -468,8 +467,6 @@ $$
 
 → With symmetric returns around the risk-free, optimal exposure = 0.
 
----
-
 ------------------------------------------------------------------------
 
 ## Exercise 4: Portfolio Choice (Approximation)
@@ -477,33 +474,56 @@ $$
 Same setup as before, but now $\mathbb{E}[\tilde{r}] = 0.10$, $\sigma = 0.20$, $r_f = 0.05$, and $u(y)=\ln(y)$.
 
 **Question:**  
-Approximate the optimal risky share $w^*$ using the mean–variance approximation.
+Approximate the optimal risky share $w^*$ using a mean–variance approximation.
 
 ---
 
 **Solution**
 
-For small risk,
+- Approximate $u(y)$ around $\mathbb{E}[\tilde{y}_1]$:
 
 $$
-w^* \approx \frac{\mathbb{E}[\tilde{r}] - r_f}{R_R(y_0)\sigma^2}
+u(y) \approx u(\mathbb{E}[\tilde{y}_1]) + u'(\mathbb{E}[\tilde{y}_1])(y - \mathbb{E}[\tilde{y}_1]) + \frac{1}{2}u''(\mathbb{E}[\tilde{y}_1])(y - \mathbb{E}[\tilde{y}_1])^2
+$$
+- Expected utility:
+$$
+\mathbb{E}[u(\tilde{y}_1)] \approx u(\mathbb{E}[\tilde{y}_1]) + \frac{1}{2}u''(\mathbb{E}[\tilde{y}_1])\mathrm{Var}[\tilde{y}_1]
 $$
 
-For $u(y)=\ln(y)$, $R_R(y)=1$. Thus,
-
+- Final wealth:
 $$
-w^* = \frac{0.10 - 0.05}{(0.20)^2} = \frac{0.05}{0.04} = 1.25
+\tilde{y}_1 = 100(1.05) + w(\tilde{r} - 0.05)
 $$
-
-→ The investor invests **125%** of wealth in the risky asset (i.e. leveraged position).
 
 ---
+
+- Mean and variance:
+$$
+\mathbb{E}[\tilde{y}_1] = 105 + 0.05w, \quad \mathrm{Var}[\tilde{y}_1] = w^2 \sigma^2
+$$
+
+- Objective function:
+$$
+\max_w U(w) \approx \max_w \ln(105 + 0.05w) - \frac{1}{2}\frac{1}{(105 + 0.05w)^2} w^2 \sigma^2
+$$
+
+- First-order condition:
+$$
+U'(w) = \frac{0.05}{105 + 0.05w} - \frac{w \sigma^2}{(105 + 0.05w)^2} = 0
+$$
+
+- Solution:
+$$
+\Rightarrow w^* \approx \frac{0.05(105 + 0.05w^*)}{\sigma^2} \approx \frac{0.05 \times 105}{0.20^2} = 131.25
+$$
+
 
 ------------------------------------------------------------------------
 
 ## Exercise 5 (Advanced): Optimal Insurance under Risk Aversion
 
 An individual has initial wealth $y=100$ and faces a loss $\tilde{L}$:
+
 - €0 with probability 0.9  
 - €40 with probability 0.1  
 
