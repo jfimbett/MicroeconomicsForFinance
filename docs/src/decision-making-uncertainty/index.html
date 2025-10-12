@@ -145,8 +145,10 @@ Juan F. Imbet
 </div>
 
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Choosing Between Uncertain Payments</h2>
+<p>Probability of two states of the world: Good (G) and Bad (B). E.g. 0.5 each. What do you prefer?</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -173,19 +175,63 @@ Juan F. Imbet
 </tr>
 </tbody>
 </table>
+</section>
+<section class="slide level0">
+
+<h2>Choosing Between Uncertain Payments</h2>
 <p>Asset 3 payments <strong>state by state dominate</strong> those of assets 1 and 2.</p>
 <p>⇒ Obviously, 3 is preferred</p>
 <p>Asset 1 vs.&nbsp;Asset 2 is not obvious: more in state B but less in state G.</p>
 <p><strong>Similar problem.</strong> Which basket the consumer does prefer: 2 apples and 3 bananas or 3 apples and 2 bananas?</p>
-<p>⇒ We must quantify the <strong>agents’ preferences</strong> with a <strong>utility function</strong>.</p>
+<p>⇒ We must quantify the <strong>agents’ preferences</strong> ideally with a <strong>utility function</strong>.</p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
+<h2>Lotteries</h2>
+<p>A <strong>risky payment</strong> (or lottery) is a random variable <span class="math inline">\(\tilde{a}\)</span> with random realizations in each state of nature <span class="math inline">\(a_1, a_2, \ldots, a_N\)</span> with probabilities <span class="math inline">\(\pi_1, \pi_2, \ldots, \pi_N\)</span>, such that <span class="math inline">\(\sum_{n=1}^N \pi_n = 1\)</span>.</p>
+<p>Examples include:</p>
+<ul>
+<li>Cash flows from an investment project depending on the state of the economy.</li>
+<li>Returns from a financial asset depending on market conditions.</li>
+<li>Insurance payoffs depending on whether an accident occurs or not.</li>
+<li>Derivatives payoffs depending on the underlying asset price at maturity.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Preferences over Lotteries</h2>
+<p>We want to define a <strong>relation of order</strong> (i.e, a preference) over the set of risky payments (lotteries). Denote <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{b}\)</span> two risky payments (lotteries). - <span class="math inline">\(\tilde{a}\)</span> is <strong>preferred to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \succ \tilde{b}\)</span>, if the agent prefers <span class="math inline">\(\tilde{a}\)</span> to <span class="math inline">\(\tilde{b}\)</span>. - <span class="math inline">\(\tilde{a}\)</span> is <strong>indifferent to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \sim \tilde{b}\)</span>, if the agent is indifferent between <span class="math inline">\(\tilde{a}\)</span> and <span class="math inline">\(\tilde{b}\)</span>. - <span class="math inline">\(\tilde{a}\)</span> is <strong>not preferred to</strong> <span class="math inline">\(\tilde{b}\)</span>, denoted <span class="math inline">\(\tilde{a} \preceq \tilde{b}\)</span>, if the agent does not prefer <span class="math inline">\(\tilde{a}\)</span> to <span class="math inline">\(\tilde{b}\)</span>.</p>
+</section>
+<section class="slide level0">
+
+<h2>Rational Preferences</h2>
+<p>We say that the relation of order <span class="math inline">\(\succeq\)</span> is <strong>rational</strong> if it satisfies:</p>
+<ol type="1">
+<li><strong>Completeness</strong>: For any lotteries <span class="math inline">\(\tilde{a}, \tilde{b}\)</span>, either <span class="math inline">\(\tilde{a} \succeq \tilde{b}\)</span> or <span class="math inline">\(\tilde{b} \succeq \tilde{a}\)</span> (or both).</li>
+<li><strong>Transitivity</strong>: For any lotteries <span class="math inline">\(\tilde{a}, \tilde{b}, \tilde{c}\)</span>, if <span class="math inline">\(\tilde{a} \succeq \tilde{b}\)</span> and <span class="math inline">\(\tilde{b} \succeq \tilde{c}\)</span>, then <span class="math inline">\(\tilde{a} \succeq \tilde{c}\)</span>.</li>
+<li><strong>Continuity</strong>: For any lotteries <span class="math inline">\(\tilde{a}, \tilde{b}, \tilde{c}\)</span>, if <span class="math inline">\(\tilde{a} \succeq \tilde{b} \succeq \tilde{c}\)</span>, then there exists <span class="math inline">\(\alpha \in [0,1]\)</span> such that <span class="math inline">\(\alpha \tilde{a} + (1-\alpha) \tilde{c} \sim \tilde{b}\)</span>.</li>
+<li><strong>Independence</strong>: For any lotteries <span class="math inline">\(\tilde{a}, \tilde{b}, \tilde{c}\)</span> and any <span class="math inline">\(\alpha \in (0,1)\)</span>, if <span class="math inline">\(\tilde{a} \succeq \tilde{b}\)</span>, then <span class="math inline">\(\alpha \tilde{a} + (1-\alpha) \tilde{c} \succeq \alpha \tilde{b} + (1-\alpha) \tilde{c}\)</span>.</li>
+</ol>
+</section>
+<section class="slide level0">
+
+<h2>Utility Function</h2>
+<ul>
+<li><p>If the relation of order <span class="math inline">\(\succeq\)</span> is rational, then there exists a <strong>utility function</strong> <span class="math inline">\(U\)</span> such that, for any lotteries <span class="math inline">\(\tilde{a}, \tilde{b}\)</span>,</p>
+<p><span class="math display">\[\tilde{a} \succeq \tilde{b} \Leftrightarrow U(\tilde{a}) \geq U(\tilde{b})\]</span></p></li>
+<li><p>The utility function is not unique. If <span class="math inline">\(V\)</span> is another utility function representing the same preferences, then there exists an increasing transformation <span class="math inline">\(f\)</span> such that</p>
+<p><span class="math display">\[V(\tilde{a}) = f(U(\tilde{a}))\]</span></p></li>
+</ul>
+</section>
+<section class="slide level0">
+
 <h2>Properties of the Utility Function</h2>
-<p>We want to determine a utility function, U, “reasonable”, which generates a <strong>relation of order</strong> (i.e, a preference) over the set of risky payments (lotteries).</p>
+<p>We want to determine a utility function, <span class="math inline">\(U\)</span>, “reasonable”, which generates a <strong>relation of order</strong> (i.e, a preference) over the set of risky payments (lotteries).</p>
 <p>Back to our example, the utility function should depend positively on the payment realization in each state.</p>
 <p>If <span class="math inline">\(\tilde{a}\)</span> is a risky payment with realizations <span class="math inline">\(a^{G}\)</span>, <span class="math inline">\(a^{B}\)</span>, then <span class="math display">\[U(\tilde{a}) = U(a^{G}, a^{B}) \quad \text{with} \quad \frac{\partial U}{\partial a^{G}} &gt; 0, \quad \frac{\partial U}{\partial a^{B}} &gt; 0\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Properties of the Utility Function</h2>
 <p>How to take into account the probabilities of each state of the world?</p>
 <table class="caption-top">
@@ -216,7 +262,8 @@ Juan F. Imbet
 <p><span class="math display">\[U(\tilde{a}) = \pi^G u(a^G) + \pi^B u(a^B) = \mathbb{E}[u(\tilde{a})]\]</span></p></li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Properties of the Utility Function</h2>
 <table class="caption-top">
 <thead>
@@ -245,116 +292,145 @@ Juan F. Imbet
 <li><p>→ If we still consider the “candidate” <span class="math display">\[\mathbb{E}[u(\tilde{a})] = \pi^G u(a^G) + \pi^B u(a^B),\]</span> Which condition on u?</p></li>
 </ul>
 </section>
-<section class="slide level2">
-<h2>Concavity</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed data-src="../../assets/figures/EdgeworthBox_1.pdf" style="width:85.0%"></p>
-<figcaption>Concavity Illustration</figcaption>
-</figure>
-</div>
-</section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Expected Utility</h2>
 <p>John <strong>von Neumann</strong> and Oskar <strong>Morgenstern</strong> have determined conditions under which agents’ preferences for risky payments (lotteries) can be described by an <strong>expected utility function</strong> such that</p>
 <p><span class="math display">\[\mathbb{E}[u(\tilde{a})] = \sum_{n=1}^N \pi_n u(a_n)\]</span></p>
 <p>with <span class="math inline">\(u\)</span> <strong>concave and increasing</strong>, <span class="math inline">\(u' &gt; 0\)</span> and <span class="math inline">\(u'' &lt; 0\)</span>.</p>
 <p>More generally, if a risky payment <span class="math inline">\(\tilde{a}\)</span> has a distribution <span class="math inline">\(d\Phi\)</span>,</p>
 <p><span class="math display">\[\mathbb{E}[u(\tilde{a})] = \int_{\mathbb{R}} u(a) \, d\Phi(a)\]</span></p>
-<p><strong>Bibliography.</strong> The axiomatic approach behind the theory of the expected utility function are developed by von Neumann and Morgenstern in their book <em>Theory of Games and Economic Behavior</em> (1947).</p>
+<ul>
+<li>The function <span class="math inline">\(u\)</span> is called the <strong>von Neumann-Morgenstern utility function</strong>. It is unique up to an increasing affine transformation. E.g. <span class="math inline">\(u\)</span> and <span class="math inline">\(v = \alpha u + \beta\)</span>, with <span class="math inline">\(\alpha &gt; 0\)</span> and <span class="math inline">\(\beta \in \mathbb{R}\)</span>, represent the same preferences.</li>
+</ul>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion</h2>
 <p>Under these conditions, agents are risk averse. In particular, with <strong>Jensen inequality</strong> for a concave function, we have</p>
 <p><span class="math display">\[\mathbb{E}[u(\tilde{a})] \leq u(\mathbb{E}[\tilde{a}]).\]</span></p>
 <p>Agents would prefer to obtain the mean of payment with certainty rather than the risky payment.</p>
 <p><strong>How to quantify risk aversion?</strong></p>
-<p>The level of concavity, measured by the second derivative, u’’, <strong>is not</strong> a good measure. Indeed, if v = α u + β, with α &gt; 1</p>
-<p>v generates the same relation of order among risky payments than u does. Yet v’’ &lt; u’’ &lt; 0.</p>
+<p>The level of concavity, measured by the second derivative, <span class="math inline">\(u''\)</span>, <strong>is not</strong> a good measure. Indeed, if <span class="math inline">\(v = \alpha u + \beta\)</span>, with <span class="math inline">\(\alpha &gt; 1\)</span></p>
+<p><span class="math inline">\(v\)</span> generates the same relation of order among risky payments than u does. Yet <span class="math inline">\(v'' &lt; u'' &lt; 0\)</span>.</p>
 <p>⇒ A measure of risk aversion must be invariant with any affine transformation of the utility function.</p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Measuring Risk Aversion</h2>
 <p>There are two classic measures of risk aversion</p>
 <p><span class="math display">\[R_A(y) = -\frac{u''(y)}{u'(y)} = \text{coefficient of absolute risk aversion}\]</span></p>
 <p>and</p>
 <p><span class="math display">\[R_R(y) = -y \frac{u''(y)}{u'(y)} = \text{coefficient of relative risk aversion}\]</span></p>
-<p>where y is the payment (the income) of the agent.</p>
-<p>Both are positive: R_A(y) &gt; 0, R_R(y) &gt; 0.</p>
+<p>where <span class="math inline">\(y\)</span> is the payment (the income) of the agent.</p>
+<p>Both are positive: <span class="math inline">\(R_A(y) &gt; 0, R_R(y) &gt; 0\)</span>.</p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Interpreting Risk Aversion</h2>
 <p>Consider a risk averse agent who receives a risky payment <span class="math inline">\(y + \tilde{\epsilon}\)</span>, with mean <span class="math inline">\(y\)</span> and variance <span class="math inline">\(\mathrm{Var}[\tilde{\epsilon}] = \sigma^{2}\)</span>.</p>
-<p>The <strong>certainty equivalent</strong> of this payment is y - Δ such that</p>
+<p>The <strong>certainty equivalent</strong> of this payment is <span class="math inline">\(y - \Delta\)</span> such that</p>
 <p><span class="math display">\[u(y - \Delta) = \mathbb{E}[u(y + \tilde{\epsilon})]\]</span></p>
-<p>Δ is a <strong>risk premium</strong>: How much the agent is willing to reduce his mean payment to get rid of uncertainty.</p>
+<p><span class="math inline">\(\Delta\)</span> is a <strong>risk premium</strong>: How much the agent is willing to reduce his mean payment to get rid of uncertainty.</p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Interpreting Risk Aversion</h2>
 <p>Assuming that <span class="math inline">\(\Delta\)</span> and <span class="math inline">\(\epsilon\)</span> are small, <span class="math inline">\(\Delta \ll 1\)</span> and <span class="math inline">\(\sigma^{2} \ll 1\)</span>, give an approximation of <span class="math inline">\(\Delta\)</span>.</p>
 <p><span class="math display">\[u(y - \Delta) \approx u(y) - \Delta u'(y)\]</span> <span class="math display">\[\mathbb{E}[u(y + \tilde{\epsilon})] \approx \mathbb{E}[u(y)] + \mathbb{E}[\tilde{\epsilon} u'(y)] + \frac{1}{2}\mathbb{E}[\tilde{\epsilon}^2 u''(y)] = u(y) + \frac{\sigma^2}{2} u''(y)\]</span></p>
 <p><span class="math display">\[\Rightarrow \Delta = -\frac{u''(y)}{u'(y)} \cdot \frac{\sigma^2}{2} = R_A(y) \cdot \frac{\sigma^2}{2}\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Interpreting Risk Aversion</h2>
-<p>When the risky payment is <span class="math inline">\(y + y \tilde{\epsilon}\)</span>, define <span class="math inline">\(\delta\)</span> as <span class="math display">\[u(y - \delta y) = \mathbb{E}[u(y + y \tilde{\epsilon})].\]</span> Similarly, one can give a first order approximation of δ under the assumption δ ≪ 1 and σ² ≪ 1.</p>
+<p>When the risky payment is <span class="math inline">\(y + y \tilde{\epsilon}\)</span>, define <span class="math inline">\(\delta\)</span> as <span class="math display">\[u(y - \delta y) = \mathbb{E}[u(y + y \tilde{\epsilon})].\]</span> Similarly, one can give a first order approximation of <span class="math inline">\(\delta\)</span> under the assumption <span class="math inline">\(\delta &lt;&lt; 1\)</span> and <span class="math inline">\(\sigma^{2} &lt;&lt; 1\)</span>.</p>
 <p><span class="math display">\[u(y - \delta y) \approx u(y) - \delta y u'(y)\]</span> <span class="math display">\[\mathbb{E}[u(y + y \tilde{\epsilon})] \approx u(y) + \frac{y^2 \sigma^2}{2} u''(y)\]</span></p>
 <p><span class="math display">\[\Rightarrow \delta = -\frac{y u''(y)}{u'(y)} \cdot \frac{\sigma^2}{2} = R_R(y) \cdot \frac{\sigma^2}{2}\]</span></p>
-<p>Whether uncertainty is absolute or relative (w.r.t y), the certainty equivalent depends on the coefficient of absolute or relative risk aversion.</p>
+<p>Whether uncertainty is absolute or relative (w.r.t <span class="math inline">\(y\)</span>), the certainty equivalent depends on the coefficient of absolute or relative risk aversion.</p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Usual Utility Functions</h2>
 <ul>
 <li><p>CARA (“Constant Absolute Risk Aversion”)</p>
-<p><span class="math display">\[u(y) = -\frac{1}{\nu} e^{-\nu y}\]</span></p></li>
+<p><span class="math display">\[
+u(y) = -\frac{1}{\nu} e^{-\nu y}
+\]</span></p></li>
 <li><p>CRRA (“Constant Relative Risk Aversion”)</p>
-<p><span class="math display">\[u(y) = \frac{y^{1-\gamma}}{1-\gamma}\]</span></p>
-<p>and, in addition, <span class="math display">\[u(y) = \ln(y)\]</span> for γ = 1.</p></li>
-<li><p>What are R_A(y) in the CARA case, and R_R(y) in the CRRA case?</p></li>
+<p><span class="math display">\[
+u(y) = \frac{y^{1-\gamma}}{1-\gamma}
+\]</span></p>
+<p>and, in addition, <span class="math display">\[u(y) = \ln(y)\]</span> for <span class="math inline">\(\gamma = 1\)</span>.</p></li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Neutrality</h2>
-<p>When u is affine, the agent is risk neutral:</p>
-<p><span class="math display">\[u(y) = \alpha y + \beta\]</span></p>
+<p>When <span class="math inline">\(u\)</span> is affine, the agent is risk neutral:</p>
+<p><span class="math display">\[
+u(y) = \alpha y + \beta
+\]</span></p>
 <p>He only cares about his expected revenue.</p>
 <p>Specifically,</p>
-<p><span class="math display">\[R_A(y) = R_R(y) = 0 \quad \forall y\]</span></p>
+<p><span class="math display">\[
+R_A(y) = R_R(y) = 0 \quad \forall y
+\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion and Portfolio Choice</h2>
 <p>Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at t=0 and, at t=1, receives the pay-off of its investment and “consume” it (get the utility out of the payment).</p>
 <p>The agent can invest his initial wealth <span class="math inline">\(y_0\)</span> in the following way:</p>
 <ul>
 <li>invests an amount <span class="math inline">\(w\)</span> in a risky asset (the S&amp;P 500 for instance) with random net return <span class="math inline">\(\tilde{r}\)</span>, and the rest in the risk free asset with (certain) net return <span class="math inline">\(r_f\)</span>.</li>
 </ul>
-<p>His final wealth <span class="math inline">\(\tilde{y}_1\)</span> at <span class="math inline">\(t=1\)</span>: <span class="math display">\[\tilde{y}_1 = (y_0 - w) \times (1 + r_f) + w \times (1 + \tilde{r})\]</span> <span class="math display">\[= y_0 \times (1 + r_f) + w \times (\tilde{r} - r_f)\]</span></p>
+<p>His final wealth <span class="math inline">\(\tilde{y}_1\)</span> at <span class="math inline">\(t=1\)</span>: <span class="math display">\[
+\tilde{y}_1 = (y_0 - w) \times (1 + r_f) + w \times (1 + \tilde{r})= y_0 \times (1 + r_f) + w \times (\tilde{r} - r_f)
+\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion and Portfolio Choice</h2>
 <p>Objective function of the agent:</p>
-<p><span class="math display">\[\max_w U(w) = \max_w \mathbb{E}[u(\tilde{y}_1)] = \max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))]\]</span></p>
+<p><span class="math display">\[
+\max_w U(w) = \max_w \mathbb{E}[u(\tilde{y}_1)] = \max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))]
+\]</span></p>
 <p>Unconstrained optimization of a concave function,</p>
-<p><span class="math display">\[u'' &lt; 0 \Rightarrow U''(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] &lt; 0\]</span></p>
-<p>The optimal amount w* is given by the first order condition:</p>
-<p><span class="math display">\[U'(w) = 0\]</span></p>
+<p><span class="math display">\[
+u'' &lt; 0 \Rightarrow U''(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] &lt; 0
+\]</span></p>
+<p>The optimal amount <span class="math inline">\(w*\)</span> is given by the first order condition:</p>
+<p><span class="math display">\[
+U'(w) = 0
+\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion and Portfolio Choice</h2>
 <p>First order condition:</p>
-<p><span class="math display">\[\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0\]</span></p>
+<p><span class="math display">\[
+\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0
+\]</span></p>
 <p><em>Remark:</em> Unconstrained optimization implies that short-selling (<span class="math inline">\(w &lt; 0\)</span>) or leverage (<span class="math inline">\(w &gt; y_0\)</span>) are possible.</p>
-<p><strong>Proposition 1.</strong> When u is increasing and concave, u’ &gt; 0, u’’ &lt; 0, then, <span class="math display">\[w^* &gt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &gt; r_f\]</span> <span class="math display">\[w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f\]</span> <span class="math display">\[w^* &lt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &lt; r_f\]</span></p>
+<p><strong>Proposition 1.</strong> When <span class="math inline">\(u\)</span> is increasing and concave, <span class="math inline">\(u' &gt; 0, u'' &lt; 0\)</span>, then, <span class="math display">\[
+w^* &gt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &gt; r_f
+\]</span> <span class="math display">\[
+w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
+\]</span> w^* &lt; 0 [] &lt; r_f <span class="math display">\[
+w^* &lt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &lt; r_f
+\]</span></p>
 <p><strong>Implication.</strong> Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (at least a little).</p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion and Portfolio Choice</h2>
-<p><strong>Proof.</strong> Define F(w) as <span class="math display">\[F(w) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w (\tilde{r} - r_f))]\]</span> <span class="math display">\[w^* \text{ is such that } F(w^*) = 0\]</span></p>
-<p>Derivative of F:</p>
+<p><strong>Proof.</strong> Define <span class="math inline">\(F(w)\)</span> as <span class="math display">\[F(w) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w (\tilde{r} - r_f))]\]</span> <span class="math display">\[w^* \text{ is such that } F(w^*) = 0\]</span></p>
+<p>Derivative of <span class="math inline">\(F\)</span>:</p>
 <p><span class="math display">\[F'(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] &lt; 0\]</span></p>
-<p>Value of F in 0: <span class="math display">\[F(0) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f))] = u'(y_0 (1 + r_f)) \times (\mathbb{E}[\tilde{r}] - r_f)\]</span></p>
+<p>Value of <span class="math inline">\(F\)</span> in <span class="math inline">\(0\)</span>: <span class="math display">\[F(0) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f))] = u'(y_0 (1 + r_f)) \times (\mathbb{E}[\tilde{r}] - r_f)\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion and Portfolio Choice</h2>
 <p>If the investor is risk neutral:</p>
 <p><span class="math display">\[u(y) = \alpha y + \beta\]</span></p>
@@ -362,31 +438,143 @@ Juan F. Imbet
 <p>Then,</p>
 <p><span class="math display">\[\mathbb{E}[\tilde{r}] &gt; r_f \Rightarrow w^* = +\infty\]</span> <span class="math display">\[\mathbb{E}[\tilde{r}] &lt; r_f \Rightarrow w^* = -\infty\]</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Risk Aversion and Portfolio Choice</h2>
 <p>Same problem, different formulation: The agent buys z units of risky assets, at price p, with pay-off at t=1 equal to <span class="math inline">\(\tilde{a}\)</span>.</p>
 <p><span class="math display">\[\tilde{y}_1 = (y_0 - p \cdot z) \times (1 + r_f) + z \times \tilde{a}\]</span> <span class="math display">\[= y_0 \times (1 + r_f) + z \times (\tilde{a} - (1 + r_f)p)\]</span></p>
 <p>First order condition: <span class="math display">\[\mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f) + z^* (\tilde{a} - (1 + r_f)p))] = 0\]</span> <span class="math display">\[z^* &gt; 0 \Leftrightarrow \frac{\mathbb{E}[\tilde{a}]}{1 + r_f} &gt; p\]</span></p>
 <p>Consistent with Proposition 1 because: <span class="math display">\[1 + \mathbb{E}[\tilde{r}] = \frac{\mathbb{E}[\tilde{a}]}{p}\]</span></p>
 </section>
-<section class="slide level2">
-<h2>Risk Aversion, Portfolio and Initial Wealth</h2>
-<p>Let <span class="math inline">\(w^*(y_0)\)</span> the solution of</p>
-<p><span class="math display">\[\max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))], \quad \text{when } \mathbb{E}[\tilde{r}] &gt; r_f\]</span> which implies <span class="math inline">\(w^* &gt; 0\)</span>.</p>
-<p><strong>Proposition 2.</strong> If u is such that <span class="math display">\[R_A'(y) &lt; 0 \Rightarrow \frac{dw^*}{dy_0} &gt; 0\]</span> <span class="math display">\[R_A'(y) = 0 \Rightarrow \frac{dw^*}{dy_0} = 0\]</span> <span class="math display">\[R_A'(y) &gt; 0 \Rightarrow \frac{dw^*}{dy_0} &lt; 0\]</span></p>
+<section class="slide level0">
+
+<h2>Exercise 1: Certainty Equivalent (Basic)</h2>
+<p>An investor has a utility function <span class="math inline">\(u(y) = \sqrt{y}\)</span> and faces a lottery: - with probability 0.5, she receives €100; - with probability 0.5, she receives €400.</p>
+<p><strong>Question:</strong><br>
+Compute her <em>expected utility</em> and <em>certainty equivalent (CE)</em>.</p>
 </section>
-<section class="slide level2">
-<h2>Risk Aversion, Portfolio and Initial Wealth</h2>
-<p><strong>Proof.</strong> Assume that <span class="math inline">\(R_A'(y) &lt; 0\)</span>. By taking the derivative of the first order condition with respect to <span class="math inline">\(y_0\)</span> we get:</p>
-<p><span class="math display">\[\mathbb{E}[(\tilde{r} - r_f)(1 + r_f + \frac{d w^*}{d y_0} (\tilde{r} - r_f)) u''(\tilde{y}_1)] = 0\]</span></p>
-<p><span class="math display">\[\frac{d w^*}{d y_0} \; \mathbb{E}[(\tilde{r} - r_f)^2 u''(\tilde{y}_1)] = (1 + r_f) \; \mathbb{E}[(\tilde{r} - r_f) (-u''(\tilde{y}_1))]\]</span> <span class="math display">\[= (1 + r_f) \; \mathbb{E}[(\tilde{r} - r_f) u'(\tilde{y}_1) R_A(\tilde{y}_1)]\]</span></p>
-<p>Since <span class="math display">\[\mathbb{E}[(\tilde{r} - r_f)^2 u''(\tilde{y}_1)] &lt; 0\]</span>, and the right side is positive when <span class="math inline">\(R_A'(y) &lt; 0\)</span>, we have <span class="math display">\[\frac{d w^*}{d y_0} &gt; 0\]</span>.</p>
+<section class="slide level0">
+
+<p><strong>Solution</strong></p>
+<p><span class="math display">\[
+\mathbb{E}[u(\tilde{y})] = 0.5\sqrt{100} + 0.5\sqrt{400} = 0.5(10 + 20) = 15
+\]</span></p>
+<p>Certainty equivalent is found by <span class="math inline">\(u(CE) = 15\)</span>:</p>
+<p><span class="math display">\[
+\sqrt{CE} = 15 \Rightarrow CE = 225
+\]</span></p>
+<p>Expected value = €250 → Risk premium = €25.</p>
 </section>
-<section class="slide level2">
-<h2>Risk Aversion, Portfolio and Initial Wealth</h2>
-<p>Let <span class="math inline">\(\eta(y_0)\)</span> the elasticity of <span class="math inline">\(w^*(y_0)\)</span>:</p>
-<p><span class="math display">\[\eta(y_0) = \frac{d \ln\left(w^*(y_0)\right)}{d \ln(y_0)}\]</span></p>
-<p><strong>Proposition 3.</strong> If u is such that <span class="math display">\[R_R'(y) &lt; 0 \Rightarrow \eta(y_0) &gt; 1\]</span> <span class="math display">\[R_R'(y) = 0 \Rightarrow \eta(y_0) = 1\]</span> <span class="math display">\[R_R'(y) &gt; 0 \Rightarrow \eta(y_0) &lt; 1\]</span></p>
+<section class="slide level0">
+
+</section>
+<section class="slide level0">
+
+<h2>Exercise 2: Certainty Equivalent (with CRRA Utility)</h2>
+<p>Let <span class="math inline">\(u(y) = \frac{y^{1-\gamma}}{1-\gamma}\)</span> with <span class="math inline">\(\gamma = 2\)</span> and a lottery paying: - €80 with probability 0.6<br>
+- €200 with probability 0.4</p>
+<p><strong>Question:</strong><br>
+Compute the certainty equivalent and risk premium.</p>
+</section>
+<section class="slide level0">
+
+<p><strong>Solution</strong></p>
+<p><span class="math display">\[
+\mathbb{E}[u(\tilde{y})] = 0.6\frac{80^{-1}}{-1} + 0.4\frac{200^{-1}}{-1}
+= 0.6(-\tfrac{1}{80}) + 0.4(-\tfrac{1}{200}) = -0.0095
+\]</span></p>
+<p><span class="math display">\[
+CE: \frac{CE^{-1}}{-1} = -0.0095 \Rightarrow CE^{-1} = 0.0095 \Rightarrow CE = 105.26
+\]</span></p>
+<p>Expected value = €128 → Risk premium = €22.74.</p>
+</section>
+<section class="slide level0">
+
+</section>
+<section class="slide level0">
+
+<h2>Exercise 3: Portfolio Choice (Analytical)</h2>
+<p>Initial wealth <span class="math inline">\(y_0 = 100\)</span>.<br>
+Risk-free rate <span class="math inline">\(r_f = 5\%\)</span>.<br>
+Risky asset return <span class="math inline">\(\tilde{r}\)</span> takes: - <span class="math inline">\(r_G = 20\%\)</span> with probability 0.5<br>
+- <span class="math inline">\(r_B = -10\%\)</span> with probability 0.5</p>
+<p>Utility: <span class="math inline">\(u(y) = \ln(y)\)</span>.</p>
+<p><strong>Question:</strong><br>
+Find the optimal risky investment <span class="math inline">\(w^*\)</span>.</p>
+</section>
+<section class="slide level0">
+
+<p><strong>Solution</strong></p>
+<p>Final wealth:</p>
+<p><span class="math display">\[
+\tilde{y}_1 = 100(1.05) + w(\tilde{r} - 0.05)
+\]</span></p>
+<p>Expected utility:</p>
+<p><span class="math display">\[
+U(w) = 0.5\ln(105 + 0.15w) + 0.5\ln(105 - 0.15w)
+\]</span></p>
+<p>First-order condition:</p>
+<p><span class="math display">\[
+U'(w) = 0.5\frac{0.15}{105 + 0.15w} - 0.5\frac{0.15}{105 - 0.15w} = 0
+\]</span></p>
+<p><span class="math display">\[
+\Rightarrow 105 + 0.15w = 105 - 0.15w \Rightarrow w^* = 0
+\]</span></p>
+<p>→ With symmetric returns around the risk-free, optimal exposure = 0.</p>
+</section>
+<section class="slide level0">
+
+</section>
+<section class="slide level0">
+
+<h2>Exercise 4: Portfolio Choice (Approximation)</h2>
+<p>Same setup as before, but now <span class="math inline">\(\mathbb{E}[\tilde{r}] = 0.10\)</span>, <span class="math inline">\(\sigma = 0.20\)</span>, <span class="math inline">\(r_f = 0.05\)</span>, and <span class="math inline">\(u(y)=\ln(y)\)</span>.</p>
+<p><strong>Question:</strong><br>
+Approximate the optimal risky share <span class="math inline">\(w^*\)</span> using the mean–variance approximation.</p>
+</section>
+<section class="slide level0">
+
+<p><strong>Solution</strong></p>
+<p>For small risk,</p>
+<p><span class="math display">\[
+w^* \approx \frac{\mathbb{E}[\tilde{r}] - r_f}{R_R(y_0)\sigma^2}
+\]</span></p>
+<p>For <span class="math inline">\(u(y)=\ln(y)\)</span>, <span class="math inline">\(R_R(y)=1\)</span>. Thus,</p>
+<p><span class="math display">\[
+w^* = \frac{0.10 - 0.05}{(0.20)^2} = \frac{0.05}{0.04} = 1.25
+\]</span></p>
+<p>→ The investor invests <strong>125%</strong> of wealth in the risky asset (i.e.&nbsp;leveraged position).</p>
+</section>
+<section class="slide level0">
+
+</section>
+<section class="slide level0">
+
+<h2>Exercise 5 (Advanced): Optimal Insurance under Risk Aversion</h2>
+<p>An individual has initial wealth <span class="math inline">\(y=100\)</span> and faces a loss <span class="math inline">\(\tilde{L}\)</span>: - €0 with probability 0.9<br>
+- €40 with probability 0.1</p>
+<p>They can buy insurance coverage <span class="math inline">\(I\)</span> that fully compensates the loss if it occurs, at a <strong>premium</strong> <span class="math inline">\(\pi\)</span> per unit of coverage.<br>
+Utility: <span class="math inline">\(u(y) = \ln(y)\)</span>.</p>
+<p><strong>Questions:</strong> 1. Write expected utility as a function of <span class="math inline">\(I\)</span>.<br>
+2. For which premium <span class="math inline">\(\pi\)</span> is <em>full insurance</em> (<span class="math inline">\(I=40\)</span>) optimal?</p>
+</section>
+<section class="slide level0">
+
+<p><strong>Solution</strong></p>
+<p>Expected utility:</p>
+<p><span class="math display">\[
+U(I) = 0.9\ln(y - \pi I) + 0.1\ln(y - \pi I - L + I)
+\]</span></p>
+<p>Differentiate:</p>
+<p><span class="math display">\[
+U'(I) = 0.9\frac{-\pi}{y - \pi I} + 0.1\frac{-\pi + 1}{y - \pi I - L + I} = 0
+\]</span></p>
+<p>At full insurance <span class="math inline">\(I=L=40\)</span>:</p>
+<p><span class="math display">\[
+0.9\frac{-\pi}{y - \pi L} + 0.1\frac{-\pi + 1}{y - \pi L} = 0
+\Rightarrow -\pi(0.9 + 0.1) + 0.1 = 0 \Rightarrow \pi = 0.1
+\]</span></p>
+<p>→ The <strong>actuarially fair premium</strong> (<span class="math inline">\(\pi = \text{probability of loss}\)</span>) makes full insurance optimal.</p>
 
 
 </section>

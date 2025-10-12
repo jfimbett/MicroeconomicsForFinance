@@ -18,11 +18,17 @@ execute:
 
 ## Choosing Between Uncertain Payments
 
+Probability of two states of the world: Good (G) and Bad (B). E.g. 0.5 each. What do you prefer?
+
 |  | Payments, Good state | Payments, Bad state |
 |---|---|---|
 | Asset 1 | 1500 | 1000 |
 | Asset 2 | 2000 | 500 |
 | Asset 3 | 2000 | 1000 |
+
+---
+
+## Choosing Between Uncertain Payments
 
 Asset 3 payments **state by state dominate** those of assets 1 and 2.
 
@@ -32,7 +38,51 @@ Asset 1 vs. Asset 2 is not obvious: more in state B but less in state G.
 
 **Similar problem.** Which basket the consumer does prefer: 2 apples and 3 bananas or 3 apples and 2 bananas?
 
-⇒ We must quantify the **agents' preferences** with a **utility function**.
+⇒ We must quantify the **agents' preferences** ideally with a **utility function**.
+
+---
+
+## Lotteries
+
+A **risky payment** (or lottery) is a random variable $\tilde{a}$ with random realizations in each state of nature $a_1, a_2, \ldots, a_N$ with probabilities $\pi_1, \pi_2, \ldots, \pi_N$, such that $\sum_{n=1}^N \pi_n = 1$.
+
+Examples include:
+
+- Cash flows from an investment project depending on the state of the economy.
+- Returns from a financial asset depending on market conditions.
+- Insurance payoffs depending on whether an accident occurs or not.
+- Derivatives payoffs depending on the underlying asset price at maturity.
+
+---
+
+## Preferences over Lotteries
+
+We want to define a **relation of order** (i.e, a preference) over the set of risky payments (lotteries). Denote $\tilde{a}$ and $\tilde{b}$ two risky payments (lotteries).
+- $\tilde{a}$ is **preferred to** $\tilde{b}$, denoted $\tilde{a} \succ \tilde{b}$, if the agent prefers $\tilde{a}$ to $\tilde{b}$.
+- $\tilde{a}$ is **indifferent to** $\tilde{b}$, denoted $\tilde{a} \sim \tilde{b}$, if the agent is indifferent between $\tilde{a}$ and $\tilde{b}$.
+- $\tilde{a}$ is **not preferred to** $\tilde{b}$, denoted $\tilde{a} \preceq \tilde{b}$, if the agent does not prefer $\tilde{a}$ to $\tilde{b}$.
+
+---
+
+## Rational Preferences
+
+We say that the relation of order $\succeq$ is **rational** if it satisfies:
+
+1. **Completeness**: For any lotteries $\tilde{a}, \tilde{b}$, either $\tilde{a} \succeq \tilde{b}$ or $\tilde{b} \succeq \tilde{a}$ (or both).
+2. **Transitivity**: For any lotteries $\tilde{a}, \tilde{b}, \tilde{c}$, if $\tilde{a} \succeq \tilde{b}$ and $\tilde{b} \succeq \tilde{c}$, then $\tilde{a} \succeq \tilde{c}$.
+3. **Continuity**: For any lotteries $\tilde{a}, \tilde{b}, \tilde{c}$, if $\tilde{a} \succeq \tilde{b} \succeq \tilde{c}$, then there exists $\alpha \in [0,1]$ such that $\alpha \tilde{a} + (1-\alpha) \tilde{c} \sim \tilde{b}$.
+4. **Independence**: For any lotteries $\tilde{a}, \tilde{b}, \tilde{c}$ and any $\alpha \in (0,1)$, if $\tilde{a} \succeq \tilde{b}$, then $\alpha \tilde{a} + (1-\alpha) \tilde{c} \succeq \alpha \tilde{b} + (1-\alpha) \tilde{c}$.
+
+---
+
+## Utility Function
+
+- If the relation of order $\succeq$ is rational, then there exists a **utility function** $U$ such that, for any lotteries $\tilde{a}, \tilde{b}$,
+
+  $$\tilde{a} \succeq \tilde{b} \Leftrightarrow U(\tilde{a}) \geq U(\tilde{b})$$
+- The utility function is not unique. If $V$ is another utility function representing the same preferences, then there exists an increasing transformation $f$ such that
+
+  $$V(\tilde{a}) = f(U(\tilde{a}))$$
 
 ------------------------------------------------------------------------
 
@@ -95,7 +145,7 @@ More generally, if a risky payment $\tilde{a}$ has a distribution $d\Phi$,
 
 $$\mathbb{E}[u(\tilde{a})] = \int_{\mathbb{R}} u(a) \, d\Phi(a)$$
 
-**Bibliography.** The axiomatic approach behind the theory of the expected utility function are developed by von Neumann and Morgenstern in their book *Theory of Games and Economic Behavior* (1947).
+- The function $u$ is called the **von Neumann-Morgenstern utility function**. It is unique up to an increasing affine transformation. E.g. $u$ and $v = \alpha u + \beta$, with $\alpha > 0$ and $\beta \in \mathbb{R}$, represent the same preferences.
 
 ------------------------------------------------------------------------
 
@@ -161,7 +211,7 @@ $$\Rightarrow \Delta = -\frac{u''(y)}{u'(y)} \cdot \frac{\sigma^2}{2} = R_A(y) \
 
 When the risky payment is $y + y \tilde{\epsilon}$, define $\delta$ as
 $$u(y - \delta y) = \mathbb{E}[u(y + y \tilde{\epsilon})].$$
-Similarly, one can give a first order approximation of δ under the assumption δ ≪ 1 and σ² ≪ 1.
+Similarly, one can give a first order approximation of $\delta$ under the assumption $\delta << 1$ and $\sigma^{2} << 1$.
 
 $$u(y - \delta y) \approx u(y) - \delta y u'(y)$$
 $$\mathbb{E}[u(y + y \tilde{\epsilon})] \approx u(y) + \frac{y^2 \sigma^2}{2} u''(y)$$
@@ -176,15 +226,19 @@ Whether uncertainty is absolute or relative (w.r.t $y$), the certainty equivalen
 
 - CARA ("Constant Absolute Risk Aversion")
 
-  $$u(y) = -\frac{1}{\nu} e^{-\nu y}$$
+  $$
+  u(y) = -\frac{1}{\nu} e^{-\nu y}
+  $$
 
 - CRRA ("Constant Relative Risk Aversion")
 
-  $$u(y) = \frac{y^{1-\gamma}}{1-\gamma}$$
+  $$
+  u(y) = \frac{y^{1-\gamma}}{1-\gamma}
+  $$
 
-  and, in addition, $$u(y) = \ln(y)$$ for γ = 1.
+  and, in addition, $$u(y) = \ln(y)$$ for $\gamma = 1$.
 
-- What are $R_A(y)$ in the CARA case, and $R_R(y)$ in the CRRA case?
+
 
 ------------------------------------------------------------------------
 
@@ -192,13 +246,17 @@ Whether uncertainty is absolute or relative (w.r.t $y$), the certainty equivalen
 
 When $u$ is affine, the agent is risk neutral:
 
-$$u(y) = \alpha y + \beta$$
+$$
+u(y) = \alpha y + \beta
+$$
 
 He only cares about his expected revenue.
 
 Specifically,
 
-$$R_A(y) = R_R(y) = 0 \quad \forall y$$
+$$
+R_A(y) = R_R(y) = 0 \quad \forall y
+$$
 
 ------------------------------------------------------------------------
 
@@ -212,8 +270,9 @@ The agent can invest his initial wealth $y_0$ in the following way:
   and the rest in the risk free asset with (certain) net return $r_f$.
 
 His final wealth $\tilde{y}_1$ at $t=1$:
-$$\tilde{y}_1 = (y_0 - w) \times (1 + r_f) + w \times (1 + \tilde{r})$$
-$$= y_0 \times (1 + r_f) + w \times (\tilde{r} - r_f)$$
+$$
+\tilde{y}_1 = (y_0 - w) \times (1 + r_f) + w \times (1 + \tilde{r})= y_0 \times (1 + r_f) + w \times (\tilde{r} - r_f)
+$$
 
 ------------------------------------------------------------------------
 
@@ -221,15 +280,21 @@ $$= y_0 \times (1 + r_f) + w \times (\tilde{r} - r_f)$$
 
 Objective function of the agent:
 
-$$\max_w U(w) = \max_w \mathbb{E}[u(\tilde{y}_1)] = \max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))]$$
+$$
+\max_w U(w) = \max_w \mathbb{E}[u(\tilde{y}_1)] = \max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))]
+$$
 
 Unconstrained optimization of a concave function,
 
-$$u'' < 0 \Rightarrow U''(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] < 0$$
+$$
+u'' < 0 \Rightarrow U''(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] < 0
+$$
 
 The optimal amount $w*$ is given by the first order condition:
 
-$$U'(w) = 0$$
+$$
+U'(w) = 0
+$$
 
 ------------------------------------------------------------------------
 
@@ -237,14 +302,23 @@ $$U'(w) = 0$$
 
 First order condition:
 
-$$\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0$$
+$$
+\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0
+$$
 
 *Remark:* Unconstrained optimization implies that short-selling ($w < 0$) or leverage ($w > y_0$) are possible.
 
 **Proposition 1.** When $u$ is increasing and concave, $u' > 0, u'' < 0$, then,
-$$w^* > 0 \Leftrightarrow \mathbb{E}[\tilde{r}] > r_f$$
-$$w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f$$
-$$w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f$$
+$$
+w^* > 0 \Leftrightarrow \mathbb{E}[\tilde{r}] > r_f
+$$
+$$
+w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
+$$
+w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f
+$$
+w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f
+$$
 
 **Implication.** Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (at least a little).
 
@@ -296,40 +370,172 @@ $$1 + \mathbb{E}[\tilde{r}] = \frac{\mathbb{E}[\tilde{a}]}{p}$$
 
 ------------------------------------------------------------------------
 
-## Risk Aversion, Portfolio and Initial Wealth
+## Exercise 1: Certainty Equivalent (Basic)
 
-Let $w^*(y_0)$ the solution of
+An investor has a utility function $u(y) = \sqrt{y}$ and faces a lottery:
+- with probability 0.5, she receives €100;
+- with probability 0.5, she receives €400.
 
-$$\max_w \mathbb{E}[u(y_0 (1 + r_f) + w (\tilde{r} - r_f))], \quad \text{when } \mathbb{E}[\tilde{r}] > r_f$$
-which implies $w^* > 0$.
+**Question:**  
+Compute her *expected utility* and *certainty equivalent (CE)*.
 
-**Proposition 2.** If u is such that
-$$R_A'(y) < 0 \Rightarrow \frac{dw^*}{dy_0} > 0$$
-$$R_A'(y) = 0 \Rightarrow \frac{dw^*}{dy_0} = 0$$
-$$R_A'(y) > 0 \Rightarrow \frac{dw^*}{dy_0} < 0$$
+---
+
+**Solution**
+
+$$
+\mathbb{E}[u(\tilde{y})] = 0.5\sqrt{100} + 0.5\sqrt{400} = 0.5(10 + 20) = 15
+$$
+
+Certainty equivalent is found by $u(CE) = 15$:
+
+$$
+\sqrt{CE} = 15 \Rightarrow CE = 225
+$$
+
+Expected value = €250 → Risk premium = €25.
+
+---
 
 ------------------------------------------------------------------------
 
-## Risk Aversion, Portfolio and Initial Wealth
+## Exercise 2: Certainty Equivalent (with CRRA Utility)
 
-**Proof.** Assume that $R_A'(y) < 0$. By taking the derivative of the first order condition with respect to $y_0$ we get:
+Let $u(y) = \frac{y^{1-\gamma}}{1-\gamma}$ with $\gamma = 2$ and a lottery paying:
+- €80 with probability 0.6  
+- €200 with probability 0.4
 
-$$\mathbb{E}[(\tilde{r} - r_f)(1 + r_f + \frac{d w^*}{d y_0} (\tilde{r} - r_f)) u''(\tilde{y}_1)] = 0$$
+**Question:**  
+Compute the certainty equivalent and risk premium.
 
-$$\frac{d w^*}{d y_0} \; \mathbb{E}[(\tilde{r} - r_f)^2 u''(\tilde{y}_1)] = (1 + r_f) \; \mathbb{E}[(\tilde{r} - r_f) (-u''(\tilde{y}_1))]$$
-$$= (1 + r_f) \; \mathbb{E}[(\tilde{r} - r_f) u'(\tilde{y}_1) R_A(\tilde{y}_1)]$$
+---
 
-Since $$\mathbb{E}[(\tilde{r} - r_f)^2 u''(\tilde{y}_1)] < 0$$, and the right side is positive when $R_A'(y) < 0$, we have $$\frac{d w^*}{d y_0} > 0$$.
+**Solution**
+
+$$
+\mathbb{E}[u(\tilde{y})] = 0.6\frac{80^{-1}}{-1} + 0.4\frac{200^{-1}}{-1} 
+= 0.6(-\tfrac{1}{80}) + 0.4(-\tfrac{1}{200}) = -0.0095
+$$
+
+$$
+CE: \frac{CE^{-1}}{-1} = -0.0095 \Rightarrow CE^{-1} = 0.0095 \Rightarrow CE = 105.26
+$$
+
+Expected value = €128 → Risk premium = €22.74.
+
+---
 
 ------------------------------------------------------------------------
 
-## Risk Aversion, Portfolio and Initial Wealth
+## Exercise 3: Portfolio Choice (Analytical)
 
-Let $\eta(y_0)$ the elasticity of $w^*(y_0)$:
+Initial wealth $y_0 = 100$.  
+Risk-free rate $r_f = 5\%$.  
+Risky asset return $\tilde{r}$ takes:
+- $r_G = 20\%$ with probability 0.5  
+- $r_B = -10\%$ with probability 0.5  
 
-$$\eta(y_0) = \frac{d \ln\left(w^*(y_0)\right)}{d \ln(y_0)}$$
+Utility: $u(y) = \ln(y)$.
 
-**Proposition 3.** If $u$ is such that
-$$R_R'(y) < 0 \Rightarrow \eta(y_0) > 1$$
-$$R_R'(y) = 0 \Rightarrow \eta(y_0) = 1$$
-$$R_R'(y) > 0 \Rightarrow \eta(y_0) < 1$$
+**Question:**  
+Find the optimal risky investment $w^*$.
+
+---
+
+**Solution**
+
+Final wealth:
+
+$$
+\tilde{y}_1 = 100(1.05) + w(\tilde{r} - 0.05)
+$$
+
+Expected utility:
+
+$$
+U(w) = 0.5\ln(105 + 0.15w) + 0.5\ln(105 - 0.15w)
+$$
+
+First-order condition:
+
+$$
+U'(w) = 0.5\frac{0.15}{105 + 0.15w} - 0.5\frac{0.15}{105 - 0.15w} = 0
+$$
+
+$$
+\Rightarrow 105 + 0.15w = 105 - 0.15w \Rightarrow w^* = 0
+$$
+
+→ With symmetric returns around the risk-free, optimal exposure = 0.
+
+---
+
+------------------------------------------------------------------------
+
+## Exercise 4: Portfolio Choice (Approximation)
+
+Same setup as before, but now $\mathbb{E}[\tilde{r}] = 0.10$, $\sigma = 0.20$, $r_f = 0.05$, and $u(y)=\ln(y)$.
+
+**Question:**  
+Approximate the optimal risky share $w^*$ using the mean–variance approximation.
+
+---
+
+**Solution**
+
+For small risk,
+
+$$
+w^* \approx \frac{\mathbb{E}[\tilde{r}] - r_f}{R_R(y_0)\sigma^2}
+$$
+
+For $u(y)=\ln(y)$, $R_R(y)=1$. Thus,
+
+$$
+w^* = \frac{0.10 - 0.05}{(0.20)^2} = \frac{0.05}{0.04} = 1.25
+$$
+
+→ The investor invests **125%** of wealth in the risky asset (i.e. leveraged position).
+
+---
+
+------------------------------------------------------------------------
+
+## Exercise 5 (Advanced): Optimal Insurance under Risk Aversion
+
+An individual has initial wealth $y=100$ and faces a loss $\tilde{L}$:
+- €0 with probability 0.9  
+- €40 with probability 0.1  
+
+They can buy insurance coverage $I$ that fully compensates the loss if it occurs, at a **premium** $\pi$ per unit of coverage.  
+Utility: $u(y) = \ln(y)$.
+
+**Questions:**
+1. Write expected utility as a function of $I$.  
+2. For which premium $\pi$ is *full insurance* ($I=40$) optimal?
+
+---
+
+**Solution**
+
+Expected utility:
+
+$$
+U(I) = 0.9\ln(y - \pi I) + 0.1\ln(y - \pi I - L + I)
+$$
+
+Differentiate:
+
+$$
+U'(I) = 0.9\frac{-\pi}{y - \pi I} + 0.1\frac{-\pi + 1}{y - \pi I - L + I} = 0
+$$
+
+At full insurance $I=L=40$:
+
+$$
+0.9\frac{-\pi}{y - \pi L} + 0.1\frac{-\pi + 1}{y - \pi L} = 0
+\Rightarrow -\pi(0.9 + 0.1) + 0.1 = 0 \Rightarrow \pi = 0.1
+$$
+
+→ The **actuarially fair premium** ($\pi = \text{probability of loss}$) makes full insurance optimal.
+

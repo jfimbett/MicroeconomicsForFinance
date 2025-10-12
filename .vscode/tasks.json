@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Render decision-making-uncertainty slides",
+			"type": "shell",
+			"command": "quarto render src/decision-making-uncertainty/index.qmd --to revealjs",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$eslint - stylish"
+			],
+			"group": "build"
+		}
+	]
+}
