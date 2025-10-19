@@ -384,7 +384,7 @@ R_A(y) = R_R(y) = 0 \quad \forall y
 <section class="slide level0">
 
 <h2>Risk Aversion and Portfolio Choice</h2>
-<p>Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at t=0 and, at t=1, receives the pay-off of its investment and “consume” it (get the utility out of the payment).</p>
+<p>Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at <span class="math inline">\(t=0\)</span> and, at <span class="math inline">\(t=1\)</span>, receives the pay-off of its investment and “consume” it (get the utility out of the payment).</p>
 <p>The agent can invest his initial wealth <span class="math inline">\(y_0\)</span> in the following way:</p>
 <ul>
 <li>invests an amount <span class="math inline">\(w\)</span> in a risky asset (the S&amp;P 500 for instance) with random net return <span class="math inline">\(\tilde{r}\)</span>, and the rest in the risk free asset with (certain) net return <span class="math inline">\(r_f\)</span>.</li>
@@ -412,30 +412,6 @@ U'(w) = 0
 <section class="slide level0">
 
 <h2>Risk Aversion and Portfolio Choice</h2>
-<p>First order condition:</p>
-<p><span class="math display">\[
-\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0
-\]</span></p>
-<p><em>Remark:</em> Unconstrained optimization implies that short-selling (<span class="math inline">\(w &lt; 0\)</span>) or leverage (<span class="math inline">\(w &gt; y_0\)</span>) are possible.</p>
-<p><strong>Proposition 1.</strong> When <span class="math inline">\(u\)</span> is increasing and concave, <span class="math inline">\(u' &gt; 0, u'' &lt; 0\)</span>, then, <span class="math display">\[
-w^* &gt; 0 \Leftrightarrow \mathbb{E}[\tilde{r}] &gt; r_f
-\]</span> <span class="math display">\[
-w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
-\]</span> w^* &lt; 0 [] &lt; r_f <span class="math display">\[
-\]</span> w^* &lt; 0 [] &lt; r_f $$</p>
-<p><strong>Implication.</strong> Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (at least a little).</p>
-</section>
-<section class="slide level0">
-
-<h2>Risk Aversion and Portfolio Choice</h2>
-<p><strong>Proof.</strong> Define <span class="math inline">\(F(w)\)</span> as <span class="math display">\[F(w) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w (\tilde{r} - r_f))]\]</span> <span class="math display">\[w^* \text{ is such that } F(w^*) = 0\]</span></p>
-<p>Derivative of <span class="math inline">\(F\)</span>:</p>
-<p><span class="math display">\[F'(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] &lt; 0\]</span></p>
-<p>Value of <span class="math inline">\(F\)</span> in <span class="math inline">\(0\)</span>: <span class="math display">\[F(0) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f))] = u'(y_0 (1 + r_f)) \times (\mathbb{E}[\tilde{r}] - r_f)\]</span></p>
-</section>
-<section class="slide level0">
-
-<h2>Risk Aversion and Portfolio Choice</h2>
 <p>If the investor is risk neutral:</p>
 <p><span class="math display">\[u(y) = \alpha y + \beta\]</span></p>
 <p><span class="math display">\[\max_w \mathbb{E}[u(\tilde{y}_1)] \Leftrightarrow \max_w y_0 (1 + r_f) + w (\mathbb{E}[\tilde{r}] - r_f).\]</span></p>
@@ -447,8 +423,18 @@ w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
 <h2>Risk Aversion and Portfolio Choice</h2>
 <p>Same problem, different formulation: The agent buys z units of risky assets, at price p, with pay-off at t=1 equal to <span class="math inline">\(\tilde{a}\)</span>.</p>
 <p><span class="math display">\[\tilde{y}_1 = (y_0 - p \cdot z) \times (1 + r_f) + z \times \tilde{a}\]</span> <span class="math display">\[= y_0 \times (1 + r_f) + z \times (\tilde{a} - (1 + r_f)p)\]</span></p>
-<p>First order condition: <span class="math display">\[\mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f) + z^* (\tilde{a} - (1 + r_f)p))] = 0\]</span> <span class="math display">\[z^* &gt; 0 \Leftrightarrow \frac{\mathbb{E}[\tilde{a}]}{1 + r_f} &gt; p\]</span></p>
-<p>Consistent with Proposition 1 because: <span class="math display">\[1 + \mathbb{E}[\tilde{r}] = \frac{\mathbb{E}[\tilde{a}]}{p}\]</span></p>
+<p>First order condition: <span class="math display">\[\mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f) + z^* (\tilde{a} - (1 + r_f)p))] = 0\]</span></p>
+<p>Let’s approximate the function around <span class="math inline">\(z=0\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+U'(z) &amp; = \mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f))] \\
+&amp; + z \mathbb{E}[(\tilde{a} - (1 + r_f)p)^2 u''(y_0 (1 + r_f))] + o(z)
+\end{aligned}
+\]</span></p>
+<p>The first order condition is only approximately zero at <span class="math inline">\(z=0\)</span> if the first term is zero, i.e. <span class="math display">\[\mathbb{E}[(\tilde{a} - (1 + r_f)p)] = 0 \Leftrightarrow \frac{\mathbb{E}[\tilde{a}]}{1+r_f} = p\]</span></p>
+<ul>
+<li>If the investor gets in expectation the risk-free return, he does not invest in the risky asset: <span class="math inline">\(z^* = 0\)</span>.</li>
+</ul>
 </section>
 <section class="slide level0">
 
@@ -535,7 +521,7 @@ Approximate the optimal risky share <span class="math inline">\(w^*\)</span> usi
 
 <p><strong>Solution</strong></p>
 <ul>
-<li>Approximate u(y) around <span class="math inline">\(\mathbb{E}[\tilde{y}_1]\)</span>:</li>
+<li>Approximate <span class="math inline">\(u(y)\)</span> around <span class="math inline">\(\mathbb{E}[\tilde{y}_1]\)</span>:</li>
 </ul>
 <p><span class="math display">\[
 u(y) \approx u(\mathbb{E}[\tilde{y}_1]) + u'(\mathbb{E}[\tilde{y}_1])(y - \mathbb{E}[\tilde{y}_1]) + \frac{1}{2}u''(\mathbb{E}[\tilde{y}_1])(y - \mathbb{E}[\tilde{y}_1])^2
@@ -568,8 +554,12 @@ U'(w) = \frac{0.05}{105 + 0.05w} - \frac{w \sigma^2}{(105 + 0.05w)^2} = 0
 <section class="slide level0">
 
 <h2>Exercise 5 (Advanced): Optimal Insurance under Risk Aversion</h2>
-<p>An individual has initial wealth <span class="math inline">\(y=100\)</span> and faces a loss <span class="math inline">\(\tilde{L}\)</span>: - €0 with probability 0.9<br>
-- €40 with probability 0.1</p>
+<p>An individual has initial wealth <span class="math inline">\(y=100\)</span> and faces a loss <span class="math inline">\(\tilde{L}\)</span>:</p>
+<ul>
+<li>€0 with probability 0.9<br>
+</li>
+<li>€40 with probability 0.1</li>
+</ul>
 <p>They can buy insurance coverage <span class="math inline">\(I\)</span> that fully compensates the loss if it occurs, at a <strong>premium</strong> <span class="math inline">\(\pi\)</span> per unit of coverage.<br>
 Utility: <span class="math inline">\(u(y) = \ln(y)\)</span>.</p>
 <p><strong>Questions:</strong> 1. Write expected utility as a function of <span class="math inline">\(I\)</span>.<br>

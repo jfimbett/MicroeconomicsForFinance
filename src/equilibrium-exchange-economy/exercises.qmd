@@ -18,81 +18,563 @@ sidebar: false
 
 Adam and Bob are the only two individuals in an island. Adam has been able to collect 10 coconuts and 5 fish, while Bob has 5 coconuts and 10 fish. Both individuals have the same utility function over coconut and fish consumption bundles represented by the following Constant Elasticity of Substitution (CES) utility function:
 $$
-u(X_c, X_f) = \left( X_c^{\frac{\sigma - 1}{\sigma}} + X_f^{\frac{\sigma - 1}{\sigma}} \right)^{\frac{\sigma}{\sigma - 1}}
+u(X_c, X_f) = \left( X_c^{\frac{\sigma - 1}{\sigma}} + X_f^{\frac{\sigma - 1}{\sigma}} \right)^{\frac{\sigma}{\sigma - 1}},
+\qquad \sigma=2,
 $$
-where $X_c$ is the number of coconuts, $X_f$ is the number of fish, and $\sigma$ is the elasticity of substitution between coconuts and fish. Assume that $\sigma = 2$.
+where $X_c$ is the number of coconuts and $X_f$ the number of fish.
 
-1. Compute the Marshallian demand functions for coconuts and fish for both Adam and Bob as a function of prices. 
-2. Compute the equilibrium prices of coconuts and fish in this economy.
-3. Compute the equilibrium consumption bundles for both Adam and Bob.
-4. For an arbitrary level $\bar{u}$ of utility, compute the Hicksian demand functions for both Adam and Bob as a function of prices and utility. 
-5. Compute the expenditure functions for both Adam and Bob as a function of prices and utility.
-6. Show that both demands coincide. 
+1. Compute the Marshallian demand functions for coconuts and fish for both Adam and Bob as a function of prices.  
+2. Compute the equilibrium prices of coconuts and fish in this economy.  
+3. Compute the equilibrium consumption bundles for both Adam and Bob.  
+4. For an arbitrary level $\bar{u}$ of utility, compute the Hicksian demand functions for both Adam and Bob as a function of prices and utility.  
+5. Compute the expenditure function as a function of prices and utility.  
+6. Show that Marshallian and Hicksian demands coincide when utility is set to the Marshallian utility level.
+
+---
 
 ## Exercise 2
 
-Only one hospital in a country provides medical services. Citizens have preferences over medical services and cash that they can use for their own spending. Cities have the following utility function:
-
+Only one hospital in a country provides medical services. Cities have preferences over medical services $X$ and cash $C$:
 $$
-U(X,C) = X^{\frac{1}{2}} C^{\frac{1}{2}}
+U(X,C) = X^{\frac{1}{2}} C^{\frac{1}{2}}.
 $$
+The government has allocated $1$ million services to city 1 and $2$ million to city 2. Cities have no cash. A policy lets cities **sell** medical services to outside buyers and receive **80%** of the market price per service. Normalize the price of cash to $1$ and let the (producer) price of services be $p_X$. Compute each city’s optimal $(X,C)$ after the policy.
 
-where $X$ is the number of medical services received, and $C$ the amount of cash. Currently, the government has allocated 1 million services to city 1, and 2 million services to city 2. Cities have currently no cash. However, the government is thinking about implementing a 
-policy in which cities can exchange medical services to other cities outside of this economy and receive 80% of the price of the services that they give away. If the normalized price of cash is $1$, compute the total demand of services and cash for each city after this policy is implemented.
+---
 
+## Exercise 3
 
-## Exercise 3 
-
-In the market for tobacco and alcohol, Carol and Dave have preferences represented by the following utility functions:
+In the market for tobacco ($X_t$) and alcohol ($X_a$), Carol and Dave have utilities
 $$
-U_C(X_t, X_a) = X_t^{\frac{1}{3}} X_a^{\frac{2}{3}}
+U_C(X_t, X_a) = X_t^{\frac{1}{3}} X_a^{\frac{2}{3}},\qquad
+U_D(X_t, X_a) = X_t^{\frac{2}{3}} X_a^{\frac{1}{3}}.
 $$
-and
-$$
-U_D(X_t, X_a) = X_t^{\frac{2}{3}} X_a^{\frac{1}{3}}
-$$
+Endowments: Carol $(4,1)$, Dave $(1,4)$.
 
-where $X_t$ is the number of tobacco units, and $X_a$ the number of alcohol units. Carol has an initial endowment of 4 units of tobacco and 1 unit of alcohol, while Dave has an initial endowment of 1 unit of tobacco and 4 units of alcohol. Compute the Mashallian Demands. 
+1. Compute Marshallian demands.  
+2. Find equilibrium prices.  
+3. Compute equilibrium consumption bundles.  
+4. Suppose a **20% consumption tax on tobacco** (buyers pay $(1+\tau)p_t$ with $\tau=0.2$; sellers receive $p_t$).  
+   - (a) Characterize an equilibrium with the tax and **lump-sum transfers** $(T_C,T_D)$ such that markets clear.  
+   - (b) Give one revenue-neutral example with $T_C+T_D$ equal to tax revenue and compute the resulting prices and allocations.  
+   - (c) If the government rebated revenue equally, what are the transfers?
 
-- Find the equilibrium prices of tobacco and alcohol in this economy.
-- Assume that the government has imposed a tax of $20\%$ on tobacco consumption. What are the implicit transfers that the government has to give/receive to/from Carol and Dave to achieve an equilibrium? Think about the Second Welfare Theorem, these transfers do not need to be unique.
-- If the government only uses the collected tax revenue for transfers, what would be the transfers to Carol and Dave?  
+---
 
 ## Exercise 4
 
-Apples and Pears are in season. Eve and Frank are the only market participants. They have agreed that the first $\bar{A}$ units of apples will be sold/bought at a price of $\bar{p_a}$ but every extra apple will only pay $\frac{\bar{p_a}}{2}$. The same agreement has been made for pears, where the first $\bar{P}$ units of pears will be sold/bought at a price of $\bar{p_p}$ but every extra pear will only pay $\frac{\bar{p_p}}{2}$. Eve has an initial endowment of $\omega_{EA}$ apples and $\omega_{EP}$ pears,
- while Frank has an initial endowment of $\omega_{FA}$ apples and $\omega_{FP}$ pears. Both individuals have the same utility function represented by the following Cobb-Douglas utility function:
-
- $$
-    U(X_A, X_P) = X_A^{\alpha} X_P^{1 - \alpha}
+Apples ($X_A$) and pears ($X_P$) are traded by Eve and Frank. Block pricing applies to **purchases**: first $\bar{A}$ apples at price $\bar p_a$, additional apples at $\bar p_a/2$; analogously, first $\bar P$ pears at price $\bar p_p$, additional pears at $\bar p_p/2$. Eve’s endowment $(\omega_{EA},\omega_{EP})$, Frank’s $(\omega_{FA},\omega_{FP})$. Both have Cobb–Douglas utility
+$$
+U(X_A,X_P)=X_A^\alpha X_P^{1-\alpha},\qquad \alpha\in(0,1).
 $$
 
-where $X_A$ is the number of apples, $X_P$ the number of pears, and $\alpha \in (0,1)$.
+1. Write each consumer’s **piecewise-linear budget** and the corresponding Marshallian demand **case by case**.  
+2. State market-clearing conditions and characterize equilibrium prices.  
+3. Characterize equilibrium allocations.  
+4. Comparative statics: how do equilibrium prices/allocations change as $\bar A$ and $\bar P$ increase?
 
-1. Compute the Marshallian demand functions for apples and pears for both Eve and Frank as a function of prices.
-2. Compute the equilibrium prices of apples and pears in this economy.
-3. Compute the equilibrium consumption bundles for both Eve and Frank.
-4. How do the equilibrium prices and consumption bundles change if $\bar{A}$ and $\bar{P}$ increase?
+---
 
 ## Exercise 5
 
-- For a two good (1,2), two consumer (A,B) exchange economy and initial allocations
+Two-good $(1,2)$, two-consumer $(A,B)$ exchange economy with initial allocations
 $$
-\omega_A = (4, 2) \quad \text{and} \quad \omega_B = (2, 4)
+\omega_A=(4,2),\qquad \omega_B=(2,4),
+$$
+total endowments $(6,6)$. Both have $U(X_1,X_2)=X_1^\alpha X_2^{1-\alpha}$.
+
+1. Draw an Edgeworth box ($6\times 6$) and locate the initial endowment.  
+2. Draw budget lines through the endowment for each consumer.  
+3. Draw indifference curves for $A$ and discuss their shape.  
+4. What is the slope of a budget line?  
+5. Compute equilibrium relative prices and show the equilibrium allocation.
+
+---
+
+# Solutions
+
+## Solution to Exercise 1
+
+### 0) Useful identities for $\sigma=2$
+
+With $\sigma=2$, set $\rho=\frac{\sigma-1}{\sigma}=\tfrac12$ and write
+$$
+U(X_c,X_f)=\big(X_c^{\rho}+X_f^{\rho}\big)^{1/\rho}=(X_c^{1/2}+X_f^{1/2})^2,
+$$
+which is homogeneous of degree 1 (so homothetic). The MRS is
+$$
+\text{MRS}_{c,f}=\frac{\partial U/\partial X_c}{\partial U/\partial X_f}
+=\frac{X_c^{\rho-1}}{X_f^{\rho-1}}=\left(\frac{X_f}{X_c}\right)^{\frac{1}{2}}.
 $$
 
-- Assume that both consumers have the same utility function represented by the following Cobb-Douglas utility function:
+Let prices be $(p_c,p_f)$ and income $I$.
+
+### 1) Marshallian demands
+
+FOC at an interior optimum: $\text{MRS}_{c,f}=\frac{p_c}{p_f}$, i.e.
 $$
-U(X_1, X_2) = X_1^{\alpha} X_2^{1 - \alpha}
+\left(\frac{X_f}{X_c}\right)^{1/2}=\frac{p_c}{p_f}\quad\Rightarrow\quad
+X_f=X_c\left(\frac{p_c}{p_f}\right)^2.
+$$
+Budget: $p_c X_c+p_f X_f=I$. Substitute and solve for $X_c, X_f$:
+$$
+X_c=\frac{I\,p_f}{p_c(p_c+p_f)},\qquad
+X_f=\frac{I\,p_c}{p_f(p_c+p_f)}.
+$$
+These hold for any consumer with income $I$. Hence
+- Adam: $I_A=10p_c+5p_f$,
+- Bob: $I_B=5p_c+10p_f$,
+and plug into the same formulas.
+
+### 2) Equilibrium prices
+
+Normalize $p_c=1$, let $p_f=p$. Total endowments: $(15,15)$. Aggregate coconut demand is
+$$
+X_{c,A}+X_{c,B}
+=\frac{(10+5p)p}{1+p}+\frac{(5+10p)p}{1+p}
+=\frac{(15+15p)p}{1+p}.
+$$
+Market clearing $X_{c,\cdot}=15$ gives
+$$
+\frac{(15+15p)p}{1+p}=15 \;\Rightarrow\; p^2=1 \;\Rightarrow\; p=1.
+$$
+Thus $p_c=p_f=1$.
+
+### 3) Equilibrium allocations
+
+With $p_c=p_f=1$, $I_A=15$, $I_B=15$ and
+$$
+X_{c,i}^{M}=X_{f,i}^{M}=\frac{I_i}{2}=\frac{15}{2}=7.5,\quad i\in\{A,B\}.
 $$
 
-- Draw a 6 by 6 box in which the x-axis represents good 1 and the y-axis good 2. The bottom left corner represents the origin for consumer A (no consumption), while the top right corner represents the origin for consumer B.  This is called an Edgeworth box, it's like putting two coordinate systems one in top of the other. 
-- As a point draw the initial endownment of both consumers. 
-- Draw the equation representing the budget constraint for consumer A using its (0,0) point as a reference. Do the same for consumer B using its origin point as a reference. 
-- For different values of $\bar{u}$, the relation between $X_1$ and $X_2$ is called an indifference curve
+### 4) Hicksian demands (any prices)
+
+Minimize $p_c X_c+p_f X_f$ s.t. $(X_c^{1/2}+X_f^{1/2})^2\ge \bar u$. Equivalently
+$X_c^{1/2}+X_f^{1/2}\ge \bar u^{1/2}$. Standard CES duality for $\sigma=2$ yields
+the Hicksian (compensated) demands
 $$
-\bar{u} = X_1^{\alpha} X_2^{1 - \alpha}
+X_c^{h}(p,\bar u)=\bar u\cdot \frac{4\,p_f^2}{(p_c+p_f)^2},\qquad
+X_f^{h}(p,\bar u)=\bar u\cdot \frac{4\,p_c^2}{(p_c+p_f)^2}.
 $$
-- For the first consumer, draw different indifference curves. What can you say about their shape?
-- What is the slope of the budget constraint? 
-- Compute the equilibrium prices.
+(You can obtain these via Shephard’s lemma from the expenditure function below.)
+
+### 5) Expenditure function
+
+For CES with $\sigma=2$ (equal weights up to a normalization consistent with the utility above), the price index is
+$$
+\Pi(p_c,p_f)=\frac{4\,p_c p_f}{p_c+p_f},
+$$
+and the expenditure function is
+$$
+e(p_c,p_f,\bar u)=\bar u\,\Pi(p_c,p_f)
+=\bar u\cdot \frac{4\,p_c p_f}{p_c+p_f}.
+$$
+Then $X_j^{h}=\partial e/\partial p_j$ gives the Hicksian demands in 4).
+
+### 6) Marshallian = Hicksian at the Marshallian utility
+
+Let $X^{M}(p,I)$ be Marshallian demands and $\bar u=U\!\big(X^{M}(p,I)\big)$ be the attained utility. Since $e(p,\bar u)=I$ for homothetic CES, we have
+$$
+X^{M}(p,I)=X^{h}\big(p,\bar u\big).
+$$
+**Verification:** Using $I=e(p,\bar u)=\bar u\,\frac{4p_c p_f}{p_c+p_f}$ in $X_c^{M}=\frac{I\,p_f}{p_c(p_c+p_f)}$ gives
+$$
+X_c^{M}
+=\frac{\bar u\,\frac{4p_c p_f}{p_c+p_f}\,p_f}{p_c(p_c+p_f)}
+=\bar u\cdot \frac{4\,p_f^2}{(p_c+p_f)^2}=X_c^{h}.
+$$
+Similarly for $X_f$. Hence Marshallian and Hicksian **coincide** at the Marshallian utility level.
+
+---
+
+## Solution to Exercise 2
+
+Each city starts with $(X_0,0)$ and can **sell** $s\in[0,X_0]$ services for cash at **net** price $0.8\,p_X$. Thus
+$$
+X=X_0-s,\qquad C=0.8\,p_X\,s.
+$$
+Maximize $U=\sqrt{XC}$ subject to this tradeoff. The FOC uses the MRS:
+$$
+\text{MRS}_{X,C}=\frac{\partial U/\partial X}{\partial U/\partial C}
+=\frac{C}{X}.
+$$
+Optimality along the feasible line requires
+$$
+\frac{C}{X}=0.8\,p_X \quad\Rightarrow\quad C=0.8\,p_X\,X.
+$$
+Using $C=0.8\,p_X\,(X_0-X)$ from the tradeoff:
+$$
+0.8\,p_X\,(X_0-X)=0.8\,p_X\,X \;\Rightarrow\; X=\frac{X_0}{2},\quad
+C=0.8\,p_X\,\frac{X_0}{2}=0.4\,p_X\,X_0.
+$$
+Therefore
+- **City 1** ($X_0=1$): $(X_1^*,C_1^*)=\big(\tfrac{1}{2},\,0.4\,p_X\big)$.
+- **City 2** ($X_0=2$): $(X_2^*,C_2^*)=\big(1,\,0.8\,p_X\big)$.
+
+*(Contrast: without the 80% wedge you would have $C=\tfrac{1}{2}p_X X_0$; the wedge reduces cash by 20%.)*
+
+---
+
+## Solution to Exercise 3
+
+Let prices be $(p_t,p_a)$ with $p_a=1$ (numeraire), $p_t=p$ unless otherwise stated.
+
+### 1) Marshallian demands
+
+For $U=x^\alpha y^{1-\alpha}$,
+$$
+x^M=\alpha\,\frac{I}{p_x},\qquad y^M=(1-\alpha)\,\frac{I}{p_y}.
+$$
+Incomes from endowments: $I_C=4p+1$, $I_D=p+4$.
+
+Hence
+$$
+\text{Carol }(\alpha=\tfrac13):\quad
+X_{t,C}=\frac{1}{3}\frac{I_C}{p},\quad
+X_{a,C}=\frac{2}{3} I_C,
+$$
+$$
+\text{Dave }(\alpha=\tfrac23):\quad
+X_{t,D}=\frac{2}{3}\frac{I_D}{p},\quad
+X_{a,D}=\frac{1}{3} I_D.
+$$
+
+### 2) Equilibrium prices (no taxes)
+
+Market clearing for tobacco (total endowment $5$):
+$$
+\frac{1}{3}\frac{4p+1}{p}+\frac{2}{3}\frac{p+4}{p}=5
+\;\Rightarrow\; p=1.
+$$
+Thus $(p_t,p_a)=(1,1)$.
+
+### 3) Equilibrium allocations (no taxes)
+
+With $p=1$, $I_C=I_D=5$:
+$$
+\text{Carol:}\quad X_{t,C}=\tfrac{5}{3},\quad X_{a,C}=\tfrac{10}{3},\qquad
+\text{Dave:}\quad X_{t,D}=\tfrac{10}{3},\quad X_{a,D}=\tfrac{5}{3}.
+$$
+Totals: $(5,5)$ as required.
+
+### 4) 20% **consumption** tax on tobacco
+
+Buyers pay $(1+\tau)p_t=(1.2)p_t$ for tobacco; sellers receive $p_t$. Keep $p_a=1$ as numeraire.
+
+Let the **producer** (seller) relative price of tobacco be $p$ so consumers face $p^{c}=(1+\tau)p=1.2p$.
+Incomes from selling endowments are **at producer prices**:
+$$
+I_C=4p+1,\qquad I_D=p+4.
+$$
+With **lump-sum transfers** $T_C,T_D$, consumer demands are
+$$
+X_{t,C}=\frac{1}{3}\frac{I_C+T_C}{1.2p}, \quad
+X_{a,C}=\frac{2}{3}(I_C+T_C), \qquad
+X_{t,D}=\frac{2}{3}\frac{I_D+T_D}{1.2p}, \quad
+X_{a,D}=\frac{1}{3}(I_D+T_D).
+$$
+**Market clearing** requires
+$$
+X_{t,C}+X_{t,D}=5,\qquad X_{a,C}+X_{a,D}=5.
+$$
+**Government revenue** is tax-per-unit times quantity traded:
+$$
+R=\tau\,p\cdot Q_t=0.2\,p\cdot 5=1.0\,p.
+$$
+A **revenue-neutral** policy imposes $T_C+T_D=R= p$.
+
+#### (a) Equilibrium conditions (summary)
+
+$$
+\frac{(I_C+T_C)/3+2(I_D+T_D)/3}{1.2p}=5, \qquad
+\frac{2(I_C+T_C)+(I_D+T_D)}{3}=5, \qquad
+T_C+T_D=p.
+$$
+
+#### (b) One revenue-neutral example: **equal rebates** $T_C=T_D=\frac{p}{2}$
+
+Use the alcohol market ($X_{a,\cdot}=5$):
+$$
+2(4p+1+\tfrac{p}{2})+(p+4+\tfrac{p}{2})=15
+\;\Rightarrow\;
+10.5p+6=15 \;\Rightarrow\; p=\frac{6}{7}\approx 0.8571.
+$$
+- Producer tobacco price: $p_t=p=\tfrac{6}{7}$.  
+- Consumer tobacco price: $p_t^c=1.2p=\tfrac{36}{35}\approx 1.0286$.  
+- Transfers: $T_C=T_D=\tfrac{p}{2}=\tfrac{3}{7}$.
+
+**Allocations.** Incomes: $I_C=\frac{31}{7}$, $I_D=\frac{34}{7}$. Then
+$$
+X_{t,C}=\frac{1}{3}\frac{\frac{31}{7}+\frac{3}{7}}{\frac{36}{35}}
+=\frac{595}{756}\approx 1.482,\qquad
+X_{t,D}=\frac{2}{3}\frac{\frac{34}{7}+\frac{3}{7}}{\frac{36}{35}}
+=\frac{1295}{756}\approx 3.518,
+$$
+summing to $5$. For alcohol:
+$$
+X_{a,C}=\frac{2}{3}\cdot \frac{34}{7}=\frac{68}{21}\approx 3.238,\qquad
+X_{a,D}=\frac{1}{3}\cdot \frac{37}{7}=\frac{37}{21}\approx 1.762,
+$$
+summing to $5$.
+
+#### (c) If revenue is rebated equally
+
+As computed above: $T_C=T_D=\frac{p}{2}$ with $p=\frac{6}{7}$, i.e. each receives $\frac{3}{7}$.
+
+> **Remarks.**  
+> - With a consumption tax wedge, **producer** and **consumer** prices differ.  
+> - Lump-sum transfers are needed in pure exchange to re-spend the tax revenue; otherwise aggregate demand falls short of endowments.  
+> - Different splits $(T_C,T_D)$ lead to different relative prices $p$ but still clear markets (Second Welfare Theorem logic).
+
+---
+
+## Solution to Exercise 4
+
+We solve the nonlinear (block) price problem **explicitly**. Prices are *piecewise linear* per good:
+
+- Apples: first $\bar A$ units at $\bar p_a$, any additional unit at $\bar p_a/2$.
+- Pears: first $\bar P$ units at $\bar p_p$, any additional unit at $\bar p_p/2$.
+
+Both Eve (E) and Frank (F) have $U(X_A,X_P)=X_A^\alpha X_P^{1-\alpha}$ with $\alpha\in(0,1)$, endowments $(\omega_{EA},\omega_{EP})$, $(\omega_{FA},\omega_{FP})$. Let totals be
+$$
+\Omega_A=\omega_{EA}+\omega_{FA},\qquad \Omega_P=\omega_{EP}+\omega_{FP}.
+$$
+
+We treat the **value of any quantity $x$** of a good at the block price as its *expenditure function*:
+$$
+E_A(x)=
+\begin{cases}
+\bar p_a\,x, & 0\le x\le \bar A,\\
+\bar p_a\,\bar A+\dfrac{\bar p_a}{2}(x-\bar A), & x>\bar A,
+\end{cases}
+\qquad
+E_P(x)=
+\begin{cases}
+\bar p_p\,x, & 0\le x\le \bar P,\\
+\bar p_p\,\bar P+\dfrac{\bar p_p}{2}(x-\bar P), & x>\bar P.
+\end{cases}
+$$
+The **inverse** (quantity from a spending target $s$ on that good) is
+$$
+X_A(s)=
+\begin{cases}
+\dfrac{s}{\bar p_a}, & 0\le s\le \bar p_a\bar A,\\[6pt]
+\bar A+\dfrac{2}{\bar p_a}\big(s-\bar p_a\bar A\big), & s> \bar p_a\bar A,
+\end{cases}
+\qquad
+X_P(s)=
+\begin{cases}
+\dfrac{s}{\bar p_p}, & 0\le s\le \bar p_p\bar P,\\[6pt]
+\bar P+\dfrac{2}{\bar p_p}\big(s-\bar p_p\bar P\big), & s> \bar p_p\bar P.
+\end{cases}
+$$
+
+### Step 1 — Each consumer’s income at the block schedule
+
+Think of “cashing out” the endowment at the *same* schedule (the standard approach with nonlinear prices). For $i\in\{E,F\}$,
+$$
+I_i \equiv E_A(\omega_{iA})+E_P(\omega_{iP}).
+$$
+Write these explicitly with the piecewise forms above (note: **selling** uses the same schedule).
+
+### Step 2 — Marshallian (block-price) demands for Cobb–Douglas
+
+With Cobb–Douglas, the consumer tries to spend shares $\alpha I_i$ on apples and $(1-\alpha)I_i$ on pears. Under the block schedule, the resulting **Marshallian quantities** are obtained by plugging these *target spendings* into the inverse maps:
+$$
+X_{A,i}=
+\begin{cases}
+\dfrac{\alpha I_i}{\bar p_a}, & \alpha I_i\le \bar p_a\bar A,\\[6pt]
+\bar A+\dfrac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big), & \alpha I_i> \bar p_a\bar A,
+\end{cases}
+\qquad
+X_{P,i}=
+\begin{cases}
+\dfrac{(1-\alpha) I_i}{\bar p_p}, & (1-\alpha) I_i\le \bar p_p\bar P,\\[6pt]
+\bar P+\dfrac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big), & (1-\alpha) I_i> \bar p_p\bar P.
+\end{cases}
+$$
+
+These are **closed-form** individual demands at the block prices.
+
+### Step 3 — Market clearing and **equilibrium prices**
+
+We choose a numeraire (only **relative** prices matter). Set $\bar p_p\equiv 1$ and solve for the relative price $\bar p_a$.
+
+We now present a **fully explicit equilibrium** in the economically most relevant regime:
+
+> **Regime R (deep-interior, both kinks active):**  
+> Totals are beyond thresholds, and each consumer’s *target spending* on each good exceeds the first block:  
+> $$\Omega_A>\bar A,\quad \Omega_P>\bar P,$$
+> $$\alpha I_i>\bar p_a\bar A,\quad (1-\alpha)I_i>\bar P,\qquad i\in\{E,F\}.$$
+> (All these will be verifiable inequalities; see “Case checks” below.)
+
+Under Regime R, everyone buys into the **second block** on both goods. Then
+$$
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
+X_{P,i}=\bar P+2\big((1-\alpha) I_i-\bar P\big),
+$$
+and aggregate demands simplify to
+$$
+X_{A,E}+X_{A,F}=\frac{2\alpha}{\bar p_a}\,(I_E+I_F),\qquad
+X_{P,E}+X_{P,F}=2(1-\alpha)\,(I_E+I_F).
+$$
+Market clearing $X_{\cdot}= \Omega_{\cdot}$ gives
+$$
+\frac{2\alpha}{\bar p_a}(I_E+I_F)=\Omega_A,\qquad 2(1-\alpha)(I_E+I_F)=\Omega_P.
+$$
+Hence the **aggregate income at block prices** is pinned down by pears (the numeraire):
+$$
+I_E+I_F=\frac{\Omega_P}{2(1-\alpha)}.
+$$
+Then the **equilibrium relative price** of apples is
+$$
+\boxed{\;\bar p_a=\frac{2\alpha}{\Omega_A}\,(I_E+I_F)=\frac{2\alpha}{\Omega_A}\cdot \frac{\Omega_P}{2(1-\alpha)}
+=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A}\;}
+$$
+with $\bar p_p\equiv 1$. (This is intuitive: a Cobb–Douglas price ratio scaled by the **relative scarcity** $\Omega_P/\Omega_A$.)
+
+To finish the equilibrium, compute **individual incomes** (at these prices) and then **allocations**.
+
+- With $\bar p_p=1$ and the totals beyond thresholds, **the value of the aggregate endowment** is
+  $$
+  I_E+I_F=E_A(\Omega_A)+E_P(\Omega_P)
+  =\frac{\bar p_a}{2}(\Omega_A+\bar A)+\frac{1}{2}(\Omega_P+\bar P).
+  $$
+  Using the value forced by market clearing above is a consistency condition in Regime R and indeed holds with the $\bar p_a$ we found.
+
+- **Individual incomes** are
+  $$
+  I_i = E_A(\omega_{iA})+E_P(\omega_{iP})
+  =
+  \begin{cases}
+  \bar p_a\,\omega_{iA}, & \omega_{iA}\le \bar A,\\
+  \bar p_a\,\bar A+\dfrac{\bar p_a}{2}(\omega_{iA}-\bar A), & \omega_{iA}>\bar A,
+  \end{cases}
+  +
+  \begin{cases}
+  \omega_{iP}, & \omega_{iP}\le \bar P,\\
+  \bar P+\dfrac{1}{2}(\omega_{iP}-\bar P), & \omega_{iP}>\bar P.
+  \end{cases}
+  $$
+
+- **Individual allocations (closed-form):**
+  $$
+  X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
+  X_{P,i}=\bar P+2\big((1-\alpha) I_i-\bar P\big),
+  $$
+  which automatically **add up** to $\Omega_A,\Omega_P$ across $i=E,F$.
+
+Putting it all together:
+
+**Equilibrium in Regime R (deep interior, $\bar p_p=1$):**
+$$
+\boxed{\;\bar p_a=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A},\qquad \bar p_p=1\;}
+$$
+$$
+\boxed{\;I_i=E_A(\omega_{iA};\bar p_a,\bar A)+E_P(\omega_{iP};1,\bar P)\;}
+$$
+$$
+\boxed{\;X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
+X_{P,i}=\bar P+2\big((1-\alpha) I_i-\bar P\big)\;}
+$$
+with $i\in\{E,F\}$ and $X_{A,E}+X_{A,F}=\Omega_A$, $X_{P,E}+X_{P,F}=\Omega_P$.
+
+### Step 4 — Case checks and alternative regimes (complete specification)
+
+You must verify the **inequalities** defining Regime R:
+
+1) Totals beyond thresholds: $\Omega_A>\bar A$, $\Omega_P>\bar P$.
+
+2) Individual spending beyond first blocks:
+$$
+\alpha I_i>\bar p_a\bar A,\qquad (1-\alpha)I_i>\bar P,\qquad i=E,F,
+$$
+using the $\bar p_a$ above and the $I_i$ computed from endowments.
+
+- If a condition **fails for apples** (say $\alpha I_i\le \bar p_a\bar A$), then for that $i$ replace
+  $$
+  X_{A,i}=\frac{\alpha I_i}{\bar p_a} \quad\text{(first block only)},
+  $$
+  and re-clear the **apple** market for $\bar p_a$ using the exact sum of individual cases (some first-block, some second-block):
+  $$
+  \sum_{i:\,\alpha I_i\le \bar p_a\bar A}\frac{\alpha I_i}{\bar p_a}
+  \;+\;
+  \sum_{i:\,\alpha I_i> \bar p_a\bar A}\left[\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)\right]
+  \;=\; \Omega_A.
+  $$
+  This is **linear** in $(1/\bar p_a)$ and solves in closed form. (Analogous for pears.)
+
+- If a **total** is not beyond its threshold (e.g. $\Omega_A\le \bar A$), then the second block is never used for that good. Set
+  $$
+  X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad \sum_i X_{A,i}=\frac{\alpha (I_E+I_F)}{\bar p_a}=\Omega_A
+  \ \Longrightarrow\ 
+  \bar p_a=\frac{\alpha (I_E+I_F)}{\Omega_A},
+  $$
+  with $\bar p_p$ obtained analogously (and one normalized to $1$). Individual allocations then use the first-block formulas only.
+
+> In all regimes, the **procedure is complete and constructive**: compute $I_i$ from endowments at the block prices, apply the appropriate (first/second-block) individual demand formula, and solve the *two* linear market-clearing equations (one per good) for $(\bar p_a,\bar p_p)$ up to a numeraire. The closed forms above cover each case.
+
+### Step 5 — Comparative statics in $\bar A,\bar P$
+
+- In **Regime R**, prices (with $\bar p_p=1$) are
+  $$
+  \bar p_a=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A},
+  $$
+  which do **not** depend directly on $(\bar A,\bar P)$ in this deep-interior case. However, increasing $\bar A$ or $\bar P$ makes it **easier** for individuals to remain in Regime R (their “beyond-kink” inequalities $\alpha I_i>\bar p_a\bar A$, $(1-\alpha)I_i>\bar P$ become **harder** to satisfy as thresholds rise), potentially pushing the economy into mixed regimes where some consumers buy only in first blocks. In those regimes, higher $\bar A$ (or $\bar P$) **lowers** the effective marginal price schedule for larger quantities (since more units are at the higher first-block price before the half-price kicks in), which typically **raises** equilibrium price levels to re-clear markets.
+
+- If $\Omega_A\le \bar A$ (or $\Omega_P\le \bar P$), the second block is irrelevant for that good; comparative statics are the standard Cobb–Douglas ones with linear prices.
+
+
+---
+
+## Solution to Exercise 5
+
+### 1–4) Edgeworth box, indifference curves, budget slopes
+
+- Box is $6\times 6$. Initial endowment at $(4,2)$ for $A$ (hence $(2,4)$ for $B$).  
+- Budget lines pass through the endowment with slope $-\frac{p_1}{p_2}$.  
+- Indifference curves for $A$: $\bar u=X_1^\alpha X_2^{1-\alpha}\Rightarrow 
+X_2=\bar u^{1/(1-\alpha)}X_1^{-\alpha/(1-\alpha)}$ — convex to the origin (diminishing MRS).
+
+### 5) Equilibrium prices and allocation
+
+Let $p_2=1$, $p_1=p$. Aggregate demand for good 1:
+$$
+X_{1,A}+X_{1,B}
+=\alpha\frac{I_A}{p}+\alpha\frac{I_B}{p}
+=\alpha\frac{p(4+2)+1(2+4)}{p}
+=\alpha\cdot 6\Big(1+\frac{1}{p}\Big).
+$$
+Set equal to total supply $6$:
+$$
+\alpha\Big(1+\frac{1}{p}\Big)=1
+\;\Rightarrow\;
+\frac{1}{p}=\frac{1-\alpha}{\alpha}
+\;\Rightarrow\;
+\frac{p_1}{p_2}=p=\frac{\alpha}{1-\alpha}.
+$$
+Thus the **equilibrium price ratio** is $\frac{p_1}{p_2}=\frac{\alpha}{1-\alpha}$.
+
+**Allocations.** With $p=\frac{\alpha}{1-\alpha}$,
+$$
+I_A=p\cdot 4+1\cdot 2
+=\frac{\alpha}{1-\alpha}\cdot 4+2
+=\frac{2}{1-\alpha},\qquad
+I_B=p\cdot 2+1\cdot 4
+=\frac{\alpha}{1-\alpha}\cdot 2+4
+=\frac{4}{1-\alpha}.
+$$
+Then
+$$
+X_{1,A}=\alpha\frac{I_A}{p}
+=\alpha\cdot \frac{\frac{2}{1-\alpha}}{\frac{\alpha}{1-\alpha}}=2,\qquad
+X_{2,A}=(1-\alpha)I_A=(1-\alpha)\cdot \frac{2}{1-\alpha}=2,
+$$
+$$
+X_{1,B}=\alpha\frac{I_B}{p}
+=\alpha\cdot \frac{\frac{4}{1-\alpha}}{\frac{\alpha}{1-\alpha}}=4,\qquad
+X_{2,B}=(1-\alpha)I_B=(1-\alpha)\cdot \frac{4}{1-\alpha}=4.
+$$
+So the **equilibrium allocation** is $(X_A,X_B)=\big( (2,2), (4,4) \big)$, independent of $\alpha$ (given the symmetric total endowment $(6,6)$ and Cobb–Douglas homotheticity).
+
+---

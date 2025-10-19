@@ -263,7 +263,7 @@ $$
 
 ## Risk Aversion and Portfolio Choice
 
-Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at t=0 and, at t=1, receives the pay-off of its investment and "consume" it (get the utility out of the payment).
+Consider an agent with an expected utility function à la von Neumann-Morgenstern, who invests at $t=0$ and, at $t=1$, receives the pay-off of its investment and "consume" it (get the utility out of the payment).
 
 The agent can invest his initial wealth $y_0$ in the following way:
 
@@ -301,48 +301,6 @@ $$
 
 ## Risk Aversion and Portfolio Choice
 
-First order condition:
-
-$$
-\mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w^* (\tilde{r} - r_f))] = 0
-$$
-
-*Remark:* Unconstrained optimization implies that short-selling ($w < 0$) or leverage ($w > y_0$) are possible.
-
-**Proposition 1.** When $u$ is increasing and concave, $u' > 0, u'' < 0$, then,
-$$
-w^* > 0 \Leftrightarrow \mathbb{E}[\tilde{r}] > r_f
-$$
-$$
-w^* = 0 \Leftrightarrow \mathbb{E}[\tilde{r}] = r_f
-$$
-w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f
-$$
-$$
-w^* < 0 \Leftrightarrow \mathbb{E}[\tilde{r}] < r_f
-$$
-
-**Implication.** Whenever the expected return is larger than the risk free rate, it is always optimal to invest in (at least a little).
-
-------------------------------------------------------------------------
-
-## Risk Aversion and Portfolio Choice
-
-**Proof.** Define $F(w)$ as
-$$F(w) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f) + w (\tilde{r} - r_f))]$$
-$$w^* \text{ is such that } F(w^*) = 0$$
-
-Derivative of $F$:
-
-$$F'(w) = \mathbb{E}[(\tilde{r} - r_f)^2 u''(y_0 (1 + r_f) + w (\tilde{r} - r_f))] < 0$$
-
-Value of $F$ in $0$:
-$$F(0) = \mathbb{E}[(\tilde{r} - r_f) u'(y_0 (1 + r_f))] = u'(y_0 (1 + r_f)) \times (\mathbb{E}[\tilde{r}] - r_f)$$
-
-------------------------------------------------------------------------
-
-## Risk Aversion and Portfolio Choice
-
 If the investor is risk neutral:
 
 $$u(y) = \alpha y + \beta$$
@@ -365,16 +323,27 @@ $$= y_0 \times (1 + r_f) + z \times (\tilde{a} - (1 + r_f)p)$$
 
 First order condition:
 $$\mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f) + z^* (\tilde{a} - (1 + r_f)p))] = 0$$
-$$z^* > 0 \Leftrightarrow \frac{\mathbb{E}[\tilde{a}]}{1 + r_f} > p$$
 
-Consistent with Proposition 1 because:
-$$1 + \mathbb{E}[\tilde{r}] = \frac{\mathbb{E}[\tilde{a}]}{p}$$
+Let's approximate the function around $z=0$.
+
+$$
+\begin{aligned}
+U'(z) & = \mathbb{E}[(\tilde{a} - (1 + r_f)p) u'(y_0 (1 + r_f))] \\
+& + z \mathbb{E}[(\tilde{a} - (1 + r_f)p)^2 u''(y_0 (1 + r_f))] + o(z)
+\end{aligned} 
+$$
+
+The first order condition is only approximately zero at $z=0$ if the first term is zero, i.e.
+$$\mathbb{E}[(\tilde{a} - (1 + r_f)p)] = 0 \Leftrightarrow \frac{\mathbb{E}[\tilde{a}]}{1+r_f} = p$$
+
+- If the investor gets in expectation the risk-free return, he does not invest in the risky asset: $z^* = 0$.
 
 ------------------------------------------------------------------------
 
 ## Exercise 1: Certainty Equivalent (Basic)
 
 An investor has a utility function $u(y) = \sqrt{y}$ and faces a lottery:
+
 - with probability 0.5, she receives €100;
 - with probability 0.5, she receives €400.
 
@@ -402,6 +371,7 @@ Expected value = €250 → Risk premium = €25.
 ## Exercise 2: Certainty Equivalent (with CRRA Utility)
 
 Let $u(y) = \frac{y^{1-\gamma}}{1-\gamma}$ with $\gamma = 2$ and a lottery paying:
+
 - €80 with probability 0.6  
 - €200 with probability 0.4
 
