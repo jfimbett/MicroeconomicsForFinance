@@ -1,6 +1,6 @@
 ---
 title: "Exercises: Equilibrium in an Exchange Economy"
-subtitle: "Practice Problems (with clear, step-by-step solutions)"
+subtitle: "Practice Problems "
 format:
   html:
     toc: false
@@ -367,7 +367,8 @@ $$
 
 ## Solution to Exercise 4
 
-### Expenditure (cost) of buying $x$ units at block prices
+### Cost of purchasing and income from selling (block prices)
+
 For any $x\ge 0$,
 $$
 E_A(x)=
@@ -383,29 +384,42 @@ E_P(x)=
 \end{cases}
 $$
 
-### Income at block prices
-For $i\in\{E,F\}$,
+Income of $i\in\{E,F\}$ when endowments are valued at the same schedule:
 $$
 I_i \;=\; E_A(\omega_{iA})+E_P(\omega_{iP}),\qquad
 \Omega_A=\omega_{EA}+\omega_{FA},\ \ \Omega_P=\omega_{EP}+\omega_{FP}.
 $$
 
-### Individual Marshallian demand (Cobb–Douglas, case by case)
-Target spending shares: $s_{A,i}=\alpha I_i$, $s_{P,i}=(1-\alpha)I_i$.
-Invert the cost functions to map spending $\to$ quantity:
+### Individual Marshallian demand (Cobb–Douglas, derived from spending)
+
+Cobb–Douglas $U=X_A^\alpha X_P^{1-\alpha}$ implies the agent **targets** spendings
 $$
-X_{A,i}=
-\begin{cases}
-\dfrac{\alpha I_i}{\bar p_a}, & \alpha I_i\le \bar p_a\bar A,\\[6pt]
-\bar A+\dfrac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big), & \alpha I_i> \bar p_a\bar A,
-\end{cases}
-\qquad
-X_{P,i}=
-\begin{cases}
-\dfrac{(1-\alpha) I_i}{\bar p_p}, & (1-\alpha) I_i\le \bar p_p\bar P,\\[6pt]
-\bar P+\dfrac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big), & (1-\alpha) I_i> \bar p_p\bar P.
-\end{cases}
+s_{A,i}=\alpha I_i,\qquad s_{P,i}=(1-\alpha)I_i.
 $$
+Convert spending into quantities by **inverting** $E_A,E_P$.
+
+- Apples.  
+  If $s_{A,i}\le \bar p_a\bar A$, all spending is at unit price $\bar p_a$:
+  $$
+  X_{A,i}=\frac{s_{A,i}}{\bar p_a}.
+  $$
+  If $s_{A,i}>\bar p_a\bar A$, first buy $\bar A$ units with $\bar p_a\bar A$, then the **remaining spending** is $s_{A,i}-\bar p_a\bar A$ and each extra unit costs $\bar p_a/2$, so **each currency unit buys $2/\bar p_a$ units**:
+  $$
+  X_{A,i}=\bar A+\frac{s_{A,i}-\bar p_a\bar A}{\bar p_a/2}
+  \;=\;\bar A+\frac{2}{\bar p_a}\big(s_{A,i}-\bar p_a\bar A\big).
+  $$
+
+- Pears (analogous).  
+  If $s_{P,i}\le \bar p_p\bar P$,
+  $$
+  X_{P,i}=\frac{s_{P,i}}{\bar p_p}.
+  $$
+  If $s_{P,i}>\bar p_p\bar P$,
+  $$
+  X_{P,i}=\bar P+\frac{2}{\bar p_p}\big(s_{P,i}-\bar p_p\bar P\big).
+  $$
+
+Substitute $s_{A,i}=\alpha I_i$ and $s_{P,i}=(1-\alpha)I_i$ in each branch.
 
 ### Market clearing
 $$
@@ -414,87 +428,84 @@ $$
 
 ---
 
-## Equilibria by aggregate regime
+## Equilibrium by aggregate regime (prices up to a numeraire)
 
-Below, price levels are determined up to a numeraire; relative prices are pinned down. Allocations for each agent follow directly by plugging $I_i$ into the corresponding branches above.
+Below, we present closed forms for the **relative price** and the implied **allocations** when the aggregate economy falls in one of four quantity regimes. In each case, compute $I_i$ from endowments, plug into the branch formulas above, and the allocations will sum to $(\Omega_A,\Omega_P)$.
 
-### Case 1: Neither good reaches the second block
+### Case 1: Neither good uses the second block
 $$
 \Omega_A\le \bar A,\qquad \Omega_P\le \bar P.
 $$
-Everyone is in the first-block branch for both goods. Then
+All agents are in the first-block branch for both goods:
 $$
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad X_{P,i}=\frac{(1-\alpha)I_i}{\bar p_p}.
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
+X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
 $$
-Market clearing implies
+Clearing implies
 $$
-\frac{\alpha(I_E+I_F)}{\bar p_a}=\Omega_A,\qquad \frac{(1-\alpha)(I_E+I_F)}{\bar p_p}=\Omega_P,
-$$
-so the relative price is
-$$
-\frac{\bar p_a}{\bar p_p}=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A}.
+\frac{\alpha(I_E+I_F)}{\bar p_a}=\Omega_A,\qquad
+\frac{(1-\alpha)(I_E+I_F)}{\bar p_p}=\Omega_P
+\ \Rightarrow\
+\boxed{\ \frac{\bar p_a}{\bar p_p}=\frac{\alpha}{1-\alpha}\cdot\frac{\Omega_P}{\Omega_A}\ }.
 $$
 
-### Case 2: Only apples reach the second block
+### Case 2: Only apples use the second block
 $$
 \Omega_A>\bar A,\qquad \Omega_P\le \bar P.
 $$
-Apples: both agents use the beyond-first-block branch  
-Pears: both agents use the first-block branch. Then
+Apples beyond-first-block, pears first-block. Using the spending-to-quantity conversion:
 $$
 X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
-\;=\;\frac{2\alpha}{\bar p_a}I_i-\bar A,
-\qquad
-X_{P,i}=\frac{(1-\alpha)I_i}{\bar p_p}.
+=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
+X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
 $$
-Aggregate clearing:
+Summing and clearing:
 $$
 \frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
-\frac{(1-\alpha)}{\bar p_p}(I_E+I_F)=\Omega_P.
+\frac{1-\alpha}{\bar p_p}(I_E+I_F)=\Omega_P,
 $$
-Hence
+hence
 $$
-\frac{\bar p_a}{\bar p_p}
-=\frac{2\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A+2\bar A}.
+\boxed{\ \frac{\bar p_a}{\bar p_p}
+=\frac{2\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A+2\bar A}\ }.
 $$
 
-### Case 3: Only pears reach the second block
+### Case 3: Only pears use the second block
 $$
 \Omega_A\le \bar A,\qquad \Omega_P>\bar P.
 $$
-Apples: first-block branch  
-Pears: beyond-first-block branch. Then
+Apples first-block, pears beyond-first-block:
 $$
 X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
 X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
 =\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
 $$
-Aggregate clearing:
+Summing and clearing:
 $$
 \frac{\alpha}{\bar p_a}(I_E+I_F)=\Omega_A,\qquad
-\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P.
+\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P,
 $$
-Hence
+so
 $$
-\frac{\bar p_a}{\bar p_p}
-=\frac{\alpha}{2(1-\alpha)}\cdot \frac{\Omega_P+2\bar P}{\Omega_A}.
+\boxed{\ \frac{\bar p_a}{\bar p_p}
+=\frac{\alpha}{2(1-\alpha)}\cdot \frac{\Omega_P+2\bar P}{\Omega_A}\ }.
 $$
 
-### Case 4: Both goods reach the second block (deep interior)
+### Case 4: Both goods use the second block (deep interior)
 $$
 \Omega_A>\bar A,\qquad \Omega_P>\bar P.
 $$
-Both agents use the beyond-first-block branch for both goods. Then
+Both beyond-first-block:
 $$
 X_{A,i}=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
 X_{P,i}=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
 $$
-Aggregate clearing:
+Summing and clearing:
 $$
 \frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
-\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P.
+\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P,
 $$
-Divide the two equations to eliminate $I_E+I_F$ and obtain the relative price:
+giving
 $$
 \boxed{\ \frac{\bar p_a}{\bar p_p}
 =\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P+2\bar P}{\Omega_A+2\bar A}\ }.
@@ -502,35 +513,36 @@ $$
 
 ---
 
-## Equilibrium allocations (all cases)
-Once $(\bar p_a,\bar p_p)$ are fixed (up to a numeraire), compute $I_i=E_A(\omega_{iA})+E_P(\omega_{iP})$ and then plug into the appropriate branch:
+### Equilibrium allocations (all regimes)
+
+1) Compute $I_i=E_A(\omega_{iA})+E_P(\omega_{iP})$ using the block-price cost functions above.  
+2) Use the appropriate branch for each good:
 
 - First-block branch:
 $$
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
+X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
 $$
 
 - Beyond-first-block branch:
 $$
-X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
-=\frac{2\alpha}{\bar p_a}I_i-\bar A,
-$$
-$$
-X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
-=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big).
 $$
 
-These allocations satisfy $X_{A,E}+X_{A,F}=\Omega_A$ and $X_{P,E}+X_{P,F}=\Omega_P$ in each case.
+These allocations satisfy $X_{A,E}+X_{A,F}=\Omega_A$ and $X_{P,E}+X_{P,F}=\Omega_P$ by construction.
 
 ---
 
-## Comparative statics in $(\bar A,\bar P)$
-In any regime in which a good uses the second block in equilibrium, its relative price moves with the corresponding threshold:
+### Comparative statics in $\bar A,\bar P$
+
+When a good uses the second block in equilibrium, the marginal price relevant for most purchased units is $\bar p/2$, and the relative price adjusts so that, holding endowments fixed,
 $$
-\frac{\partial}{\partial \bar A}\left(\frac{\bar p_a}{\bar p_p}\right)>0\quad\text{when apples use the second block},\qquad
-\frac{\partial}{\partial \bar P}\left(\frac{\bar p_a}{\bar p_p}\right)<0\quad\text{when pears use the second block}.
+\frac{\partial}{\partial \bar A}\left(\frac{\bar p_a}{\bar p_p}\right)>0
+\quad\text{if apples use the second block},\qquad
+\frac{\partial}{\partial \bar P}\left(\frac{\bar p_a}{\bar p_p}\right)<0
+\quad\text{if pears use the second block}.
 $$
-The closed-form expressions above (Cases 2–4) show this directly.
 
 
 ---

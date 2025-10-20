@@ -42,9 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7f2553f82da0a27203d2dd69918cfc55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-99da8eeeb61bed438ded90c173150d79.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-7f2553f82da0a27203d2dd69918cfc55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-ea2c01f27a86cd888be845a75ab84aaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-78d0a13e6d35108d84457cbe65748f29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ea2c01f27a86cd888be845a75ab84aaf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -342,7 +342,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/equilibrium-exchange-economy/index.html">Topic 1: Equilibrium in an Exchange Economy</a></li><li class="breadcrumb-item"><a href="../../src/equilibrium-exchange-economy/exercises.html">Exercises: Equilibrium in an Exchange Economy</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exercises: Equilibrium in an Exchange Economy</h1>
-<p class="subtitle lead">Practice Problems (with clear, step-by-step solutions)</p>
+<p class="subtitle lead">Practice Problems</p>
 </div>
 
 
@@ -682,8 +682,8 @@ p&amp;=\frac{18}{21}=\frac{6}{7}.
 </section>
 <section id="solution-to-exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-4">Solution to Exercise 4</h2>
-<section id="expenditure-cost-of-buying-x-units-at-block-prices" class="level3">
-<h3 class="anchored" data-anchor-id="expenditure-cost-of-buying-x-units-at-block-prices">Expenditure (cost) of buying <span class="math inline">\(x\)</span> units at block prices</h3>
+<section id="cost-of-purchasing-and-income-from-selling-block-prices" class="level3">
+<h3 class="anchored" data-anchor-id="cost-of-purchasing-and-income-from-selling-block-prices">Cost of purchasing and income from selling (block prices)</h3>
 <p>For any <span class="math inline">\(x\ge 0\)</span>, <span class="math display">\[
 E_A(x)=
 \begin{cases}
@@ -697,29 +697,32 @@ E_P(x)=
 \bar p_p\,\bar P+\dfrac{\bar p_p}{2}\,(x-\bar P), &amp; x&gt;\bar P.
 \end{cases}
 \]</span></p>
-</section>
-<section id="income-at-block-prices" class="level3">
-<h3 class="anchored" data-anchor-id="income-at-block-prices">Income at block prices</h3>
-<p>For <span class="math inline">\(i\in\{E,F\}\)</span>, <span class="math display">\[
+<p>Income of <span class="math inline">\(i\in\{E,F\}\)</span> when endowments are valued at the same schedule: <span class="math display">\[
 I_i \;=\; E_A(\omega_{iA})+E_P(\omega_{iP}),\qquad
 \Omega_A=\omega_{EA}+\omega_{FA},\ \ \Omega_P=\omega_{EP}+\omega_{FP}.
 \]</span></p>
 </section>
-<section id="individual-marshallian-demand-cobbdouglas-case-by-case" class="level3">
-<h3 class="anchored" data-anchor-id="individual-marshallian-demand-cobbdouglas-case-by-case">Individual Marshallian demand (Cobb–Douglas, case by case)</h3>
-<p>Target spending shares: <span class="math inline">\(s_{A,i}=\alpha I_i\)</span>, <span class="math inline">\(s_{P,i}=(1-\alpha)I_i\)</span>. Invert the cost functions to map spending <span class="math inline">\(\to\)</span> quantity: <span class="math display">\[
-X_{A,i}=
-\begin{cases}
-\dfrac{\alpha I_i}{\bar p_a}, &amp; \alpha I_i\le \bar p_a\bar A,\\[6pt]
-\bar A+\dfrac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big), &amp; \alpha I_i&gt; \bar p_a\bar A,
-\end{cases}
-\qquad
-X_{P,i}=
-\begin{cases}
-\dfrac{(1-\alpha) I_i}{\bar p_p}, &amp; (1-\alpha) I_i\le \bar p_p\bar P,\\[6pt]
-\bar P+\dfrac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big), &amp; (1-\alpha) I_i&gt; \bar p_p\bar P.
-\end{cases}
-\]</span></p>
+<section id="individual-marshallian-demand-cobbdouglas-derived-from-spending" class="level3">
+<h3 class="anchored" data-anchor-id="individual-marshallian-demand-cobbdouglas-derived-from-spending">Individual Marshallian demand (Cobb–Douglas, derived from spending)</h3>
+<p>Cobb–Douglas <span class="math inline">\(U=X_A^\alpha X_P^{1-\alpha}\)</span> implies the agent <strong>targets</strong> spendings <span class="math display">\[
+s_{A,i}=\alpha I_i,\qquad s_{P,i}=(1-\alpha)I_i.
+\]</span> Convert spending into quantities by <strong>inverting</strong> <span class="math inline">\(E_A,E_P\)</span>.</p>
+<ul>
+<li><p>Apples.<br>
+If <span class="math inline">\(s_{A,i}\le \bar p_a\bar A\)</span>, all spending is at unit price <span class="math inline">\(\bar p_a\)</span>: <span class="math display">\[
+X_{A,i}=\frac{s_{A,i}}{\bar p_a}.
+\]</span> If <span class="math inline">\(s_{A,i}&gt;\bar p_a\bar A\)</span>, first buy <span class="math inline">\(\bar A\)</span> units with <span class="math inline">\(\bar p_a\bar A\)</span>, then the <strong>remaining spending</strong> is <span class="math inline">\(s_{A,i}-\bar p_a\bar A\)</span> and each extra unit costs <span class="math inline">\(\bar p_a/2\)</span>, so <strong>each currency unit buys <span class="math inline">\(2/\bar p_a\)</span> units</strong>: <span class="math display">\[
+X_{A,i}=\bar A+\frac{s_{A,i}-\bar p_a\bar A}{\bar p_a/2}
+\;=\;\bar A+\frac{2}{\bar p_a}\big(s_{A,i}-\bar p_a\bar A\big).
+\]</span></p></li>
+<li><p>Pears (analogous).<br>
+If <span class="math inline">\(s_{P,i}\le \bar p_p\bar P\)</span>, <span class="math display">\[
+X_{P,i}=\frac{s_{P,i}}{\bar p_p}.
+\]</span> If <span class="math inline">\(s_{P,i}&gt;\bar p_p\bar P\)</span>, <span class="math display">\[
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big(s_{P,i}-\bar p_p\bar P\big).
+\]</span></p></li>
+</ul>
+<p>Substitute <span class="math inline">\(s_{A,i}=\alpha I_i\)</span> and <span class="math inline">\(s_{P,i}=(1-\alpha)I_i\)</span> in each branch.</p>
 </section>
 <section id="market-clearing" class="level3">
 <h3 class="anchored" data-anchor-id="market-clearing">Market clearing</h3>
@@ -729,98 +732,101 @@ X_{A,E}+X_{A,F}=\Omega_A,\qquad X_{P,E}+X_{P,F}=\Omega_P.
 <hr>
 </section>
 </section>
-<section id="equilibria-by-aggregate-regime" class="level2">
-<h2 class="anchored" data-anchor-id="equilibria-by-aggregate-regime">Equilibria by aggregate regime</h2>
-<p>Below, price levels are determined up to a numeraire; relative prices are pinned down. Allocations for each agent follow directly by plugging <span class="math inline">\(I_i\)</span> into the corresponding branches above.</p>
-<section id="case-1-neither-good-reaches-the-second-block" class="level3">
-<h3 class="anchored" data-anchor-id="case-1-neither-good-reaches-the-second-block">Case 1: Neither good reaches the second block</h3>
+<section id="equilibrium-by-aggregate-regime-prices-up-to-a-numeraire" class="level2">
+<h2 class="anchored" data-anchor-id="equilibrium-by-aggregate-regime-prices-up-to-a-numeraire">Equilibrium by aggregate regime (prices up to a numeraire)</h2>
+<p>Below, we present closed forms for the <strong>relative price</strong> and the implied <strong>allocations</strong> when the aggregate economy falls in one of four quantity regimes. In each case, compute <span class="math inline">\(I_i\)</span> from endowments, plug into the branch formulas above, and the allocations will sum to <span class="math inline">\((\Omega_A,\Omega_P)\)</span>.</p>
+<section id="case-1-neither-good-uses-the-second-block" class="level3">
+<h3 class="anchored" data-anchor-id="case-1-neither-good-uses-the-second-block">Case 1: Neither good uses the second block</h3>
 <p><span class="math display">\[
 \Omega_A\le \bar A,\qquad \Omega_P\le \bar P.
-\]</span> Everyone is in the first-block branch for both goods. Then <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad X_{P,i}=\frac{(1-\alpha)I_i}{\bar p_p}.
-\]</span> Market clearing implies <span class="math display">\[
-\frac{\alpha(I_E+I_F)}{\bar p_a}=\Omega_A,\qquad \frac{(1-\alpha)(I_E+I_F)}{\bar p_p}=\Omega_P,
-\]</span> so the relative price is <span class="math display">\[
-\frac{\bar p_a}{\bar p_p}=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A}.
+\]</span> All agents are in the first-block branch for both goods: <span class="math display">\[
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
+X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+\]</span> Clearing implies <span class="math display">\[
+\frac{\alpha(I_E+I_F)}{\bar p_a}=\Omega_A,\qquad
+\frac{(1-\alpha)(I_E+I_F)}{\bar p_p}=\Omega_P
+\ \Rightarrow\
+\boxed{\ \frac{\bar p_a}{\bar p_p}=\frac{\alpha}{1-\alpha}\cdot\frac{\Omega_P}{\Omega_A}\ }.
 \]</span></p>
 </section>
-<section id="case-2-only-apples-reach-the-second-block" class="level3">
-<h3 class="anchored" data-anchor-id="case-2-only-apples-reach-the-second-block">Case 2: Only apples reach the second block</h3>
+<section id="case-2-only-apples-use-the-second-block" class="level3">
+<h3 class="anchored" data-anchor-id="case-2-only-apples-use-the-second-block">Case 2: Only apples use the second block</h3>
 <p><span class="math display">\[
 \Omega_A&gt;\bar A,\qquad \Omega_P\le \bar P.
-\]</span> Apples: both agents use the beyond-first-block branch<br>
-Pears: both agents use the first-block branch. Then <span class="math display">\[
+\]</span> Apples beyond-first-block, pears first-block. Using the spending-to-quantity conversion: <span class="math display">\[
 X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
-\;=\;\frac{2\alpha}{\bar p_a}I_i-\bar A,
-\qquad
-X_{P,i}=\frac{(1-\alpha)I_i}{\bar p_p}.
-\]</span> Aggregate clearing: <span class="math display">\[
+=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
+X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+\]</span> Summing and clearing: <span class="math display">\[
 \frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
-\frac{(1-\alpha)}{\bar p_p}(I_E+I_F)=\Omega_P.
-\]</span> Hence <span class="math display">\[
-\frac{\bar p_a}{\bar p_p}
-=\frac{2\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A+2\bar A}.
+\frac{1-\alpha}{\bar p_p}(I_E+I_F)=\Omega_P,
+\]</span> hence <span class="math display">\[
+\boxed{\ \frac{\bar p_a}{\bar p_p}
+=\frac{2\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A+2\bar A}\ }.
 \]</span></p>
 </section>
-<section id="case-3-only-pears-reach-the-second-block" class="level3">
-<h3 class="anchored" data-anchor-id="case-3-only-pears-reach-the-second-block">Case 3: Only pears reach the second block</h3>
+<section id="case-3-only-pears-use-the-second-block" class="level3">
+<h3 class="anchored" data-anchor-id="case-3-only-pears-use-the-second-block">Case 3: Only pears use the second block</h3>
 <p><span class="math display">\[
 \Omega_A\le \bar A,\qquad \Omega_P&gt;\bar P.
-\]</span> Apples: first-block branch<br>
-Pears: beyond-first-block branch. Then <span class="math display">\[
+\]</span> Apples first-block, pears beyond-first-block: <span class="math display">\[
 X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
 X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
 =\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
-\]</span> Aggregate clearing: <span class="math display">\[
+\]</span> Summing and clearing: <span class="math display">\[
 \frac{\alpha}{\bar p_a}(I_E+I_F)=\Omega_A,\qquad
-\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P.
-\]</span> Hence <span class="math display">\[
-\frac{\bar p_a}{\bar p_p}
-=\frac{\alpha}{2(1-\alpha)}\cdot \frac{\Omega_P+2\bar P}{\Omega_A}.
+\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P,
+\]</span> so <span class="math display">\[
+\boxed{\ \frac{\bar p_a}{\bar p_p}
+=\frac{\alpha}{2(1-\alpha)}\cdot \frac{\Omega_P+2\bar P}{\Omega_A}\ }.
 \]</span></p>
 </section>
-<section id="case-4-both-goods-reach-the-second-block-deep-interior" class="level3">
-<h3 class="anchored" data-anchor-id="case-4-both-goods-reach-the-second-block-deep-interior">Case 4: Both goods reach the second block (deep interior)</h3>
+<section id="case-4-both-goods-use-the-second-block-deep-interior" class="level3">
+<h3 class="anchored" data-anchor-id="case-4-both-goods-use-the-second-block-deep-interior">Case 4: Both goods use the second block (deep interior)</h3>
 <p><span class="math display">\[
 \Omega_A&gt;\bar A,\qquad \Omega_P&gt;\bar P.
-\]</span> Both agents use the beyond-first-block branch for both goods. Then <span class="math display">\[
+\]</span> Both beyond-first-block: <span class="math display">\[
 X_{A,i}=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
 X_{P,i}=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
-\]</span> Aggregate clearing: <span class="math display">\[
+\]</span> Summing and clearing: <span class="math display">\[
 \frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
-\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P.
-\]</span> Divide the two equations to eliminate <span class="math inline">\(I_E+I_F\)</span> and obtain the relative price: <span class="math display">\[
+\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P,
+\]</span> giving <span class="math display">\[
 \boxed{\ \frac{\bar p_a}{\bar p_p}
 =\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P+2\bar P}{\Omega_A+2\bar A}\ }.
 \]</span></p>
 <hr>
 </section>
-</section>
-<section id="equilibrium-allocations-all-cases" class="level2">
-<h2 class="anchored" data-anchor-id="equilibrium-allocations-all-cases">Equilibrium allocations (all cases)</h2>
-<p>Once <span class="math inline">\((\bar p_a,\bar p_p)\)</span> are fixed (up to a numeraire), compute <span class="math inline">\(I_i=E_A(\omega_{iA})+E_P(\omega_{iP})\)</span> and then plug into the appropriate branch:</p>
+<section id="equilibrium-allocations-all-regimes" class="level3">
+<h3 class="anchored" data-anchor-id="equilibrium-allocations-all-regimes">Equilibrium allocations (all regimes)</h3>
+<ol type="1">
+<li>Compute <span class="math inline">\(I_i=E_A(\omega_{iA})+E_P(\omega_{iP})\)</span> using the block-price cost functions above.<br>
+</li>
+<li>Use the appropriate branch for each good:</li>
+</ol>
 <ul>
 <li><p>First-block branch: <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
+X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
 \]</span></p></li>
 <li><p>Beyond-first-block branch: <span class="math display">\[
-X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
-=\frac{2\alpha}{\bar p_a}I_i-\bar A,
-\]</span> <span class="math display">\[
-X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
-=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big).
 \]</span></p></li>
 </ul>
-<p>These allocations satisfy <span class="math inline">\(X_{A,E}+X_{A,F}=\Omega_A\)</span> and <span class="math inline">\(X_{P,E}+X_{P,F}=\Omega_P\)</span> in each case.</p>
+<p>These allocations satisfy <span class="math inline">\(X_{A,E}+X_{A,F}=\Omega_A\)</span> and <span class="math inline">\(X_{P,E}+X_{P,F}=\Omega_P\)</span> by construction.</p>
 <hr>
 </section>
-<section id="comparative-statics-in-bar-abar-p" class="level2">
-<h2 class="anchored" data-anchor-id="comparative-statics-in-bar-abar-p">Comparative statics in <span class="math inline">\((\bar A,\bar P)\)</span></h2>
-<p>In any regime in which a good uses the second block in equilibrium, its relative price moves with the corresponding threshold: <span class="math display">\[
-\frac{\partial}{\partial \bar A}\left(\frac{\bar p_a}{\bar p_p}\right)&gt;0\quad\text{when apples use the second block},\qquad
-\frac{\partial}{\partial \bar P}\left(\frac{\bar p_a}{\bar p_p}\right)&lt;0\quad\text{when pears use the second block}.
-\]</span> The closed-form expressions above (Cases 2–4) show this directly.</p>
+<section id="comparative-statics-in-bar-abar-p" class="level3">
+<h3 class="anchored" data-anchor-id="comparative-statics-in-bar-abar-p">Comparative statics in <span class="math inline">\(\bar A,\bar P\)</span></h3>
+<p>When a good uses the second block in equilibrium, the marginal price relevant for most purchased units is <span class="math inline">\(\bar p/2\)</span>, and the relative price adjusts so that, holding endowments fixed, <span class="math display">\[
+\frac{\partial}{\partial \bar A}\left(\frac{\bar p_a}{\bar p_p}\right)&gt;0
+\quad\text{if apples use the second block},\qquad
+\frac{\partial}{\partial \bar P}\left(\frac{\bar p_a}{\bar p_p}\right)&lt;0
+\quad\text{if pears use the second block}.
+\]</span></p>
 <hr>
+</section>
 </section>
 <section id="solution-to-exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-5">Solution to Exercise 5</h2>
