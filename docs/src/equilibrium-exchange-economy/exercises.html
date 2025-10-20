@@ -342,7 +342,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/equilibrium-exchange-economy/index.html">Topic 1: Equilibrium in an Exchange Economy</a></li><li class="breadcrumb-item"><a href="../../src/equilibrium-exchange-economy/exercises.html">Exercises: Equilibrium in an Exchange Economy</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Exercises: Equilibrium in an Exchange Economy</h1>
-<p class="subtitle lead">Practice Problems</p>
+<p class="subtitle lead">Practice Problems (with clear, step-by-step solutions)</p>
 </div>
 
 
@@ -405,12 +405,10 @@ U_D(X_t, X_a) = X_t^{\frac{2}{3}} X_a^{\frac{1}{3}}.
 <li>Suppose a <strong>20% consumption tax on tobacco</strong> (buyers pay <span class="math inline">\((1+\tau)p_t\)</span> with <span class="math inline">\(\tau=0.2\)</span>; sellers receive <span class="math inline">\(p_t\)</span>).
 <ul>
 <li><ol type="a">
-<li>Characterize an equilibrium with the tax and <strong>lump-sum transfers</strong> <span class="math inline">\((T_C,T_D)\)</span> such that markets clear.<br>
-</li>
+<li>Characterize an equilibrium with the tax and <strong>lump-sum transfers</strong> <span class="math inline">\((T_C,T_D)\)</span> such that markets clear.</li>
 </ol></li>
 <li><ol start="2" type="a">
-<li>Give one revenue-neutral example with <span class="math inline">\(T_C+T_D\)</span> equal to tax revenue and compute the resulting prices and allocations.<br>
-</li>
+<li>Give one revenue-neutral example with <span class="math inline">\(T_C+T_D\)</span> equal to tax revenue and compute the resulting prices and allocations.</li>
 </ol></li>
 <li><ol start="3" type="a">
 <li>If the government rebated revenue equally, what are the transfers?</li>
@@ -421,7 +419,7 @@ U_D(X_t, X_a) = X_t^{\frac{2}{3}} X_a^{\frac{1}{3}}.
 </section>
 <section id="exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
-<p>Apples (<span class="math inline">\(X_A\)</span>) and pears (<span class="math inline">\(X_P\)</span>) are traded by Eve and Frank. Block pricing applies to <strong>purchases</strong>: first <span class="math inline">\(\bar{A}\)</span> apples at price <span class="math inline">\(\bar p_a\)</span>, additional apples at <span class="math inline">\(\bar p_a/2\)</span>; analogously, first <span class="math inline">\(\bar P\)</span> pears at price <span class="math inline">\(\bar p_p\)</span>, additional pears at <span class="math inline">\(\bar p_p/2\)</span>. Eve’s endowment <span class="math inline">\((\omega_{EA},\omega_{EP})\)</span>, Frank’s <span class="math inline">\((\omega_{FA},\omega_{FP})\)</span>. Both have Cobb–Douglas utility <span class="math display">\[
+<p>Apples (<span class="math inline">\(X_A\)</span>) and pears (<span class="math inline">\(X_P\)</span>) are traded by Eve and Frank. <strong>Block pricing</strong> applies to <strong>purchases</strong>: first <span class="math inline">\(\bar{A}\)</span> apples at price <span class="math inline">\(\bar p_a\)</span>, additional apples at <span class="math inline">\(\bar p_a/2\)</span>; analogously, first <span class="math inline">\(\bar P\)</span> pears at price <span class="math inline">\(\bar p_p\)</span>, additional pears at <span class="math inline">\(\bar p_p/2\)</span>. Eve’s endowment <span class="math inline">\((\omega_{EA},\omega_{EP})\)</span>, Frank’s <span class="math inline">\((\omega_{FA},\omega_{FP})\)</span>. Both have Cobb–Douglas utility <span class="math display">\[
 U(X_A,X_P)=X_A^\alpha X_P^{1-\alpha},\qquad \alpha\in(0,1).
 \]</span></p>
 <ol type="1">
@@ -456,97 +454,162 @@ U(X_A,X_P)=X_A^\alpha X_P^{1-\alpha},\qquad \alpha\in(0,1).
 </section>
 <section id="solutions" class="level1">
 <h1>Solutions</h1>
+<section id="notes-on-terminology-for-making-marshallian-vs.-hicksian-demands-coincide" class="level2">
+<h2 class="anchored" data-anchor-id="notes-on-terminology-for-making-marshallian-vs.-hicksian-demands-coincide">Notes on terminology for making Marshallian vs.&nbsp;Hicksian demands coincide</h2>
+<ul>
+<li><strong>Homothetic preferences:</strong> if we scale a consumption bundle by any positive factor, the ranking of bundles does not change along that ray (indifference curves are “scaled copies”). Why it matters: income expansion paths are straight lines through the origin, and Marshallian demands are proportional to income. For homothetic preferences, Hicksian and Marshallian <strong>coincide at the Marshallian utility level</strong>.</li>
+</ul>
+<hr>
+</section>
 <section id="solution-to-exercise-1" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-1">Solution to Exercise 1</h2>
-<section id="useful-identities-for-sigma2" class="level3">
-<h3 class="anchored" data-anchor-id="useful-identities-for-sigma2">0) Useful identities for <span class="math inline">\(\sigma=2\)</span></h3>
-<p>With <span class="math inline">\(\sigma=2\)</span>, set <span class="math inline">\(\rho=\frac{\sigma-1}{\sigma}=\tfrac12\)</span> and write <span class="math display">\[
-U(X_c,X_f)=\big(X_c^{\rho}+X_f^{\rho}\big)^{1/\rho}=(X_c^{1/2}+X_f^{1/2})^2,
-\]</span> which is homogeneous of degree 1 (so homothetic). The MRS is <span class="math display">\[
-\text{MRS}_{c,f}=\frac{\partial U/\partial X_c}{\partial U/\partial X_f}
-=\frac{X_c^{\rho-1}}{X_f^{\rho-1}}=\left(\frac{X_f}{X_c}\right)^{\frac{1}{2}}.
-\]</span></p>
-<p>Let prices be <span class="math inline">\((p_c,p_f)\)</span> and income <span class="math inline">\(I\)</span>.</p>
+<section id="step-0-simplify-the-utility-with-an-increasing-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="step-0-simplify-the-utility-with-an-increasing-transformation">Step 0) Simplify the utility with an <strong>increasing transformation</strong></h3>
+<p>With <span class="math inline">\(\sigma=2\)</span>, <span class="math display">\[
+u(X_c,X_f)=(X_c^{1/2}+X_f^{1/2})^2.
+\]</span> Apply the strictly increasing transformation <span class="math inline">\(g(u)=\sqrt{u}\)</span>: <span class="math display">\[
+\tilde u(X_c,X_f)=\sqrt{u(X_c,X_f)}=X_c^{1/2}+X_f^{1/2}.
+\]</span> This preserves preferences (same optima) and makes derivatives simple. It is <strong>linear in the transformed consumptions</strong> <span class="math inline">\(Z_c=\sqrt{X_c}\)</span> and <span class="math inline">\(Z_f=\sqrt{X_f}\)</span>, which makes the MRS and the FOCs very easy.</p>
 </section>
-<section id="marshallian-demands" class="level3">
-<h3 class="anchored" data-anchor-id="marshallian-demands">1) Marshallian demands</h3>
-<p>FOC at an interior optimum: <span class="math inline">\(\text{MRS}_{c,f}=\frac{p_c}{p_f}\)</span>, i.e. <span class="math display">\[
-\left(\frac{X_f}{X_c}\right)^{1/2}=\frac{p_c}{p_f}\quad\Rightarrow\quad
-X_f=X_c\left(\frac{p_c}{p_f}\right)^2.
-\]</span> Budget: <span class="math inline">\(p_c X_c+p_f X_f=I\)</span>. Substitute and solve for <span class="math inline">\(X_c, X_f\)</span>: <span class="math display">\[
-X_c=\frac{I\,p_f}{p_c(p_c+p_f)},\qquad
-X_f=\frac{I\,p_c}{p_f(p_c+p_f)}.
-\]</span> These hold for any consumer with income <span class="math inline">\(I\)</span>. Hence - Adam: <span class="math inline">\(I_A=10p_c+5p_f\)</span>, - Bob: <span class="math inline">\(I_B=5p_c+10p_f\)</span>, and plug into the same formulas.</p>
+<section id="marshallian-demands-for-any-consumer-with-income-i-and-prices-p_cp_f" class="level3">
+<h3 class="anchored" data-anchor-id="marshallian-demands-for-any-consumer-with-income-i-and-prices-p_cp_f">1) Marshallian demands (for any consumer with income <span class="math inline">\(I\)</span> and prices <span class="math inline">\((p_c,p_f)\)</span>)</h3>
+<p>With <span class="math inline">\(\tilde u=\sqrt{X_c}+\sqrt{X_f}\)</span>, the FOC at an interior optimum sets MRS equal to the price ratio: <span class="math display">\[
+\text{MRS}_{c,f}
+=\frac{\partial \tilde u/\partial X_c}{\partial \tilde u/\partial X_f}
+=\frac{\tfrac{1}{2}X_c^{-1/2}}{\tfrac{1}{2}X_f^{-1/2}}
+=\left(\frac{X_f}{X_c}\right)^{1/2}
+=\frac{p_c}{p_f}.
+\]</span> Hence <span class="math inline">\(X_f=X_c\left(\frac{p_c}{p_f}\right)^2\)</span>. With the budget <span class="math inline">\(p_c X_c+p_f X_f=I\)</span>, solve: <span class="math display">\[
+X_c^M=\frac{I\,p_f}{p_c(p_c+p_f)},
+\qquad
+X_f^M=\frac{I\,p_c}{p_f(p_c+p_f)}.
+\]</span> Individual incomes from endowments: <span class="math display">\[
+I_A=10p_c+5p_f,\qquad I_B=5p_c+10p_f.
+\]</span> Plug these into the formulas above for Adam and Bob.</p>
 </section>
 <section id="equilibrium-prices" class="level3">
 <h3 class="anchored" data-anchor-id="equilibrium-prices">2) Equilibrium prices</h3>
-<p>Normalize <span class="math inline">\(p_c=1\)</span>, let <span class="math inline">\(p_f=p\)</span>. Total endowments: <span class="math inline">\((15,15)\)</span>. Aggregate coconut demand is <span class="math display">\[
-X_{c,A}+X_{c,B}
-=\frac{(10+5p)p}{1+p}+\frac{(5+10p)p}{1+p}
-=\frac{(15+15p)p}{1+p}.
-\]</span> Market clearing <span class="math inline">\(X_{c,\cdot}=15\)</span> gives <span class="math display">\[
-\frac{(15+15p)p}{1+p}=15 \;\Rightarrow\; p^2=1 \;\Rightarrow\; p=1.
-\]</span> Thus <span class="math inline">\(p_c=p_f=1\)</span>.</p>
+<p>Normalize <span class="math inline">\(p_c=1\)</span> and let <span class="math inline">\(p_f=p\)</span>. Aggregate endowments: <span class="math inline">\((15,15)\)</span>. Market-clearing for coconuts: <span class="math display">\[
+\begin{aligned}
+X_{c,A}^M+X_{c,B}^M=\frac{(10+5p)p}{1+p}+\frac{(5+10p)p}{1+p}
+=\frac{(15+15p)p}{1+p}&amp;=15 \\
+\Rightarrow\quad (15+15p)p&amp;=15(1+p) \\
+\Rightarrow\quad 15p^2&amp;=15 \\
+\Rightarrow\quad p^2&amp;=1 \\
+\Rightarrow\quad p&amp;=1.
+\end{aligned}
+\]</span> Thus <span class="math inline">\(p_c=p_f=1\)</span>. Why don’t we normalize with the simplex <span class="math inline">\(p_c+p_f=1\)</span>? Look at the expression and choose the normalization that makes the algebra easiest.</p>
 </section>
 <section id="equilibrium-allocations" class="level3">
 <h3 class="anchored" data-anchor-id="equilibrium-allocations">3) Equilibrium allocations</h3>
-<p>With <span class="math inline">\(p_c=p_f=1\)</span>, <span class="math inline">\(I_A=15\)</span>, <span class="math inline">\(I_B=15\)</span> and <span class="math display">\[
-X_{c,i}^{M}=X_{f,i}^{M}=\frac{I_i}{2}=\frac{15}{2}=7.5,\quad i\in\{A,B\}.
+<p>With <span class="math inline">\(p_c=p_f=1\)</span>, <span class="math inline">\(I_A=I_B=15\)</span> and <span class="math display">\[
+X_{c,i}^M=X_{f,i}^M=\frac{I_i}{2}=\frac{15}{2}=7.5,\quad i\in\{A,B\}.
 \]</span></p>
 </section>
-<section id="hicksian-demands-any-prices" class="level3">
-<h3 class="anchored" data-anchor-id="hicksian-demands-any-prices">4) Hicksian demands (any prices)</h3>
-<p>Minimize <span class="math inline">\(p_c X_c+p_f X_f\)</span> s.t. <span class="math inline">\((X_c^{1/2}+X_f^{1/2})^2\ge \bar u\)</span>. Equivalently <span class="math inline">\(X_c^{1/2}+X_f^{1/2}\ge \bar u^{1/2}\)</span>. Standard CES duality for <span class="math inline">\(\sigma=2\)</span> yields the Hicksian (compensated) demands <span class="math display">\[
-X_c^{h}(p,\bar u)=\bar u\cdot \frac{4\,p_f^2}{(p_c+p_f)^2},\qquad
-X_f^{h}(p,\bar u)=\bar u\cdot \frac{4\,p_c^2}{(p_c+p_f)^2}.
-\]</span> (You can obtain these via Shephard’s lemma from the expenditure function below.)</p>
+<section id="hicksian-compensated-demands" class="level3">
+<h3 class="anchored" data-anchor-id="hicksian-compensated-demands">4) Hicksian (compensated) demands</h3>
+<p>Cost-minimization <span class="math inline">\(\min_{h_c,h_f}\{p_c h_c+p_f h_f \text{.  s.t.}\ (h_c^{1/2}+h_f^{1/2})^2\ge \bar u\}\)</span> is equivalent to <span class="math inline">\(h_c^{1/2}+h_f^{1/2}\ge \bar u^{1/2}\)</span>. The solution yields</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathcal{L} &amp;=p_c h_c+p_f h_f+\mu\big(\bar u^{1/2}-(h_c^{1/2}+h_f^{1/2})\big) \\
+\frac{\partial \mathcal{L}}{\partial h_c} &amp;=p_c - \mu \frac{1}{2} h_c^{-1/2}=0 \quad\Rightarrow\quad \mu=2 p_c h_c^{1/2}, \\
+\frac{\partial \mathcal{L}}{\partial h_f} &amp;=p_f - \mu \frac{1}{2} h_f^{-1/2}=0 \quad\Rightarrow\quad \mu=2 p_f h_f^{1/2} \\
+\Rightarrow\quad 2 p_c h_c^{1/2} &amp;= 2 p_f h_f^{1/2} \quad\Rightarrow\quad h_f = h_c \left(\frac{p_c}{p_f}\right)^2.
+\end{aligned}
+\]</span> Replace into the utility constraint (Local Non-Satiation ensures equality): <span class="math display">\[
+\begin{aligned}
+h_c^{1/2}+h_f^{1/2} &amp;= \bar u^{1/2} \\
+h_c^{1/2}+\left(\frac{p_c}{p_f}\right) h_c^{1/2} &amp;= \bar u^{1/2} \\
+h_c^{1/2}\left(1+\frac{p_c}{p_f}\right) &amp;= \bar u^{1/2} \\
+h_c^{1/2} &amp;= \frac{\bar u^{1/2}}{1+\frac{p_c}{p_f}} \\
+h_c &amp;= \frac{\bar u}{\left(1+\frac{p_c}{p_f}\right)^2}.
+\end{aligned}
+\]</span></p>
+<p>and similarly for <span class="math inline">\(h_f\)</span>: <span class="math display">\[
+h_f = \frac{\bar u}{\left(1+\frac{p_f}{p_c}\right)^2}.
+\]</span></p>
 </section>
 <section id="expenditure-function" class="level3">
 <h3 class="anchored" data-anchor-id="expenditure-function">5) Expenditure function</h3>
-<p>For CES with <span class="math inline">\(\sigma=2\)</span> (equal weights up to a normalization consistent with the utility above), the price index is <span class="math display">\[
-\Pi(p_c,p_f)=\frac{4\,p_c p_f}{p_c+p_f},
-\]</span> and the expenditure function is <span class="math display">\[
-e(p_c,p_f,\bar u)=\bar u\,\Pi(p_c,p_f)
-=\bar u\cdot \frac{4\,p_c p_f}{p_c+p_f}.
-\]</span> Then <span class="math inline">\(X_j^{h}=\partial e/\partial p_j\)</span> gives the Hicksian demands in 4).</p>
+<p>The expenditure function is <span class="math display">\[
+\begin{aligned}
+e(p_c,p_f,\bar u) &amp;= p_c h_c + p_f h_f \\
+&amp;= \frac{p_c \bar u}{\left(1+\frac{p_c}{p_f}\right)^2} + \frac{p_f \bar u}{\left(1+\frac{p_f}{p_c}\right)^2} \\
+&amp;= \bar u \cdot \left( \frac{p_c}{\left(1+\frac{p_c}{p_f}\right)^2} + \frac{p_f}{\left(1+\frac{p_f}{p_c}\right)^2} \right).
+\end{aligned}
+\]</span></p>
+<p>or simplified: <span class="math display">\[
+\begin{aligned}
+e(p_c,p_f,\bar u) &amp;= \bar u \cdot \left( \frac{p_c}{\left(1+\frac{p_c}{p_f}\right)^2} + \frac{p_f}{\left(1+\frac{p_f}{p_c}\right)^2} \right) \\
+&amp;= \bar u \cdot \left( \frac{p_c p_f^2 + p_f p_c^2}{(p_c+p_f)^2} \right).
+\end{aligned}
+\]</span></p>
 </section>
-<section id="marshallian-hicksian-at-the-marshallian-utility" class="level3">
-<h3 class="anchored" data-anchor-id="marshallian-hicksian-at-the-marshallian-utility">6) Marshallian = Hicksian at the Marshallian utility</h3>
-<p>Let <span class="math inline">\(X^{M}(p,I)\)</span> be Marshallian demands and <span class="math inline">\(\bar u=U\!\big(X^{M}(p,I)\big)\)</span> be the attained utility. Since <span class="math inline">\(e(p,\bar u)=I\)</span> for homothetic CES, we have <span class="math display">\[
-X^{M}(p,I)=X^{h}\big(p,\bar u\big).
-\]</span> <strong>Verification:</strong> Using <span class="math inline">\(I=e(p,\bar u)=\bar u\,\frac{4p_c p_f}{p_c+p_f}\)</span> in <span class="math inline">\(X_c^{M}=\frac{I\,p_f}{p_c(p_c+p_f)}\)</span> gives <span class="math display">\[
-X_c^{M}
-=\frac{\bar u\,\frac{4p_c p_f}{p_c+p_f}\,p_f}{p_c(p_c+p_f)}
-=\bar u\cdot \frac{4\,p_f^2}{(p_c+p_f)^2}=X_c^{h}.
-\]</span> Similarly for <span class="math inline">\(X_f\)</span>. Hence Marshallian and Hicksian <strong>coincide</strong> at the Marshallian utility level.</p>
+<section id="why-marshallian-and-hicksian-coincide-at-the-marshallian-utility" class="level3">
+<h3 class="anchored" data-anchor-id="why-marshallian-and-hicksian-coincide-at-the-marshallian-utility">6) Why Marshallian and Hicksian coincide at the Marshallian utility</h3>
+<p>In the optimal bundle, budget is spent entirely: <span class="math inline">\(I=e(p_c,p_f,\bar u)\)</span>. Set <span class="math inline">\(\bar u\)</span> to the Marshallian utility level <span class="math inline">\(\bar u=u(X_c,X_f)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+X_c&amp;=\frac{I\,p_f}{p_c(p_c+p_f)} \\
+&amp;=\frac{e(p_c,p_f,\bar u)\,p_f}{p_c(p_c+p_f)} \\
+&amp;=\frac{\bar u \cdot \left( \frac{p_c p_f^2 + p_f p_c^2}{(p_c+p_f)^2} \right) p_f}{p_c(p_c+p_f)} \\
+&amp;= \frac{\bar u (p_c p_f^3 + p_c^2 p_f^2)}{p_c (p_c+p_f)^3} \\
+&amp;= \frac{\bar u p_c p_f^2 (p_f + p_c p)}{p_c (p_c+p_f)^3} \\
+&amp;=\frac{\bar u \cdot p_f^2}{(p_c+p_f)^2} \\
+\end{aligned}
+\]</span></p>
+<p>The utility is given by <span class="math inline">\(\bar u = (X_c^{1/2} + X_f^{1/2})^2\)</span>. And only in terms of <span class="math inline">\(X_c\)</span> we have:</p>
+<p><span class="math display">\[
+\bar u = (X_c^{1/2} + (X_c\left(\frac{p_c}{p_f}\right)^2)^{1/2})^2
+\]</span></p>
+<p>which can be simplified as</p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar u &amp;= (X_c^{1/2} + (X_c\left(\frac{p_c}{p_f}\right)^2)^{1/2})^2 \\
+&amp;= (X_c^{1/2} + X_c^{1/2}\left(\frac{p_c}{p_f}\right))^2 \\
+&amp;= (X_c^{1/2}(1+\frac{p_c}{p_f}))^2 \\
+&amp;= X_c \cdot \left(1+\frac{p_c}{p_f}\right)^2.
+\end{aligned}
+\]</span></p>
+<p>Plugin back <span class="math display">\[
+\begin{aligned}
+X_c &amp;= \frac{\bar u \cdot p_f^2}{(p_c+p_f)^2} \\
+&amp;= \frac{X_c \cdot \left(1+\frac{p_c}{p_f}\right)^2 \cdot p_f^2}{(p_c+p_f)^2} \\
+&amp;= X_c \times \frac{\frac{p_f^2 (p_f+p_c)^2}{p_f^2}}{(p_c+p_f)^2} \\
+&amp;= X_c.
+\end{aligned}
+\]</span></p>
+<p>and same for <span class="math inline">\(X_f\)</span>.</p>
 <hr>
 </section>
 </section>
 <section id="solution-to-exercise-2" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-2">Solution to Exercise 2</h2>
-<p>Each city starts with <span class="math inline">\((X_0,0)\)</span> and can <strong>sell</strong> <span class="math inline">\(s\in[0,X_0]\)</span> services for cash at <strong>net</strong> price <span class="math inline">\(0.8\,p_X\)</span>. Thus <span class="math display">\[
+<p>A city with initial services <span class="math inline">\(X_0\)</span> sells <span class="math inline">\(s\in[0,X_0]\)</span> units at <strong>net</strong> price <span class="math inline">\(0.8\,p_X\)</span> (it keeps 80% of the revenue): <span class="math display">\[
 X=X_0-s,\qquad C=0.8\,p_X\,s.
-\]</span> Maximize <span class="math inline">\(U=\sqrt{XC}\)</span> subject to this tradeoff. The FOC uses the MRS: <span class="math display">\[
-\text{MRS}_{X,C}=\frac{\partial U/\partial X}{\partial U/\partial C}
-=\frac{C}{X}.
-\]</span> Optimality along the feasible line requires <span class="math display">\[
-\frac{C}{X}=0.8\,p_X \quad\Rightarrow\quad C=0.8\,p_X\,X.
-\]</span> Using <span class="math inline">\(C=0.8\,p_X\,(X_0-X)\)</span> from the tradeoff: <span class="math display">\[
-0.8\,p_X\,(X_0-X)=0.8\,p_X\,X \;\Rightarrow\; X=\frac{X_0}{2},\quad
-C=0.8\,p_X\,\frac{X_0}{2}=0.4\,p_X\,X_0.
-\]</span> Therefore - <strong>City 1</strong> (<span class="math inline">\(X_0=1\)</span>): <span class="math inline">\((X_1^*,C_1^*)=\big(\tfrac{1}{2},\,0.4\,p_X\big)\)</span>. - <strong>City 2</strong> (<span class="math inline">\(X_0=2\)</span>): <span class="math inline">\((X_2^*,C_2^*)=\big(1,\,0.8\,p_X\big)\)</span>.</p>
-<p><em>(Contrast: without the 80% wedge you would have <span class="math inline">\(C=\tfrac{1}{2}p_X X_0\)</span>; the wedge reduces cash by 20%.)</em></p>
+\]</span> Maximize <span class="math inline">\(U=\sqrt{XC}=\sqrt{(X_0-s)(0.8\,p_X\,s)}\)</span>.</p>
+<p>FOC: <span class="math display">\[
+\begin{aligned}
+\frac{\partial U}{\partial s} &amp;=-\frac{1}{2}\sqrt{\frac{0.8\,p_X}{X_0-s}}+\frac{1}{2}\sqrt{\frac{0.8\,p_X (X_0-s)}{s^2}}=0 \\
+\Rightarrow\quad -\frac{1}{\sqrt{X_0-s}}+\frac{\sqrt{X_0-s}}{s}&amp;=0 \\
+\Rightarrow\quad s&amp;=X_0-s \\
+\Rightarrow\quad s&amp;=\frac{X_0}{2}.
+\end{aligned}
+\]</span> Thus each city sells half its initial services, based on their initial endowments. Final consumptions and cash:</p>
+<ul>
+<li>City 1: <span class="math inline">\(X_1=\frac{1}{2}\)</span>, <span class="math inline">\(C_1=0.8\,p_X\cdot \frac{1}{2}=0.4\,p_X\)</span>.</li>
+<li>City 2: <span class="math inline">\(X_2=1\)</span>, <span class="math inline">\(C_2=0.8\,p_X\cdot 1=0.8\,p_X\)</span>.</li>
+</ul>
 <hr>
 </section>
 <section id="solution-to-exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-3">Solution to Exercise 3</h2>
-<p>Let prices be <span class="math inline">\((p_t,p_a)\)</span> with <span class="math inline">\(p_a=1\)</span> (numeraire), <span class="math inline">\(p_t=p\)</span> unless otherwise stated.</p>
-<section id="marshallian-demands-1" class="level3">
-<h3 class="anchored" data-anchor-id="marshallian-demands-1">1) Marshallian demands</h3>
-<p>For <span class="math inline">\(U=x^\alpha y^{1-\alpha}\)</span>, <span class="math display">\[
+<p>Let prices be <span class="math inline">\((p_t,p_a)\)</span> with <span class="math inline">\(p_a=1\)</span> (numeraire) and write <span class="math inline">\(p_t=p\)</span>.</p>
+<section id="marshallian-demands" class="level3">
+<h3 class="anchored" data-anchor-id="marshallian-demands">1) Marshallian demands</h3>
+<p>For Cobb–Douglas <span class="math inline">\(x^\alpha y^{1-\alpha}\)</span>, <span class="math display">\[
 x^M=\alpha\,\frac{I}{p_x},\qquad y^M=(1-\alpha)\,\frac{I}{p_y}.
-\]</span> Incomes from endowments: <span class="math inline">\(I_C=4p+1\)</span>, <span class="math inline">\(I_D=p+4\)</span>.</p>
-<p>Hence <span class="math display">\[
+\]</span> Incomes from endowments at producer prices: <span class="math inline">\(I_C=4p+1\)</span>, <span class="math inline">\(I_D=p+4\)</span>. Thus <span class="math display">\[
 \text{Carol }(\alpha=\tfrac13):\quad
 X_{t,C}=\frac{1}{3}\frac{I_C}{p},\quad
 X_{a,C}=\frac{2}{3} I_C,
@@ -556,119 +619,95 @@ X_{t,D}=\frac{2}{3}\frac{I_D}{p},\quad
 X_{a,D}=\frac{1}{3} I_D.
 \]</span></p>
 </section>
-<section id="equilibrium-prices-no-taxes" class="level3">
-<h3 class="anchored" data-anchor-id="equilibrium-prices-no-taxes">2) Equilibrium prices (no taxes)</h3>
-<p>Market clearing for tobacco (total endowment <span class="math inline">\(5\)</span>): <span class="math display">\[
-\frac{1}{3}\frac{4p+1}{p}+\frac{2}{3}\frac{p+4}{p}=5
-\;\Rightarrow\; p=1.
-\]</span> Thus <span class="math inline">\((p_t,p_a)=(1,1)\)</span>.</p>
+<section id="equilibrium-prices-no-tax" class="level3">
+<h3 class="anchored" data-anchor-id="equilibrium-prices-no-tax">2) Equilibrium prices (no tax)</h3>
+<p>Clear tobacco (total endowment <span class="math inline">\(5\)</span>): <span class="math display">\[
+\frac{1}{3}\frac{4p+1}{p}+\frac{2}{3}\frac{p+4}{p}=5\quad\Rightarrow\quad p=1.
+\]</span> Hence <span class="math inline">\((p_t,p_a)=(1,1)\)</span>.</p>
 </section>
-<section id="equilibrium-allocations-no-taxes" class="level3">
-<h3 class="anchored" data-anchor-id="equilibrium-allocations-no-taxes">3) Equilibrium allocations (no taxes)</h3>
-<p>With <span class="math inline">\(p=1\)</span>, <span class="math inline">\(I_C=I_D=5\)</span>: <span class="math display">\[
-\text{Carol:}\quad X_{t,C}=\tfrac{5}{3},\quad X_{a,C}=\tfrac{10}{3},\qquad
-\text{Dave:}\quad X_{t,D}=\tfrac{10}{3},\quad X_{a,D}=\tfrac{5}{3}.
-\]</span> Totals: <span class="math inline">\((5,5)\)</span> as required.</p>
+<section id="equilibrium-allocations-no-tax" class="level3">
+<h3 class="anchored" data-anchor-id="equilibrium-allocations-no-tax">3) Equilibrium allocations (no tax)</h3>
+<p>With <span class="math inline">\(p=1\)</span>, incomes <span class="math inline">\(I_C=I_D=5\)</span>: <span class="math display">\[
+\text{Carol: } \left(X_{t,C},X_{a,C}\right)=\left(\tfrac{5}{3},\,\tfrac{10}{3}\right),\qquad
+\text{Dave: } \left(X_{t,D},X_{a,D}\right)=\left(\tfrac{10}{3},\,\tfrac{5}{3}\right).
+\]</span></p>
 </section>
 <section id="consumption-tax-on-tobacco" class="level3">
-<h3 class="anchored" data-anchor-id="consumption-tax-on-tobacco">4) 20% <strong>consumption</strong> tax on tobacco</h3>
-<p>Buyers pay <span class="math inline">\((1+\tau)p_t=(1.2)p_t\)</span> for tobacco; sellers receive <span class="math inline">\(p_t\)</span>. Keep <span class="math inline">\(p_a=1\)</span> as numeraire.</p>
-<p>Let the <strong>producer</strong> (seller) relative price of tobacco be <span class="math inline">\(p\)</span> so consumers face <span class="math inline">\(p^{c}=(1+\tau)p=1.2p\)</span>. Incomes from selling endowments are <strong>at producer prices</strong>: <span class="math display">\[
-I_C=4p+1,\qquad I_D=p+4.
-\]</span> With <strong>lump-sum transfers</strong> <span class="math inline">\(T_C,T_D\)</span>, consumer demands are <span class="math display">\[
-X_{t,C}=\frac{1}{3}\frac{I_C+T_C}{1.2p}, \quad
-X_{a,C}=\frac{2}{3}(I_C+T_C), \qquad
-X_{t,D}=\frac{2}{3}\frac{I_D+T_D}{1.2p}, \quad
+<h3 class="anchored" data-anchor-id="consumption-tax-on-tobacco">4) 20% consumption tax on tobacco</h3>
+<p>Buyers pay <span class="math inline">\(p^c=(1+\tau)p=1.2p\)</span>; sellers receive <span class="math inline">\(p\)</span>; <span class="math inline">\(p_a=1\)</span>. Incomes (at producer prices) are still <span class="math inline">\(I_C=4p+1\)</span>, <span class="math inline">\(I_D=p+4\)</span>. With lump-sum transfers <span class="math inline">\((T_C,T_D)\)</span>, <span class="math display">\[
+X_{t,C}=\frac{1}{3}\frac{I_C+T_C}{1.2p},\quad
+X_{a,C}=\frac{2}{3}(I_C+T_C),\qquad
+X_{t,D}=\frac{2}{3}\frac{I_D+T_D}{1.2p},\quad
 X_{a,D}=\frac{1}{3}(I_D+T_D).
-\]</span> <strong>Market clearing</strong> requires <span class="math display">\[
-X_{t,C}+X_{t,D}=5,\qquad X_{a,C}+X_{a,D}=5.
-\]</span> <strong>Government revenue</strong> is tax-per-unit times quantity traded: <span class="math display">\[
-R=\tau\,p\cdot Q_t=0.2\,p\cdot 5=1.0\,p.
-\]</span> A <strong>revenue-neutral</strong> policy imposes <span class="math inline">\(T_C+T_D=R= p\)</span>.</p>
-<section id="a-equilibrium-conditions-summary" class="level4">
-<h4 class="anchored" data-anchor-id="a-equilibrium-conditions-summary">(a) Equilibrium conditions (summary)</h4>
+\]</span></p>
+<ul>
+<li><strong>Market clearing:</strong> <span class="math inline">\(X_{t,C}+X_{t,D}=5\)</span>, <span class="math inline">\(X_{a,C}+X_{a,D}=5\)</span>.</li>
+</ul>
+<section id="a-equilibrium-conditions-any-sum-such-that-t_ct_dp" class="level4">
+<h4 class="anchored" data-anchor-id="a-equilibrium-conditions-any-sum-such-that-t_ct_dp">(a) Equilibrium conditions, any sum such that <span class="math inline">\(T_C+T_D=p\)</span></h4>
 <p><span class="math display">\[
-\frac{(I_C+T_C)/3+2(I_D+T_D)/3}{1.2p}=5, \qquad
-\frac{2(I_C+T_C)+(I_D+T_D)}{3}=5, \qquad
+\frac{(I_C+T_C)/3+2(I_D+T_D)/3}{1.2p}=5,\qquad
+\frac{2(I_C+T_C)+(I_D+T_D)}{3}=5,\qquad
 T_C+T_D=p.
 \]</span></p>
 </section>
-<section id="b-one-revenue-neutral-example-equal-rebates-t_ct_dfracp2" class="level4">
-<h4 class="anchored" data-anchor-id="b-one-revenue-neutral-example-equal-rebates-t_ct_dfracp2">(b) One revenue-neutral example: <strong>equal rebates</strong> <span class="math inline">\(T_C=T_D=\frac{p}{2}\)</span></h4>
-<p>Use the alcohol market (<span class="math inline">\(X_{a,\cdot}=5\)</span>): <span class="math display">\[
-2(4p+1+\tfrac{p}{2})+(p+4+\tfrac{p}{2})=15
-\;\Rightarrow\;
-10.5p+6=15 \;\Rightarrow\; p=\frac{6}{7}\approx 0.8571.
-\]</span> - Producer tobacco price: <span class="math inline">\(p_t=p=\tfrac{6}{7}\)</span>.<br>
-- Consumer tobacco price: <span class="math inline">\(p_t^c=1.2p=\tfrac{36}{35}\approx 1.0286\)</span>.<br>
-- Transfers: <span class="math inline">\(T_C=T_D=\tfrac{p}{2}=\tfrac{3}{7}\)</span>.</p>
-<p><strong>Allocations.</strong> Incomes: <span class="math inline">\(I_C=\frac{31}{7}\)</span>, <span class="math inline">\(I_D=\frac{34}{7}\)</span>. Then <span class="math display">\[
-X_{t,C}=\frac{1}{3}\frac{\frac{31}{7}+\frac{3}{7}}{\frac{36}{35}}
-=\frac{595}{756}\approx 1.482,\qquad
-X_{t,D}=\frac{2}{3}\frac{\frac{34}{7}+\frac{3}{7}}{\frac{36}{35}}
-=\frac{1295}{756}\approx 3.518,
-\]</span> summing to <span class="math inline">\(5\)</span>. For alcohol: <span class="math display">\[
-X_{a,C}=\frac{2}{3}\cdot \frac{34}{7}=\frac{68}{21}\approx 3.238,\qquad
-X_{a,D}=\frac{1}{3}\cdot \frac{37}{7}=\frac{37}{21}\approx 1.762,
-\]</span> summing to <span class="math inline">\(5\)</span>.</p>
+<section id="b-one-revenue-neutral-example" class="level4">
+<h4 class="anchored" data-anchor-id="b-one-revenue-neutral-example">(b) One revenue-neutral example:</h4>
+<ul>
+<li><p><strong>Tax revenue:</strong> <span class="math inline">\(R=\tau\,p\cdot \Omega_t=0.2\,p\cdot 5=p\)</span>.</p></li>
+<li><p><strong>Revenue-neutral:</strong> <span class="math inline">\(T_C+T_D=p\)</span>, so any equilibrium condition is revenue-neutral.</p></li>
+</ul>
 </section>
-<section id="c-if-revenue-is-rebated-equally" class="level4">
-<h4 class="anchored" data-anchor-id="c-if-revenue-is-rebated-equally">(c) If revenue is rebated equally</h4>
-<p>As computed above: <span class="math inline">\(T_C=T_D=\frac{p}{2}\)</span> with <span class="math inline">\(p=\frac{6}{7}\)</span>, i.e.&nbsp;each receives <span class="math inline">\(\frac{3}{7}\)</span>.</p>
-<blockquote class="blockquote">
-<p><strong>Remarks.</strong><br>
-- With a consumption tax wedge, <strong>producer</strong> and <strong>consumer</strong> prices differ.<br>
-- Lump-sum transfers are needed in pure exchange to re-spend the tax revenue; otherwise aggregate demand falls short of endowments.<br>
-- Different splits <span class="math inline">\((T_C,T_D)\)</span> lead to different relative prices <span class="math inline">\(p\)</span> but still clear markets (Second Welfare Theorem logic).</p>
-</blockquote>
-<hr>
+<section id="c-equal-rebate-transfers" class="level4">
+<h4 class="anchored" data-anchor-id="c-equal-rebate-transfers">(c) Equal rebate transfers</h4>
+<p><span class="math inline">\(T_C=T_D=\tfrac{p}{2}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{(I_C+p/2)/3+2(I_D+p/2)/3}{\frac{6}{5}p}&amp;=5 \\
+\frac{(I_C+p/2)+2(I_D+p/2)}{\frac{6}{5}p}&amp;=15 \\
+\frac{I_C+2I_D+\frac{3p}{2}}{\frac{6}{5}p}&amp;=15 \\
+I_C+2I_D+\frac{3p}{2}&amp;=18p \\
+(4p+1)+2(p+4)+\frac{3p}{2}&amp;=18p \\
+6p + \frac{3p}{2} + 9&amp;=18p \\
+\frac{12p}{2} + \frac{3p}{2} + 9&amp;=18p \\
+\frac{15p}{2}+9&amp;=18p \\
+9&amp;=18p - \frac{15p}{2} \\
+9&amp;=\frac{36p}{2} - \frac{15p}{2} \\
+9&amp;=\frac{21p}{2} \\
+p&amp;=\frac{18}{21}=\frac{6}{7}.
+\end{aligned}
+\]</span> —</p>
 </section>
 </section>
 </section>
 <section id="solution-to-exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-4">Solution to Exercise 4</h2>
-<p>We solve the nonlinear (block) price problem <strong>explicitly</strong>. Prices are <em>piecewise linear</em> per good:</p>
-<ul>
-<li>Apples: first <span class="math inline">\(\bar A\)</span> units at <span class="math inline">\(\bar p_a\)</span>, any additional unit at <span class="math inline">\(\bar p_a/2\)</span>.</li>
-<li>Pears: first <span class="math inline">\(\bar P\)</span> units at <span class="math inline">\(\bar p_p\)</span>, any additional unit at <span class="math inline">\(\bar p_p/2\)</span>.</li>
-</ul>
-<p>Both Eve (E) and Frank (F) have <span class="math inline">\(U(X_A,X_P)=X_A^\alpha X_P^{1-\alpha}\)</span> with <span class="math inline">\(\alpha\in(0,1)\)</span>, endowments <span class="math inline">\((\omega_{EA},\omega_{EP})\)</span>, <span class="math inline">\((\omega_{FA},\omega_{FP})\)</span>. Let totals be <span class="math display">\[
-\Omega_A=\omega_{EA}+\omega_{FA},\qquad \Omega_P=\omega_{EP}+\omega_{FP}.
-\]</span></p>
-<p>We treat the <strong>value of any quantity <span class="math inline">\(x\)</span></strong> of a good at the block price as its <em>expenditure function</em>: <span class="math display">\[
+<section id="expenditure-cost-of-buying-x-units-at-block-prices" class="level3">
+<h3 class="anchored" data-anchor-id="expenditure-cost-of-buying-x-units-at-block-prices">Expenditure (cost) of buying <span class="math inline">\(x\)</span> units at block prices</h3>
+<p>For any <span class="math inline">\(x\ge 0\)</span>, <span class="math display">\[
 E_A(x)=
 \begin{cases}
-\bar p_a\,x, &amp; 0\le x\le \bar A,\\
-\bar p_a\,\bar A+\dfrac{\bar p_a}{2}(x-\bar A), &amp; x&gt;\bar A,
+\bar p_a\,x, &amp; 0\le x\le \bar A,\\[4pt]
+\bar p_a\,\bar A+\dfrac{\bar p_a}{2}\,(x-\bar A), &amp; x&gt;\bar A,
 \end{cases}
 \qquad
 E_P(x)=
 \begin{cases}
-\bar p_p\,x, &amp; 0\le x\le \bar P,\\
-\bar p_p\,\bar P+\dfrac{\bar p_p}{2}(x-\bar P), &amp; x&gt;\bar P.
-\end{cases}
-\]</span> The <strong>inverse</strong> (quantity from a spending target <span class="math inline">\(s\)</span> on that good) is <span class="math display">\[
-X_A(s)=
-\begin{cases}
-\dfrac{s}{\bar p_a}, &amp; 0\le s\le \bar p_a\bar A,\\[6pt]
-\bar A+\dfrac{2}{\bar p_a}\big(s-\bar p_a\bar A\big), &amp; s&gt; \bar p_a\bar A,
-\end{cases}
-\qquad
-X_P(s)=
-\begin{cases}
-\dfrac{s}{\bar p_p}, &amp; 0\le s\le \bar p_p\bar P,\\[6pt]
-\bar P+\dfrac{2}{\bar p_p}\big(s-\bar p_p\bar P\big), &amp; s&gt; \bar p_p\bar P.
+\bar p_p\,x, &amp; 0\le x\le \bar P,\\[4pt]
+\bar p_p\,\bar P+\dfrac{\bar p_p}{2}\,(x-\bar P), &amp; x&gt;\bar P.
 \end{cases}
 \]</span></p>
-<section id="step-1-each-consumers-income-at-the-block-schedule" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-each-consumers-income-at-the-block-schedule">Step 1 — Each consumer’s income at the block schedule</h3>
-<p>Think of “cashing out” the endowment at the <em>same</em> schedule (the standard approach with nonlinear prices). For <span class="math inline">\(i\in\{E,F\}\)</span>, <span class="math display">\[
-I_i \equiv E_A(\omega_{iA})+E_P(\omega_{iP}).
-\]</span> Write these explicitly with the piecewise forms above (note: <strong>selling</strong> uses the same schedule).</p>
 </section>
-<section id="step-2-marshallian-block-price-demands-for-cobbdouglas" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-marshallian-block-price-demands-for-cobbdouglas">Step 2 — Marshallian (block-price) demands for Cobb–Douglas</h3>
-<p>With Cobb–Douglas, the consumer tries to spend shares <span class="math inline">\(\alpha I_i\)</span> on apples and <span class="math inline">\((1-\alpha)I_i\)</span> on pears. Under the block schedule, the resulting <strong>Marshallian quantities</strong> are obtained by plugging these <em>target spendings</em> into the inverse maps: <span class="math display">\[
+<section id="income-at-block-prices" class="level3">
+<h3 class="anchored" data-anchor-id="income-at-block-prices">Income at block prices</h3>
+<p>For <span class="math inline">\(i\in\{E,F\}\)</span>, <span class="math display">\[
+I_i \;=\; E_A(\omega_{iA})+E_P(\omega_{iP}),\qquad
+\Omega_A=\omega_{EA}+\omega_{FA},\ \ \Omega_P=\omega_{EP}+\omega_{FP}.
+\]</span></p>
+</section>
+<section id="individual-marshallian-demand-cobbdouglas-case-by-case" class="level3">
+<h3 class="anchored" data-anchor-id="individual-marshallian-demand-cobbdouglas-case-by-case">Individual Marshallian demand (Cobb–Douglas, case by case)</h3>
+<p>Target spending shares: <span class="math inline">\(s_{A,i}=\alpha I_i\)</span>, <span class="math inline">\(s_{P,i}=(1-\alpha)I_i\)</span>. Invert the cost functions to map spending <span class="math inline">\(\to\)</span> quantity: <span class="math display">\[
 X_{A,i}=
 \begin{cases}
 \dfrac{\alpha I_i}{\bar p_a}, &amp; \alpha I_i\le \bar p_a\bar A,\\[6pt]
@@ -681,149 +720,133 @@ X_{P,i}=
 \bar P+\dfrac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big), &amp; (1-\alpha) I_i&gt; \bar p_p\bar P.
 \end{cases}
 \]</span></p>
-<p>These are <strong>closed-form</strong> individual demands at the block prices.</p>
 </section>
-<section id="step-3-market-clearing-and-equilibrium-prices" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-market-clearing-and-equilibrium-prices">Step 3 — Market clearing and <strong>equilibrium prices</strong></h3>
-<p>We choose a numeraire (only <strong>relative</strong> prices matter). Set <span class="math inline">\(\bar p_p\equiv 1\)</span> and solve for the relative price <span class="math inline">\(\bar p_a\)</span>.</p>
-<p>We now present a <strong>fully explicit equilibrium</strong> in the economically most relevant regime:</p>
-<blockquote class="blockquote">
-<p><strong>Regime R (deep-interior, both kinks active):</strong><br>
-Totals are beyond thresholds, and each consumer’s <em>target spending</em> on each good exceeds the first block:<br>
-<span class="math display">\[\Omega_A&gt;\bar A,\quad \Omega_P&gt;\bar P,\]</span> <span class="math display">\[\alpha I_i&gt;\bar p_a\bar A,\quad (1-\alpha)I_i&gt;\bar P,\qquad i\in\{E,F\}.\]</span> (All these will be verifiable inequalities; see “Case checks” below.)</p>
-</blockquote>
-<p>Under Regime R, everyone buys into the <strong>second block</strong> on both goods. Then <span class="math display">\[
-X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
-X_{P,i}=\bar P+2\big((1-\alpha) I_i-\bar P\big),
-\]</span> and aggregate demands simplify to <span class="math display">\[
-X_{A,E}+X_{A,F}=\frac{2\alpha}{\bar p_a}\,(I_E+I_F),\qquad
-X_{P,E}+X_{P,F}=2(1-\alpha)\,(I_E+I_F).
-\]</span> Market clearing <span class="math inline">\(X_{\cdot}= \Omega_{\cdot}\)</span> gives <span class="math display">\[
-\frac{2\alpha}{\bar p_a}(I_E+I_F)=\Omega_A,\qquad 2(1-\alpha)(I_E+I_F)=\Omega_P.
-\]</span> Hence the <strong>aggregate income at block prices</strong> is pinned down by pears (the numeraire): <span class="math display">\[
-I_E+I_F=\frac{\Omega_P}{2(1-\alpha)}.
-\]</span> Then the <strong>equilibrium relative price</strong> of apples is <span class="math display">\[
-\boxed{\;\bar p_a=\frac{2\alpha}{\Omega_A}\,(I_E+I_F)=\frac{2\alpha}{\Omega_A}\cdot \frac{\Omega_P}{2(1-\alpha)}
-=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A}\;}
-\]</span> with <span class="math inline">\(\bar p_p\equiv 1\)</span>. (This is intuitive: a Cobb–Douglas price ratio scaled by the <strong>relative scarcity</strong> <span class="math inline">\(\Omega_P/\Omega_A\)</span>.)</p>
-<p>To finish the equilibrium, compute <strong>individual incomes</strong> (at these prices) and then <strong>allocations</strong>.</p>
-<ul>
-<li><p>With <span class="math inline">\(\bar p_p=1\)</span> and the totals beyond thresholds, <strong>the value of the aggregate endowment</strong> is <span class="math display">\[
-I_E+I_F=E_A(\Omega_A)+E_P(\Omega_P)
-=\frac{\bar p_a}{2}(\Omega_A+\bar A)+\frac{1}{2}(\Omega_P+\bar P).
-\]</span> Using the value forced by market clearing above is a consistency condition in Regime R and indeed holds with the <span class="math inline">\(\bar p_a\)</span> we found.</p></li>
-<li><p><strong>Individual incomes</strong> are <span class="math display">\[
-I_i = E_A(\omega_{iA})+E_P(\omega_{iP})
-=
-\begin{cases}
-\bar p_a\,\omega_{iA}, &amp; \omega_{iA}\le \bar A,\\
-\bar p_a\,\bar A+\dfrac{\bar p_a}{2}(\omega_{iA}-\bar A), &amp; \omega_{iA}&gt;\bar A,
-\end{cases}
-+
-\begin{cases}
-\omega_{iP}, &amp; \omega_{iP}\le \bar P,\\
-\bar P+\dfrac{1}{2}(\omega_{iP}-\bar P), &amp; \omega_{iP}&gt;\bar P.
-\end{cases}
-\]</span></p></li>
-<li><p><strong>Individual allocations (closed-form):</strong> <span class="math display">\[
-X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
-X_{P,i}=\bar P+2\big((1-\alpha) I_i-\bar P\big),
-\]</span> which automatically <strong>add up</strong> to <span class="math inline">\(\Omega_A,\Omega_P\)</span> across <span class="math inline">\(i=E,F\)</span>.</p></li>
-</ul>
-<p>Putting it all together:</p>
-<p><strong>Equilibrium in Regime R (deep interior, <span class="math inline">\(\bar p_p=1\)</span>):</strong> <span class="math display">\[
-\boxed{\;\bar p_a=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A},\qquad \bar p_p=1\;}
-\]</span> <span class="math display">\[
-\boxed{\;I_i=E_A(\omega_{iA};\bar p_a,\bar A)+E_P(\omega_{iP};1,\bar P)\;}
-\]</span> <span class="math display">\[
-\boxed{\;X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
-X_{P,i}=\bar P+2\big((1-\alpha) I_i-\bar P\big)\;}
-\]</span> with <span class="math inline">\(i\in\{E,F\}\)</span> and <span class="math inline">\(X_{A,E}+X_{A,F}=\Omega_A\)</span>, <span class="math inline">\(X_{P,E}+X_{P,F}=\Omega_P\)</span>.</p>
-</section>
-<section id="step-4-case-checks-and-alternative-regimes-complete-specification" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-case-checks-and-alternative-regimes-complete-specification">Step 4 — Case checks and alternative regimes (complete specification)</h3>
-<p>You must verify the <strong>inequalities</strong> defining Regime R:</p>
-<ol type="1">
-<li><p>Totals beyond thresholds: <span class="math inline">\(\Omega_A&gt;\bar A\)</span>, <span class="math inline">\(\Omega_P&gt;\bar P\)</span>.</p></li>
-<li><p>Individual spending beyond first blocks: <span class="math display">\[
-\alpha I_i&gt;\bar p_a\bar A,\qquad (1-\alpha)I_i&gt;\bar P,\qquad i=E,F,
-\]</span> using the <span class="math inline">\(\bar p_a\)</span> above and the <span class="math inline">\(I_i\)</span> computed from endowments.</p></li>
-</ol>
-<ul>
-<li><p>If a condition <strong>fails for apples</strong> (say <span class="math inline">\(\alpha I_i\le \bar p_a\bar A\)</span>), then for that <span class="math inline">\(i\)</span> replace <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a} \quad\text{(first block only)},
-\]</span> and re-clear the <strong>apple</strong> market for <span class="math inline">\(\bar p_a\)</span> using the exact sum of individual cases (some first-block, some second-block): <span class="math display">\[
-\sum_{i:\,\alpha I_i\le \bar p_a\bar A}\frac{\alpha I_i}{\bar p_a}
-\;+\;
-\sum_{i:\,\alpha I_i&gt; \bar p_a\bar A}\left[\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)\right]
-\;=\; \Omega_A.
-\]</span> This is <strong>linear</strong> in <span class="math inline">\((1/\bar p_a)\)</span> and solves in closed form. (Analogous for pears.)</p></li>
-<li><p>If a <strong>total</strong> is not beyond its threshold (e.g.&nbsp;<span class="math inline">\(\Omega_A\le \bar A\)</span>), then the second block is never used for that good. Set <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad \sum_i X_{A,i}=\frac{\alpha (I_E+I_F)}{\bar p_a}=\Omega_A
-\ \Longrightarrow\
-\bar p_a=\frac{\alpha (I_E+I_F)}{\Omega_A},
-\]</span> with <span class="math inline">\(\bar p_p\)</span> obtained analogously (and one normalized to <span class="math inline">\(1\)</span>). Individual allocations then use the first-block formulas only.</p></li>
-</ul>
-<blockquote class="blockquote">
-<p>In all regimes, the <strong>procedure is complete and constructive</strong>: compute <span class="math inline">\(I_i\)</span> from endowments at the block prices, apply the appropriate (first/second-block) individual demand formula, and solve the <em>two</em> linear market-clearing equations (one per good) for <span class="math inline">\((\bar p_a,\bar p_p)\)</span> up to a numeraire. The closed forms above cover each case.</p>
-</blockquote>
-</section>
-<section id="step-5-comparative-statics-in-bar-abar-p" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-comparative-statics-in-bar-abar-p">Step 5 — Comparative statics in <span class="math inline">\(\bar A,\bar P\)</span></h3>
-<ul>
-<li><p>In <strong>Regime R</strong>, prices (with <span class="math inline">\(\bar p_p=1\)</span>) are <span class="math display">\[
-\bar p_a=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A},
-\]</span> which do <strong>not</strong> depend directly on <span class="math inline">\((\bar A,\bar P)\)</span> in this deep-interior case. However, increasing <span class="math inline">\(\bar A\)</span> or <span class="math inline">\(\bar P\)</span> makes it <strong>easier</strong> for individuals to remain in Regime R (their “beyond-kink” inequalities <span class="math inline">\(\alpha I_i&gt;\bar p_a\bar A\)</span>, <span class="math inline">\((1-\alpha)I_i&gt;\bar P\)</span> become <strong>harder</strong> to satisfy as thresholds rise), potentially pushing the economy into mixed regimes where some consumers buy only in first blocks. In those regimes, higher <span class="math inline">\(\bar A\)</span> (or <span class="math inline">\(\bar P\)</span>) <strong>lowers</strong> the effective marginal price schedule for larger quantities (since more units are at the higher first-block price before the half-price kicks in), which typically <strong>raises</strong> equilibrium price levels to re-clear markets.</p></li>
-<li><p>If <span class="math inline">\(\Omega_A\le \bar A\)</span> (or <span class="math inline">\(\Omega_P\le \bar P\)</span>), the second block is irrelevant for that good; comparative statics are the standard Cobb–Douglas ones with linear prices.</p></li>
-</ul>
-<p><strong>Conclusion.</strong> The solution above gives <strong>closed-form</strong> individual demands at the block schedule, a <strong>closed-form</strong> price ratio (and prices up to a numeraire) in the interior regime, and a <strong>complete algorithm</strong> with explicit formulas for all alternative regimes. This fully “does” the problem rather than sketching it.</p>
+<section id="market-clearing" class="level3">
+<h3 class="anchored" data-anchor-id="market-clearing">Market clearing</h3>
+<p><span class="math display">\[
+X_{A,E}+X_{A,F}=\Omega_A,\qquad X_{P,E}+X_{P,F}=\Omega_P.
+\]</span></p>
 <hr>
 </section>
+</section>
+<section id="equilibria-by-aggregate-regime" class="level2">
+<h2 class="anchored" data-anchor-id="equilibria-by-aggregate-regime">Equilibria by aggregate regime</h2>
+<p>Below, price levels are determined up to a numeraire; relative prices are pinned down. Allocations for each agent follow directly by plugging <span class="math inline">\(I_i\)</span> into the corresponding branches above.</p>
+<section id="case-1-neither-good-reaches-the-second-block" class="level3">
+<h3 class="anchored" data-anchor-id="case-1-neither-good-reaches-the-second-block">Case 1: Neither good reaches the second block</h3>
+<p><span class="math display">\[
+\Omega_A\le \bar A,\qquad \Omega_P\le \bar P.
+\]</span> Everyone is in the first-block branch for both goods. Then <span class="math display">\[
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad X_{P,i}=\frac{(1-\alpha)I_i}{\bar p_p}.
+\]</span> Market clearing implies <span class="math display">\[
+\frac{\alpha(I_E+I_F)}{\bar p_a}=\Omega_A,\qquad \frac{(1-\alpha)(I_E+I_F)}{\bar p_p}=\Omega_P,
+\]</span> so the relative price is <span class="math display">\[
+\frac{\bar p_a}{\bar p_p}=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A}.
+\]</span></p>
+</section>
+<section id="case-2-only-apples-reach-the-second-block" class="level3">
+<h3 class="anchored" data-anchor-id="case-2-only-apples-reach-the-second-block">Case 2: Only apples reach the second block</h3>
+<p><span class="math display">\[
+\Omega_A&gt;\bar A,\qquad \Omega_P\le \bar P.
+\]</span> Apples: both agents use the beyond-first-block branch<br>
+Pears: both agents use the first-block branch. Then <span class="math display">\[
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
+\;=\;\frac{2\alpha}{\bar p_a}I_i-\bar A,
+\qquad
+X_{P,i}=\frac{(1-\alpha)I_i}{\bar p_p}.
+\]</span> Aggregate clearing: <span class="math display">\[
+\frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
+\frac{(1-\alpha)}{\bar p_p}(I_E+I_F)=\Omega_P.
+\]</span> Hence <span class="math display">\[
+\frac{\bar p_a}{\bar p_p}
+=\frac{2\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A+2\bar A}.
+\]</span></p>
+</section>
+<section id="case-3-only-pears-reach-the-second-block" class="level3">
+<h3 class="anchored" data-anchor-id="case-3-only-pears-reach-the-second-block">Case 3: Only pears reach the second block</h3>
+<p><span class="math display">\[
+\Omega_A\le \bar A,\qquad \Omega_P&gt;\bar P.
+\]</span> Apples: first-block branch<br>
+Pears: beyond-first-block branch. Then <span class="math display">\[
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
+=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+\]</span> Aggregate clearing: <span class="math display">\[
+\frac{\alpha}{\bar p_a}(I_E+I_F)=\Omega_A,\qquad
+\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P.
+\]</span> Hence <span class="math display">\[
+\frac{\bar p_a}{\bar p_p}
+=\frac{\alpha}{2(1-\alpha)}\cdot \frac{\Omega_P+2\bar P}{\Omega_A}.
+\]</span></p>
+</section>
+<section id="case-4-both-goods-reach-the-second-block-deep-interior" class="level3">
+<h3 class="anchored" data-anchor-id="case-4-both-goods-reach-the-second-block-deep-interior">Case 4: Both goods reach the second block (deep interior)</h3>
+<p><span class="math display">\[
+\Omega_A&gt;\bar A,\qquad \Omega_P&gt;\bar P.
+\]</span> Both agents use the beyond-first-block branch for both goods. Then <span class="math display">\[
+X_{A,i}=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
+X_{P,i}=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+\]</span> Aggregate clearing: <span class="math display">\[
+\frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
+\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P.
+\]</span> Divide the two equations to eliminate <span class="math inline">\(I_E+I_F\)</span> and obtain the relative price: <span class="math display">\[
+\boxed{\ \frac{\bar p_a}{\bar p_p}
+=\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P+2\bar P}{\Omega_A+2\bar A}\ }.
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="equilibrium-allocations-all-cases" class="level2">
+<h2 class="anchored" data-anchor-id="equilibrium-allocations-all-cases">Equilibrium allocations (all cases)</h2>
+<p>Once <span class="math inline">\((\bar p_a,\bar p_p)\)</span> are fixed (up to a numeraire), compute <span class="math inline">\(I_i=E_A(\omega_{iA})+E_P(\omega_{iP})\)</span> and then plug into the appropriate branch:</p>
+<ul>
+<li><p>First-block branch: <span class="math display">\[
+X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+\]</span></p></li>
+<li><p>Beyond-first-block branch: <span class="math display">\[
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
+=\frac{2\alpha}{\bar p_a}I_i-\bar A,
+\]</span> <span class="math display">\[
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
+=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+\]</span></p></li>
+</ul>
+<p>These allocations satisfy <span class="math inline">\(X_{A,E}+X_{A,F}=\Omega_A\)</span> and <span class="math inline">\(X_{P,E}+X_{P,F}=\Omega_P\)</span> in each case.</p>
+<hr>
+</section>
+<section id="comparative-statics-in-bar-abar-p" class="level2">
+<h2 class="anchored" data-anchor-id="comparative-statics-in-bar-abar-p">Comparative statics in <span class="math inline">\((\bar A,\bar P)\)</span></h2>
+<p>In any regime in which a good uses the second block in equilibrium, its relative price moves with the corresponding threshold: <span class="math display">\[
+\frac{\partial}{\partial \bar A}\left(\frac{\bar p_a}{\bar p_p}\right)&gt;0\quad\text{when apples use the second block},\qquad
+\frac{\partial}{\partial \bar P}\left(\frac{\bar p_a}{\bar p_p}\right)&lt;0\quad\text{when pears use the second block}.
+\]</span> The closed-form expressions above (Cases 2–4) show this directly.</p>
+<hr>
 </section>
 <section id="solution-to-exercise-5" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-5">Solution to Exercise 5</h2>
-<section id="edgeworth-box-indifference-curves-budget-slopes" class="level3">
-<h3 class="anchored" data-anchor-id="edgeworth-box-indifference-curves-budget-slopes">1–4) Edgeworth box, indifference curves, budget slopes</h3>
+<section id="box-budgets-indifference-curves-slope" class="level3">
+<h3 class="anchored" data-anchor-id="box-budgets-indifference-curves-slope">1–4) Box, budgets, indifference curves, slope</h3>
 <ul>
-<li>Box is <span class="math inline">\(6\times 6\)</span>. Initial endowment at <span class="math inline">\((4,2)\)</span> for <span class="math inline">\(A\)</span> (hence <span class="math inline">\((2,4)\)</span> for <span class="math inline">\(B\)</span>).<br>
-</li>
-<li>Budget lines pass through the endowment with slope <span class="math inline">\(-\frac{p_1}{p_2}\)</span>.<br>
-</li>
-<li>Indifference curves for <span class="math inline">\(A\)</span>: <span class="math inline">\(\bar u=X_1^\alpha X_2^{1-\alpha}\Rightarrow
-X_2=\bar u^{1/(1-\alpha)}X_1^{-\alpha/(1-\alpha)}\)</span> — convex to the origin (diminishing MRS).</li>
+<li>Box <span class="math inline">\(6\times 6\)</span>, initial endowment at <span class="math inline">\((4,2)\)</span> for <span class="math inline">\(A\)</span> (hence <span class="math inline">\((2,4)\)</span> for <span class="math inline">\(B\)</span>).</li>
+<li>Budget lines through the endowment with slope <span class="math inline">\(-\frac{p_1}{p_2}\)</span>.</li>
+<li>Indifference curves for <span class="math inline">\(A\)</span> from <span class="math inline">\(X_1^\alpha X_2^{1-\alpha}=\bar u\)</span>: <span class="math display">\[
+X_2=\bar u^{\frac{1}{1-\alpha}}\,X_1^{-\frac{\alpha}{1-\alpha}},
+\]</span> which are convex to the origin (diminishing MRS).</li>
 </ul>
 </section>
-<section id="equilibrium-prices-and-allocation" class="level3">
-<h3 class="anchored" data-anchor-id="equilibrium-prices-and-allocation">5) Equilibrium prices and allocation</h3>
-<p>Let <span class="math inline">\(p_2=1\)</span>, <span class="math inline">\(p_1=p\)</span>. Aggregate demand for good 1: <span class="math display">\[
-X_{1,A}+X_{1,B}
-=\alpha\frac{I_A}{p}+\alpha\frac{I_B}{p}
-=\alpha\frac{p(4+2)+1(2+4)}{p}
-=\alpha\cdot 6\Big(1+\frac{1}{p}\Big).
-\]</span> Set equal to total supply <span class="math inline">\(6\)</span>: <span class="math display">\[
-\alpha\Big(1+\frac{1}{p}\Big)=1
-\;\Rightarrow\;
-\frac{1}{p}=\frac{1-\alpha}{\alpha}
-\;\Rightarrow\;
-\frac{p_1}{p_2}=p=\frac{\alpha}{1-\alpha}.
-\]</span> Thus the <strong>equilibrium price ratio</strong> is <span class="math inline">\(\frac{p_1}{p_2}=\frac{\alpha}{1-\alpha}\)</span>.</p>
-<p><strong>Allocations.</strong> With <span class="math inline">\(p=\frac{\alpha}{1-\alpha}\)</span>, <span class="math display">\[
-I_A=p\cdot 4+1\cdot 2
-=\frac{\alpha}{1-\alpha}\cdot 4+2
-=\frac{2}{1-\alpha},\qquad
-I_B=p\cdot 2+1\cdot 4
-=\frac{\alpha}{1-\alpha}\cdot 2+4
-=\frac{4}{1-\alpha}.
+<section id="equilibrium-price-ratio-and-allocation" class="level3">
+<h3 class="anchored" data-anchor-id="equilibrium-price-ratio-and-allocation">5) Equilibrium price ratio and allocation</h3>
+<p>Let <span class="math inline">\(p_2=1\)</span>, <span class="math inline">\(p_1=p\)</span>. Incomes: <span class="math inline">\(I_A=4p+2\)</span>, <span class="math inline">\(I_B=2p+4\)</span>. Demand for good 1: <span class="math inline">\(X_{1,A}=\alpha I_A/p\)</span>, <span class="math inline">\(X_{1,B}=\alpha I_B/p\)</span>. Clear good 1 (total supply <span class="math inline">\(6\)</span>): <span class="math display">\[
+\alpha\Big(\frac{4p+2}{p}+\frac{2p+4}{p}\Big)=6
+\ \Rightarrow\
+\alpha\Big(6+\frac{6}{p}\Big)=6
+\ \Rightarrow\
+p=\frac{\alpha}{1-\alpha}.
 \]</span> Then <span class="math display">\[
-X_{1,A}=\alpha\frac{I_A}{p}
-=\alpha\cdot \frac{\frac{2}{1-\alpha}}{\frac{\alpha}{1-\alpha}}=2,\qquad
-X_{2,A}=(1-\alpha)I_A=(1-\alpha)\cdot \frac{2}{1-\alpha}=2,
-\]</span> <span class="math display">\[
-X_{1,B}=\alpha\frac{I_B}{p}
-=\alpha\cdot \frac{\frac{4}{1-\alpha}}{\frac{\alpha}{1-\alpha}}=4,\qquad
-X_{2,B}=(1-\alpha)I_B=(1-\alpha)\cdot \frac{4}{1-\alpha}=4.
-\]</span> So the <strong>equilibrium allocation</strong> is <span class="math inline">\((X_A,X_B)=\big( (2,2), (4,4) \big)\)</span>, independent of <span class="math inline">\(\alpha\)</span> (given the symmetric total endowment <span class="math inline">\((6,6)\)</span> and Cobb–Douglas homotheticity).</p>
-<hr>
+I_A=\frac{2}{1-\alpha},\qquad I_B=\frac{4}{1-\alpha},
+\]</span> and allocations <span class="math display">\[
+X_{1,A}=2,\ X_{2,A}=2;\qquad X_{1,B}=4,\ X_{2,B}=4.
+\]</span> By homotheticity, the equilibrium allocation is independent of <span class="math inline">\(\alpha\)</span> given the symmetric totals <span class="math inline">\((6,6)\)</span>.</p>
 
 
 </section>
