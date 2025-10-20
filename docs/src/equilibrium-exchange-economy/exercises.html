@@ -471,20 +471,20 @@ u(X_c,X_f)=(X_c^{1/2}+X_f^{1/2})^2.
 \tilde u(X_c,X_f)=\sqrt{u(X_c,X_f)}=X_c^{1/2}+X_f^{1/2}.
 \]</span> This preserves preferences (same optima) and makes derivatives simple. It is <strong>linear in the transformed consumptions</strong> <span class="math inline">\(Z_c=\sqrt{X_c}\)</span> and <span class="math inline">\(Z_f=\sqrt{X_f}\)</span>, which makes the MRS and the FOCs very easy.</p>
 </section>
-<section id="marshallian-demands-for-any-consumer-with-income-i-and-prices-p_cp_f" class="level3">
-<h3 class="anchored" data-anchor-id="marshallian-demands-for-any-consumer-with-income-i-and-prices-p_cp_f">1) Marshallian demands (for any consumer with income <span class="math inline">\(I\)</span> and prices <span class="math inline">\((p_c,p_f)\)</span>)</h3>
+<section id="marshallian-demands-for-any-consumer-with-wealth-wp-and-prices-p_cp_f" class="level3">
+<h3 class="anchored" data-anchor-id="marshallian-demands-for-any-consumer-with-wealth-wp-and-prices-p_cp_f">1) Marshallian demands (for any consumer with wealth <span class="math inline">\(W(p)\)</span> and prices <span class="math inline">\((p_c,p_f)\)</span>)</h3>
 <p>With <span class="math inline">\(\tilde u=\sqrt{X_c}+\sqrt{X_f}\)</span>, the FOC at an interior optimum sets MRS equal to the price ratio: <span class="math display">\[
 \text{MRS}_{c,f}
 =\frac{\partial \tilde u/\partial X_c}{\partial \tilde u/\partial X_f}
 =\frac{\tfrac{1}{2}X_c^{-1/2}}{\tfrac{1}{2}X_f^{-1/2}}
 =\left(\frac{X_f}{X_c}\right)^{1/2}
 =\frac{p_c}{p_f}.
-\]</span> Hence <span class="math inline">\(X_f=X_c\left(\frac{p_c}{p_f}\right)^2\)</span>. With the budget <span class="math inline">\(p_c X_c+p_f X_f=I\)</span>, solve: <span class="math display">\[
-X_c^M=\frac{I\,p_f}{p_c(p_c+p_f)},
+\]</span> Hence <span class="math inline">\(X_f=X_c\left(\frac{p_c}{p_f}\right)^2\)</span>. With the budget <span class="math inline">\(p_c X_c+p_f X_f=W(p)\)</span>, solve: <span class="math display">\[
+X_c^M=\frac{W(p)\,p_f}{p_c(p_c+p_f)},
 \qquad
-X_f^M=\frac{I\,p_c}{p_f(p_c+p_f)}.
-\]</span> Individual incomes from endowments: <span class="math display">\[
-I_A=10p_c+5p_f,\qquad I_B=5p_c+10p_f.
+X_f^M=\frac{W(p)\,p_c}{p_f(p_c+p_f)}.
+\]</span> Wealth from endowments: <span class="math display">\[
+W_A(p)=10p_c+5p_f,\qquad W_B(p)=5p_c+10p_f.
 \]</span> Plug these into the formulas above for Adam and Bob.</p>
 </section>
 <section id="equilibrium-prices" class="level3">
@@ -502,8 +502,8 @@ X_{c,A}^M+X_{c,B}^M=\frac{(10+5p)p}{1+p}+\frac{(5+10p)p}{1+p}
 </section>
 <section id="equilibrium-allocations" class="level3">
 <h3 class="anchored" data-anchor-id="equilibrium-allocations">3) Equilibrium allocations</h3>
-<p>With <span class="math inline">\(p_c=p_f=1\)</span>, <span class="math inline">\(I_A=I_B=15\)</span> and <span class="math display">\[
-X_{c,i}^M=X_{f,i}^M=\frac{I_i}{2}=\frac{15}{2}=7.5,\quad i\in\{A,B\}.
+<p>With <span class="math inline">\(p_c=p_f=1\)</span>, <span class="math inline">\(W_A(1)=W_B(1)=15\)</span> and <span class="math display">\[
+X_{c,i}^M=X_{f,i}^M=\frac{W_i(p)}{2}=\frac{15}{2}=7.5,\quad i\in\{A,B\}.
 \]</span></p>
 </section>
 <section id="hicksian-compensated-demands" class="level3">
@@ -547,14 +547,14 @@ e(p_c,p_f,\bar u) &amp;= \bar u \cdot \left( \frac{p_c}{\left(1+\frac{p_c}{p_f}\
 </section>
 <section id="why-marshallian-and-hicksian-coincide-at-the-marshallian-utility" class="level3">
 <h3 class="anchored" data-anchor-id="why-marshallian-and-hicksian-coincide-at-the-marshallian-utility">6) Why Marshallian and Hicksian coincide at the Marshallian utility</h3>
-<p>In the optimal bundle, budget is spent entirely: <span class="math inline">\(I=e(p_c,p_f,\bar u)\)</span>. Set <span class="math inline">\(\bar u\)</span> to the Marshallian utility level <span class="math inline">\(\bar u=u(X_c,X_f)\)</span>:</p>
+<p>In the optimal bundle, budget is spent entirely: <span class="math inline">\(W(p)=e(p_c,p_f,\bar u)\)</span>. Set <span class="math inline">\(\bar u\)</span> to the Marshallian utility level <span class="math inline">\(\bar u=u(X_c,X_f)\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-X_c&amp;=\frac{I\,p_f}{p_c(p_c+p_f)} \\
+X_c&amp;=\frac{W(p)\,p_f}{p_c(p_c+p_f)} \\
 &amp;=\frac{e(p_c,p_f,\bar u)\,p_f}{p_c(p_c+p_f)} \\
 &amp;=\frac{\bar u \cdot \left( \frac{p_c p_f^2 + p_f p_c^2}{(p_c+p_f)^2} \right) p_f}{p_c(p_c+p_f)} \\
 &amp;= \frac{\bar u (p_c p_f^3 + p_c^2 p_f^2)}{p_c (p_c+p_f)^3} \\
-&amp;= \frac{\bar u p_c p_f^2 (p_f + p_c p)}{p_c (p_c+p_f)^3} \\
+&amp;= \frac{\bar u \; p_c \; p_f^2 \,(p_f + p_c)}{p_c (p_c+p_f)^3} \\
 &amp;=\frac{\bar u \cdot p_f^2}{(p_c+p_f)^2} \\
 \end{aligned}
 \]</span></p>
@@ -604,86 +604,149 @@ X=X_0-s,\qquad C=0.8\,p_X\,s.
 </section>
 <section id="solution-to-exercise-3" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-3">Solution to Exercise 3</h2>
-<p>Let prices be <span class="math inline">\((p_t,p_a)\)</span> with <span class="math inline">\(p_a=1\)</span> (numeraire) and write <span class="math inline">\(p_t=p\)</span>.</p>
-<section id="marshallian-demands" class="level3">
-<h3 class="anchored" data-anchor-id="marshallian-demands">1) Marshallian demands</h3>
-<p>For Cobb–Douglas <span class="math inline">\(x^\alpha y^{1-\alpha}\)</span>, <span class="math display">\[
-x^M=\alpha\,\frac{I}{p_x},\qquad y^M=(1-\alpha)\,\frac{I}{p_y}.
-\]</span> Incomes from endowments at producer prices: <span class="math inline">\(I_C=4p+1\)</span>, <span class="math inline">\(I_D=p+4\)</span>. Thus <span class="math display">\[
-\text{Carol }(\alpha=\tfrac13):\quad
-X_{t,C}=\frac{1}{3}\frac{I_C}{p},\quad
-X_{a,C}=\frac{2}{3} I_C,
-\]</span> <span class="math display">\[
-\text{Dave }(\alpha=\tfrac23):\quad
-X_{t,D}=\frac{2}{3}\frac{I_D}{p},\quad
-X_{a,D}=\frac{1}{3} I_D.
+<p>Let prices be <span class="math inline">\((p_t,p_a)\)</span> and normalize the numeraire <span class="math inline">\(p_a=1\)</span>. Denote the tobacco price by <span class="math inline">\(p_t=p\)</span>. Endowments are Carol <span class="math inline">\((4,1)\)</span> and Dave <span class="math inline">\((1,4)\)</span>.</p>
+<p>We use the slides’ wealth notation: for consumer <span class="math inline">\(i\in\{C,D\}\)</span>, <span class="math display">\[
+W_i(p)=p\cdot \omega_{it}+1\cdot \omega_{ia}.
+\]</span> Thus, without taxes, <span class="math display">\[
+W_C(p)=4p+1,\qquad W_D(p)=p+4.
+\]</span></p>
+<p>Notation: we call the no-transfer case the competitive equilibrium (prices only). With transfers present, we simply refer to an equilibrium with transfers.</p>
+<section id="marshallian-demands-step-by-step" class="level3">
+<h3 class="anchored" data-anchor-id="marshallian-demands-step-by-step">1) Marshallian demands (step by step)</h3>
+<p>Utilities are Cobb–Douglas: <span class="math display">\[
+U_C(X_t,X_a)=X_t^{\tfrac13}X_a^{\tfrac23}\quad(\alpha_C=\tfrac13),\qquad
+U_D(X_t,X_a)=X_t^{\tfrac23}X_a^{\tfrac13}\quad(\alpha_D=\tfrac23).
+\]</span> For Cobb–Douglas <span class="math inline">\(U=X_t^{\alpha}X_a^{1-\alpha}\)</span> with prices <span class="math inline">\((p,1)\)</span> and wealth <span class="math inline">\(W\)</span>, solve <span class="math display">\[
+\max_{X_t,X_a\ge 0} X_t^{\alpha}X_a^{1-\alpha}\quad \text{s.t.}\quad pX_t+1\cdot X_a=W.
+\]</span> Take logs to linearize and form the Lagrangian <span class="math display">\[
+\mathcal L=\alpha\ln X_t+(1-\alpha)\ln X_a+\lambda\big(W-pX_t-X_a\big).
+\]</span> FOCs: <span class="math display">\[
+\frac{\partial \mathcal L}{\partial X_t}=\frac{\alpha}{X_t}-\lambda p=0\;\Rightarrow\; X_t=\frac{\alpha}{\lambda p},\qquad
+\frac{\partial \mathcal L}{\partial X_a}=\frac{1-\alpha}{X_a}-\lambda=0\;\Rightarrow\; X_a=\frac{1-\alpha}{\lambda}.
+\]</span> Budget <span class="math inline">\(pX_t+X_a=W\)</span> gives, after substitution, <span class="math display">\[
+p\Big(\tfrac{\alpha}{\lambda p}\Big)+\tfrac{1-\alpha}{\lambda}=\frac{\alpha}{\lambda}+\frac{1-\alpha}{\lambda}=\frac{1}{\lambda}=W\;\Rightarrow\;\lambda=\frac{1}{W}.
+\]</span> Hence Marshallian demands are <span class="math display">\[
+X_t^{M}=\alpha\,\frac{W}{p},\qquad X_a^{M}=(1-\alpha)\,W.
+\]</span> Applying to each consumer using <span class="math inline">\(W_C(p)\)</span> and <span class="math inline">\(W_D(p)\)</span>: <span class="math display">\[
+\begin{aligned}
+    \text{Carol }(\alpha_C=\tfrac13):&amp;\quad X_{t,C}(p)=\frac{1}{3}\,\frac{W_C(p)}{p}=\frac{1}{3}\,\frac{4p+1}{p},\quad X_{a,C}(p)=\frac{2}{3}\,W_C(p)=\frac{2}{3}(4p+1);\\
+    \text{Dave }(\alpha_D=\tfrac23):&amp;\quad X_{t,D}(p)=\frac{2}{3}\,\frac{W_D(p)}{p}=\frac{2}{3}\,\frac{p+4}{p},\quad X_{a,D}(p)=\frac{1}{3}\,W_D(p)=\frac{1}{3}(p+4).
+\end{aligned}
 \]</span></p>
 </section>
-<section id="equilibrium-prices-no-tax" class="level3">
-<h3 class="anchored" data-anchor-id="equilibrium-prices-no-tax">2) Equilibrium prices (no tax)</h3>
-<p>Clear tobacco (total endowment <span class="math inline">\(5\)</span>): <span class="math display">\[
-\frac{1}{3}\frac{4p+1}{p}+\frac{2}{3}\frac{p+4}{p}=5\quad\Rightarrow\quad p=1.
-\]</span> Hence <span class="math inline">\((p_t,p_a)=(1,1)\)</span>.</p>
+<section id="equilibrium-prices-no-tax-step-by-step" class="level3">
+<h3 class="anchored" data-anchor-id="equilibrium-prices-no-tax-step-by-step">2) Equilibrium prices (no tax) — step by step</h3>
+<p>Aggregate endowments are <span class="math inline">\((\Omega_t,\Omega_a)=(5,5)\)</span>. Market clearing in tobacco requires <span class="math display">\[
+X_{t,C}(p)+X_{t,D}(p)=\Omega_t=5.
+\]</span> Substitute the demands and clear denominators carefully: <span class="math display">\[
+\begin{aligned}
+\frac{1}{3}\frac{4p+1}{p}+\frac{2}{3}\frac{p+4}{p}&amp;=5 \\
+\frac{4p+1+2(p+4)}{3p}&amp;=5 \\
+\frac{6p+9}{3p}&amp;=5 \\
+6p+9&amp;=15p \\
+9&amp;=9p \\
+p&amp;=1.
+\end{aligned}
+\]</span> Thus <span class="math inline">\((p_t,p_a)=(1,1)\)</span>. As a consistency check, alcohol also clears at <span class="math inline">\(p=1\)</span>: <span class="math display">\[
+X_{a,C}(1)+X_{a,D}(1)=\tfrac{2}{3}(5)+\tfrac{1}{3}(5)=\tfrac{10}{3}+\tfrac{5}{3}=5.
+\]</span></p>
 </section>
 <section id="equilibrium-allocations-no-tax" class="level3">
 <h3 class="anchored" data-anchor-id="equilibrium-allocations-no-tax">3) Equilibrium allocations (no tax)</h3>
-<p>With <span class="math inline">\(p=1\)</span>, incomes <span class="math inline">\(I_C=I_D=5\)</span>: <span class="math display">\[
-\text{Carol: } \left(X_{t,C},X_{a,C}\right)=\left(\tfrac{5}{3},\,\tfrac{10}{3}\right),\qquad
-\text{Dave: } \left(X_{t,D},X_{a,D}\right)=\left(\tfrac{10}{3},\,\tfrac{5}{3}\right).
-\]</span></p>
+<p>At <span class="math inline">\(p=1\)</span>, wealths are <span class="math inline">\(W_C(1)=4\cdot 1+1=5\)</span> and <span class="math inline">\(W_D(1)=1+4=5\)</span>. Then <span class="math display">\[
+  \text{Carol: }\big(X_{t,C},X_{a,C}\big)=\Big(\tfrac{1}{3}\tfrac{5}{1},\;\tfrac{2}{3}\cdot 5\Big)=\Big(\tfrac{5}{3},\;\tfrac{10}{3}\Big),\quad
+  \text{Dave: }\big(X_{t,D},X_{a,D}\big)=\Big(\tfrac{2}{3}\tfrac{5}{1},\;\tfrac{1}{3}\cdot 5\Big)=\Big(\tfrac{10}{3},\;\tfrac{5}{3}\Big).
+\]</span> They sum to <span class="math inline">\((5,5)\)</span>, as required.</p>
 </section>
-<section id="consumption-tax-on-tobacco" class="level3">
-<h3 class="anchored" data-anchor-id="consumption-tax-on-tobacco">4) 20% consumption tax on tobacco</h3>
-<p>Buyers pay <span class="math inline">\(p^c=(1+\tau)p=1.2p\)</span>; sellers receive <span class="math inline">\(p\)</span>; <span class="math inline">\(p_a=1\)</span>. Incomes (at producer prices) are still <span class="math inline">\(I_C=4p+1\)</span>, <span class="math inline">\(I_D=p+4\)</span>. With lump-sum transfers <span class="math inline">\((T_C,T_D)\)</span>, <span class="math display">\[
-X_{t,C}=\frac{1}{3}\frac{I_C+T_C}{1.2p},\quad
-X_{a,C}=\frac{2}{3}(I_C+T_C),\qquad
-X_{t,D}=\frac{2}{3}\frac{I_D+T_D}{1.2p},\quad
-X_{a,D}=\frac{1}{3}(I_D+T_D).
-\]</span></p>
-<ul>
-<li><strong>Market clearing:</strong> <span class="math inline">\(X_{t,C}+X_{t,D}=5\)</span>, <span class="math inline">\(X_{a,C}+X_{a,D}=5\)</span>.</li>
-</ul>
-<section id="a-equilibrium-conditions-any-sum-such-that-t_ct_dp" class="level4">
-<h4 class="anchored" data-anchor-id="a-equilibrium-conditions-any-sum-such-that-t_ct_dp">(a) Equilibrium conditions, any sum such that <span class="math inline">\(T_C+T_D=p\)</span></h4>
-<p><span class="math display">\[
-\frac{(I_C+T_C)/3+2(I_D+T_D)/3}{1.2p}=5,\qquad
-\frac{2(I_C+T_C)+(I_D+T_D)}{3}=5,\qquad
-T_C+T_D=p.
-\]</span></p>
-</section>
-<section id="b-one-revenue-neutral-example" class="level4">
-<h4 class="anchored" data-anchor-id="b-one-revenue-neutral-example">(b) One revenue-neutral example:</h4>
-<ul>
-<li><p><strong>Tax revenue:</strong> <span class="math inline">\(R=\tau\,p\cdot \Omega_t=0.2\,p\cdot 5=p\)</span>.</p></li>
-<li><p><strong>Revenue-neutral:</strong> <span class="math inline">\(T_C+T_D=p\)</span>, so any equilibrium condition is revenue-neutral.</p></li>
-</ul>
-</section>
-<section id="c-equal-rebate-transfers" class="level4">
-<h4 class="anchored" data-anchor-id="c-equal-rebate-transfers">(c) Equal rebate transfers</h4>
-<p><span class="math inline">\(T_C=T_D=\tfrac{p}{2}\)</span>.</p>
-<p><span class="math display">\[
+<section id="consumption-tax-on-tobacco-full-characterization-and-examples" class="level3">
+<h3 class="anchored" data-anchor-id="consumption-tax-on-tobacco-full-characterization-and-examples">4) 20% consumption tax on tobacco — full characterization and examples</h3>
+<p>Let <span class="math inline">\(\tau=0.2\)</span>. Buyers face the consumption price <span class="math inline">\(p^{c}=(1+\tau)p=1.2\,p\)</span>, while sellers receive the producer price <span class="math inline">\(p\)</span>. Wealth from endowments is still <span class="math display">\[
+W_C(p)=4p+1,\qquad W_D(p)=p+4.
+\]</span> Let lump-sum transfers be <span class="math inline">\((T_C,T_D)\)</span>. The budget for agent <span class="math inline">\(i\)</span> is <span class="math display">\[
+p^{c}X_{t,i}+1\cdot X_{a,i}=W_i(p)+T_i.
+\]</span> Repeating the Cobb–Douglas derivation with prices <span class="math inline">\((p^{c},1)\)</span> and wealth <span class="math inline">\(W_i(p)+T_i\)</span> gives <span class="math display">\[
+X_{t,i}=\alpha_i\,\frac{W_i(p)+T_i}{p^{c}},\qquad X_{a,i}=(1-\alpha_i)\,[W_i(p)+T_i].
+\]</span> Therefore <span class="math display">\[
 \begin{aligned}
-\frac{(I_C+p/2)/3+2(I_D+p/2)/3}{\frac{6}{5}p}&amp;=5 \\
-\frac{(I_C+p/2)+2(I_D+p/2)}{\frac{6}{5}p}&amp;=15 \\
-\frac{I_C+2I_D+\frac{3p}{2}}{\frac{6}{5}p}&amp;=15 \\
-I_C+2I_D+\frac{3p}{2}&amp;=18p \\
-(4p+1)+2(p+4)+\frac{3p}{2}&amp;=18p \\
-6p + \frac{3p}{2} + 9&amp;=18p \\
-\frac{12p}{2} + \frac{3p}{2} + 9&amp;=18p \\
-\frac{15p}{2}+9&amp;=18p \\
-9&amp;=18p - \frac{15p}{2} \\
-9&amp;=\frac{36p}{2} - \frac{15p}{2} \\
-9&amp;=\frac{21p}{2} \\
-p&amp;=\frac{18}{21}=\frac{6}{7}.
+X_{t,C}&amp;=\frac{1}{3}\,\frac{W_C(p)+T_C}{1.2\,p},&amp;\quad X_{a,C}&amp;=\frac{2}{3}\,[W_C(p)+T_C],\\
+X_{t,D}&amp;=\frac{2}{3}\,\frac{W_D(p)+T_D}{1.2\,p},&amp;\quad X_{a,D}&amp;=\frac{1}{3}\,[W_D(p)+T_D].
 \end{aligned}
-\]</span> —</p>
+\]</span></p>
+<ul>
+<li>Market clearing: <span class="math display">\[
+X_{t,C}+X_{t,D}=5,\qquad X_{a,C}+X_{a,D}=5.
+\]</span></li>
+</ul>
+<p>Transfers and equilibrium characterization (independent of funding): With lump-sum transfers <span class="math inline">\((T_C,T_D)\)</span>, the demand equations above and the market-clearing conditions determine the price <span class="math inline">\(p\)</span> and the allocation for any given <span class="math inline">\((T_C,T_D)\)</span>. By the Second Welfare Theorem (with convex preferences and local non-satiation), different transfer vectors implement different competitive equilibria; the source of the transfers is irrelevant for this characterization.</p>
+<section id="a-algebraic-equilibrium-conditions-with-transfers" class="level4">
+<h4 class="anchored" data-anchor-id="a-algebraic-equilibrium-conditions-with-transfers">(a) Algebraic equilibrium conditions (with transfers)</h4>
+<p>Tobacco clearing, multiplying both sides by <span class="math inline">\(1.2\,p\)</span>: <span class="math display">\[
+\frac{W_C+T_C}{3}+\frac{2(W_D+T_D)}{3}=5\cdot 1.2\,p=6p.
+\]</span> Alcohol clearing: <span class="math display">\[
+\frac{2(W_C+T_C)}{3}+\frac{W_D+T_D}{3}=5.
+\]</span> You can view these in two equivalent ways: - Given <span class="math inline">\((T_C,T_D)\)</span>, they determine the equilibrium price <span class="math inline">\(p\)</span> and allocation. - Or, given a target price <span class="math inline">\(p&gt;0\)</span>, they determine the transfers that implement an equilibrium at that <span class="math inline">\(p\)</span>.</p>
+<p>Implementing transfers as functions of <span class="math inline">\(p\)</span>. Write the two clearing equations in levels and substitute <span class="math inline">\(W_C=4p+1\)</span>, <span class="math inline">\(W_D=p+4\)</span>: <span class="math display">\[
+\begin{aligned}
+&amp;\text{tobacco:}&amp;&amp; (W_C+T_C)+2(W_D+T_D)=18p,\\
+&amp;\text{alcohol:}&amp;&amp; 2(W_C+T_C)+(W_D+T_D)=15.
+\end{aligned}
+\]</span> That is, <span class="math display">\[
+\begin{aligned}
+T_C+2T_D&amp;=18p-(4p+1)-2(p+4)=12p-9,\\
+2T_C+T_D&amp;=15-2(4p+1)-(p+4)=9-9p.
+\end{aligned}
+\]</span> Solving the linear system gives the transfers that implement <span class="math inline">\(p\)</span>: <span class="math display">\[
+T_C(p)=9-10p,\qquad T_D(p)=11p-9.
+\]</span> Note these satisfy <span class="math inline">\(T_C(p)+T_D(p)=p\)</span> as a consequence of market clearing; later, if you impose revenue neutrality, this identity coincides with the government budget condition.</p>
+</section>
+<section id="b-revenue-neutral-implementation-and-one-unequal-rebate-example" class="level4">
+<h4 class="anchored" data-anchor-id="b-revenue-neutral-implementation-and-one-unequal-rebate-example">(b) Revenue-neutral implementation and one unequal-rebate example</h4>
+<p>Revenue neutrality: the per-unit tax is <span class="math inline">\((1+\tau)p-p=\tau p\)</span>, market clearing gives taxed quantity <span class="math inline">\(\Omega_t=5\)</span>, hence revenue <span class="math display">\[R=\tau p\cdot 5=0.2\,p\cdot 5=p,\]</span> so the government budget is <span class="math display">\[T_C+T_D=R=p.\]</span></p>
+<p>One unequal-rebate example: <span class="math inline">\((T_C,T_D)=(0,\,p)\)</span></p>
+<p>Use <span class="math inline">\(T_C=0\)</span>, <span class="math inline">\(T_D=p\)</span>, and <span class="math inline">\(W_C=4p+1\)</span>, <span class="math inline">\(W_D=p+4\)</span>. From tobacco clearing: <span class="math display">\[
+\begin{aligned}
+\frac{W_C}{3}+\frac{2(W_D+p)}{3}&amp;=6p \\
+W_C+2(W_D+p)&amp;=18p \\
+(4p+1)+2[(p+4)+p]&amp;=18p \\
+4p+1+2(2p+4)&amp;=18p \\
+8p+9&amp;=18p \\
+p&amp;=\frac{9}{10}.
+\end{aligned}
+\]</span> Then the allocations (write as exact fractions): <span class="math display">\[
+\begin{aligned}
+&amp;p=\tfrac{9}{10},\quad p^{c}=\tfrac{27}{25},\quad W_C=\tfrac{23}{5},\quad W_D=\tfrac{49}{10},\quad T_C=0,\ T_D=\tfrac{9}{10}.\\[4pt]
+&amp;X_{t,C}=\frac{1}{3}\,\frac{\tfrac{23}{5}}{\tfrac{27}{25}}=\frac{23}{15}\cdot\frac{25}{27}=\frac{115}{81},\quad
+X_{a,C}=\frac{2}{3}\cdot \tfrac{23}{5}=\tfrac{46}{15};\\
+&amp;X_{t,D}=\frac{2}{3}\,\frac{\tfrac{49}{10}+\tfrac{9}{10}}{\tfrac{27}{25}}=\frac{2}{3}\,\frac{\tfrac{29}{5}}{\tfrac{27}{25}}=\frac{58}{15}\cdot\frac{25}{27}=\frac{290}{81},\quad
+X_{a,D}=\frac{1}{3}\cdot \tfrac{29}{5}=\tfrac{29}{15}.
+\end{aligned}
+\]</span> Checks: <span class="math inline">\(\tfrac{115}{81}+\tfrac{290}{81}=\tfrac{405}{81}=5\)</span> and <span class="math inline">\(\tfrac{46}{15}+\tfrac{29}{15}=\tfrac{75}{15}=5\)</span>.</p>
+</section>
+<section id="c-equal-rebate-transfers-t_ct_dtfracp2" class="level4">
+<h4 class="anchored" data-anchor-id="c-equal-rebate-transfers-t_ct_dtfracp2">(c) Equal rebate transfers: <span class="math inline">\(T_C=T_D=\tfrac{p}{2}\)</span></h4>
+<p>Solve for <span class="math inline">\(p\)</span> first. Tobacco clearing gives <span class="math display">\[
+\frac{W_C+\tfrac{p}{2}}{3}+\frac{2(W_D+\tfrac{p}{2})}{3}=6p
+\;\Rightarrow\; W_C+2W_D+\tfrac{3p}{2}=18p.
+\]</span> Substitute <span class="math inline">\(W_C=4p+1\)</span>, <span class="math inline">\(W_D=p+4\)</span> and solve step by step: <span class="math display">\[
+4p+1+2(p+4)+\tfrac{3p}{2}=18p
+\;\Rightarrow\; 7.5p+9=18p
+\;\Rightarrow\; 9=10.5p
+\;\Rightarrow\; p=\frac{6}{7}.
+\]</span> Now compute allocations (keep exact fractions): with <span class="math inline">\(p=\tfrac{6}{7}\)</span> we have <span class="math inline">\(p^{c}=\tfrac{36}{35}\)</span>, <span class="math inline">\(W_C=\tfrac{31}{7}\)</span>, <span class="math inline">\(W_D=\tfrac{34}{7}\)</span>, and <span class="math inline">\(T_C=T_D=\tfrac{3}{7}\)</span>. Then <span class="math display">\[
+\begin{aligned}
+X_{t,C}&amp;=\frac{1}{3}\,\frac{\tfrac{31}{7}+\tfrac{3}{7}}{\tfrac{36}{35}}=\frac{1}{3}\,\frac{\tfrac{34}{7}}{\tfrac{36}{35}}=\frac{34}{21}\cdot\frac{35}{36}=\frac{85}{54},&amp;\quad
+X_{a,C}&amp;=\frac{2}{3}\cdot \tfrac{34}{7}=\tfrac{68}{21},\\
+X_{t,D}&amp;=\frac{2}{3}\,\frac{\tfrac{34}{7}+\tfrac{3}{7}}{\tfrac{36}{35}}=\frac{2}{3}\,\frac{\tfrac{37}{7}}{\tfrac{36}{35}}=\frac{74}{21}\cdot\frac{35}{36}=\frac{185}{54},&amp;\quad
+X_{a,D}&amp;=\frac{1}{3}\cdot \tfrac{37}{7}=\tfrac{37}{21}.
+\end{aligned}
+\]</span> Checks: <span class="math inline">\(\tfrac{85}{54}+\tfrac{185}{54}=\tfrac{270}{54}=5\)</span> and <span class="math inline">\(\tfrac{68}{21}+\tfrac{37}{21}=\tfrac{105}{21}=5\)</span>. —</p>
 </section>
 </section>
 </section>
 <section id="solution-to-exercise-4" class="level2">
 <h2 class="anchored" data-anchor-id="solution-to-exercise-4">Solution to Exercise 4</h2>
-<section id="cost-of-purchasing-and-income-from-selling-block-prices" class="level3">
-<h3 class="anchored" data-anchor-id="cost-of-purchasing-and-income-from-selling-block-prices">Cost of purchasing and income from selling (block prices)</h3>
+<section id="cost-of-purchasing-and-wealth-from-selling-block-prices" class="level3">
+<h3 class="anchored" data-anchor-id="cost-of-purchasing-and-wealth-from-selling-block-prices">Cost of purchasing and wealth from selling (block prices)</h3>
 <p>For any <span class="math inline">\(x\ge 0\)</span>, <span class="math display">\[
 E_A(x)=
 \begin{cases}
@@ -697,15 +760,15 @@ E_P(x)=
 \bar p_p\,\bar P+\dfrac{\bar p_p}{2}\,(x-\bar P), &amp; x&gt;\bar P.
 \end{cases}
 \]</span></p>
-<p>Income of <span class="math inline">\(i\in\{E,F\}\)</span> when endowments are valued at the same schedule: <span class="math display">\[
-I_i \;=\; E_A(\omega_{iA})+E_P(\omega_{iP}),\qquad
+<p>Wealth of <span class="math inline">\(i\in\{E,F\}\)</span> when endowments are valued at the same schedule (notation consistent with <span class="math inline">\(W\)</span>): <span class="math display">\[
+W_i \;=\; E_A(\omega_{iA})+E_P(\omega_{iP}),\qquad
 \Omega_A=\omega_{EA}+\omega_{FA},\ \ \Omega_P=\omega_{EP}+\omega_{FP}.
 \]</span></p>
 </section>
 <section id="individual-marshallian-demand-cobbdouglas-derived-from-spending" class="level3">
 <h3 class="anchored" data-anchor-id="individual-marshallian-demand-cobbdouglas-derived-from-spending">Individual Marshallian demand (Cobb–Douglas, derived from spending)</h3>
 <p>Cobb–Douglas <span class="math inline">\(U=X_A^\alpha X_P^{1-\alpha}\)</span> implies the agent <strong>targets</strong> spendings <span class="math display">\[
-s_{A,i}=\alpha I_i,\qquad s_{P,i}=(1-\alpha)I_i.
+s_{A,i}=\alpha W_i,\qquad s_{P,i}=(1-\alpha)W_i.
 \]</span> Convert spending into quantities by <strong>inverting</strong> <span class="math inline">\(E_A,E_P\)</span>.</p>
 <ul>
 <li><p>Apples.<br>
@@ -722,7 +785,7 @@ X_{P,i}=\frac{s_{P,i}}{\bar p_p}.
 X_{P,i}=\bar P+\frac{2}{\bar p_p}\big(s_{P,i}-\bar p_p\bar P\big).
 \]</span></p></li>
 </ul>
-<p>Substitute <span class="math inline">\(s_{A,i}=\alpha I_i\)</span> and <span class="math inline">\(s_{P,i}=(1-\alpha)I_i\)</span> in each branch.</p>
+<p>Substitute <span class="math inline">\(s_{A,i}=\alpha W_i\)</span> and <span class="math inline">\(s_{P,i}=(1-\alpha)W_i\)</span> in each branch.</p>
 </section>
 <section id="market-clearing" class="level3">
 <h3 class="anchored" data-anchor-id="market-clearing">Market clearing</h3>
@@ -734,17 +797,17 @@ X_{A,E}+X_{A,F}=\Omega_A,\qquad X_{P,E}+X_{P,F}=\Omega_P.
 </section>
 <section id="equilibrium-by-aggregate-regime-prices-up-to-a-numeraire" class="level2">
 <h2 class="anchored" data-anchor-id="equilibrium-by-aggregate-regime-prices-up-to-a-numeraire">Equilibrium by aggregate regime (prices up to a numeraire)</h2>
-<p>Below, we present closed forms for the <strong>relative price</strong> and the implied <strong>allocations</strong> when the aggregate economy falls in one of four quantity regimes. In each case, compute <span class="math inline">\(I_i\)</span> from endowments, plug into the branch formulas above, and the allocations will sum to <span class="math inline">\((\Omega_A,\Omega_P)\)</span>.</p>
+<p>Below, we present closed forms for the <strong>relative price</strong> and the implied <strong>allocations</strong> when the aggregate economy falls in one of four quantity regimes. In each case, compute <span class="math inline">\(W_i\)</span> from endowments, plug into the branch formulas above, and the allocations will sum to <span class="math inline">\((\Omega_A,\Omega_P)\)</span>.</p>
 <section id="case-1-neither-good-uses-the-second-block" class="level3">
 <h3 class="anchored" data-anchor-id="case-1-neither-good-uses-the-second-block">Case 1: Neither good uses the second block</h3>
 <p><span class="math display">\[
 \Omega_A\le \bar A,\qquad \Omega_P\le \bar P.
 \]</span> All agents are in the first-block branch for both goods: <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
-X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+X_{A,i}=\frac{\alpha W_i}{\bar p_a},\qquad
+X_{P,i}=\frac{(1-\alpha) W_i}{\bar p_p}.
 \]</span> Clearing implies <span class="math display">\[
-\frac{\alpha(I_E+I_F)}{\bar p_a}=\Omega_A,\qquad
-\frac{(1-\alpha)(I_E+I_F)}{\bar p_p}=\Omega_P
+\frac{\alpha(W_E+W_F)}{\bar p_a}=\Omega_A,\qquad
+\frac{(1-\alpha)(W_E+W_F)}{\bar p_p}=\Omega_P
 \ \Rightarrow\
 \boxed{\ \frac{\bar p_a}{\bar p_p}=\frac{\alpha}{1-\alpha}\cdot\frac{\Omega_P}{\Omega_A}\ }.
 \]</span></p>
@@ -754,12 +817,12 @@ X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
 <p><span class="math display">\[
 \Omega_A&gt;\bar A,\qquad \Omega_P\le \bar P.
 \]</span> Apples beyond-first-block, pears first-block. Using the spending-to-quantity conversion: <span class="math display">\[
-X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big)
-=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
-X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha W_i-\bar p_a\bar A\big)
+=\frac{2\alpha}{\bar p_a}W_i-\bar A,\qquad
+X_{P,i}=\frac{(1-\alpha) W_i}{\bar p_p}.
 \]</span> Summing and clearing: <span class="math display">\[
-\frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
-\frac{1-\alpha}{\bar p_p}(I_E+I_F)=\Omega_P,
+\frac{2\alpha}{\bar p_a}(W_E+W_F)-2\bar A=\Omega_A,\qquad
+\frac{1-\alpha}{\bar p_p}(W_E+W_F)=\Omega_P,
 \]</span> hence <span class="math display">\[
 \boxed{\ \frac{\bar p_a}{\bar p_p}
 =\frac{2\alpha}{1-\alpha}\cdot \frac{\Omega_P}{\Omega_A+2\bar A}\ }.
@@ -770,12 +833,12 @@ X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
 <p><span class="math display">\[
 \Omega_A\le \bar A,\qquad \Omega_P&gt;\bar P.
 \]</span> Apples first-block, pears beyond-first-block: <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
-X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
-=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+X_{A,i}=\frac{\alpha W_i}{\bar p_a},\qquad
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) W_i-\bar p_p\bar P\big)
+=\frac{2(1-\alpha)}{\bar p_p}W_i-\bar P.
 \]</span> Summing and clearing: <span class="math display">\[
-\frac{\alpha}{\bar p_a}(I_E+I_F)=\Omega_A,\qquad
-\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P,
+\frac{\alpha}{\bar p_a}(W_E+W_F)=\Omega_A,\qquad
+\frac{2(1-\alpha)}{\bar p_p}(W_E+W_F)-2\bar P=\Omega_P,
 \]</span> so <span class="math display">\[
 \boxed{\ \frac{\bar p_a}{\bar p_p}
 =\frac{\alpha}{2(1-\alpha)}\cdot \frac{\Omega_P+2\bar P}{\Omega_A}\ }.
@@ -786,11 +849,11 @@ X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big)
 <p><span class="math display">\[
 \Omega_A&gt;\bar A,\qquad \Omega_P&gt;\bar P.
 \]</span> Both beyond-first-block: <span class="math display">\[
-X_{A,i}=\frac{2\alpha}{\bar p_a}I_i-\bar A,\qquad
-X_{P,i}=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
+X_{A,i}=\frac{2\alpha}{\bar p_a}W_i-\bar A,\qquad
+X_{P,i}=\frac{2(1-\alpha)}{\bar p_p}W_i-\bar P.
 \]</span> Summing and clearing: <span class="math display">\[
-\frac{2\alpha}{\bar p_a}(I_E+I_F)-2\bar A=\Omega_A,\qquad
-\frac{2(1-\alpha)}{\bar p_p}(I_E+I_F)-2\bar P=\Omega_P,
+\frac{2\alpha}{\bar p_a}(W_E+W_F)-2\bar A=\Omega_A,\qquad
+\frac{2(1-\alpha)}{\bar p_p}(W_E+W_F)-2\bar P=\Omega_P,
 \]</span> giving <span class="math display">\[
 \boxed{\ \frac{\bar p_a}{\bar p_p}
 =\frac{\alpha}{1-\alpha}\cdot \frac{\Omega_P+2\bar P}{\Omega_A+2\bar A}\ }.
@@ -800,18 +863,18 @@ X_{P,i}=\frac{2(1-\alpha)}{\bar p_p}I_i-\bar P.
 <section id="equilibrium-allocations-all-regimes" class="level3">
 <h3 class="anchored" data-anchor-id="equilibrium-allocations-all-regimes">Equilibrium allocations (all regimes)</h3>
 <ol type="1">
-<li>Compute <span class="math inline">\(I_i=E_A(\omega_{iA})+E_P(\omega_{iP})\)</span> using the block-price cost functions above.<br>
+<li>Compute <span class="math inline">\(W_i=E_A(\omega_{iA})+E_P(\omega_{iP})\)</span> using the block-price cost functions above.<br>
 </li>
 <li>Use the appropriate branch for each good:</li>
 </ol>
 <ul>
 <li><p>First-block branch: <span class="math display">\[
-X_{A,i}=\frac{\alpha I_i}{\bar p_a},\qquad
-X_{P,i}=\frac{(1-\alpha) I_i}{\bar p_p}.
+X_{A,i}=\frac{\alpha W_i}{\bar p_a},\qquad
+X_{P,i}=\frac{(1-\alpha) W_i}{\bar p_p}.
 \]</span></p></li>
 <li><p>Beyond-first-block branch: <span class="math display">\[
-X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha I_i-\bar p_a\bar A\big),\qquad
-X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) I_i-\bar p_p\bar P\big).
+X_{A,i}=\bar A+\frac{2}{\bar p_a}\big(\alpha W_i-\bar p_a\bar A\big),\qquad
+X_{P,i}=\bar P+\frac{2}{\bar p_p}\big((1-\alpha) W_i-\bar p_p\bar P\big).
 \]</span></p></li>
 </ul>
 <p>These allocations satisfy <span class="math inline">\(X_{A,E}+X_{A,F}=\Omega_A\)</span> and <span class="math inline">\(X_{P,E}+X_{P,F}=\Omega_P\)</span> by construction.</p>
@@ -842,17 +905,109 @@ X_2=\bar u^{\frac{1}{1-\alpha}}\,X_1^{-\frac{\alpha}{1-\alpha}},
 </section>
 <section id="equilibrium-price-ratio-and-allocation" class="level3">
 <h3 class="anchored" data-anchor-id="equilibrium-price-ratio-and-allocation">5) Equilibrium price ratio and allocation</h3>
-<p>Let <span class="math inline">\(p_2=1\)</span>, <span class="math inline">\(p_1=p\)</span>. Incomes: <span class="math inline">\(I_A=4p+2\)</span>, <span class="math inline">\(I_B=2p+4\)</span>. Demand for good 1: <span class="math inline">\(X_{1,A}=\alpha I_A/p\)</span>, <span class="math inline">\(X_{1,B}=\alpha I_B/p\)</span>. Clear good 1 (total supply <span class="math inline">\(6\)</span>): <span class="math display">\[
+<p>Let <span class="math inline">\(p_2=1\)</span>, <span class="math inline">\(p_1=p\)</span>. Wealth: <span class="math inline">\(W_A(p)=4p+2\)</span>, <span class="math inline">\(W_B(p)=2p+4\)</span>. Demand for good 1: <span class="math inline">\(X_{1,A}=\alpha W_A(p)/p\)</span>, <span class="math inline">\(X_{1,B}=\alpha W_B(p)/p\)</span>. Clear good 1 (total supply <span class="math inline">\(6\)</span>): <span class="math display">\[
 \alpha\Big(\frac{4p+2}{p}+\frac{2p+4}{p}\Big)=6
 \ \Rightarrow\
 \alpha\Big(6+\frac{6}{p}\Big)=6
 \ \Rightarrow\
 p=\frac{\alpha}{1-\alpha}.
 \]</span> Then <span class="math display">\[
-I_A=\frac{2}{1-\alpha},\qquad I_B=\frac{4}{1-\alpha},
+W_A(p)=\frac{2}{1-\alpha},\qquad W_B(p)=\frac{4}{1-\alpha},
 \]</span> and allocations <span class="math display">\[
-X_{1,A}=2,\ X_{2,A}=2;\qquad X_{1,B}=4,\ X_{2,B}=4.
-\]</span> By homotheticity, the equilibrium allocation is independent of <span class="math inline">\(\alpha\)</span> given the symmetric totals <span class="math inline">\((6,6)\)</span>.</p>
+X_{1,A}=\frac{\alpha W_A(p)}{p}=2(1+\alpha),\quad X_{2,A}=(1-\alpha) W_A(p)=2(1+\alpha);\\
+X_{1,B}=\frac{\alpha W_B(p)}{p}=2(2-\alpha),\quad X_{2,B}=(1-\alpha) W_B(p)=2(2-\alpha).
+\]</span> These satisfy market clearing <span class="math inline">\((2(1+\alpha)+2(2-\alpha)=6)\)</span> for each good. In the symmetric case <span class="math inline">\(\alpha=\tfrac12\)</span> we have <span class="math inline">\(p=1\)</span>, <span class="math inline">\(W_A=W_B=6\)</span>, and both consumers choose <span class="math inline">\((3,3)\)</span>.</p>
+<p>Budget lines pass through the endowment. For A, with <span class="math inline">\(p_2=1\)</span>, the budget is <span class="math display">\[
+p\,X_{1,A}+X_{2,A}=W_A(p)=p\cdot 4+1\cdot 2,
+\]</span> so when <span class="math inline">\(p=1\)</span> it is <span class="math inline">\(X_{1,A}+X_{2,A}=6\)</span> (slope <span class="math inline">\(-1\)</span> through <span class="math inline">\((4,2)\)</span>), as shown in the diagram.</p>
+</section>
+<section id="edgeworth-box-diagram-illustrative" class="level3">
+<h3 class="anchored" data-anchor-id="edgeworth-box-diagram-illustrative">Edgeworth box diagram (illustrative)</h3>
+<p>Assumption for this diagram: <span class="math inline">\(\alpha=\tfrac{1}{2}\)</span> (so <span class="math inline">\(p_1/p_2=1\)</span>). Then <span class="math inline">\(W_A=W_B=6\)</span> and A’s budget is <span class="math inline">\(X_1+X_2=6\)</span> through the endowment <span class="math inline">\((4,2)\)</span>.</p>
+<div style="max-width: 800px; margin: 1rem 0;">
+<svg viewbox="0 0 480 480" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-label="Edgeworth box for totals (6,6)">
+  <!-- margins -->
+  <defs>
+    <style>
+      .axis { stroke: #222; stroke-width: 1; }
+      .box { fill: none; stroke: #222; stroke-width: 2; }
+      .grid { stroke: #ddd; stroke-width: 1; }
+      .dashed { stroke-dasharray: 6 4; }
+      .label { font: 12px sans-serif; fill: #222; }
+      .label-small { font: 11px sans-serif; fill: #444; }
+      .curve-eq { fill: none; stroke: #1565c0; stroke-width: 2; }
+      .curve-endow { fill: none; stroke: #8e24aa; stroke-width: 2; stroke-dasharray: 5 4; }
+      .budget { fill: none; stroke: #7b1fa2; stroke-width: 2.5; }
+    </style>
+  </defs>
+
+  <!-- coordinate frame -->
+  <!-- Box from (40,440) bottom-left to (440,40) top-right -->
+  <rect x="40" y="40" width="400" height="400" class="box"></rect>
+
+  <!-- light grid lines at integers 1..5 -->
+  <!-- vertical -->
+  <g class="grid">
+    <line x1="106.667" y1="40" x2="106.667" y2="440"></line>
+    <line x1="173.333" y1="40" x2="173.333" y2="440"></line>
+    <line x1="240.000" y1="40" x2="240.000" y2="440"></line>
+    <line x1="306.667" y1="40" x2="306.667" y2="440"></line>
+    <line x1="373.333" y1="40" x2="373.333" y2="440"></line>
+    <!-- horizontal -->
+    <line x1="40" y1="106.667" x2="440" y2="106.667"></line>
+    <line x1="40" y1="173.333" x2="440" y2="173.333"></line>
+    <line x1="40" y1="240.000" x2="440" y2="240.000"></line>
+    <line x1="40" y1="306.667" x2="440" y2="306.667"></line>
+    <line x1="40" y1="373.333" x2="440" y2="373.333"></line>
+  </g>
+
+  <!-- axes labels -->
+  <text x="240" y="462" text-anchor="middle" class="label">A: X₁ (0 → 6)</text>
+  <text x="18" y="240" transform="rotate(-90, 18, 240)" text-anchor="middle" class="label">A: X₂ (0 → 6)</text>
+  <text x="240" y="24" text-anchor="middle" class="label">B: X₁ (6 → 0)</text>
+  <text x="462" y="240" transform="rotate(90, 462, 240)" text-anchor="middle" class="label">B: X₂ (6 → 0)</text>
+
+  <!-- tick labels (0 and 6) for A -->
+  <text x="40" y="455" class="label-small">0</text>
+  <text x="432" y="455" class="label-small">6</text>
+  <text x="24" y="440" class="label-small">0</text>
+  <text x="24" y="48" class="label-small">6</text>
+
+  <!-- contract curve (diagonal) -->
+  <line x1="40" y1="440" x2="440" y2="40" stroke="#2e7d32" stroke-width="2" class="dashed"></line>
+  <text x="360" y="58" class="label-small" fill="#2e7d32">Contract curve</text>
+
+  <!-- initial endowment (4,2) for A, (2,4) for B) -->
+  <!-- maps to (x=306.667, y=306.667) -->
+  <circle cx="306.667" cy="306.667" r="4" fill="#c62828"></circle>
+  <line x1="306.667" y1="440" x2="306.667" y2="40" stroke="#c62828" class="dashed"></line>
+  <line x1="40" y1="306.667" x2="440" y2="306.667" stroke="#c62828" class="dashed"></line>
+  <text x="314" y="322" class="label-small" fill="#c62828">Endowment A:(4,2) = B:(2,4)</text>
+
+  
+
+  <!-- Budget line for A through endowment with p1/p2 = 1: x1 + x2 = 6 -->
+  <line x1="40" y1="40" x2="440" y2="440" class="budget"></line>
+  <!-- Indifference curves for A (Cobb–Douglas, α = 1/2) -->
+  <!-- IC tangent to budget at (3,3): x2 = 9 / x1 -->
+  <path class="curve-eq" d="M 140 40 L 173.333 140 L 240 240 L 306.667 290 L 373.333 320 L 406.667 330.944"></path>
+
+  <!-- IC through endowment (4,2): x2 = 8 / x1 -->
+  <path class="curve-endow" d="M 128.889 40 L 173.333 173.333 L 240 262.222 L 306.667 306.667 L 373.333 333.333 L 440 351.111"></path>
+
+  <!-- Legend to avoid label overlap -->
+  <g transform="translate(300,60)">
+    <rect x="0" y="0" width="210" height="100" rx="6" ry="6" fill="#fff" fill-opacity="0.92" stroke="#bbb"></rect>
+    <text x="10" y="16" class="label-small" fill="#333">Assumes α = 1/2 (p₁/p₂ = 1)</text>
+    <line x1="10" y1="34" x2="40" y2="34" class="budget"></line>
+    <text x="48" y="38" class="label-small" fill="#7b1fa2">Budget (through endowment)</text>
+    <line x1="10" y1="54" x2="40" y2="54" class="curve-eq"></line>
+    <text x="48" y="58" class="label-small" fill="#1565c0">ICₐ (tangent)</text>
+    <line x1="10" y1="74" x2="40" y2="74" class="curve-endow"></line>
+    <text x="48" y="78" class="label-small" fill="#8e24aa">ICₐ (through endowment)</text>
+  </g>
+</svg>
+</div>
 
 
 </section>
