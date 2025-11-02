@@ -305,5 +305,89 @@
       "Topic 1: Equilibrium in an Exchange Economy",
       "Exercises: Equilibrium in an Exchange Economy"
     ]
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises.html",
+    "href": "src/decision-making-uncertainty/exercises.html",
+    "title": "Exercises: Decision Making under Uncertainty (Problems Only)",
+    "section": "",
+    "text": "This set contains 5 exercises aligned with the material covered in Decision Making under Uncertainty.\n\n3 easy, 1 intermediate, 1 advanced.\n\nOnly the problem statements are included here. See the separate solutions document for worked answers.\nNotation reminders:\n\n\\(\\mathbb{E}[\\cdot]\\) expectation, \\(\\mathrm{Var}[\\cdot]\\) variance.\n\\(u(\\cdot)\\): Bernoulli (von Neumann–Morgenstern) utility.\n\\(R_A(y) = -\\dfrac{u''(y)}{u'(y)}\\) and \\(R_R(y) = - y \\dfrac{u''(y)}{u'(y)}\\)."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises.html#exercise-1-expected-utility-and-ce",
+    "href": "src/decision-making-uncertainty/exercises.html#exercise-1-expected-utility-and-ce",
+    "title": "Exercises: Decision Making under Uncertainty (Problems Only)",
+    "section": "2.1 Exercise 1 (Expected utility and CE)",
+    "text": "2.1 Exercise 1 (Expected utility and CE)\nAn investor has utility \\(u(y)=\\sqrt{y}\\). A lottery pays 100 with probability 0.4 and 400 with probability 0.6.\n\nCompute expected utility and the certainty equivalent (CE).\nCompute the risk premium as \\(\\mathbb{E}[\\tilde{y}] - \\text{CE}\\)."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises.html#exercise-2-jensen-approximation-of-risk-premium",
+    "href": "src/decision-making-uncertainty/exercises.html#exercise-2-jensen-approximation-of-risk-premium",
+    "title": "Exercises: Decision Making under Uncertainty (Problems Only)",
+    "section": "2.2 Exercise 2 (Jensen approximation of risk premium)",
+    "text": "2.2 Exercise 2 (Jensen approximation of risk premium)\nLet \\(\\tilde{X}\\) have mean \\(m\\) and variance \\(\\sigma^2\\). Using a second-order Taylor expansion around \\(m\\) and Arrow–Pratt \\(R_A(m)\\), derive the approximation for the risk premium \\(\\pi \\approx \\tfrac12 R_A(m) \\sigma^2\\)."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises.html#exercise-3-cara-vs-crra",
+    "href": "src/decision-making-uncertainty/exercises.html#exercise-3-cara-vs-crra",
+    "title": "Exercises: Decision Making under Uncertainty (Problems Only)",
+    "section": "2.3 Exercise 3 (CARA vs CRRA)",
+    "text": "2.3 Exercise 3 (CARA vs CRRA)\nFor CARA \\(u(x)= -\\frac{1}{\\nu} e^{-\\nu x}\\) and CRRA \\(u(x)= \\frac{x^{1-\\gamma}}{1-\\gamma}\\) (\\(\\gamma\\neq 1\\)) or \\(u(x)=\\ln x\\):\n\nDerive \\(R_A(x)\\) and \\(R_R(x)\\) in each case.\nBriefly interpret the constancy properties."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises.html#exercise-4-meanvariance-portfolio-rule",
+    "href": "src/decision-making-uncertainty/exercises.html#exercise-4-meanvariance-portfolio-rule",
+    "title": "Exercises: Decision Making under Uncertainty (Problems Only)",
+    "section": "3.1 Exercise 4 (Mean–variance portfolio rule)",
+    "text": "3.1 Exercise 4 (Mean–variance portfolio rule)\nInitial wealth \\(y_0=100\\), risk-free rate \\(r_f=5\\%\\). Risky return has mean \\(\\mu=10\\%\\) and volatility \\(\\sigma=20\\%\\). For small risk, use the approximation \\[\nw^* \\approx \\frac{\\mu - r_f}{R_A(y_0(1+r_f))\\,\\sigma^2}.\n\\]\n\nWith CRRA \\(u(y)= y^{1-\\gamma}/(1-\\gamma)\\) and \\(\\gamma=3\\), compute \\(w^*\\).\nComment on how \\(w^*\\) scales with \\(y_0\\) under CRRA."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises.html#exercise-5-optimal-insurance-with-log-utility",
+    "href": "src/decision-making-uncertainty/exercises.html#exercise-5-optimal-insurance-with-log-utility",
+    "title": "Exercises: Decision Making under Uncertainty (Problems Only)",
+    "section": "4.1 Exercise 5 (Optimal insurance with log utility)",
+    "text": "4.1 Exercise 5 (Optimal insurance with log utility)\nWealth \\(y&gt;0\\). Loss \\(L=40\\) occurs with probability \\(p=0.1\\); otherwise no loss. Insurance with coverage \\(I\\in[0,L]\\) costs premium \\(\\pi\\) per unit of coverage. Utility \\(u(c)=\\ln c\\).\n\nWrite expected utility \\(U(I)\\).\nDerive the first-order condition for interior \\(I\\) and solve for \\(I^*\\) as a function of \\(\\pi\\).\nDetermine the value of \\(\\pi\\) for which full insurance \\(I=L\\) is optimal."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises-solutions.html",
+    "href": "src/decision-making-uncertainty/exercises-solutions.html",
+    "title": "Exercises: Decision Making under Uncertainty (Solutions)",
+    "section": "",
+    "text": "This document contains detailed solutions to the 5 problems in the companion exercises."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises-solutions.html#exercise-1-expected-utility-and-ce",
+    "href": "src/decision-making-uncertainty/exercises-solutions.html#exercise-1-expected-utility-and-ce",
+    "title": "Exercises: Decision Making under Uncertainty (Solutions)",
+    "section": "2.1 Exercise 1 (Expected utility and CE)",
+    "text": "2.1 Exercise 1 (Expected utility and CE)\nLottery: 100 with prob 0.4, 400 with prob 0.6; utility \\(u(y)=\\sqrt{y}\\).\n\nExpected utility: \\[\\mathbb{E}[u(\\tilde{y})] = 0.4\\sqrt{100} + 0.6\\sqrt{400} = 0.4\\cdot 10 + 0.6\\cdot 20 = 16.\\]\nCertainty equivalent CE solves \\(\\sqrt{\\text{CE}} = 16\\) so \\(\\text{CE} = 256\\).\nExpected value \\(= 0.4\\cdot 100 + 0.6\\cdot 400 = 280\\). Risk premium \\(= 280 - 256 = 24\\)."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises-solutions.html#exercise-2-jensen-approximation-of-risk-premium",
+    "href": "src/decision-making-uncertainty/exercises-solutions.html#exercise-2-jensen-approximation-of-risk-premium",
+    "title": "Exercises: Decision Making under Uncertainty (Solutions)",
+    "section": "2.2 Exercise 2 (Jensen approximation of risk premium)",
+    "text": "2.2 Exercise 2 (Jensen approximation of risk premium)\nLet \\(m=\\mathbb{E}[\\tilde{X}]\\), \\(\\sigma^2=\\mathrm{Var}(\\tilde{X})\\). Expand \\(u(\\tilde{X})\\) at \\(m\\):\n\\[u(\\tilde{X}) \\approx u(m) + u'(m)(\\tilde{X}-m) + \\tfrac12 u''(m)(\\tilde{X}-m)^2.\\]\nTaking expectations yields \\(\\mathbb{E}[u(\\tilde{X})] \\approx u(m) + \\tfrac12 u''(m)\\sigma^2\\).\nLet CE solve \\(u(\\text{CE}) = \\mathbb{E}[u(\\tilde{X})]\\). With \\(\\text{CE} = m - \\pi\\) and linearizing, \\(u(\\text{CE}) \\approx u(m) - \\pi u'(m)\\), so\n\\[u(m) - \\pi u'(m) \\approx u(m) + \\tfrac12 u''(m)\\sigma^2 \\;\\Rightarrow\\; \\pi \\approx -\\tfrac12 \\frac{u''(m)}{u'(m)}\\sigma^2 = \\tfrac12 R_A(m)\\,\\sigma^2.\\]"
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises-solutions.html#exercise-3-cara-vs-crra",
+    "href": "src/decision-making-uncertainty/exercises-solutions.html#exercise-3-cara-vs-crra",
+    "title": "Exercises: Decision Making under Uncertainty (Solutions)",
+    "section": "2.3 Exercise 3 (CARA vs CRRA)",
+    "text": "2.3 Exercise 3 (CARA vs CRRA)\n\nCARA \\(u(x)= -\\tfrac{1}{\\nu} e^{-\\nu x}\\): \\(u'(x)=e^{-\\nu x}\\), \\(u''(x)=-\\nu e^{-\\nu x}\\).\n\n\\(R_A(x)=\\nu\\) (constant), \\(R_R(x)=\\nu x\\) (increasing in \\(x\\)).\n\nCRRA \\(u(x)= \\tfrac{x^{1-\\gamma}}{1-\\gamma}\\) or \\(u(x)=\\ln x\\):\n\n\\(u'(x)=x^{-\\gamma}\\), \\(u''(x)=-\\gamma x^{-\\gamma-1}\\); hence \\(R_A(x)=\\gamma/x\\), \\(R_R(x)=\\gamma\\) (constant). For \\(u=\\ln x\\): \\(R_A(x)=1/x\\), \\(R_R(x)=1\\).\n\nInterpretation: CARA keeps absolute risk aversion constant (additive risks), CRRA keeps relative risk aversion constant (multiplicative risks)."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises-solutions.html#exercise-4-meanvariance-portfolio-rule",
+    "href": "src/decision-making-uncertainty/exercises-solutions.html#exercise-4-meanvariance-portfolio-rule",
+    "title": "Exercises: Decision Making under Uncertainty (Solutions)",
+    "section": "3.1 Exercise 4 (Mean–variance portfolio rule)",
+    "text": "3.1 Exercise 4 (Mean–variance portfolio rule)\nGiven \\(y_0=100\\), \\(r_f=0.05\\), \\(\\mu=0.10\\), \\(\\sigma=0.20\\), \\(\\gamma=3\\) with CRRA \\(u(y)= y^{1-\\gamma}/(1-\\gamma)\\).\n\n\\(Y = y_0(1+r_f) = 105\\) and \\(R_A(Y)=\\gamma/Y = 3/105 \\approx 0.028571\\).\nUse \\(w^* \\approx (\\mu - r_f)/\\big(R_A(Y)\\,\\sigma^2\\big) = 0.05 / (0.028571\\cdot 0.04) \\approx 43.75\\).\nUnder CRRA, \\(R_A(Y)=\\gamma/Y\\) so \\(w^* \\propto Y \\propto y_0\\). The elasticity of \\(w^*\\) with respect to \\(y_0\\) is 1."
+  },
+  {
+    "objectID": "src/decision-making-uncertainty/exercises-solutions.html#exercise-5-optimal-insurance-with-log-utility",
+    "href": "src/decision-making-uncertainty/exercises-solutions.html#exercise-5-optimal-insurance-with-log-utility",
+    "title": "Exercises: Decision Making under Uncertainty (Solutions)",
+    "section": "4.1 Exercise 5 (Optimal insurance with log utility)",
+    "text": "4.1 Exercise 5 (Optimal insurance with log utility)\nStates: loss \\(L=40\\) with prob \\(p=0.1\\), no loss otherwise. Coverage \\(I\\in[0,L]\\) with per-unit premium \\(\\pi\\). Utility \\(u(c)=\\ln c\\).\n\nBudget outcomes:\n\nNo loss: \\(c_{NL} = y - \\pi I\\).\nLoss: \\(c_L = y - L - \\pi I + I = y - L + (1-\\pi) I\\).\n\nExpected utility:\n\\[U(I) = (1-p)\\,\\ln(y - \\pi I) + p\\,\\ln\\big(y - L + (1-\\pi) I\\big).\\]\nFOC for interior optimum:\n\\[U'(I) = (1-p)\\frac{-\\pi}{y - \\pi I} + p\\frac{1-\\pi}{y - L + (1-\\pi)I} = 0.\\]\nSolve for \\(I^*\\):\n\\[(1-p)(-\\pi)\\big(y - L + (1-\\pi)I^*\\big) + p(1-\\pi)\\big(y - \\pi I^*\\big) = 0.\\]\nRearranging gives\n\\[I^* = \\frac{p y - (1-p)(y - L)\\frac{\\pi}{1-\\pi}}{\\pi + (1-\\pi)\\frac{\\pi}{1-\\pi}} = \\frac{p(y) - (1-p)\\frac{\\pi}{1-\\pi}(y - L)}{\\pi + \\pi} = \\frac{p(y) - (1-p)\\frac{\\pi}{1-\\pi}(y - L)}{2\\pi}.\\]\nA cleaner route is to note that at \\(\\pi=p\\) (actuarially fair), \\(c_{NL}=c_L\\) at \\(I=L\\), which equalizes marginal utilities and yields full insurance.\nPremium threshold for full insurance \\(I=L\\):\nAt \\(I=L\\), the FOC becomes \\((1-p)\\frac{-\\pi}{y - \\pi L} + p\\frac{1-\\pi}{y} = 0\\).\nThis simplifies to \\(-\\pi(1-p) + p(1-\\pi) = 0 \\Rightarrow \\pi = p\\).\nConclusion: Full insurance is optimal iff \\(\\pi=p\\) (actuarially fair). For \\(\\pi&gt;p\\), partial insurance; for \\(\\pi&lt;p\\), corner may exceed \\(I=L\\) but constrained to \\(I=L\\)."
   }
 ]

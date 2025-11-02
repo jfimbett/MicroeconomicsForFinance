@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Juan F. Imbet">
   <title>Microeconomics for Finance – Equilibrium in Markets for Securities</title>
@@ -145,107 +145,252 @@ Juan F. Imbet
 </div>
 
 </section>
-<section class="slide level2">
-<h2>Introduction to Securities Markets</h2>
+<section class="slide level0">
+
+<h2>Overview and Notation (aligned with Uncertainty)</h2>
 <ul>
-<li><p>Securities markets involve trading of financial instruments such as stocks, bonds, and derivatives.</p></li>
-<li><p>In equilibrium, supply equals demand for each security.</p></li>
-<li><p>Prices adjust to clear markets.</p></li>
-<li><p>Key concepts: portfolio choice, market completeness, and the role of information.</p></li>
+<li>Finite states of nature: <span class="math inline">\(s \in \{1,\dots,S\}\)</span> with probabilities <span class="math inline">\(\pi = (\pi_1,\dots,\pi_S)\)</span>, <span class="math inline">\(\sum_s \pi_s = 1\)</span>.</li>
+<li><span class="math inline">\(J\)</span> securities with time-1 state-contingent payoffs <span class="math inline">\(a_{sj}\)</span> collected in the payoff matrix <span class="math display">\[
+A = \begin{bmatrix}
+a_{11} &amp; \cdots &amp; a_{1J} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{S1} &amp; \cdots &amp; a_{SJ}
+\end{bmatrix} \in \mathbb{R}^{S\times J}.
+\]</span></li>
+<li>Time-0 prices <span class="math inline">\(q = (q_1,\dots,q_J)\in\mathbb{R}^J\)</span>.</li>
+<li>A portfolio <span class="math inline">\(x\in\mathbb{R}^J\)</span> costs <span class="math inline">\(q\cdot x\)</span> at <span class="math inline">\(t=0\)</span> and delivers random payoff vector <span class="math inline">\(A x\)</span> at <span class="math inline">\(t=1\)</span> (a lottery, as in the uncertainty section).</li>
 </ul>
 </section>
-<section class="slide level2">
-<h2>Portfolio Theory</h2>
+<section class="slide level0">
+
+<h2>Arbitrage: Definition (Linear Algebra)</h2>
+<p>An arbitrage is a portfolio <span class="math inline">\(x\in\mathbb{R}^J\)</span> such that</p>
+<p><span class="math display">\[
+q\cdot x \le 0,\quad A x \ge 0 \;\text{(componentwise)}, \quad \text{and at least one strict inequality.}
+\]</span></p>
 <ul>
-<li><p>Investors choose portfolios to maximize expected utility given their risk preferences.</p></li>
-<li><p>Mean-variance analysis: portfolios characterized by expected return and variance.</p></li>
-<li><p>Efficient frontier: set of portfolios with maximum expected return for given risk level.</p></li>
-<li><p>Capital Asset Pricing Model (CAPM): relationship between expected return and systematic risk.</p></li>
+<li>Intuition: non-positive cost today, non-negative state payoffs with some gain for sure (or strictly negative cost with zero payoff).</li>
+<li>Homogeneity: if <span class="math inline">\(x\)</span> is an arbitrage, so is <span class="math inline">\(\lambda x\)</span> for any <span class="math inline">\(\lambda&gt;0\)</span>.</li>
+<li>Detecting arbitrage is a feasibility LP: find <span class="math inline">\(x\)</span> with <span class="math inline">\(A x \ge 0\)</span> and <span class="math inline">\(q\cdot x &lt; 0\)</span>.</li>
 </ul>
 </section>
-<section class="slide level2">
-<h2>The Capital Asset Pricing Model (CAPM)</h2>
+<section class="slide level0">
+
+<h2>Law of One Price (LoOP) and No-Arbitrage</h2>
 <ul>
-<li><p><strong>Assumptions:</strong></p>
+<li><p>LoOP: If two portfolios <span class="math inline">\(x,y\)</span> have the same state-by-state payoffs, <span class="math inline">\(A x = A y\)</span>, then <span class="math inline">\(q\cdot x = q\cdot y\)</span>.</p></li>
+<li><p>In matrix form, LoOP says pricing is a linear functional of payoffs.</p></li>
+<li><p>Fundamental theorem (finite-state version):</p>
 <ul>
-<li>Investors are risk-averse and maximize expected utility</li>
-<li>Single-period investment horizon</li>
-<li>Frictionless markets (no transaction costs, taxes)</li>
-<li>Investors can borrow/lend at risk-free rate</li>
-<li>Homogeneous expectations</li>
+<li>No-Arbitrage (NA) holds iff there exists a nonnegative state-price vector <span class="math inline">\(\psi \in \mathbb{R}^S_{+}\)</span> such that <span class="math display">\[
+q = A^{\top} \psi,\quad \text{i.e. } q_j = \sum_{s=1}^S \psi_s\, a_{sj} \;\; (j=1,\dots,J).
+\]</span></li>
+<li><span class="math inline">\(\psi_s\)</span> is the Arrow–Debreu price of one unit delivered in state <span class="math inline">\(s\)</span> (next slide).</li>
 </ul></li>
-<li><p><strong>Key Result:</strong> Expected return on asset i:</p></li>
-<li><p><strong>Key Result:</strong> Expected return on asset <span class="math inline">\(i\)</span>: <span class="math display">\[\mathbb{E}[R_i] = R_f + \beta_i \left(\mathbb{E}[R_m] - R_f\right)\]</span></p>
-<p>where <span class="math inline">\(\beta_i = \dfrac{\mathrm{Cov}(R_i, R_m)}{\mathrm{Var}(R_m)}\)</span></p></li>
 </ul>
 </section>
-<section class="slide level2">
-<h2>Market Equilibrium</h2>
+<section class="slide level0">
+
+<h2>Arrow–Debreu State Securities and State Prices</h2>
 <ul>
-<li><p>In equilibrium, all investors hold the market portfolio (combination of all risky assets).</p></li>
-<li><p>The market portfolio is mean-variance efficient.</p></li>
-<li><p>Risk-free asset is tangent to the efficient frontier.</p></li>
-<li><p>Separation theorem: portfolio choice separates into two decisions:</p>
+<li>The Arrow–Debreu security for state <span class="math inline">\(s\)</span> pays <span class="math inline">\(1\)</span> in state <span class="math inline">\(s\)</span> and <span class="math inline">\(0\)</span> otherwise: payoff <span class="math inline">\(e_s \in \mathbb{R}^S\)</span>.</li>
+<li>Its time-0 price is the state price <span class="math inline">\(\psi_s = q(e_s)\)</span>.</li>
+<li>Stack <span class="math inline">\(\psi=(\psi_1,\dots,\psi_S)\!\in\!\mathbb{R}^S_{+}\)</span>. Pricing any asset <span class="math inline">\(j\)</span>: <span class="math display">\[
+q_j = \sum_{s=1}^S \psi_s a_{sj} = \psi^{\top} a_{\cdot j},\quad\text{or }\boxed{\; q = A^{\top} \psi\; }.
+\]</span></li>
+<li>If markets are complete (below), <span class="math inline">\(\psi\)</span> is unique and can be solved from observed <span class="math inline">\((A,q)\)</span>.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Complete vs Incomplete Markets</h2>
+<ul>
+<li>Markets are complete if payoffs of traded assets span all contingencies: <span class="math display">\[\mathrm{rank}(A)=S.\]</span>
+<ul>
+<li>If <span class="math inline">\(J=S\)</span> and <span class="math inline">\(\det(A)\neq 0\)</span>, then <span class="math inline">\(A\)</span> is invertible.</li>
+<li>If <span class="math inline">\(J&gt;S\)</span> and <span class="math inline">\(\mathrm{rank}(A)=S\)</span>, many portfolios replicate the same payoff; prices are still unique by LoOP.</li>
+</ul></li>
+<li>Consequences:
+<ul>
+<li>Replication: For any target payoff <span class="math inline">\(b\in\mathbb{R}^S\)</span>, there exists <span class="math inline">\(x\)</span> s.t. <span class="math inline">\(A x = b\)</span>.</li>
+<li>Pricing uniqueness: <span class="math inline">\(q(b) = \psi^{\top} b\)</span> is uniquely defined under NA.</li>
+</ul></li>
+<li>Incomplete markets: <span class="math inline">\(\mathrm{rank}(A)&lt;S\)</span>.
+<ul>
+<li>Not all <span class="math inline">\(b\)</span> are replicable; state prices <span class="math inline">\(\psi\)</span> may not be unique (set-valued) but still satisfy <span class="math inline">\(q=A^{\top}\psi\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>The Stochastic Discount Factor (SDF)</h2>
+<ul>
+<li>Using the probabilities <span class="math inline">\(\pi\)</span> (as in the uncertainty section), define the SDF <span class="math inline">\(m=(m_1,\dots,m_S)\)</span> by <span class="math display">\[\boxed{\; m_s = \frac{\psi_s}{\pi_s} \;},\quad s=1,\dots,S.\]</span></li>
+<li>Then pricing can be written as an expectation under the physical measure <span class="math inline">\(\pi\)</span>: <span class="math display">\[
+\boxed{\; q_j = \sum_{s=1}^S \pi_s\, m_s\, a_{sj} = \mathbb{E}_{\pi}[\, m\, \tilde a_j\, ]\; }.
+\]</span></li>
+<li>In terms of gross returns <span class="math inline">\(R_j = \dfrac{\tilde a_j}{q_j}\)</span> (random): <span class="math display">\[\boxed{\; 1 = \mathbb{E}_{\pi}[\, m\, R_j\, ] \; }\quad \text{for all traded } j.
+\]</span></li>
+<li>With a risk-free asset of price <span class="math inline">\(q_f\)</span> and payoff <span class="math inline">\(1\)</span> in all states, <span class="math inline">\(R_f = 1/q_f\)</span> and <span class="math inline">\(1 = \mathbb{E}[m R_f] = R_f\, \mathbb{E}[m]\)</span> so <span class="math inline">\(\mathbb{E}[m] = 1/R_f\)</span>.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Two-Period Consumption–Investment Problem and the SDF</h2>
+<ul>
+<li>Preferences (expected utility): <span class="math display">\[\max_{c_0,\,x\in\mathbb{R}^J} \; u(c_0) + \beta\, \sum_{s=1}^S \pi_s\, u\big(c_1(s)\big)\]</span></li>
+<li>Budget constraints: <span class="math display">\[ c_0 + q\cdot x = w_0, \qquad c_1(s) = a_{s\cdot}\, x + y_1(s), \; s=1,\dots,S \]</span> where <span class="math inline">\(a_{s\cdot}\)</span> is row <span class="math inline">\(s\)</span> of <span class="math inline">\(A\)</span>, and <span class="math inline">\(y_1(s)\)</span> is (optional) state-<span class="math inline">\(s\)</span> endowment.</li>
+<li>Lagrangian with multipliers <span class="math inline">\(\lambda\)</span> for <span class="math inline">\(t=0\)</span>, and <span class="math inline">\(\mu_s\)</span> for <span class="math inline">\(t=1\)</span> states: <span class="math display">\[\mathcal{L} = u(c_0) + \beta\sum_s \pi_s u(c_1(s)) + \lambda\,(w_0 - c_0 - q\cdot x) + \sum_s \mu_s \big(a_{s\cdot}x + y_1(s) - c_1(s)\big).\]</span></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>FOCs → Euler Equation → SDF</h2>
+<ul>
+<li><p>FOCs: <span class="math display">\[ u'(c_0) - \lambda = 0 \;\Rightarrow\; \lambda = u'(c_0), \]</span> <span class="math display">\[ \beta\,\pi_s\, u'(c_1(s)) - \mu_s = 0 \;\Rightarrow\; \mu_s = \beta\,\pi_s\, u'(c_1(s)), \]</span> <span class="math display">\[ -\lambda\, q_j + \sum_{s=1}^S \mu_s\, a_{sj} = 0 \;\Rightarrow\; q_j = \sum_s \frac{\mu_s}{\lambda} a_{sj}. \]</span></p></li>
+<li><p>Identify the SDF: <span class="math display">\[ \boxed{\; m_s = \frac{\mu_s}{\lambda\,\pi_s} = \beta\, \frac{u'(c_1(s))}{u'(c_0)} \;} \quad \Rightarrow \quad q_j = \sum_s \pi_s m_s a_{sj} = \mathbb{E}[m\, \tilde a_j]. \]</span></p></li>
+<li><p>Euler equation in returns (for any traded <span class="math inline">\(j\)</span>): <span class="math display">\[ \boxed{\; 1 = \mathbb{E}[\, m\, R_j\, ] \;} \quad (\text{divide } q_j u'(c_0) = \beta\,\mathbb{E}[u'(c_1) a_j] \text{ by } q_j). \]</span></p></li>
+<li><p>Risk-free relation: <span class="math inline">\(1 = \mathbb{E}[m\, R_f] = R_f\, \mathbb{E}[m] \Rightarrow R_f = 1/\mathbb{E}[m]\)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Interpreting Risk Premia via Covariance</h2>
+<p>From <span class="math inline">\(0 = \mathbb{E}[m(R_j - R_f)]\)</span>: <span class="math display">\[
+\mathbb{E}[R_j] - R_f = -\frac{\mathrm{Cov}(m,R_j)}{\mathbb{E}[m]}\, R_f.
+\]</span></p>
+<ul>
+<li>Assets that pay more in “bad” states (high <span class="math inline">\(m\)</span>) have positive <span class="math inline">\(\mathrm{Cov}(m,R_j)\)</span> and lower expected returns.</li>
+<li>Conversely, assets that pay in “good” states (low <span class="math inline">\(m\)</span>) require a premium.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Numeric Example: CRRA, Two States</h2>
+<ul>
+<li>Utility: <span class="math inline">\(u(c) = \frac{c^{1-\gamma}}{1-\gamma}\)</span>, with <span class="math inline">\(\gamma = 2\)</span>, <span class="math inline">\(\beta = 0.96\)</span>.</li>
+<li>Probabilities: <span class="math inline">\(\pi = (0.6, 0.4)\)</span>.</li>
+<li>Consumption: <span class="math inline">\(c_0 = 1\)</span>, <span class="math inline">\(c_1 = (1.10, 0.90)\)</span>.</li>
+<li>SDF: <span class="math inline">\(m_s = \beta (c_1(s)/c_0)^{-\gamma}\)</span> ⇒ <span class="math inline">\(m = (0.96\cdot 1.10^{-2},\; 0.96\cdot 0.90^{-2}) \approx (0.793,\; 1.185)\)</span>.</li>
+<li>Risk-free: <span class="math inline">\(\mathbb{E}[m] = 0.6\cdot 0.793 + 0.4\cdot 1.185 = 0.949\)</span> ⇒ <span class="math inline">\(R_f \approx 1/0.949 = 1.054\)</span>.</li>
+<li>Price an asset with state payoffs <span class="math inline">\(a = (0,2)\)</span>: <span class="math display">\[ q = \mathbb{E}[m\, a] = 0.6\cdot 0.793 \cdot 0 + 0.4\cdot 1.185 \cdot 2 = 0.948. \]</span> Its expected return: <span class="math inline">\(\mathbb{E}[R] = \mathbb{E}[a]/q = (0.6\cdot 0 + 0.4\cdot 2)/0.948 \approx 0.843 &lt; R_f\)</span> (pays in bad state ⇒ insurance ⇒ lower return).</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Connections to Expected Utility and Risk Aversion</h2>
+<ul>
+<li><p>From decision making under uncertainty: agents evaluate lotteries <span class="math inline">\(\tilde a\)</span> via <span class="math inline">\(\mathbb{E}[u(\tilde a)]\)</span> (concave <span class="math inline">\(u\)</span>).</p></li>
+<li><p>In equilibrium, marginal utilities determine <span class="math inline">\(m\)</span> (up to normalization), and risk aversion shapes state prices:</p>
+<ul>
+<li>“Bad” states (high marginal utility) have larger <span class="math inline">\(m_s\)</span> and thus larger <span class="math inline">\(\psi_s\)</span>.</li>
+<li>Assets paying in bad states command higher prices (insurance role).</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Worked Example: Solving for State Prices and the SDF</h2>
+<p>Let <span class="math inline">\(S=2\)</span>, <span class="math inline">\(J=2\)</span> with</p>
+<p><span class="math display">\[
+A = \begin{bmatrix}
+1 &amp; 1 \\
+0 &amp; 2
+\end{bmatrix},\quad q = \begin{bmatrix}0.9 \\ 1.4\end{bmatrix}.
+\]</span></p>
+<ul>
+<li>NA implies <span class="math inline">\(q = A^{\top} \psi\)</span>. Since <span class="math inline">\(A\)</span> has rank 2, solve for <span class="math inline">\(\psi\)</span> uniquely: <span class="math display">\[
+A^{\top} = \begin{bmatrix}1 &amp; 0 \\ 1 &amp; 2\end{bmatrix},\;\; \Rightarrow\;\; \begin{cases}
+0.9 = \psi_1, \\
+1.4 = \psi_1 + 2\psi_2
+\end{cases}
+\Rightarrow (\psi_1,\psi_2) = (0.9, 0.25).
+\]</span></li>
+<li>If <span class="math inline">\(\pi = (0.6,0.4)\)</span>, then <span class="math inline">\(m = (\psi_1/\pi_1,\psi_2/\pi_2) = (1.5, 0.625)\)</span> and <span class="math inline">\(q_j = \mathbb{E}[m\, \tilde a_j]\)</span>.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Replication via Inversion (Complete Markets)</h2>
+<ul>
+<li>Given target payoff <span class="math inline">\(b\in\mathbb{R}^S\)</span> and invertible <span class="math inline">\(A\)</span>, the unique replicating portfolio is <span class="math display">\[\boxed{\; x = A^{-1} b \; }.\]</span></li>
+<li>Price of <span class="math inline">\(b\)</span>: <span class="math inline">\(q(b) = q\cdot x = \psi^{\top} b\)</span>.</li>
+<li>If <span class="math inline">\(J&gt;S\)</span> but <span class="math inline">\(\mathrm{rank}(A)=S\)</span>, replication exists and is non-unique; the price is still unique.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Exercise 1: Find an Arbitrage Strategy</h2>
+<p>States <span class="math inline">\(S=2\)</span>, assets <span class="math inline">\(J=3\)</span> with <span class="math display">\[
+A = \begin{bmatrix}
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 2
+\end{bmatrix},\quad q = \begin{bmatrix}0.9 \\ 0.4 \\ 0.9\end{bmatrix}.
+\]</span></p>
 <ol type="1">
-<li>Which efficient portfolio to hold</li>
-<li>How much to invest in risky vs.&nbsp;risk-free assets</li>
-</ol></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Complete Markets</h2>
+<li>Show there is no <span class="math inline">\(\psi\ge 0\)</span> with <span class="math inline">\(q = A^{\top}\psi\)</span> (hint: use the first two assets to infer <span class="math inline">\(\psi\)</span>, then check the third).</li>
+<li>Construct an explicit arbitrage portfolio <span class="math inline">\(x\)</span> with <span class="math inline">\(q\cdot x &lt; 0\)</span> and <span class="math inline">\(A x \ge 0\)</span>.</li>
+</ol>
+<p>Solution sketch</p>
 <ul>
-<li><p>A market is complete if any contingent claim can be replicated by a portfolio of existing securities.</p></li>
-<li><p>In complete markets, all risk can be hedged.</p></li>
-<li><p>Arrow-Debreu securities: pay 1 in one state, 0 otherwise.</p></li>
-<li><p>State prices: prices of Arrow-Debreu securities.</p></li>
-<li><p>Any security’s price is the expected value of its payoffs discounted by state prices.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Incomplete Markets</h2>
+<li>From assets 1 and 2: <span class="math inline">\(0.9 = \psi_1\)</span>, <span class="math inline">\(0.4 = \psi_1 \Rightarrow \psi_1=0.4\)</span>, <span class="math inline">\(\psi_2=0.5\)</span>. Then asset 3 would imply <span class="math inline">\(q_3 = 2\psi_2 = 1.0 \neq 0.9\)</span> ⇒ NA violated.</li>
+<li>Replicate asset 3 using (1,2): solve <span class="math inline">\(A y = (0,2)^{\top}\)</span> ⇒ <span class="math inline">\(y=(2,-2,0)\)</span>. Its price is <span class="math inline">\(q\cdot y = 1.0\)</span>.</li>
+<li>Arbitrage: buy asset 3 and short its replicating portfolio <span class="math inline">\(x = e_3 - y = (-2,2,1)\)</span>.
 <ul>
-<li><p>Most real-world markets are incomplete.</p></li>
-<li><p>Cannot hedge all risks.</p></li>
-<li><p>Equilibrium concepts: Radner equilibrium, constrained efficiency.</p></li>
-<li><p>Role of derivatives in completing markets.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Information and Asset Pricing</h2>
-<ul>
-<li><p>Asymmetric information: some investors have private information.</p></li>
-<li><p>Efficient markets hypothesis: prices reflect all available information.</p></li>
-<li><p>Forms of market efficiency:</p>
-<ul>
-<li>Weak: prices reflect past price information</li>
-<li>Semi-strong: prices reflect all public information</li>
-<li>Strong: prices reflect all information (public and private)</li>
+<li>Cost: <span class="math inline">\(q\cdot x = -1.8 + 0.8 + 0.9 = -0.1 &lt; 0\)</span>.</li>
+<li>Payoff: <span class="math inline">\(A x = 0\)</span> (riskless free cash today) ⇒ arbitrage.</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-<h2>Behavioral Finance</h2>
+<section class="slide level0">
+
+<h2>Exercise 2: Compute Arrow–Debreu Prices (State Prices)</h2>
+<p>Use the 2-state, 2-asset setup from the worked example: <span class="math display">\[
+A = \begin{bmatrix}1 &amp; 1 \\ 0 &amp; 2\end{bmatrix},\quad q = \begin{bmatrix}0.9 \\ 1.4\end{bmatrix}.
+\]</span></p>
+<ol type="1">
+<li>Verify <span class="math inline">\(\mathrm{rank}(A)=2\)</span> (complete markets).</li>
+<li>Solve <span class="math inline">\(q = A^{\top} \psi\)</span> to obtain <span class="math inline">\(\psi\)</span>.</li>
+<li>For <span class="math inline">\(\pi = (0.6,0.4)\)</span>, compute the SDF <span class="math inline">\(m=\psi/\pi\)</span> and check <span class="math inline">\(q_j = \mathbb{E}[m\, \tilde a_j]\)</span>.</li>
+</ol>
+<p>— Solution —</p>
 <ul>
-<li><p>Traditional finance assumes rational investors.</p></li>
-<li><p>Behavioral finance incorporates psychological biases:</p>
-<ul>
-<li>Overconfidence</li>
-<li>Loss aversion</li>
-<li>Mental accounting</li>
-<li>Herding</li>
-</ul></li>
-<li><p>Implications for asset pricing and market anomalies.</p></li>
+<li><span class="math inline">\(\psi = (0.9,0.25)\)</span> (unique); <span class="math inline">\(m=(1.5,0.625)\)</span>; identities verify by direct substitution.</li>
 </ul>
 </section>
-<section class="slide level2">
-<h2>Conclusion</h2>
+<section class="slide level0">
+
+<h2>Exercise 3: Replicate a Target Payoff</h2>
+<p>With the same <span class="math inline">\(A\)</span> as above, replicate <span class="math inline">\(b = (1,1.5)^{\top}\)</span>.</p>
+<ol type="1">
+<li>Compute <span class="math inline">\(x\)</span> such that <span class="math inline">\(A x = b\)</span> (use inversion or solve the linear system).</li>
+<li>Compute its price <span class="math inline">\(q(b) = q\cdot x\)</span> and verify <span class="math inline">\(q(b) = \psi^{\top} b\)</span>.</li>
+</ol>
+<p>— Solution —</p>
 <ul>
-<li><p>Securities markets play a crucial role in allocating resources and managing risk.</p></li>
-<li><p>Equilibrium concepts help understand price formation.</p></li>
-<li><p>Extensions to incomplete markets and behavioral considerations provide more realistic models.</p></li>
-<li><p>Applications in portfolio management, risk management, and financial regulation.</p></li>
+<li>Solve <span class="math inline">\(\begin{cases} x_1 + x_2 = 1,\\ 2x_2 = 1.5\end{cases}\)</span> ⇒ <span class="math inline">\((x_1,x_2)=(0.25,0.75)\)</span>.</li>
+<li>Price: <span class="math inline">\(q\cdot x = 0.9\cdot 0.25 + 1.4\cdot 0.75 = 1.275\)</span>.</li>
+<li>Also <span class="math inline">\(\psi^{\top} b = 0.9\cdot 1 + 0.25\cdot 1.5 = 1.275\)</span>.</li>
 </ul>
+</section>
+<section class="slide level0">
+
+<h2>Risk-Neutral Probabilities</h2>
+<p>Risk-neutral (or “pricing”) probabilities reweight physical probabilities to absorb investors’ risk preferences so that discounted expected payoffs under the new measure price assets.</p>
+<ul>
+<li><p>Define the risk-neutral measure <span class="math inline">\(Q\)</span> by <span class="math display">\[\pi_s^{Q} = \frac{m_s\,\pi_s}{\mathbb{E}[m]},\qquad s=1,\dots,S,\]</span> where <span class="math inline">\(m_s\)</span> is the SDF and <span class="math inline">\(\mathbb{E}[m]=\sum_s \pi_s m_s\)</span>.</p></li>
+<li><p>Then for any asset with payoff <span class="math inline">\(\tilde a\)</span>, <span class="math display">\[q = \mathbb{E}[m\,\tilde a] = \mathbb{E}[m]\;\mathbb{E}_{Q}[\tilde a] = \frac{1}{R_f}\;\mathbb{E}_{Q}[\tilde a],\]</span> since <span class="math inline">\(R_f = 1/\mathbb{E}[m]\)</span>.</p></li>
+<li><p>Interpretation: under <span class="math inline">\(Q\)</span> investors are effectively risk-neutral and assets are priced by discounting <span class="math inline">\(Q\)</span>–expected payoffs at the risk-free rate. The change of measure shifts probability mass toward states that are valuable to investors (high <span class="math inline">\(m\)</span>).</p></li>
+</ul>
+<h3>Example (from the worked example)</h3>
+<p>Use the earlier solved state prices <span class="math inline">\(\psi=(0.9,0.25)\)</span> and physical probabilities <span class="math inline">\(\pi=(0.6,0.4)\)</span>, which give</p>
+<p><span class="math display">\[m = \left(\frac{0.9}{0.6},\frac{0.25}{0.4}\right) = (1.5,0.625),\qquad \mathbb{E}[m]=0.6\cdot1.5+0.4\cdot0.625=1.15.\]</span></p>
+<p>Compute the risk-neutral probabilities:</p>
+<p><span class="math display">\[\pi^Q = \frac{m\circ\pi}{\mathbb{E}[m]} = \left(\frac{1.5\cdot0.6}{1.15},\frac{0.625\cdot0.4}{1.15}\right) \approx (0.783,0.217).\]</span></p>
+<p>Price asset 1 with payoff <span class="math inline">\((1,0)\)</span> under <span class="math inline">\(Q\)</span>:</p>
+<p><span class="math display">\[\mathbb{E}_Q[\tilde a^{(1)}] = 0.783\cdot1 + 0.217\cdot0 = 0.783,\qquad q_1 = \frac{1}{R_f}\,\mathbb{E}_Q[\tilde a^{(1)}] = 1.15\cdot0.783 = 0.9.\]</span></p>
+<p>Similarly for asset 2 with payoff <span class="math inline">\((1,2)\)</span> we get <span class="math inline">\(q_2 = 1.15\cdot(0.783+2\cdot0.217) = 1.4\)</span>.</p>
+<p>This shows risk-neutral probabilities shift mass toward the state(s) with high SDF and let us price by a single discounted expectation.</p>
 
 
 </section>

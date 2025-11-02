@@ -1,0 +1,111 @@
+---
+title: "Exercises: Decision Making under Uncertainty (Solutions)"
+subtitle: "Worked Answers for 5 Exercises"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-fold: false
+    code-copy: false
+execute:
+  enabled: false
+page-layout: article
+---
+
+# Solutions Overview
+
+This document contains detailed solutions to the 5 problems in the companion exercises.
+
+---
+
+# Easy
+
+## Exercise 1 (Expected utility and CE)
+
+Lottery: 100 with prob 0.4, 400 with prob 0.6; utility $u(y)=\sqrt{y}$.
+
+- Expected utility:
+  $$\mathbb{E}[u(\tilde{y})] = 0.4\sqrt{100} + 0.6\sqrt{400} = 0.4\cdot 10 + 0.6\cdot 20 = 16.$$
+
+- Certainty equivalent CE solves $\sqrt{\text{CE}} = 16$ so $\text{CE} = 256$.
+
+- Expected value $= 0.4\cdot 100 + 0.6\cdot 400 = 280$. Risk premium $= 280 - 256 = 24$.
+
+## Exercise 2 (Jensen approximation of risk premium)
+
+Let $m=\mathbb{E}[\tilde{X}]$, $\sigma^2=\mathrm{Var}(\tilde{X})$. Expand $u(\tilde{X})$ at $m$:
+
+$$u(\tilde{X}) \approx u(m) + u'(m)(\tilde{X}-m) + \tfrac12 u''(m)(\tilde{X}-m)^2.$$
+
+Taking expectations yields $\mathbb{E}[u(\tilde{X})] \approx u(m) + \tfrac12 u''(m)\sigma^2$.
+
+Let CE solve $u(\text{CE}) = \mathbb{E}[u(\tilde{X})]$. With $\text{CE} = m - \pi$ and linearizing, $u(\text{CE}) \approx u(m) - \pi u'(m)$, so
+
+$$u(m) - \pi u'(m) \approx u(m) + \tfrac12 u''(m)\sigma^2 \;\Rightarrow\; \pi \approx -\tfrac12 \frac{u''(m)}{u'(m)}\sigma^2 = \tfrac12 R_A(m)\,\sigma^2.$$
+
+## Exercise 3 (CARA vs CRRA)
+
+- CARA $u(x)= -\tfrac{1}{\nu} e^{-\nu x}$: $u'(x)=e^{-\nu x}$, $u''(x)=-\nu e^{-\nu x}$.
+  
+  - $R_A(x)=\nu$ (constant), $R_R(x)=\nu x$ (increasing in $x$).
+
+- CRRA $u(x)= \tfrac{x^{1-\gamma}}{1-\gamma}$ or $u(x)=\ln x$:
+  
+  - $u'(x)=x^{-\gamma}$, $u''(x)=-\gamma x^{-\gamma-1}$; hence $R_A(x)=\gamma/x$, $R_R(x)=\gamma$ (constant). For $u=\ln x$: $R_A(x)=1/x$, $R_R(x)=1$.
+
+- Interpretation: CARA keeps absolute risk aversion constant (additive risks), CRRA keeps relative risk aversion constant (multiplicative risks).
+
+---
+
+# Intermediate
+
+## Exercise 4 (Mean–variance portfolio rule)
+
+Given $y_0=100$, $r_f=0.05$, $\mu=0.10$, $\sigma=0.20$, $\gamma=3$ with CRRA $u(y)= y^{1-\gamma}/(1-\gamma)$.
+
+- $Y = y_0(1+r_f) = 105$ and $R_A(Y)=\gamma/Y = 3/105 \approx 0.028571$.
+
+- Use $w^* \approx (\mu - r_f)/\big(R_A(Y)\,\sigma^2\big) = 0.05 / (0.028571\cdot 0.04) \approx 43.75$.
+
+- Under CRRA, $R_A(Y)=\gamma/Y$ so $w^* \propto Y \propto y_0$. The elasticity of $w^*$ with respect to $y_0$ is 1.
+
+---
+
+# Advanced
+
+## Exercise 5 (Optimal insurance with log utility)
+
+States: loss $L=40$ with prob $p=0.1$, no loss otherwise. Coverage $I\in[0,L]$ with per-unit premium $\pi$. Utility $u(c)=\ln c$.
+
+- Budget outcomes:
+  
+  - No loss: $c_{NL} = y - \pi I$.
+  
+  - Loss: $c_L = y - L - \pi I + I = y - L + (1-\pi) I$.
+
+- Expected utility:
+  
+  $$U(I) = (1-p)\,\ln(y - \pi I) + p\,\ln\big(y - L + (1-\pi) I\big).$$
+
+- FOC for interior optimum:
+  
+  $$U'(I) = (1-p)\frac{-\pi}{y - \pi I} + p\frac{1-\pi}{y - L + (1-\pi)I} = 0.$$
+
+- Solve for $I^*$:
+  
+  $$(1-p)(-\pi)\big(y - L + (1-\pi)I^*\big) + p(1-\pi)\big(y - \pi I^*\big) = 0.$$
+  
+  Rearranging gives
+  
+  $$I^* = \frac{p y - (1-p)(y - L)\frac{\pi}{1-\pi}}{\pi + (1-\pi)\frac{\pi}{1-\pi}} = \frac{p(y) - (1-p)\frac{\pi}{1-\pi}(y - L)}{\pi + \pi} = \frac{p(y) - (1-p)\frac{\pi}{1-\pi}(y - L)}{2\pi}.$$
+  
+  A cleaner route is to note that at $\pi=p$ (actuarially fair), $c_{NL}=c_L$ at $I=L$, which equalizes marginal utilities and yields full insurance.
+
+- Premium threshold for full insurance $I=L$:
+  
+  At $I=L$, the FOC becomes $(1-p)\frac{-\pi}{y - \pi L} + p\frac{1-\pi}{y} = 0$.
+  
+  This simplifies to $-\pi(1-p) + p(1-\pi) = 0 \Rightarrow \pi = p$.
+
+- Conclusion: Full insurance is optimal iff $\pi=p$ (actuarially fair). For $\pi>p$, partial insurance; for $\pi<p$, corner may exceed $I=L$ but constrained to $I=L$.

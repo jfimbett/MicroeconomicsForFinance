@@ -15,120 +15,270 @@ execute:
   enabled: false
 ---
 
-## Introduction to Securities Markets
+## Overview and Notation (aligned with Uncertainty)
 
-- Securities markets involve trading of financial instruments such as stocks, bonds, and derivatives.
+- Finite states of nature: $s \in \{1,\dots,S\}$ with probabilities $\pi = (\pi_1,\dots,\pi_S)$, $\sum_s \pi_s = 1$.
+- $J$ securities with time-1 state-contingent payoffs $a_{sj}$ collected in the payoff matrix
+  $$
+  A = \begin{bmatrix}
+  a_{11} & \cdots & a_{1J} \\
+  \vdots & \ddots & \vdots \\
+  a_{S1} & \cdots & a_{SJ}
+  \end{bmatrix} \in \mathbb{R}^{S\times J}.
+  $$
+- Time-0 prices $q = (q_1,\dots,q_J)\in\mathbb{R}^J$.
+- A portfolio $x\in\mathbb{R}^J$ costs $q\cdot x$ at $t=0$ and delivers random payoff vector $A x$ at $t=1$ (a lottery, as in the uncertainty section).
 
-- In equilibrium, supply equals demand for each security.
+---
 
-- Prices adjust to clear markets.
+## Arbitrage: Definition (Linear Algebra)
 
-- Key concepts: portfolio choice, market completeness, and the role of information.
+An arbitrage is a portfolio $x\in\mathbb{R}^J$ such that
 
-------------------------------------------------------------------------
+$$
+q\cdot x \le 0,\quad A x \ge 0 \;\text{(componentwise)}, \quad \text{and at least one strict inequality.}
+$$
 
-## Portfolio Theory
+- Intuition: non-positive cost today, non-negative state payoffs with some gain for sure (or strictly negative cost with zero payoff).
+- Homogeneity: if $x$ is an arbitrage, so is $\lambda x$ for any $\lambda>0$.
+- Detecting arbitrage is a feasibility LP: find $x$ with $A x \ge 0$ and $q\cdot x < 0$.
 
-- Investors choose portfolios to maximize expected utility given their risk preferences.
+---
 
-- Mean-variance analysis: portfolios characterized by expected return and variance.
+## Law of One Price (LoOP) and No-Arbitrage
 
-- Efficient frontier: set of portfolios with maximum expected return for given risk level.
-
-- Capital Asset Pricing Model (CAPM): relationship between expected return and systematic risk.
-
-------------------------------------------------------------------------
-
-## The Capital Asset Pricing Model (CAPM)
-
-- **Assumptions:**
-  - Investors are risk-averse and maximize expected utility
-  - Single-period investment horizon
-  - Frictionless markets (no transaction costs, taxes)
-  - Investors can borrow/lend at risk-free rate
-  - Homogeneous expectations
-
-- **Key Result:** Expected return on asset i:
-- **Key Result:** Expected return on asset $i$:
-  $$\mathbb{E}[R_i] = R_f + \beta_i \left(\mathbb{E}[R_m] - R_f\right)$$
-
-  where $\beta_i = \dfrac{\mathrm{Cov}(R_i, R_m)}{\mathrm{Var}(R_m)}$
-
-------------------------------------------------------------------------
-
-## Market Equilibrium
-
-- In equilibrium, all investors hold the market portfolio (combination of all risky assets).
-
-- The market portfolio is mean-variance efficient.
-
-- Risk-free asset is tangent to the efficient frontier.
-
-- Separation theorem: portfolio choice separates into two decisions:
-  1. Which efficient portfolio to hold
-  2. How much to invest in risky vs. risk-free assets
+- LoOP: If two portfolios $x,y$ have the same state-by-state payoffs, $A x = A y$, then $q\cdot x = q\cdot y$.
+- In matrix form, LoOP says pricing is a linear functional of payoffs.
+- Fundamental theorem (finite-state version):
+  
+  - No-Arbitrage (NA) holds iff there exists a nonnegative state-price vector $\psi \in \mathbb{R}^S_{+}$ such that
+    $$
+    q = A^{\top} \psi,\quad \text{i.e. } q_j = \sum_{s=1}^S \psi_s\, a_{sj} \;\; (j=1,\dots,J).
+    $$
+  - $\psi_s$ is the Arrow–Debreu price of one unit delivered in state $s$ (next slide).
 
 ------------------------------------------------------------------------
 
-## Complete Markets
+## Arrow–Debreu State Securities and State Prices
 
-- A market is complete if any contingent claim can be replicated by a portfolio of existing securities.
+- The Arrow–Debreu security for state $s$ pays $1$ in state $s$ and $0$ otherwise: payoff $e_s \in \mathbb{R}^S$.
+- Its time-0 price is the state price $\psi_s = q(e_s)$.
+- Stack $\psi=(\psi_1,\dots,\psi_S)\!\in\!\mathbb{R}^S_{+}$. Pricing any asset $j$:
+  $$
+  q_j = \sum_{s=1}^S \psi_s a_{sj} = \psi^{\top} a_{\cdot j},\quad\text{or }\boxed{\; q = A^{\top} \psi\; }.
+  $$
+- If markets are complete (below), $\psi$ is unique and can be solved from observed $(A,q)$.
 
-- In complete markets, all risk can be hedged.
+---
 
-- Arrow-Debreu securities: pay 1 in one state, 0 otherwise.
+## Complete vs Incomplete Markets
 
-- State prices: prices of Arrow-Debreu securities.
+- Markets are complete if payoffs of traded assets span all contingencies:
+  $$\mathrm{rank}(A)=S.$$
+  - If $J=S$ and $\det(A)\neq 0$, then $A$ is invertible.
+  - If $J>S$ and $\mathrm{rank}(A)=S$, many portfolios replicate the same payoff; prices are still unique by LoOP.
+- Consequences:
+  - Replication: For any target payoff $b\in\mathbb{R}^S$, there exists $x$ s.t. $A x = b$.
+  - Pricing uniqueness: $q(b) = \psi^{\top} b$ is uniquely defined under NA.
+- Incomplete markets: $\mathrm{rank}(A)<S$.
+  - Not all $b$ are replicable; state prices $\psi$ may not be unique (set-valued) but still satisfy $q=A^{\top}\psi$.
 
-- Any security's price is the expected value of its payoffs discounted by state prices.
+---
+
+## The Stochastic Discount Factor (SDF)
+
+- Using the probabilities $\pi$ (as in the uncertainty section), define the SDF $m=(m_1,\dots,m_S)$ by
+  $$\boxed{\; m_s = \frac{\psi_s}{\pi_s} \;},\quad s=1,\dots,S.$$
+- Then pricing can be written as an expectation under the physical measure $\pi$:
+  $$
+  \boxed{\; q_j = \sum_{s=1}^S \pi_s\, m_s\, a_{sj} = \mathbb{E}_{\pi}[\, m\, \tilde a_j\, ]\; }.
+  $$
+- In terms of gross returns $R_j = \dfrac{\tilde a_j}{q_j}$ (random):
+  $$\boxed{\; 1 = \mathbb{E}_{\pi}[\, m\, R_j\, ] \; }\quad \text{for all traded } j.
+  $$
+- With a risk-free asset of price $q_f$ and payoff $1$ in all states, $R_f = 1/q_f$ and $1 = \mathbb{E}[m R_f] = R_f\, \mathbb{E}[m]$ so $\mathbb{E}[m] = 1/R_f$.
+
+---
+
+## Two-Period Consumption–Investment Problem and the SDF
+
+- Preferences (expected utility):
+  $$\max_{c_0,\,x\in\mathbb{R}^J} \; u(c_0) + \beta\, \sum_{s=1}^S \pi_s\, u\big(c_1(s)\big)$$
+- Budget constraints:
+  $$ c_0 + q\cdot x = w_0, \qquad c_1(s) = a_{s\cdot}\, x + y_1(s), \; s=1,\dots,S $$
+  where $a_{s\cdot}$ is row $s$ of $A$, and $y_1(s)$ is (optional) state-$s$ endowment.
+- Lagrangian with multipliers $\lambda$ for $t=0$, and $\mu_s$ for $t=1$ states:
+  $$\mathcal{L} = u(c_0) + \beta\sum_s \pi_s u(c_1(s)) + \lambda\,(w_0 - c_0 - q\cdot x) + \sum_s \mu_s \big(a_{s\cdot}x + y_1(s) - c_1(s)\big).$$
+
+---
+
+## FOCs → Euler Equation → SDF
+
+- FOCs:
+  $$ u'(c_0) - \lambda = 0 \;\Rightarrow\; \lambda = u'(c_0), $$
+  $$ \beta\,\pi_s\, u'(c_1(s)) - \mu_s = 0 \;\Rightarrow\; \mu_s = \beta\,\pi_s\, u'(c_1(s)), $$
+  $$ -\lambda\, q_j + \sum_{s=1}^S \mu_s\, a_{sj} = 0 \;\Rightarrow\; q_j = \sum_s \frac{\mu_s}{\lambda} a_{sj}. $$
+  
+- Identify the SDF:
+  $$ \boxed{\; m_s = \frac{\mu_s}{\lambda\,\pi_s} = \beta\, \frac{u'(c_1(s))}{u'(c_0)} \;} \quad \Rightarrow \quad q_j = \sum_s \pi_s m_s a_{sj} = \mathbb{E}[m\, \tilde a_j]. $$
+- Euler equation in returns (for any traded $j$):
+  $$ \boxed{\; 1 = \mathbb{E}[\, m\, R_j\, ] \;} \quad (\text{divide } q_j u'(c_0) = \beta\,\mathbb{E}[u'(c_1) a_j] \text{ by } q_j). $$
+- Risk-free relation: $1 = \mathbb{E}[m\, R_f] = R_f\, \mathbb{E}[m] \Rightarrow R_f = 1/\mathbb{E}[m]$.
+
+---
+
+## Interpreting Risk Premia via Covariance
+
+From $0 = \mathbb{E}[m(R_j - R_f)]$:
+$$
+\mathbb{E}[R_j] - R_f = -\frac{\mathrm{Cov}(m,R_j)}{\mathbb{E}[m]}\, R_f.
+$$
+ 
+
+- Assets that pay more in “bad” states (high $m$) have positive $\mathrm{Cov}(m,R_j)$ and lower expected returns.
+- Conversely, assets that pay in “good” states (low $m$) require a premium.
+
+---
+
+## Numeric Example: CRRA, Two States
+
+- Utility: $u(c) = \frac{c^{1-\gamma}}{1-\gamma}$, with $\gamma = 2$, $\beta = 0.96$.
+- Probabilities: $\pi = (0.6, 0.4)$.
+- Consumption: $c_0 = 1$, $c_1 = (1.10, 0.90)$.
+- SDF: $m_s = \beta (c_1(s)/c_0)^{-\gamma}$ ⇒ $m = (0.96\cdot 1.10^{-2},\; 0.96\cdot 0.90^{-2}) \approx (0.793,\; 1.185)$.
+- Risk-free: $\mathbb{E}[m] = 0.6\cdot 0.793 + 0.4\cdot 1.185 = 0.949$ ⇒ $R_f \approx 1/0.949 = 1.054$.
+- Price an asset with state payoffs $a = (0,2)$:
+  $$ q = \mathbb{E}[m\, a] = 0.6\cdot 0.793 \cdot 0 + 0.4\cdot 1.185 \cdot 2 = 0.948. $$
+  Its expected return: $\mathbb{E}[R] = \mathbb{E}[a]/q = (0.6\cdot 0 + 0.4\cdot 2)/0.948 \approx 0.843 < R_f$ (pays in bad state ⇒ insurance ⇒ lower return).
 
 ------------------------------------------------------------------------
 
-## Incomplete Markets
+## Connections to Expected Utility and Risk Aversion
 
-- Most real-world markets are incomplete.
+- From decision making under uncertainty: agents evaluate lotteries $\tilde a$ via $\mathbb{E}[u(\tilde a)]$ (concave $u$).
+- In equilibrium, marginal utilities determine $m$ (up to normalization), and risk aversion shapes state prices:
+  
+  - "Bad" states (high marginal utility) have larger $m_s$ and thus larger $\psi_s$.
+  - Assets paying in bad states command higher prices (insurance role).
 
-- Cannot hedge all risks.
+---
 
-- Equilibrium concepts: Radner equilibrium, constrained efficiency.
+## Worked Example: Solving for State Prices and the SDF
 
-- Role of derivatives in completing markets.
+Let $S=2$, $J=2$ with
+
+$$
+A = \begin{bmatrix}
+1 & 1 \\
+0 & 2
+\end{bmatrix},\quad q = \begin{bmatrix}0.9 \\ 1.4\end{bmatrix}.
+$$
+
+- NA implies $q = A^{\top} \psi$. Since $A$ has rank 2, solve for $\psi$ uniquely:
+  $$
+  A^{\top} = \begin{bmatrix}1 & 0 \\ 1 & 2\end{bmatrix},\;\; \Rightarrow\;\; \begin{cases}
+  0.9 = \psi_1, \\
+  1.4 = \psi_1 + 2\psi_2
+  \end{cases}
+  \Rightarrow (\psi_1,\psi_2) = (0.9, 0.25).
+  $$
+- If $\pi = (0.6,0.4)$, then $m = (\psi_1/\pi_1,\psi_2/\pi_2) = (1.5, 0.625)$ and $q_j = \mathbb{E}[m\, \tilde a_j]$.
+
+---
+
+## Replication via Inversion (Complete Markets)
+
+- Given target payoff $b\in\mathbb{R}^S$ and invertible $A$, the unique replicating portfolio is
+  $$\boxed{\; x = A^{-1} b \; }.$$
+- Price of $b$: $q(b) = q\cdot x = \psi^{\top} b$.
+- If $J>S$ but $\mathrm{rank}(A)=S$, replication exists and is non-unique; the price is still unique.
 
 ------------------------------------------------------------------------
 
-## Information and Asset Pricing
+## Exercise 1: Find an Arbitrage Strategy
 
-- Asymmetric information: some investors have private information.
+States $S=2$, assets $J=3$ with
+$$
+A = \begin{bmatrix}
+1 & 1 & 0 \\
+1 & 0 & 2
+\end{bmatrix},\quad q = \begin{bmatrix}0.9 \\ 0.4 \\ 0.9\end{bmatrix}.
+$$
 
-- Efficient markets hypothesis: prices reflect all available information.
+1) Show there is no $\psi\ge 0$ with $q = A^{\top}\psi$ (hint: use the first two assets to infer $\psi$, then check the third).
+2) Construct an explicit arbitrage portfolio $x$ with $q\cdot x < 0$ and $A x \ge 0$.
 
-- Forms of market efficiency:
-  - Weak: prices reflect past price information
-  - Semi-strong: prices reflect all public information
-  - Strong: prices reflect all information (public and private)
+Solution sketch 
+
+- From assets 1 and 2: $0.9 = \psi_1$, $0.4 = \psi_1 \Rightarrow \psi_1=0.4$, $\psi_2=0.5$. Then asset 3 would imply $q_3 = 2\psi_2 = 1.0 \neq 0.9$ ⇒ NA violated.
+- Replicate asset 3 using (1,2): solve $A y = (0,2)^{\top}$ ⇒ $y=(2,-2,0)$. Its price is $q\cdot y = 1.0$.
+- Arbitrage: buy asset 3 and short its replicating portfolio $x = e_3 - y = (-2,2,1)$.
+  - Cost: $q\cdot x = -1.8 + 0.8 + 0.9 = -0.1 < 0$.
+  - Payoff: $A x = 0$ (riskless free cash today) ⇒ arbitrage.
+
+---
+
+## Exercise 2: Compute Arrow–Debreu Prices (State Prices)
+
+Use the 2-state, 2-asset setup from the worked example:
+$$
+A = \begin{bmatrix}1 & 1 \\ 0 & 2\end{bmatrix},\quad q = \begin{bmatrix}0.9 \\ 1.4\end{bmatrix}.
+$$
+
+1) Verify $\mathrm{rank}(A)=2$ (complete markets).
+2) Solve $q = A^{\top} \psi$ to obtain $\psi$.
+3) For $\pi = (0.6,0.4)$, compute the SDF $m=\psi/\pi$ and check $q_j = \mathbb{E}[m\, \tilde a_j]$.
+
+— Solution —
+ 
+- $\psi = (0.9,0.25)$ (unique); $m=(1.5,0.625)$; identities verify by direct substitution.
+
+---
+
+## Exercise 3: Replicate a Target Payoff
+
+With the same $A$ as above, replicate $b = (1,1.5)^{\top}$.
+
+1) Compute $x$ such that $A x = b$ (use inversion or solve the linear system).
+2) Compute its price $q(b) = q\cdot x$ and verify $q(b) = \psi^{\top} b$.
+
+— Solution —
+ 
+- Solve $\begin{cases} x_1 + x_2 = 1,\\ 2x_2 = 1.5\end{cases}$ ⇒ $(x_1,x_2)=(0.25,0.75)$.
+- Price: $q\cdot x = 0.9\cdot 0.25 + 1.4\cdot 0.75 = 1.275$.
+- Also $\psi^{\top} b = 0.9\cdot 1 + 0.25\cdot 1.5 = 1.275$.
 
 ------------------------------------------------------------------------
 
-## Behavioral Finance
+## Risk-Neutral Probabilities
 
-- Traditional finance assumes rational investors.
+Risk-neutral (or "pricing") probabilities reweight physical probabilities to absorb investors' risk preferences so that discounted expected payoffs under the new measure price assets.
 
-- Behavioral finance incorporates psychological biases:
-  - Overconfidence
-  - Loss aversion
-  - Mental accounting
-  - Herding
+- Define the risk-neutral measure $Q$ by
+  $$\pi_s^{Q} = \frac{m_s\,\pi_s}{\mathbb{E}[m]},\qquad s=1,\dots,S,$$
+  where $m_s$ is the SDF and $\mathbb{E}[m]=\sum_s \pi_s m_s$.
 
-- Implications for asset pricing and market anomalies.
+- Then for any asset with payoff $\tilde a$,
+  $$q = \mathbb{E}[m\,\tilde a] = \mathbb{E}[m]\;\mathbb{E}_{Q}[\tilde a] = \frac{1}{R_f}\;\mathbb{E}_{Q}[\tilde a],$$
+  since $R_f = 1/\mathbb{E}[m]$.
 
-------------------------------------------------------------------------
+- Interpretation: under $Q$ investors are effectively risk-neutral and assets are priced by discounting $Q$–expected payoffs at the risk-free rate. The change of measure shifts probability mass toward states that are valuable to investors (high $m$).
 
-## Conclusion
+### Example (from the worked example)
 
-- Securities markets play a crucial role in allocating resources and managing risk.
+Use the earlier solved state prices $\psi=(0.9,0.25)$ and physical probabilities $\pi=(0.6,0.4)$, which give
 
-- Equilibrium concepts help understand price formation.
+$$m = \left(\frac{0.9}{0.6},\frac{0.25}{0.4}\right) = (1.5,0.625),\qquad \mathbb{E}[m]=0.6\cdot1.5+0.4\cdot0.625=1.15.$$
 
-- Extensions to incomplete markets and behavioral considerations provide more realistic models.
+Compute the risk-neutral probabilities:
 
-- Applications in portfolio management, risk management, and financial regulation.
+$$\pi^Q = \frac{m\circ\pi}{\mathbb{E}[m]} = \left(\frac{1.5\cdot0.6}{1.15},\frac{0.625\cdot0.4}{1.15}\right) \approx (0.783,0.217).$$
+
+Price asset 1 with payoff $(1,0)$ under $Q$:
+
+$$\mathbb{E}_Q[\tilde a^{(1)}] = 0.783\cdot1 + 0.217\cdot0 = 0.783,\qquad q_1 = \frac{1}{R_f}\,\mathbb{E}_Q[\tilde a^{(1)}] = 1.15\cdot0.783 = 0.9.$$ 
+
+Similarly for asset 2 with payoff $(1,2)$ we get $q_2 = 1.15\cdot(0.783+2\cdot0.217) = 1.4$.
+
+This shows risk-neutral probabilities shift mass toward the state(s) with high SDF and let us price by a single discounted expectation.
+
