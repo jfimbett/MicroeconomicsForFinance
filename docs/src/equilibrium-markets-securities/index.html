@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.23">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Juan F. Imbet">
   <title>Microeconomics for Finance – Equilibrium in Markets for Securities</title>
@@ -256,24 +256,38 @@ q_j = \sum_{s=1}^S \psi_s a_{sj} = \psi^{\top} a_{\cdot j},\quad\text{or }\boxed
 <section class="slide level0">
 
 <h2>Interpreting Risk Premia via Covariance</h2>
-<p>From <span class="math inline">\(0 = \mathbb{E}[m(R_j - R_f)]\)</span>: <span class="math display">\[
-\mathbb{E}[R_j] - R_f = -\frac{\mathrm{Cov}(m,R_j)}{\mathbb{E}[m]}\, R_f.
-\]</span></p>
+<p>Starting from the Euler equation <span class="math inline">\(\mathbb{E}[mR_j] = 1\)</span> for any asset <span class="math inline">\(j\)</span> and <span class="math inline">\(\mathbb{E}[mR_f] = 1\)</span> for the risk-free asset:</p>
+<p><strong>Derivation:</strong></p>
+<ol type="1">
+<li><p>Write the expectation of a product using covariance: <span class="math display">\[\mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y] + \mathrm{Cov}(X,Y)\]</span></p></li>
+<li><p>Apply to <span class="math inline">\(\mathbb{E}[mR_j] = 1\)</span>: <span class="math display">\[\mathbb{E}[m]\mathbb{E}[R_j] + \mathrm{Cov}(m,R_j) = 1\]</span></p></li>
+<li><p>From the risk-free asset, <span class="math inline">\(\mathbb{E}[mR_f] = 1\)</span> and since <span class="math inline">\(R_f\)</span> is constant: <span class="math display">\[\mathbb{E}[m] \cdot R_f = 1 \quad \Rightarrow \quad \mathbb{E}[m] = \frac{1}{R_f}\]</span></p></li>
+<li><p>Substitute into step 2: <span class="math display">\[\frac{1}{R_f}\mathbb{E}[R_j] + \mathrm{Cov}(m,R_j) = 1\]</span></p></li>
+</ol>
+</section>
+<section class="slide level0">
+
+<h2>Continuation</h2>
+<ol start="5" type="1">
+<li><p>Multiply through by <span class="math inline">\(R_f\)</span> and rearrange: <span class="math display">\[\mathbb{E}[R_j] + R_f \cdot \mathrm{Cov}(m,R_j) = R_f\]</span> <span class="math display">\[\boxed{\mathbb{E}[R_j] - R_f = -R_f \cdot \mathrm{Cov}(m,R_j)}\]</span></p>
+<p>Or equivalently, dividing by <span class="math inline">\(\mathbb{E}[m] = 1/R_f\)</span>: <span class="math display">\[\boxed{\mathbb{E}[R_j] - R_f = -\frac{\mathrm{Cov}(m,R_j)}{\mathbb{E}[m]}}\]</span></p></li>
+</ol>
+<p><strong>Interpretation:</strong></p>
 <ul>
-<li>Assets that pay more in “bad” states (high <span class="math inline">\(m\)</span>) have positive <span class="math inline">\(\mathrm{Cov}(m,R_j)\)</span> and lower expected returns.</li>
-<li>Conversely, assets that pay in “good” states (low <span class="math inline">\(m\)</span>) require a premium.</li>
+<li>Assets that pay more in “bad” states (high <span class="math inline">\(m\)</span>) have positive <span class="math inline">\(\mathrm{Cov}(m,R_j)\)</span> and lower expected returns (insurance property).</li>
+<li>Conversely, assets that pay in “good” states (low <span class="math inline">\(m\)</span>) have negative covariance and require a risk premium.</li>
 </ul>
 </section>
 <section class="slide level0">
 
 <h2>Numeric Example: CRRA, Two States</h2>
 <ul>
-<li>Utility: <span class="math inline">\(u(c) = \frac{c^{1-\gamma}}{1-\gamma}\)</span>, with <span class="math inline">\(\gamma = 2\)</span>, <span class="math inline">\(\beta = 0.96\)</span>.</li>
-<li>Probabilities: <span class="math inline">\(\pi = (0.6, 0.4)\)</span>.</li>
-<li>Consumption: <span class="math inline">\(c_0 = 1\)</span>, <span class="math inline">\(c_1 = (1.10, 0.90)\)</span>.</li>
-<li>SDF: <span class="math inline">\(m_s = \beta (c_1(s)/c_0)^{-\gamma}\)</span> ⇒ <span class="math inline">\(m = (0.96\cdot 1.10^{-2},\; 0.96\cdot 0.90^{-2}) \approx (0.793,\; 1.185)\)</span>.</li>
-<li>Risk-free: <span class="math inline">\(\mathbb{E}[m] = 0.6\cdot 0.793 + 0.4\cdot 1.185 = 0.949\)</span> ⇒ <span class="math inline">\(R_f \approx 1/0.949 = 1.054\)</span>.</li>
-<li>Price an asset with state payoffs <span class="math inline">\(a = (0,2)\)</span>: <span class="math display">\[ q = \mathbb{E}[m\, a] = 0.6\cdot 0.793 \cdot 0 + 0.4\cdot 1.185 \cdot 2 = 0.948. \]</span> Its expected return: <span class="math inline">\(\mathbb{E}[R] = \mathbb{E}[a]/q = (0.6\cdot 0 + 0.4\cdot 2)/0.948 \approx 0.843 &lt; R_f\)</span> (pays in bad state ⇒ insurance ⇒ lower return).</li>
+<li>Utility: <span class="math inline">\(u(c) = \frac{c^{1-\gamma}}{1-\gamma}\)</span>, with <span class="math inline">\(\gamma = 2\)</span>, <span class="math inline">\(\beta = 1\)</span>.</li>
+<li>Probabilities: <span class="math inline">\(\pi = \left(\frac{1}{2}, \frac{1}{2}\right)\)</span>.</li>
+<li>Consumption: <span class="math inline">\(c_0 = 1\)</span>, <span class="math inline">\(c_1 = \left(2, 1\right)\)</span>.</li>
+<li>SDF: <span class="math inline">\(m_s = \beta \left(\frac{c_1(s)}{c_0}\right)^{-\gamma} = \left(\frac{c_1(s)}{c_0}\right)^{-2}\)</span> <span class="math display">\[\Rightarrow m = \left(\left(\frac{2}{1}\right)^{-2},\; \left(\frac{1}{1}\right)^{-2}\right) = \left(\frac{1}{4},\; 1\right)\]</span></li>
+<li>Risk-free: <span class="math display">\[\mathbb{E}[m] = \frac{1}{2} \cdot \frac{1}{4} + \frac{1}{2} \cdot 1 = \frac{1}{8} + \frac{1}{2} = \frac{5}{8} \quad \Rightarrow \quad R_f = \frac{1}{\mathbb{E}[m]} = \frac{8}{5}\]</span></li>
+<li>Price an asset with state payoffs <span class="math inline">\(a = (1,2)\)</span>: <span class="math display">\[ q = \mathbb{E}[m\, a] = \frac{1}{2} \cdot \frac{1}{4} \cdot 1 + \frac{1}{2} \cdot 1 \cdot 2 = \frac{1}{8} + 1 = \frac{9}{8} \]</span> Expected payoff: <span class="math inline">\(\mathbb{E}[a] = \frac{1}{2} \cdot 1 + \frac{1}{2} \cdot 2 = \frac{3}{2}\)</span>. Expected gross return: <span class="math inline">\(\mathbb{E}[R] = \mathbb{E}\left[\frac{a}{q}\right] = \frac{1}{2} \cdot \frac{1}{9/8} + \frac{1}{2} \cdot \frac{2}{9/8} = \frac{1}{2}\left(\frac{8}{9} + \frac{16}{9}\right) = \frac{4}{3} &lt; R_f = \frac{8}{5} = 1.6\)</span> (pays more in state 2, the “worse” state with higher <span class="math inline">\(m\)</span> ⇒ insurance ⇒ lower return).</li>
 </ul>
 </section>
 <section class="slide level0">
@@ -333,7 +347,7 @@ A = \begin{bmatrix}
 </ol>
 <p>Solution sketch</p>
 <ul>
-<li>From assets 1 and 2: <span class="math inline">\(0.9 = \psi_1\)</span>, <span class="math inline">\(0.4 = \psi_1 \Rightarrow \psi_1=0.4\)</span>, <span class="math inline">\(\psi_2=0.5\)</span>. Then asset 3 would imply <span class="math inline">\(q_3 = 2\psi_2 = 1.0 \neq 0.9\)</span> ⇒ NA violated.</li>
+<li>From assets 1 and 2: <span class="math inline">\(q_1 = 0.9 = \psi_1 + \psi_2\)</span> and <span class="math inline">\(q_2 = 0.4 = \psi_1 \Rightarrow \psi_1=0.4\)</span>, <span class="math inline">\(\psi_2=0.5\)</span>. Then asset 3 would imply <span class="math inline">\(q_3 = 2\psi_2 = 1.0 \neq 0.9\)</span> ⇒ NA violated.</li>
 <li>Replicate asset 3 using (1,2): solve <span class="math inline">\(A y = (0,2)^{\top}\)</span> ⇒ <span class="math inline">\(y=(2,-2,0)\)</span>. Its price is <span class="math inline">\(q\cdot y = 1.0\)</span>.</li>
 <li>Arbitrage: buy asset 3 and short its replicating portfolio <span class="math inline">\(x = e_3 - y = (-2,2,1)\)</span>.
 <ul>
@@ -388,8 +402,8 @@ A = \begin{bmatrix}1 &amp; 1 \\ 0 &amp; 2\end{bmatrix},\quad q = \begin{bmatrix}
 <p>Compute the risk-neutral probabilities:</p>
 <p><span class="math display">\[\pi^Q = \frac{m\circ\pi}{\mathbb{E}[m]} = \left(\frac{1.5\cdot0.6}{1.15},\frac{0.625\cdot0.4}{1.15}\right) \approx (0.783,0.217).\]</span></p>
 <p>Price asset 1 with payoff <span class="math inline">\((1,0)\)</span> under <span class="math inline">\(Q\)</span>:</p>
-<p><span class="math display">\[\mathbb{E}_Q[\tilde a^{(1)}] = 0.783\cdot1 + 0.217\cdot0 = 0.783,\qquad q_1 = \frac{1}{R_f}\,\mathbb{E}_Q[\tilde a^{(1)}] = 1.15\cdot0.783 = 0.9.\]</span></p>
-<p>Similarly for asset 2 with payoff <span class="math inline">\((1,2)\)</span> we get <span class="math inline">\(q_2 = 1.15\cdot(0.783+2\cdot0.217) = 1.4\)</span>.</p>
+<p><span class="math display">\[\mathbb{E}_Q[\tilde a^{(1)}] = 0.783\cdot1 + 0.217\cdot0 = 0.783,\qquad q_1 = \frac{1}{R_f}\,\mathbb{E}_Q[\tilde a^{(1)}] = \mathbb{E}[m] \cdot 0.783 = 1.15\cdot0.783 = 0.9.\]</span></p>
+<p>Similarly for asset 2 with payoff <span class="math inline">\((1,2)\)</span> we get <span class="math inline">\(\mathbb{E}_Q[\tilde a^{(2)}] = 0.783 + 2\cdot0.217 = 1.217\)</span>, so <span class="math inline">\(q_2 = \mathbb{E}[m]\cdot 1.217 = 1.15\cdot 1.217 = 1.4\)</span>.</p>
 <p>This shows risk-neutral probabilities shift mass toward the state(s) with high SDF and let us price by a single discounted expectation.</p>
 
 

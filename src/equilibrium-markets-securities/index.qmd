@@ -129,27 +129,53 @@ $$
 
 ## Interpreting Risk Premia via Covariance
 
-From $0 = \mathbb{E}[m(R_j - R_f)]$:
-$$
-\mathbb{E}[R_j] - R_f = -\frac{\mathrm{Cov}(m,R_j)}{\mathbb{E}[m]}\, R_f.
-$$
- 
+Starting from the Euler equation $\mathbb{E}[mR_j] = 1$ for any asset $j$ and $\mathbb{E}[mR_f] = 1$ for the risk-free asset:
 
-- Assets that pay more in “bad” states (high $m$) have positive $\mathrm{Cov}(m,R_j)$ and lower expected returns.
-- Conversely, assets that pay in “good” states (low $m$) require a premium.
+**Derivation:**
+
+1. Write the expectation of a product using covariance:
+   $$\mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y] + \mathrm{Cov}(X,Y)$$
+
+2. Apply to $\mathbb{E}[mR_j] = 1$:
+   $$\mathbb{E}[m]\mathbb{E}[R_j] + \mathrm{Cov}(m,R_j) = 1$$
+
+3. From the risk-free asset, $\mathbb{E}[mR_f] = 1$ and since $R_f$ is constant:
+   $$\mathbb{E}[m] \cdot R_f = 1 \quad \Rightarrow \quad \mathbb{E}[m] = \frac{1}{R_f}$$
+
+4. Substitute into step 2:
+   $$\frac{1}{R_f}\mathbb{E}[R_j] + \mathrm{Cov}(m,R_j) = 1$$
+
+---
+
+## Continuation 
+
+5. Multiply through by $R_f$ and rearrange:
+   $$\mathbb{E}[R_j] + R_f \cdot \mathrm{Cov}(m,R_j) = R_f$$
+   $$\boxed{\mathbb{E}[R_j] - R_f = -R_f \cdot \mathrm{Cov}(m,R_j)}$$
+
+   Or equivalently, dividing by $\mathbb{E}[m] = 1/R_f$:
+   $$\boxed{\mathbb{E}[R_j] - R_f = -\frac{\mathrm{Cov}(m,R_j)}{\mathbb{E}[m]}}$$
+
+**Interpretation:**
+
+- Assets that pay more in "bad" states (high $m$) have positive $\mathrm{Cov}(m,R_j)$ and lower expected returns (insurance property).
+- Conversely, assets that pay in "good" states (low $m$) have negative covariance and require a risk premium.
 
 ---
 
 ## Numeric Example: CRRA, Two States
 
-- Utility: $u(c) = \frac{c^{1-\gamma}}{1-\gamma}$, with $\gamma = 2$, $\beta = 0.96$.
-- Probabilities: $\pi = (0.6, 0.4)$.
-- Consumption: $c_0 = 1$, $c_1 = (1.10, 0.90)$.
-- SDF: $m_s = \beta (c_1(s)/c_0)^{-\gamma}$ ⇒ $m = (0.96\cdot 1.10^{-2},\; 0.96\cdot 0.90^{-2}) \approx (0.793,\; 1.185)$.
-- Risk-free: $\mathbb{E}[m] = 0.6\cdot 0.793 + 0.4\cdot 1.185 = 0.949$ ⇒ $R_f \approx 1/0.949 = 1.054$.
-- Price an asset with state payoffs $a = (0,2)$:
-  $$ q = \mathbb{E}[m\, a] = 0.6\cdot 0.793 \cdot 0 + 0.4\cdot 1.185 \cdot 2 = 0.948. $$
-  Its expected return: $\mathbb{E}[R] = \mathbb{E}[a]/q = (0.6\cdot 0 + 0.4\cdot 2)/0.948 \approx 0.843 < R_f$ (pays in bad state ⇒ insurance ⇒ lower return).
+- Utility: $u(c) = \frac{c^{1-\gamma}}{1-\gamma}$, with $\gamma = 2$, $\beta = 1$.
+- Probabilities: $\pi = \left(\frac{1}{2}, \frac{1}{2}\right)$.
+- Consumption: $c_0 = 1$, $c_1 = \left(2, 1\right)$.
+- SDF: $m_s = \beta \left(\frac{c_1(s)}{c_0}\right)^{-\gamma} = \left(\frac{c_1(s)}{c_0}\right)^{-2}$ 
+  $$\Rightarrow m = \left(\left(\frac{2}{1}\right)^{-2},\; \left(\frac{1}{1}\right)^{-2}\right) = \left(\frac{1}{4},\; 1\right)$$
+- Risk-free: 
+  $$\mathbb{E}[m] = \frac{1}{2} \cdot \frac{1}{4} + \frac{1}{2} \cdot 1 = \frac{1}{8} + \frac{1}{2} = \frac{5}{8} \quad \Rightarrow \quad R_f = \frac{1}{\mathbb{E}[m]} = \frac{8}{5}$$
+- Price an asset with state payoffs $a = (1,2)$:
+  $$ q = \mathbb{E}[m\, a] = \frac{1}{2} \cdot \frac{1}{4} \cdot 1 + \frac{1}{2} \cdot 1 \cdot 2 = \frac{1}{8} + 1 = \frac{9}{8} $$
+  Expected payoff: $\mathbb{E}[a] = \frac{1}{2} \cdot 1 + \frac{1}{2} \cdot 2 = \frac{3}{2}$.
+  Expected gross return: $\mathbb{E}[R] = \mathbb{E}\left[\frac{a}{q}\right] = \frac{1}{2} \cdot \frac{1}{9/8} + \frac{1}{2} \cdot \frac{2}{9/8} = \frac{1}{2}\left(\frac{8}{9} + \frac{16}{9}\right) = \frac{4}{3} < R_f = \frac{8}{5} = 1.6$ (pays more in state 2, the "worse" state with higher $m$ ⇒ insurance ⇒ lower return).
 
 ------------------------------------------------------------------------
 
@@ -210,7 +236,7 @@ $$
 
 Solution sketch 
 
-- From assets 1 and 2: $0.9 = \psi_1$, $0.4 = \psi_1 \Rightarrow \psi_1=0.4$, $\psi_2=0.5$. Then asset 3 would imply $q_3 = 2\psi_2 = 1.0 \neq 0.9$ ⇒ NA violated.
+- From assets 1 and 2: $q_1 = 0.9 = \psi_1 + \psi_2$ and $q_2 = 0.4 = \psi_1 \Rightarrow \psi_1=0.4$, $\psi_2=0.5$. Then asset 3 would imply $q_3 = 2\psi_2 = 1.0 \neq 0.9$ ⇒ NA violated.
 - Replicate asset 3 using (1,2): solve $A y = (0,2)^{\top}$ ⇒ $y=(2,-2,0)$. Its price is $q\cdot y = 1.0$.
 - Arbitrage: buy asset 3 and short its replicating portfolio $x = e_3 - y = (-2,2,1)$.
   - Cost: $q\cdot x = -1.8 + 0.8 + 0.9 = -0.1 < 0$.
@@ -276,9 +302,9 @@ $$\pi^Q = \frac{m\circ\pi}{\mathbb{E}[m]} = \left(\frac{1.5\cdot0.6}{1.15},\frac
 
 Price asset 1 with payoff $(1,0)$ under $Q$:
 
-$$\mathbb{E}_Q[\tilde a^{(1)}] = 0.783\cdot1 + 0.217\cdot0 = 0.783,\qquad q_1 = \frac{1}{R_f}\,\mathbb{E}_Q[\tilde a^{(1)}] = 1.15\cdot0.783 = 0.9.$$ 
+$$\mathbb{E}_Q[\tilde a^{(1)}] = 0.783\cdot1 + 0.217\cdot0 = 0.783,\qquad q_1 = \frac{1}{R_f}\,\mathbb{E}_Q[\tilde a^{(1)}] = \mathbb{E}[m] \cdot 0.783 = 1.15\cdot0.783 = 0.9.$$ 
 
-Similarly for asset 2 with payoff $(1,2)$ we get $q_2 = 1.15\cdot(0.783+2\cdot0.217) = 1.4$.
+Similarly for asset 2 with payoff $(1,2)$ we get $\mathbb{E}_Q[\tilde a^{(2)}] = 0.783 + 2\cdot0.217 = 1.217$, so $q_2 = \mathbb{E}[m]\cdot 1.217 = 1.15\cdot 1.217 = 1.4$.
 
 This shows risk-neutral probabilities shift mass toward the state(s) with high SDF and let us price by a single discounted expectation.
 
