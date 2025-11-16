@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.24">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.23">
 
   <meta name="author" content="Juan F. Imbet">
   <title>Microeconomics for Finance – Investment Decisions under Market Imperfections</title>
@@ -145,7 +145,8 @@ Juan F. Imbet
 </div>
 
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Introduction to Market Imperfections</h2>
 <ul>
 <li><p>Real-world markets deviate from the perfect competition assumptions.</p></li>
@@ -160,7 +161,8 @@ Juan F. Imbet
 <li><p>These imperfections affect investment decisions and asset pricing.</p></li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>Asymmetric Information</h2>
 <ul>
 <li><p>One party has more or better information than the other.</p></li>
@@ -172,7 +174,8 @@ Juan F. Imbet
 <li><p>In financial markets: lenders vs.&nbsp;borrowers, insurers vs.&nbsp;insured, etc.</p></li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
 <h2>The Principal-Agent Problem</h2>
 <ul>
 <li><p>Principal delegates tasks to agent.</p></li>
@@ -190,7 +193,140 @@ Juan F. Imbet
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level0">
+
+<h2>A Simple Principal-Agent Model</h2>
+<ul>
+<li><p>Two periods: contract written at <span class="math inline">\(t=0\)</span>, production realized at <span class="math inline">\(t=1\)</span>.</p></li>
+<li><p>Output <span class="math inline">\(y\)</span> combines effort and noise: <span class="math inline">\(y = e + \varepsilon\)</span>, with</p>
+<ul>
+<li>Effort <span class="math inline">\(e \in [0, \bar e]\)</span> chosen by the manager (agent) and not observed.</li>
+<li>Shock <span class="math inline">\(\varepsilon\)</span> has mean zero and variance <span class="math inline">\(\sigma^2\)</span>; realizations are observed.</li>
+</ul></li>
+<li><p>Manager preferences: <span class="math inline">\(U = \mathbb{E}[u(w) - c(e)]\)</span> with risk aversion <span class="math inline">\(u(w) = -\exp(-\rho w)\)</span> and effort cost <span class="math inline">\(c(e) = \tfrac{k}{2} e^2\)</span>, <span class="math inline">\(k&gt;0\)</span>.</p></li>
+<li><p>Owner (principal) is risk neutral and wants to maximize expected profit <span class="math inline">\(\Pi = \mathbb{E}[y - w] = e - \mathbb{E}[w]\)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Contracting with Hidden Effort</h2>
+<ul>
+<li><p>Contract offers wage schedule <span class="math inline">\(w(y)\)</span> contingent on output.</p></li>
+<li><p>Feasible contracts must satisfy:</p>
+<ul>
+<li><strong>Participation</strong>: expected utility at least outside option <span class="math inline">\(\bar U\)</span>: <span class="math display">\[ \mathbb{E}[u(w(y)) - c(e)] \ge \bar U. \]</span></li>
+<li><strong>Incentive compatibility</strong>: chosen effort solves <span class="math display">\[ e \in \arg\max_{\tilde e} \mathbb{E}[u(w(\tilde e + \varepsilon)) - c(\tilde e)]. \]</span></li>
+</ul></li>
+<li><p>Without hidden effort, principal would enforce <span class="math inline">\(e^{FB} = \arg\max_e (e - c(e)) = 1/k\)</span>.</p></li>
+<li><p>Hidden effort creates a wedge between first-best and second-best outcomes.</p></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Optimal Linear Contract (1): Agent Side</h2>
+<ul>
+<li>Consider linear wage: <span class="math inline">\(w(y) = a + b y = a + b(e+\varepsilon)\)</span>.</li>
+<li>Distribution: <span class="math inline">\(w \sim \mathcal{N}\big(a + b e,\; b^2 \sigma^2\big)\)</span> since <span class="math inline">\(\varepsilon\)</span> is mean 0, variance <span class="math inline">\(\sigma^2\)</span>.</li>
+<li>CARA utility with normal pay implies certainty equivalent (CE): <span class="math display">\[ CE = \underbrace{a + b e}_{\text{mean wage}} - \underbrace{\tfrac{1}{2} \rho b^2 \sigma^2}_{\text{risk premium}} - \underbrace{\tfrac{k}{2} e^2}_{\text{effort cost}}. \]</span></li>
+<li>Agent chooses <span class="math inline">\(e\)</span> to maximize <span class="math inline">\(CE\)</span>. <span class="math display">\[ \frac{\partial CE}{\partial e} = b - k e = 0 \;\Rightarrow\; e^{SB} = \frac{b}{k}. \]</span></li>
+<li>Effort increases one-for-one with incentive intensity <span class="math inline">\(b\)</span> and decreases with effort cost parameter <span class="math inline">\(k\)</span>.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Optimal Linear Contract (1b): CARA-Normal Certainty Equivalent</h2>
+<ul>
+<li>If <span class="math inline">\(w \sim \mathcal{N}(\mu_w, \sigma_w^2)\)</span> and <span class="math inline">\(u(w) = -e^{-\rho w}\)</span> (CARA), then <span class="math display">\[ \mathbb{E}[u(w)] = -\mathbb{E}[e^{-\rho w}] = - e^{-\rho \mu_w + \tfrac{1}{2} \rho^2 \sigma_w^2}. \]</span></li>
+<li>The certainty equivalent <span class="math inline">\(CE\)</span> solves <span class="math inline">\(u(CE) = \mathbb{E}[u(w)]\)</span>: <span class="math display">\[ -e^{-\rho CE} = - e^{-\rho \mu_w + \tfrac{1}{2} \rho^2 \sigma_w^2} \;\Rightarrow\; CE = \mu_w - \tfrac{1}{2} \rho \sigma_w^2. \]</span></li>
+<li>In our contract: <span class="math inline">\(\mu_w = a + b e\)</span>, <span class="math inline">\(\sigma_w^2 = b^2 \sigma^2\)</span> giving <span class="math display">\[ CE = a + b e - \tfrac{1}{2} \rho b^2 \sigma^2 - \tfrac{k}{2} e^2. \]</span></li>
+<li>Effort cost <span class="math inline">\(\tfrac{k}{2}e^2\)</span> subtracts from CE because utility is <span class="math inline">\(u(w) - c(e)\)</span>.</li>
+<li>This derivation justifies the earlier expression used for agent optimization.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Optimal Linear Contract (2a): Principal Optimization Setup</h2>
+<ul>
+<li>Profit given contract and agent response: <span class="math display">\[ \Pi = \mathbb{E}[y - w] = e - (a + b e). \]</span></li>
+<li>Substitute agent effort <span class="math inline">\(e = b/k\)</span>: <span class="math display">\[ \Pi = \frac{b}{k} - a - \frac{b^2}{k}. \]</span></li>
+<li>Participation (binding): <span class="math inline">\(CE = \bar U\)</span> implies <span class="math display">\[ a = \bar U + \tfrac{k}{2} e^2 + \tfrac{1}{2} \rho b^2 \sigma^2 - b e. \]</span></li>
+<li>Replace <span class="math inline">\(e = b/k\)</span> to eliminate <span class="math inline">\(a\)</span> and <span class="math inline">\(e\)</span> in <span class="math inline">\(\Pi\)</span>: <span class="math display">\[ \Pi = e - \bar U - \tfrac{1}{2} k e^2 - \tfrac{1}{2} \rho b^2 \sigma^2, \quad e=\frac{b}{k}. \]</span></li>
+<li>Express purely in <span class="math inline">\(b\)</span>, choose <span class="math inline">\(b\)</span> to maximize <span class="math inline">\(\Pi(b)\)</span>. <span class="math display">\[ \Pi(b) = \frac{b}{k} - \bar U - \frac{b^2}{2k} - \frac{1}{2} \rho b^2 \sigma^2. \]</span></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Optimal Linear Contract (2b): Solving for <span class="math inline">\(b^{\star}\)</span> and Effort</h2>
+<ul>
+<li>First-order condition: <span class="math display">\[ \frac{\partial \Pi}{\partial b} = \frac{1}{k} - \frac{b}{k} - \rho b \sigma^2 = 0. \]</span></li>
+<li>Solve for incentive slope: <span class="math display">\[ b^{\star} = \frac{k}{1 + k \rho \sigma^2}. \]</span></li>
+<li>Implied second-best effort: <span class="math display">\[ e^{SB} = \frac{b^{\star}}{k} = \frac{1}{1 + k \rho \sigma^2}. \]</span></li>
+<li>Comparison with first-best (<span class="math inline">\(e^{FB} = 1/k\)</span>): <span class="math display">\[ \frac{e^{SB}}{e^{FB}} = \frac{k}{1 + k \rho \sigma^2} &lt; 1. \]</span></li>
+<li>Gap arises from need to insure the risk-averse agent against output noise.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Optimal Linear Contract (3): Interpretation &amp; Limits</h2>
+<ul>
+<li>Incentive vs.&nbsp;insurance trade-off:
+<ul>
+<li>Benefit of higher <span class="math inline">\(b\)</span>: raises effort <span class="math inline">\(e = b/k\)</span> linearly.</li>
+<li>Cost of higher <span class="math inline">\(b\)</span>: raises agent’s risk premium <span class="math inline">\(\tfrac{1}{2} \rho b^2 \sigma^2\)</span> quadratically.</li>
+</ul></li>
+<li>Limiting cases:
+<ul>
+<li><span class="math inline">\(\rho \to 0\)</span> (risk-neutral agent) or <span class="math inline">\(\sigma^2 \to 0\)</span> (no noise): <span class="math inline">\(b^{\star} \to 1\)</span>, <span class="math inline">\(e^{SB} \to e^{FB}\)</span>.</li>
+<li>Large <span class="math inline">\(\rho\)</span> or <span class="math inline">\(\sigma^2\)</span>: <span class="math inline">\(b^{\star} \approx 1/(\rho \sigma^2)\)</span>, <span class="math inline">\(e^{SB} \approx 1/(k \rho \sigma^2) \to 0\)</span>.</li>
+</ul></li>
+<li>Comparative statics: <span class="math display">\[ \frac{\partial b^{\star}}{\partial \rho} &lt; 0, \quad \frac{\partial b^{\star}}{\partial \sigma^2} &lt; 0, \quad \frac{\partial b^{\star}}{\partial k} = \frac{1}{(1 + k \rho \sigma^2)^2} &gt; 0. \]</span>
+<ul>
+<li>Although <span class="math inline">\(b^{\star}\)</span> rises with <span class="math inline">\(k\)</span>, effort <span class="math inline">\(e^{SB} = b^{\star}/k\)</span> falls as <span class="math inline">\(k\)</span> increases.</li>
+</ul></li>
+<li>Welfare loss (effort gap): <span class="math display">\[ e^{FB} - e^{SB} = \frac{1}{k} - \frac{1}{1 + k \rho \sigma^2} = \frac{\rho \sigma^2}{1 + k \rho \sigma^2}. \]</span></li>
+<li>Smaller <span class="math inline">\(\sigma^2\)</span> (better performance metric) improves incentives.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Optimal Linear Contract (4): Decomposition &amp; Implementation</h2>
+<ul>
+<li>Fixed part <span class="math inline">\(a\)</span> provides insurance and adjusts for participation: <span class="math display">\[ a = \bar U + \tfrac{k}{2} (e^{SB})^2 + \tfrac{1}{2} (b^{\star})^2 \rho \sigma^2 - b^{\star} e^{SB}. \]</span></li>
+<li>Expected wage: <span class="math display">\[ \mathbb{E}[w] = a + b^{\star} e^{SB} = a + \frac{(b^{\star})^2}{k}. \]</span></li>
+<li>Agent rents: zero if participation binds (all surplus beyond reservation extracted).</li>
+<li>Practical implementation:
+<ul>
+<li><span class="math inline">\(b\)</span> via performance bonus or equity/stock grants.</li>
+<li><span class="math inline">\(a\)</span> as base salary ensuring risk sharing.</li>
+<li>Reduce <span class="math inline">\(\sigma^2\)</span> using better KPIs/auditing to raise feasible <span class="math inline">\(b\)</span>.</li>
+</ul></li>
+<li>Performance measurement innovations substitute for costly incentives by lowering noise.</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Implementing the Optimal Contract</h2>
+<p>(2b) - Step 1: calibrate parameters <span class="math inline">\((k, \rho, \sigma^2, \bar U)\)</span> from data or managerial judgment. - Step 2: compute <span class="math inline">\(b^{\star}\)</span> and implied effort <span class="math inline">\(e^{SB}\)</span>. - Step 3: determine fixed component <span class="math inline">\(a\)</span> from the participation constraint: <span class="math display">\[ a = \bar U + \tfrac{k}{2} (e^{SB})^2 + \tfrac{1}{2} (b^{\star})^2 \rho \sigma^2 - b^{\star} e^{SB}. \]</span> - Step 4: communicate performance metrics and ensure verifiability of output <span class="math inline">\(y\)</span>.</p>
+<ul>
+<li>Contract balances incentives (through <span class="math inline">\(b\)</span>) and insurance (through <span class="math inline">\(a\)</span>).</li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h2>Economic Interpretation of Constraints</h2>
+<ul>
+<li><p><strong>Incentive compatibility</strong> ensures the manager prefers intended effort; otherwise, hidden actions would undermine performance.</p></li>
+<li><p><strong>Participation</strong> guarantees willingness to sign; often benchmarked to outside salary offers.</p></li>
+<li><p>Comparative statics:</p>
+<ul>
+<li>Higher risk aversion <span class="math inline">\((\rho)\)</span> or noise <span class="math inline">\((\sigma^2)\)</span> lowers <span class="math inline">\(b^{\star}\)</span>, weakening incentives.</li>
+<li>Lower effort cost <span class="math inline">\((k)\)</span> allows stronger incentives and higher effort.</li>
+</ul></li>
+<li><p>Real-world contracts blend salary, bonus, and stock grants to approximate the optimal mix of incentives and insurance.</p></li>
+</ul>
+</section>
+<section class="slide level0">
+
 <h2>Moral Hazard in Financial Contracts</h2>
 <ul>
 <li><p>Agent (borrower/manager) takes actions not observable by principal (lender/investor).</p></li>
@@ -206,108 +342,6 @@ Juan F. Imbet
 <li>Covenants</li>
 <li>Performance-based fees</li>
 </ul></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Adverse Selection in Financial Markets</h2>
-<ul>
-<li><p>Occurs when one party has private information before the contract.</p></li>
-<li><p>Examples:</p>
-<ul>
-<li>Borrowers with high risk projects seek loans more aggressively</li>
-<li>Sellers of “lemons” (low-quality assets) in used car markets</li>
-<li>Investors with inside information</li>
-</ul></li>
-<li><p>Solutions:</p>
-<ul>
-<li>Screening</li>
-<li>Signaling</li>
-<li>Pooling equilibria</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Corporate Finance under Imperfections</h2>
-<ul>
-<li><p>Capital structure decisions affected by:</p>
-<ul>
-<li>Taxes (tax shield on debt)</li>
-<li>Bankruptcy costs</li>
-<li>Agency costs</li>
-<li>Asymmetric information</li>
-</ul></li>
-<li><p>Pecking order theory: firms prefer internal financing, then debt, then equity.</p></li>
-<li><p>Trade-off theory: optimal capital structure balances tax benefits and costs of debt.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Investment under Asymmetric Information</h2>
-<ul>
-<li>Firms may underinvest due to:
-<ul>
-<li>Debt overhang: existing debt reduces incentives for new investment</li>
-<li>Asset substitution: shareholders may increase risk after debt issuance</li>
-</ul></li>
-<li>Solutions:
-<ul>
-<li>Convertible debt</li>
-<li>Priority structures</li>
-<li>Covenants restricting investment</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Behavioral Aspects</h2>
-<ul>
-<li><p>Investors are not always rational.</p></li>
-<li><p>Biases affecting investment decisions:</p>
-<ul>
-<li>Overconfidence</li>
-<li>Loss aversion</li>
-<li>Mental accounting</li>
-<li>Herding behavior</li>
-</ul></li>
-<li><p>Implications for asset pricing and market efficiency.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Market Microstructure</h2>
-<ul>
-<li><p>How trades are executed and prices are determined.</p></li>
-<li><p>Imperfections:</p>
-<ul>
-<li>Bid-ask spreads</li>
-<li>Market impact</li>
-<li>Liquidity constraints</li>
-</ul></li>
-<li><p>High-frequency trading and algorithmic trading.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Regulation and Market Imperfections</h2>
-<ul>
-<li>Government intervention to correct market failures:
-<ul>
-<li>Disclosure requirements</li>
-<li>Capital requirements for banks</li>
-<li>Insider trading regulations</li>
-<li>Consumer protection laws</li>
-</ul></li>
-<li>Trade-offs between regulation and innovation.</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Conclusion</h2>
-<ul>
-<li><p>Market imperfections significantly affect investment decisions.</p></li>
-<li><p>Understanding these imperfections is crucial for:</p>
-<ul>
-<li>Corporate finance decisions</li>
-<li>Investment strategy</li>
-<li>Risk management</li>
-<li>Financial regulation</li>
-</ul></li>
-<li><p>Real-world financial decisions require balancing theoretical optimality with practical constraints.</p></li>
 </ul>
 
 

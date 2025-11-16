@@ -58,6 +58,148 @@ execute:
 
 ------------------------------------------------------------------------
 
+## A Simple Principal-Agent Model
+
+- Two periods: contract written at $t=0$, production realized at $t=1$.
+
+- Output $y$ combines effort and noise: $y = e + \varepsilon$, with
+  - Effort $e \in [0, \bar e]$ chosen by the manager (agent) and not observed.
+  - Shock $\varepsilon$ has mean zero and variance $\sigma^2$; realizations are observed.
+
+- Manager preferences: $U = \mathbb{E}[u(w) - c(e)]$ with risk aversion $u(w) = -\exp(-\rho w)$ and effort cost $c(e) = \tfrac{k}{2} e^2$, $k>0$.
+
+- Owner (principal) is risk neutral and wants to maximize expected profit $\Pi = \mathbb{E}[y - w] = e - \mathbb{E}[w]$.
+
+------------------------------------------------------------------------
+
+## Contracting with Hidden Effort
+
+- Contract offers wage schedule $w(y)$ contingent on output.
+
+- Feasible contracts must satisfy:
+  - **Participation**: expected utility at least outside option $\bar U$:
+    $$ \mathbb{E}[u(w(y)) - c(e)] \ge \bar U. $$
+  - **Incentive compatibility**: chosen effort solves
+    $$ e \in \arg\max_{\tilde e} \mathbb{E}[u(w(\tilde e + \varepsilon)) - c(\tilde e)]. $$
+
+- Without hidden effort, principal would enforce $e^{FB} = \arg\max_e (e - c(e)) = 1/k$.
+
+- Hidden effort creates a wedge between first-best and second-best outcomes.
+
+------------------------------------------------------------------------
+
+## Optimal Linear Contract (1): Agent Side
+
+- Consider linear wage: $w(y) = a + b y = a + b(e+\varepsilon)$.
+- Distribution: $w \sim \mathcal{N}\big(a + b e,\; b^2 \sigma^2\big)$ since $\varepsilon$ is mean 0, variance $\sigma^2$.
+- CARA utility with normal pay implies certainty equivalent (CE):
+  $$ CE = \underbrace{a + b e}_{\text{mean wage}} - \underbrace{\tfrac{1}{2} \rho b^2 \sigma^2}_{\text{risk premium}} - \underbrace{\tfrac{k}{2} e^2}_{\text{effort cost}}. $$
+- Agent chooses $e$ to maximize $CE$.
+  $$ \frac{\partial CE}{\partial e} = b - k e = 0 \;\Rightarrow\; e^{SB} = \frac{b}{k}. $$
+- Effort increases one-for-one with incentive intensity $b$ and decreases with effort cost parameter $k$.
+
+------------------------------------------------------------------------
+
+## Optimal Linear Contract (1b): CARA-Normal Certainty Equivalent
+
+- If $w \sim \mathcal{N}(\mu_w, \sigma_w^2)$ and $u(w) = -e^{-\rho w}$ (CARA), then
+  $$ \mathbb{E}[u(w)] = -\mathbb{E}[e^{-\rho w}] = - e^{-\rho \mu_w + \tfrac{1}{2} \rho^2 \sigma_w^2}. $$
+- The certainty equivalent $CE$ solves $u(CE) = \mathbb{E}[u(w)]$:
+  $$ -e^{-\rho CE} = - e^{-\rho \mu_w + \tfrac{1}{2} \rho^2 \sigma_w^2} \;\Rightarrow\; CE = \mu_w - \tfrac{1}{2} \rho \sigma_w^2. $$
+- In our contract: $\mu_w = a + b e$, $\sigma_w^2 = b^2 \sigma^2$ giving
+  $$ CE = a + b e - \tfrac{1}{2} \rho b^2 \sigma^2 - \tfrac{k}{2} e^2. $$
+- Effort cost $\tfrac{k}{2}e^2$ subtracts from CE because utility is $u(w) - c(e)$.
+- This derivation justifies the earlier expression used for agent optimization.
+
+------------------------------------------------------------------------
+
+## Optimal Linear Contract (2a): Principal Optimization Setup
+
+- Profit given contract and agent response:
+  $$ \Pi = \mathbb{E}[y - w] = e - (a + b e). $$
+- Substitute agent effort $e = b/k$:
+  $$ \Pi = \frac{b}{k} - a - \frac{b^2}{k}. $$
+- Participation (binding): $CE = \bar U$ implies
+  $$ a = \bar U + \tfrac{k}{2} e^2 + \tfrac{1}{2} \rho b^2 \sigma^2 - b e. $$
+- Replace $e = b/k$ to eliminate $a$ and $e$ in $\Pi$:
+  $$ \Pi = e - \bar U - \tfrac{1}{2} k e^2 - \tfrac{1}{2} \rho b^2 \sigma^2, \quad e=\frac{b}{k}. $$
+- Express purely in $b$, choose $b$ to maximize $\Pi(b)$.
+  $$ \Pi(b) = \frac{b}{k} - \bar U - \frac{b^2}{2k} - \frac{1}{2} \rho b^2 \sigma^2. $$
+
+------------------------------------------------------------------------
+
+## Optimal Linear Contract (2b): Solving for $b^{\star}$ and Effort
+
+- First-order condition:
+  $$ \frac{\partial \Pi}{\partial b} = \frac{1}{k} - \frac{b}{k} - \rho b \sigma^2 = 0. $$
+- Solve for incentive slope:
+  $$ b^{\star} = \frac{k}{1 + k \rho \sigma^2}. $$
+- Implied second-best effort:
+  $$ e^{SB} = \frac{b^{\star}}{k} = \frac{1}{1 + k \rho \sigma^2}. $$
+- Comparison with first-best ($e^{FB} = 1/k$):
+  $$ \frac{e^{SB}}{e^{FB}} = \frac{k}{1 + k \rho \sigma^2} < 1. $$
+- Gap arises from need to insure the risk-averse agent against output noise.
+
+------------------------------------------------------------------------
+
+## Optimal Linear Contract (3): Interpretation & Limits
+
+- Incentive vs. insurance trade-off:
+  - Benefit of higher $b$: raises effort $e = b/k$ linearly.
+  - Cost of higher $b$: raises agent's risk premium $\tfrac{1}{2} \rho b^2 \sigma^2$ quadratically.
+- Limiting cases:
+  - $\rho \to 0$ (risk-neutral agent) or $\sigma^2 \to 0$ (no noise): $b^{\star} \to 1$, $e^{SB} \to e^{FB}$.
+  - Large $\rho$ or $\sigma^2$: $b^{\star} \approx 1/(\rho \sigma^2)$, $e^{SB} \approx 1/(k \rho \sigma^2) \to 0$.
+- Comparative statics:
+  $$ \frac{\partial b^{\star}}{\partial \rho} < 0, \quad \frac{\partial b^{\star}}{\partial \sigma^2} < 0, \quad \frac{\partial b^{\star}}{\partial k} = \frac{1}{(1 + k \rho \sigma^2)^2} > 0. $$
+  - Although $b^{\star}$ rises with $k$, effort $e^{SB} = b^{\star}/k$ falls as $k$ increases.
+- Welfare loss (effort gap):
+  $$ e^{FB} - e^{SB} = \frac{1}{k} - \frac{1}{1 + k \rho \sigma^2} = \frac{\rho \sigma^2}{1 + k \rho \sigma^2}. $$
+- Smaller $\sigma^2$ (better performance metric) improves incentives.
+
+------------------------------------------------------------------------
+
+## Optimal Linear Contract (4): Decomposition & Implementation
+
+- Fixed part $a$ provides insurance and adjusts for participation:
+  $$ a = \bar U + \tfrac{k}{2} (e^{SB})^2 + \tfrac{1}{2} (b^{\star})^2 \rho \sigma^2 - b^{\star} e^{SB}. $$
+- Expected wage:
+  $$ \mathbb{E}[w] = a + b^{\star} e^{SB} = a + \frac{(b^{\star})^2}{k}. $$
+- Agent rents: zero if participation binds (all surplus beyond reservation extracted).
+- Practical implementation:
+  - $b$ via performance bonus or equity/stock grants.
+  - $a$ as base salary ensuring risk sharing.
+  - Reduce $\sigma^2$ using better KPIs/auditing to raise feasible $b$.
+- Performance measurement innovations substitute for costly incentives by lowering noise.
+
+------------------------------------------------------------------------
+
+## Implementing the Optimal Contract
+(2b)
+- Step 1: calibrate parameters $(k, \rho, \sigma^2, \bar U)$ from data or managerial judgment.
+- Step 2: compute $b^{\star}$ and implied effort $e^{SB}$.
+- Step 3: determine fixed component $a$ from the participation constraint:
+  $$ a = \bar U + \tfrac{k}{2} (e^{SB})^2 + \tfrac{1}{2} (b^{\star})^2 \rho \sigma^2 - b^{\star} e^{SB}. $$
+- Step 4: communicate performance metrics and ensure verifiability of output $y$.
+
+- Contract balances incentives (through $b$) and insurance (through $a$).
+
+------------------------------------------------------------------------
+
+## Economic Interpretation of Constraints
+
+- **Incentive compatibility** ensures the manager prefers intended effort; otherwise, hidden actions would undermine performance.
+
+- **Participation** guarantees willingness to sign; often benchmarked to outside salary offers.
+
+- Comparative statics:
+  - Higher risk aversion $(\rho)$ or noise $(\sigma^2)$ lowers $b^{\star}$, weakening incentives.
+  - Lower effort cost $(k)$ allows stronger incentives and higher effort.
+
+- Real-world contracts blend salary, bonus, and stock grants to approximate the optimal mix of incentives and insurance.
+
+------------------------------------------------------------------------
+
 ## Moral Hazard in Financial Contracts
 
 - Agent (borrower/manager) takes actions not observable by principal (lender/investor).
@@ -71,99 +213,3 @@ execute:
   - Collateral requirements
   - Covenants
   - Performance-based fees
-
-------------------------------------------------------------------------
-
-## Adverse Selection in Financial Markets
-
-- Occurs when one party has private information before the contract.
-
-- Examples:
-  - Borrowers with high risk projects seek loans more aggressively
-  - Sellers of "lemons" (low-quality assets) in used car markets
-  - Investors with inside information
-
-- Solutions:
-  - Screening
-  - Signaling
-  - Pooling equilibria
-
-------------------------------------------------------------------------
-
-## Corporate Finance under Imperfections
-
-- Capital structure decisions affected by:
-  - Taxes (tax shield on debt)
-  - Bankruptcy costs
-  - Agency costs
-  - Asymmetric information
-
-- Pecking order theory: firms prefer internal financing, then debt, then equity.
-
-- Trade-off theory: optimal capital structure balances tax benefits and costs of debt.
-
-------------------------------------------------------------------------
-
-## Investment under Asymmetric Information
-
-- Firms may underinvest due to:
-  - Debt overhang: existing debt reduces incentives for new investment
-  - Asset substitution: shareholders may increase risk after debt issuance
-
-- Solutions:
-  - Convertible debt
-  - Priority structures
-  - Covenants restricting investment
-
-------------------------------------------------------------------------
-
-## Behavioral Aspects
-
-- Investors are not always rational.
-
-- Biases affecting investment decisions:
-  - Overconfidence
-  - Loss aversion
-  - Mental accounting
-  - Herding behavior
-
-- Implications for asset pricing and market efficiency.
-
-------------------------------------------------------------------------
-
-## Market Microstructure
-
-- How trades are executed and prices are determined.
-
-- Imperfections:
-  - Bid-ask spreads
-  - Market impact
-  - Liquidity constraints
-
-- High-frequency trading and algorithmic trading.
-
-------------------------------------------------------------------------
-
-## Regulation and Market Imperfections
-
-- Government intervention to correct market failures:
-  - Disclosure requirements
-  - Capital requirements for banks
-  - Insider trading regulations
-  - Consumer protection laws
-
-- Trade-offs between regulation and innovation.
-
-------------------------------------------------------------------------
-
-## Conclusion
-
-- Market imperfections significantly affect investment decisions.
-
-- Understanding these imperfections is crucial for:
-  - Corporate finance decisions
-  - Investment strategy
-  - Risk management
-  - Financial regulation
-
-- Real-world financial decisions require balancing theoretical optimality with practical constraints.
