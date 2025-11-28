@@ -16,7 +16,6 @@ The course consists of four main topics:
 1. **Equilibrium in an Exchange Economy** - Understanding how markets allocate resources through voluntary exchange
 2. **Decision Making under Uncertainty** - Expected utility theory and risk preferences
 3. **Equilibrium in Markets for Securities** - Asset pricing and portfolio theory
-4. **Investment Decisions under Market Imperfections** - Asymmetric information and agency problems
 
 ## Direct Practice Access
 
@@ -44,12 +43,6 @@ Expected utility theory, risk aversion, and portfolio choice.
 Asset pricing models, CAPM, and market equilibrium concepts.
 :::
 
-::: {.g-col-6 .g-col-md-3}
-[Topic 4: Market Imperfections](src/investment-decisions-imperfections/index.html){.btn .btn-primary .btn-lg role="button"}
-
-Asymmetric information, principal-agent problems, and real-world market frictions.
-:::
-
 :::
 
 ## Course Information
@@ -68,7 +61,6 @@ By the end of this course, students will be able to:
 - Analyze market equilibrium under different conditions
 - Apply expected utility theory to decision-making under uncertainty
 - Comprehend asset pricing models and their implications
-- Recognize the impact of market imperfections on investment decisions
 
 ## Prerequisites
 

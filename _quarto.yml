@@ -27,8 +27,6 @@ website:
             href: src/decision-making-uncertainty/index.html
           - text: "3. Equilibrium in Markets for Securities"
             href: src/equilibrium-markets-securities/index.html
-          - text: "4. Investment Decisions under Market Imperfections"
-            href: src/investment-decisions-imperfections/index.html
     right:
       - text: "About"
         href: about.qmd
@@ -46,9 +44,6 @@ website:
         - section: "Topic 3: Equilibrium in Markets for Securities"
           contents:
             - src/equilibrium-markets-securities/index.qmd
-        - section: "Topic 4: Investment Decisions under Market Imperfections"
-          contents:
-            - src/investment-decisions-imperfections/index.qmd
 
 format:
   revealjs:
